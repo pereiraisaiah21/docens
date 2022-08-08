@@ -1,30 +1,113 @@
 .hdr {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    height: 100px;
+    width: 100%;
     background-color: #e4e8e8b3;
     z-index: 2;
-
-    &__lg {
-        &__img {
-            max-width: 150px;
+    &__wrppr {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px;
+        &--m {
+            width: 75%;
+            max-width: 300px;
+            height: 100%;
+            background-color: rgb(103, 103, 101);
         }
     }
-    &__pgs {}
-    &__bttns {
+    &__lg {
+        width: 20%;
+        &__img {
+            max-width: 100px;
+        }
     }
-    &__lst {}
+    &__pgs {
+        width: 50%;
+        height: 100%;
+        &__itm {
+            padding: 10px;
+        }
+    }
+    &__optns {
+        width: 20%;
+    }
+    &__bttns {
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        &--mbl {
+            display: none;
+        }
+    }
+    &__lst {
+        padding: 0 10px;
+        margin: 0 2px;
+        white-space: nowrap;
+        &--brdr {
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 5px;
+        }
+    }
     &__itm {
+        cursor: pointer;
         &__icn {
-
+            margin: 3px 5px 0 0;
         }
         &__nm {
 
         }
     }
+
+    &--mbl {
+        background-color: rgba(226, 225, 225, 0.451);
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    // Xs
+    @media (max-width: 575px) {
+        &__lg {
+            text-align: left;
+        }
+        &__pgs,
+        &__bttns {
+            display: none;
+        }
+        &__lg,
+        &__optns {
+            width: 50%;
+        }
+        &__bttns {
+            &--mbl {
+                text-align: right;
+                display: block;
+                svg {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+    // Sm
+    @media (min-width: 576px) {}
+    // Md
+    @media (min-width: 768px) {}
+    // Lg
+    @media (min-width: 991px) {}
+    // Xl
+    @media (min-width: 1200px) {}
+    // Xxl
+    @media (min-width: 1400px) {}
 }
+
