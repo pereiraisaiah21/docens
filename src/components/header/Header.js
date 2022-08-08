@@ -46,9 +46,44 @@ function Header () {
                     </div>
                 </div>
             </div>
-            <div className="hdr--mbl">
-                <div className="hdr__wrppr--m"></div>
-            </div>
+            {
+                menuIsOpen
+                ?
+                <div className="hdr--mbl">
+                    <div className="hdr--mbl__bckdrp"></div>
+                    <div className="hdr__wrppr--m">
+                        <section className="hdr--mbl__actns">
+                            <div className="hdr--mbl__cls" onClick={menuBarClick}>
+                                <span className="hdr--mbl__clsnm">
+                                    
+                                    Fechar
+                                </span>
+                            </div>
+                        </section>
+                        <section className="hdr--mbl__usr">
+                            <div className="hdr--mbl__prfl">
+                                <div className="hdr--mbl__icon">
+                                    <img className="hdr--mbl__icn" src={""} alt="Ícone do usuário"/>
+                                </div>
+                                <div className="hdr--mbl__inf">
+                                    <span className="hdr--mbl__nm">Michael Douglas</span>
+                                    <span className="hdr--mbl__ocptn">Estudante</span>
+                                </div>
+                            </div>
+                        </section>
+                        <section className="hdr--mbl__pgs">
+                            <ul className="hdr--mbl__lst">
+                                <li><a href="/" alt="">Wanderson</a></li>
+                                <li><a href="/" alt="">Wanderson</a></li>
+                                <li><a href="/" alt="">Wanderson</a></li>
+                                <li><a href="/" alt="">Wanderson</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+                :
+                ""
+            }
         </header>
     );
 }

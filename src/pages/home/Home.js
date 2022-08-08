@@ -13,7 +13,7 @@ function Home () {
     return (
         <section className="hmBnnrs">
             <Header />
-            <ImageCarousel images={["https://apod.nasa.gov/apod/image/1009/AuroraPrelude_takasaka.jpg", "https://apod.nasa.gov/apod/image/1009/AuroraPrelude_takasaka.jpg"]}/>
+            <ImageCarousel images={["https://lunetas.com.br/wp-content/uploads/2017/01/portal-lunetas-como-zelar-pela-educacao-infantil-em-tempos-de-isolamento-social.jpg", "https://lunetas.com.br/wp-content/uploads/2017/01/portal-lunetas-como-zelar-pela-educacao-infantil-em-tempos-de-isolamento-social.jpg"]}/>
         </section>  
     );
 }

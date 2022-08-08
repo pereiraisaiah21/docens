@@ -14,10 +14,12 @@
         margin: 0 auto;
         padding: 10px;
         &--m {
-            width: 75%;
-            max-width: 300px;
+            justify-content: flex-end;
             height: 100%;
             background-color: rgb(103, 103, 101);
+            width: 75%;
+            max-width: 250px;
+            padding: 20px;
         }
     }
     &__lg {
@@ -31,6 +33,8 @@
         height: 100%;
         &__itm {
             padding: 10px;
+            text-transform: uppercase;
+            font-weight: 700;
         }
     }
     &__optns {
@@ -64,16 +68,78 @@
 
         }
     }
-
     &--mbl {
-        background-color: rgba(226, 225, 225, 0.451);
         width: 100%;
-        height: 100vh;
+        height: 100%;
         position: fixed;
-        top: 0;
-        left: 0;
         display: flex;
         justify-content: flex-end;
+        box-shadow: inset 1px 0px 3px #8b8b8b;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        &__bckdrp {
+            width: 50%;
+            height: 100%;
+            background-color: #aaaaaa87;
+        }
+        &__actns {
+            width: 100%;
+            height: 50px;
+            text-align: right;
+        }
+        &__cls {
+            cursor: pointer;
+        }
+        &__opncn {
+            color: #fff;
+            font-size: 35px;
+        }
+        &__clscn {
+            margin-right: 10px;
+        }
+        &__clsnm {
+            background-color: #d20be36b;
+            border-radius: 20px;
+            padding: 10px 15px;
+            color: #fff;
+        }
+        &__usr {
+            width: 100%;
+            background-color: #fffff95e;
+            padding: 10px 0;
+        }
+        &__prfl {}
+        &__icn {
+            border-radius: 20px;
+            width: 100px;
+            margin: auto;
+        }
+        &__inf {
+            display: flex;
+            flex-direction: column;
+        }
+        &__nm {
+            margin: 0 0 0 10px;
+            font-size: 1.3rem;
+            color: #fff;
+        }
+        &__ocptn {
+            color: #fff;
+        }
+        &__lst {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #fffff95e;
+            li {
+                padding: 20px;
+                border-bottom: 2px solid #9400d3;
+                color: #fff;
+            }
+        }
     }
 
     // Xs
