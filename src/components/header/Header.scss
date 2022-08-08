@@ -1,0 +1,30 @@
+.hdr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100px;
+    background-color: #e4e8e8b3;
+    z-index: 2;
+
+    &__lg {
+        &__img {
+            max-width: 150px;
+        }
+    }
+    &__pgs {}
+    &__bttns {
+    }
+    &__lst {}
+    &__itm {
+        &__icn {
+
+        }
+        &__nm {
+
+        }
+    }
+}
