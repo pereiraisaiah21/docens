@@ -33,31 +33,17 @@ function NavigationActions () {
             link        : "",
             imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
             imageAlt    : "Image alternative"
-        },
-        {
-            name        : "item.name",
-            description : "item.description",
-            link        : "",
-            imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
-            imageAlt    : "Image alternative"
-        },
-        {
-            name        : "item.name",
-            description : "item.description",
-            link        : "",
-            imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
-            imageAlt    : "Image alternative"
         }
     ];
 
     return (
         <section className="actns">
             <div className="actns__dscrptn">
-                <span className="actns__dscrptn">
+                <span className="actns__dscrptn__icn">
                     <FaOptinMonster />
                 </span>
-                <span>
-                    Selecione uma das ações abaixo:
+                <span className="actns__dscrptn__ttl">
+                    NAVEGUE PELO SITE
                 </span>
             </div>
             <div className="actns__crds">
