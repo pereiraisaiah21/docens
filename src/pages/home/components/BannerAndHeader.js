@@ -7,7 +7,10 @@ function BannerAndHeader () {
     return (
         <section className="hmBnnrs">
             <Header />
-            <ImageCarousel images={["https://lunetas.com.br/wp-content/uploads/2017/01/portal-lunetas-como-zelar-pela-educacao-infantil-em-tempos-de-isolamento-social.jpg", "https://lunetas.com.br/wp-content/uploads/2017/01/portal-lunetas-como-zelar-pela-educacao-infantil-em-tempos-de-isolamento-social.jpg"]}/>
+            {
+                // <ImageCarousel images={["https://thumbs.dreamstime.com/b/banner-da-web-de-educa%C3%A7%C3%A3o-global-estudante-sentado-em-uma-pilha-livros-para-fazer-comunica%C3%A7%C3%A3o-online-com-outro-lan%C3%A7amento-do-216337559.jpg", "https://thumbs.dreamstime.com/b/banner-da-web-de-educa%C3%A7%C3%A3o-global-estudante-sentado-em-uma-pilha-livros-para-fazer-comunica%C3%A7%C3%A3o-online-com-outro-lan%C3%A7amento-do-216337559.jpg"]}/>
+                
+            }
         </section>  
     );
 }

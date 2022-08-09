@@ -30,7 +30,7 @@ function NavigationActions () {
     ];
 
     return (
-        <section className="actns">
+        <section className="actns actns--bg-01">
             <div className="actns__dscrptn">
                 <span className="actns__dscrptn__icn">
                     <FaOptinMonster />
@@ -42,7 +42,7 @@ function NavigationActions () {
             <div className="actns__crds">
                 <CardWithImage 
                     classStyleDivButton={"actns__itm__bttn actns__itm__bttn--fd"}
-                    link={"item.link"} 
+                    link={"/feed"} 
                     classStyleGrand="actns__itm actns__itm--fd" 
                     srcImage={"https://cdn-icons-png.flaticon.com/512/37/37430.png"} 
                     altImage={"Ícone de feed."} 

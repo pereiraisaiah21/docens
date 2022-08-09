@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import HeaderButtons from "./components/HeaderButtons";
-import { FaBars, FaWindowClose } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 import "./Header.scss";
 
@@ -55,7 +55,7 @@ function Header () {
                         <section className="hdr--mbl__actns">
                             <div className="hdr--mbl__cls" onClick={menuBarClick}>
                                 <span className="hdr--mbl__clsnm">
-                                    <FaWindowClose />
+                                    <FaTimes />
                                     Fechar
                                 </span>
                             </div>

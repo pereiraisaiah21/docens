@@ -1,0 +1,196 @@
+.mttr {
+    &__wrppr {
+        max-width: 1200px;
+        margin: auto;
+        padding: 10px;
+    }
+    &__cntnt {}
+
+    &__dtls {
+        line-height: 8px;
+        &__writer {}
+        &__date {}
+        &__lastUpdate {}
+    }
+    &__prmryWrp {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: #fbfbfb;
+        color: #4a4a4a;
+        border-radius: 10px;
+        text-align: left;
+        margin: 0px auto 20px;
+        padding: 30px;
+        box-sizing: border-box;
+        &--cntnt {
+            line-height: 25px;
+            text-align: left; 
+            .img {
+                max-width: 100%;
+            }
+            .wrnPrgrph {
+                border: 1px solid #e7e5d8;
+                border-left: 5px solid #f1f19c;
+                padding: 20px;
+                background-color: #ebeba46e;
+                &::before {
+                    content: "Observação";
+                    display: block;
+                }
+            }
+        }
+    }
+    &__prmryTtl {
+        color: #4a4a4a;
+        font-size: 1.3em;
+        text-transform: uppercase;
+        margin: 10px 0;
+    }
+    &__scndtyTtl {
+        color: #4a4a4a;
+        margin: 0 0 30px;
+        font-size: 1.3rem;
+    }
+    &__wrn {
+        display: none;
+    }
+    &__crd {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    &__img {
+        max-width: 100px;
+    }
+    &__itm {
+        padding: 10px 20px;
+        background-color: #968a9b6b;
+        color: #4a4a4a;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: 10px;
+        &__nm {
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        &__inf {
+            width: 100%;
+        }
+        &__icn {}
+        &__dscrptn {
+            display: none;
+        }
+
+        &:hover {}
+    }
+    &__actvty {
+        display: block;
+        margin-bottom: 10px;
+        padding: 10px;
+        text-align: left;
+        border-left: 3px solid;
+        &__bttn {
+            display: inline-flex;
+            justify-content: center ;
+            flex-wrap: wrap;
+            font-size: .8em;
+            text-transform: uppercase;
+            border-radius: 10px;
+            padding: 10px;
+            color: #fff;
+            svg {
+                background-color: #4a4a4a;
+                border-radius: 10px;
+                padding: 13px;
+            }
+            span {
+                display: block;
+                color: #4a4a4a;
+                width: 100%;
+            }
+            &:hover {
+                background-color: #4a4a4a;
+                svg {
+                    background-color: #fff;
+                    color: #4a4a4a;
+                }
+                span {
+                    background-color: #4a4a4a;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    &__rf {
+        display: block;
+        margin-bottom: 10px;
+        padding: 10px;
+        text-align: left;
+        border-left: 3px solid;
+        &__lst {
+            list-style-type: lower-greek;
+        }
+    }
+    &__spprt {
+        display: block;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 1.1em;
+        text-align: left;
+        border-left: 3px solid;
+        &__lst {
+            list-style-type: armenian;
+        }
+    }
+
+    // Xs
+    @media (max-width: 575px) {
+        &__prmryWrp {
+            padding: 10px;
+        }
+        &__wrn {
+            display: block;
+            padding: 10px;
+            background-color: #300aff2b;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            width: fit-content;
+            margin: 10px auto;
+        }
+        &__crds {
+            flex-wrap: wrap;
+        }
+        &__tm {
+            margin: 0 0 10px;
+            width: 100%;
+            &__nm {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    // Sm
+    @media (min-width: 576px) {}
+    // Md
+    @media (min-width: 768px) {}
+    // Lg
+    @media (min-width: 991px) {}
+    // Xl
+    @media (min-width: 1200px) {}
+    // Xxl
+    @media (min-width: 1400px) {}
+}
+
+.Subject {
+    width: 100%;  padding: 10px;
+    box-sizing: border-box;
+   
+}
+
+.font-def {
+    font-size: 2em;
+}

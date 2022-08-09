@@ -11,7 +11,7 @@ function Error () {
 
     return (
         <section className="errr">
-                Página não encontrada
+            Página não encontrada
         </section>
     );
 }

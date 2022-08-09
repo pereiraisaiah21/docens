@@ -1,0 +1,82 @@
+.fd {
+    &__wrppr {
+        max-width: 1200px;
+        margin: auto;
+        padding: 10px;
+    }
+    &__psts {}
+    &__crd {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 2px solid #ccc;
+        background-color: #e9e9e9eb;
+        padding: 10px 10px 20px;
+        margin: 0 0 10px;
+        &__img {
+            &__cntnt {
+                max-width: 100%;
+            }
+        }
+        &__inf {
+            text-align: left;
+            padding: 0 10px;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            h6 {
+                margin: 0 0 10px; 
+                font-size: 1.3em;
+                width: 100%;
+            }
+        }
+        &__vw {
+            position: absolute;
+            bottom: -13px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            right: 20px;
+            padding: 0 10px;
+            svg {
+                margin: 0 5px -2px 0;
+            }
+        }
+        &__sbjct {
+            background-color: #b3b3b3;
+            border-radius: 10px;
+            padding: 0 10px;
+            color: #fff;
+        }
+    }
+
+    // Xs
+    @media (max-width: 575px) {
+        &__crd {
+            flex-wrap: wrap;
+        }
+    }
+    // Sm
+    @media (min-width: 576px) {}
+    // Md
+    @media (min-width: 768px) {
+        &__crd {
+            &__vw {
+                position: absolute;
+                bottom: 0;
+                border: 1px solid #ccc;
+                border-radius: 10px;
+                padding: 0 10px;
+                svg {
+                    margin: 0 5px -2px 0;
+                }
+            }
+        }
+    }
+    // Lg
+    @media (min-width: 991px) {}
+    // Xl
+    @media (min-width: 1200px) {}
+    // Xxl
+    @media (min-width: 1400px) {}
+}
