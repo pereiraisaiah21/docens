@@ -5,6 +5,8 @@ import NavigationActions from "./components/NavigationActions";
 import NavigationMyProgress from "./components/NavigationMyProgress";
 import NavigationTeachers from "./components/NavigationTeachers";
 
+import Footer from "../../components/footer/Footer";
+
 import "./Home.scss";
 /**
  * 
@@ -18,6 +20,7 @@ function Home () {
             <NavigationActions />
             <NavigationMyProgress />
             <NavigationTeachers />
+            <Footer />
         </>
     );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import HeaderButtons from "./components/HeaderButtons";
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaWindowClose } from 'react-icons/fa';
 
 import "./Header.scss";
 
@@ -55,7 +55,7 @@ function Header () {
                         <section className="hdr--mbl__actns">
                             <div className="hdr--mbl__cls" onClick={menuBarClick}>
                                 <span className="hdr--mbl__clsnm">
-                                    
+                                    <FaWindowClose />
                                     Fechar
                                 </span>
                             </div>
@@ -63,7 +63,7 @@ function Header () {
                         <section className="hdr--mbl__usr">
                             <div className="hdr--mbl__prfl">
                                 <div className="hdr--mbl__icon">
-                                    <img className="hdr--mbl__icn" src={""} alt="Ícone do usuário"/>
+                                    <img className="hdr--mbl__icn" src={"https://cdn.icon-icons.com/icons2/2859/PNG/512/avatar_face_man_boy_male_profile_smiley_happy_people_icon_181657.png"} alt="Ícone do usuário"/>
                                 </div>
                                 <div className="hdr--mbl__inf">
                                     <span className="hdr--mbl__nm">Michael Douglas</span>
