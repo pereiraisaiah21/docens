@@ -18,7 +18,7 @@ function HeaderButtons () {
                         <FaQuestionCircle />
                     </span>
                     <span className="hdr__itm__nm">
-                        Ajuda
+                        AJUDA
                     </span>
                 </a>
             </li>
@@ -28,7 +28,7 @@ function HeaderButtons () {
                         <FaDoorOpen />
                     </span>
                     <span className="hdr__itm__nm">
-                        Entrar
+                        ENTRAR
                     </span>
                 </a>
             </li>

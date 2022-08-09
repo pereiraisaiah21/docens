@@ -8,7 +8,7 @@ import { FaEye } from 'react-icons/fa';
  * @returns 
  */
 
-function CardWithImage ({
+function CardSubjectProgress ({
     link, 
     classStyleGrand, 
     srcImage,
@@ -16,11 +16,12 @@ function CardWithImage ({
     classStyleImage, 
     classStyleSpan, 
     classStyleDiv, 
-    classStyleDivSpan, 
-    classStyleDivLabel,
-    classStyleDivButton, 
+    classStyleDivProgress, 
+    classStyleDivButton,
+    classStyleDivProgressDiv, 
+    classStyleSpanHit,
     title, 
-    description
+    progressValue
 }) {
 
     return (
@@ -28,10 +29,18 @@ function CardWithImage ({
             <img alt={altImage} className={classStyleImage} src={srcImage} />
             <span className={`${classStyleSpan} title`}>{title}</span>
             <div className={classStyleDiv}>
-                <span className={classStyleDivSpan}></span>
-                <label className={`${classStyleDivLabel} open`}>
-                    {description}
-                </label>
+                {
+                    progressValue 
+                    ?
+                    <span className={classStyleSpanHit}>
+                        {progressValue}% completados
+                    </span>
+                    :
+                    ""
+                } 
+                <div className={classStyleDivProgress}>
+                    <div className={classStyleDivProgressDiv} style={{width: `${progressValue}%`}}></div>
+                </div>
                 <a href={`${link}`} className={classStyleDivButton} title={title}>
                     <FaEye />
                     Acessar
@@ -41,4 +50,4 @@ function CardWithImage ({
     );
 }
 
-export default CardWithImage;
+export default CardSubjectProgress;

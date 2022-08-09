@@ -2,6 +2,7 @@ import React from "react";
 
 import BannerAndHeader from "./components/BannerAndHeader";
 import NavigationActions from "./components/NavigationActions";
+import NavigationMyProgress from "./components/NavigationMyProgress";
 
 import "./Home.scss";
 /**
@@ -14,6 +15,7 @@ function Home () {
         <>
             <BannerAndHeader />  
             <NavigationActions />
+            <NavigationMyProgress />
         </>
     );
 }

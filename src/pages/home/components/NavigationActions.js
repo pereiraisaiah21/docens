@@ -26,13 +26,6 @@ function NavigationActions () {
             link        : "",
             imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
             imageAlt    : "Image alternative"
-        },
-        {
-            name        : "item.name",
-            description : "item.description",
-            link        : "",
-            imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
-            imageAlt    : "Image alternative"
         }
     ];
 
@@ -47,6 +40,20 @@ function NavigationActions () {
                 </span>
             </div>
             <div className="actns__crds">
+                <CardWithImage 
+                    classStyleDivButton={"actns__itm__bttn actns__itm__bttn--fd"}
+                    link={"item.link"} 
+                    classStyleGrand="actns__itm actns__itm--fd" 
+                    srcImage={"https://cdn-icons-png.flaticon.com/512/37/37430.png"} 
+                    altImage={"Ícone de feed."} 
+                    classStyleImage="actns__itm__img" 
+                    classStyleSpan="actns__itm__nm actns__itm__nm--fd" 
+                    classStyleDiv="actns__itm__inf" 
+                    classStyleDivSpan="actns__itm__icn" 
+                    classStyleDivLabel="actns__itm__dscrptn actns__itm__dscrptn--fd" 
+                    title={"Feed"} 
+                    description={"Feed de matérias"}
+                />
                 {
                     cardsContent.map((item, key) => {
                         return (

@@ -29,7 +29,9 @@
         }
     }
     &__pgs {
-        width: 50%;
+        text-align: right;
+        width: 55%;
+        flex-grow: 1;
         height: 100%;
         &__itm {
             padding: 5px 10px;
@@ -39,7 +41,6 @@
         }
     }
     &__optns {
-        width: 20%;
     }
     &__bttns {
         width: 100%;
@@ -55,8 +56,9 @@
         white-space: nowrap;
         &--brdr {
             border-radius: 10px;
-            background-color: rgb(175 8 127 / 75%);
+            background-color: rgba(177, 8, 253, 0.8);
             padding: 5px;
+            margin-left: 10px;
         }
     }
     &__itm {
