@@ -3,6 +3,7 @@
         max-width: 1200px;
         margin: auto;
         padding: 10px;
+        background-color: #ebeaea;
     }
     &__cntnt {}
 
@@ -54,77 +55,6 @@
     &__wrn {
         display: none;
     }
-    &__crd {
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
-    }
-    &__img {
-        max-width: 100px;
-    }
-    &__itm {
-        padding: 10px 20px;
-        background-color: #968a9b6b;
-        color: #4a4a4a;
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        margin: 10px;
-        &__nm {
-            text-transform: uppercase;
-            font-size: 1.2rem;
-            text-decoration: none;
-        }
-        &__inf {
-            width: 100%;
-        }
-        &__icn {}
-        &__dscrptn {
-            display: none;
-        }
-
-        &:hover {}
-    }
-    &__actvty {
-        display: block;
-        margin-bottom: 10px;
-        padding: 10px;
-        text-align: left;
-        border-left: 3px solid;
-        &__bttn {
-            display: inline-flex;
-            justify-content: center ;
-            flex-wrap: wrap;
-            font-size: .8em;
-            text-transform: uppercase;
-            border-radius: 10px;
-            padding: 10px;
-            color: #fff;
-            svg {
-                background-color: #4a4a4a;
-                border-radius: 10px;
-                padding: 13px;
-            }
-            span {
-                display: block;
-                color: #4a4a4a;
-                width: 100%;
-            }
-            &:hover {
-                background-color: #4a4a4a;
-                svg {
-                    background-color: #fff;
-                    color: #4a4a4a;
-                }
-                span {
-                    background-color: #4a4a4a;
-                    color: #fff;
-                }
-            }
-        }
-    }
     &__rf {
         display: block;
         margin-bottom: 10px;
@@ -161,17 +91,6 @@
             width: fit-content;
             margin: 10px auto;
         }
-        &__crds {
-            flex-wrap: wrap;
-        }
-        &__tm {
-            margin: 0 0 10px;
-            width: 100%;
-            &__nm {
-                display: block;
-                width: 100%;
-            }
-        }
     }
     // Sm
     @media (min-width: 576px) {}
@@ -183,14 +102,4 @@
     @media (min-width: 1200px) {}
     // Xxl
     @media (min-width: 1400px) {}
-}
-
-.Subject {
-    width: 100%;  padding: 10px;
-    box-sizing: border-box;
-   
-}
-
-.font-def {
-    font-size: 2em;
 }

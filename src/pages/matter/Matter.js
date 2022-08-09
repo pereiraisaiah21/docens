@@ -11,7 +11,7 @@ import "./Matter.scss"
 
 function Matter () {
 
-    const textTestP = "<p>Às vezes, problemas que parecem muito ?</p><p>Todos eles envolvem problemas de localização de rotas ou caminhos de busca: Como o atual Príncipe William está relacionado ao Rei William III, que fundou o College of William and Mary em 1693? Que caminho um fantasma deve seguir para alcançar o Pac-Man o mais rápido possível?</br></br><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><img class='img' src='https://rockcontent.com/br/wp-content/uploads/sites/2/2019/01/como-funciona-algoritmo-do-google-1.png' alt=''/>";  
+    const textTestP = "<p>Às vezes, problemas que parecem muito ?</p><p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><img class='img' src='https://rockcontent.com/br/wp-content/uploads/sites/2/2019/01/como-funciona-algoritmo-do-google-1.png' alt=''/>";  
 
     let {id} = useParams();
     let {contentid} = useParams();
@@ -73,7 +73,7 @@ function Matter () {
                                     </div>
                                 } */}
                                 <div className="mttr__prmryWrp">
-                                    <p className="mttr__rf fnt-df">Referências</p>
+                                    <p className="mttr__rf">Referências</p>
                                     <ol className="mttr__rf__lst">
                                         <li>
                                             <p>
@@ -90,7 +90,7 @@ function Matter () {
                                     </ol>
                                 </div>
                                 <div className="mttr__prmryWrp">
-                                    <p className="mttr__spprt fnt-df">Precisa de ajuda?</p>
+                                    <p className="mttr__spprt">Precisa de ajuda?</p>
                                     <p className="mttr__spprt">Confira a seguir alguns conteúdos de apoio para te ajudar.</p>
                                     <ol className="mttr__spprt__lst">
                                         <li>
