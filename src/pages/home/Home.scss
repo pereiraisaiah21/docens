@@ -1,19 +1,26 @@
 .hmBnnrs {
     position: relative;
     overflow-y: hidden;
+    .swiper {
+        padding: 0 0 35px;
+        img {
+            width: 100%;
+        }
+    }
 }
 
 .swiper {
     padding: 0 0 35px;
-    img {
-        width: 100%;
-    }
+}
+.swiper-scrollbar {
+    height: 0 !important;
 }
 
 .actns {
     background-color: #edededbd;
     padding: 20px 10px;
     &__dscrptn {
+        position: relative;
         text-align: left;
         padding-left: 5px;
         border-left: 3px solid #000;
@@ -34,6 +41,13 @@
         &__ttl {
             padding: 0 10px;
             font-size: 1.2em;
+            p {
+                margin: 0;
+                font-size: .7em;
+            }
+            &--dscrptn {
+                display: inline-block;
+            }
         }
     }
     &__crds {
@@ -45,7 +59,6 @@
         flex-wrap: wrap;
         &--myPrgrss {
             justify-content: flex-start;
-            padding: 0 20px;
         }
     }
     &__itm {
@@ -123,6 +136,22 @@
                 display: none;
             }
         }
+        &__prgrss {
+            width: 100%;
+            height: 20px;
+            padding: 5px;
+            border: 2px solid rgba(177, 8, 253, 0.8);
+            border-radius: 10px;
+        }
+        &__prcnt {
+            height: 100%;
+            background-color: rgba(177, 8, 253, 0.8);
+            border-radius: 10px;
+        }
+        &__ht {
+            font-size: .8em;
+            padding: 10px 0;
+        }
         &--fd {
             background-color: #b108fdcc;
         }
@@ -133,11 +162,48 @@
             box-shadow: inset 0px 0px 20px #efebebe0;
         }
     }
+    &__tchrs {
+        width: 100%;
+        &__lst {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        &__itm {
+        }
+        &__anchr {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &__img {
+            width: 90px;
+            height: 90px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            margin: 0 0 10px;
+        }
+        &__nm {
+            width: 100%;
+            font-size: .9em;
+            color: #706f6f;
+        }
+        &__dscrptn {
+            margin: 0;
+            font-size: .9em;
+        }
+    }
+    &--bg-01 {
+        background-color: #eef5f5;
+    }
 
     // Xs
     @media (max-width: 575px) {
+        &__crds {
+            justify-content: space-between;
+        }
         &__itm {
-            width: 100%;
+            width: 49%;
             height: 220px;
             &__inf {
                 padding: 0;
@@ -145,11 +211,11 @@
             &__dscrptn {
                 display: none;
             }
-            &__bttn {
-                margin: 0;
-            }
+            &__bttn {}
             &--myPrgrss {
                 margin: 0 auto;
+                width: 100%;
+                height: 300px;
             }
         }
     }
@@ -164,6 +230,11 @@
     }
     // Md
     @media (min-width: 768px) {
+        &__crds {
+            &--myPrgrss {
+                padding: 0 20px;
+            }
+        }
         &__itm {
             &__img {
                 &--myPrgrss {
@@ -174,6 +245,7 @@
             &__nm {
                 &--myPrgrss {
                     width: 50%;
+                    height: 40px;
                 }
             }
             &__inf {
@@ -193,24 +265,9 @@
                     margin: 10px 10px 10px 0;
                 }
             }
-            &__prgrss {
-                width: 100%;
-                height: 20px;
-                padding: 5px;
-                border: 2px solid rgba(177, 8, 253, 0.8);
-                border-radius: 10px;
-            }
-            &__prcnt {
-                height: 100%;
-                background-color: rgba(177, 8, 253, 0.8);
-                border-radius: 10px;
-            }
-            &__ht {
-                font-size: .8em;
-                padding: 10px 0;
-            }
             &--myPrgrss {
                 width: 100%;
+                max-width: 500px;
                 justify-content: space-between;
             }
         }

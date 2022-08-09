@@ -1,0 +1,35 @@
+.dragAlert {
+    width: fit-content;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    &--tp-01 {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        background-color: #f5f5f5;
+        svg {
+            margin: 0 0 0 10px;
+        }
+    }
+
+     // Xs
+     @media (max-width: 575px) {
+        &--tp-01 {
+            position: relative;
+            margin: 10px 0;
+            top: 0;
+            left: 0;
+        }
+    }
+    // Sm
+    @media (min-width: 576px) {}
+    // Md
+    @media (min-width: 768px) {}
+    // Lg
+    @media (min-width: 991px) {}
+    // Xl
+    @media (min-width: 1200px) {}
+    // Xxl
+    @media (min-width: 1400px) {}
+} 

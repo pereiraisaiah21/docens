@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 import { FaGuitar } from 'react-icons/fa';
 import CardSubjectProgress from "../../../components/card/CardSubectProgress";
+import DragAlert from "../../../components/carousel/DragAlert";
 import { Navigation, Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -12,48 +14,27 @@ import 'swiper/css/scrollbar';
 
 function NavigationMyProgress () {
 
-    const cardsContent = [
-        {
-            name            : "Algebra Linear",
-            description     : "Descrição da matéria",
-            link            : "",
-            imageSrc        : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
-            imageAlt        : "Image alternative",
-            progressValue   : 96
-        },
-        {
-            name            : "Algebra Linear",
-            description     : "Descrição da matéria",
-            link            : "",
-            imageSrc        : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
-            imageAlt        : "Image alternative",
-            progressValue   : 45
-        },
-        {
-            name            : "Algebra Linear",
-            description     : "Descrição da matéria",
-            link            : "",
-            imageSrc        : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
-            imageAlt        : "Image alternative",
-            progressValue   : 22
-        },
-        {
-            name            : "Algebra Linear",
-            description     : "Descrição da matéria",
-            link            : "",
-            imageSrc        : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
-            imageAlt        : "Image alternative",
-            progressValue   : 22
-        },
-        {
-            name            : "Algebra Linear",
-            description     : "Descrição da matéria",
-            link            : "",
-            imageSrc        : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
-            imageAlt        : "Image alternative",
-            progressValue   : 22
-        }
-    ];
+    const [cardsContent, setCardsContent] = useState({
+        data  : [
+            {
+                name            : "",
+                description     : "",
+                link            : "",
+                imageSrc        : "",
+                imageAlt        : "",
+                progressValue   : ""
+            }
+        ],
+        error : ""
+    });
+
+    useEffect(() => {
+        axios.get("https://jsonplaceholder.typicode.com/users/")
+        .then(response => {
+            setCardsContent({...cardsContent, data : response.data});
+        })
+        .catch(err => setCardsContent({...cardsContent, error : err}));
+    }, []);
 
     return (
         <section className="actns">
@@ -64,26 +45,29 @@ function NavigationMyProgress () {
                 <span className="actns__dscrptn__ttl">
                     MEU PROGRESSO
                 </span>
+                <DragAlert classSyle="dragAlert dragAlert--tp-01" />
             </div>
             <div className="actns__crds actns__crds--myPrgrss">
                 <Swiper
                     modules={[Navigation, Pagination, A11y]}
                     spaceBetween={10}
-                    slidesPerView={(window.innerWidth < 768) ? 1 : 4}
+                    slidesPerView={(window.innerWidth < 768) ? 2 : 3}
                     pagination={{ clickable: true }}
                     scrollbar={{ draggable: true }}
                     onSwiper={(swiper) => console.log(swiper)}
                     onSlideChange={() => console.log('slide change')}>
                         {
-                            cardsContent.map((item, key) => {
+                            cardsContent.data !== null 
+                            ?
+                            cardsContent.data.map((item, key) => {
                                 return (
                                     <SwiperSlide key={key}>
                                         <CardSubjectProgress 
                                             classStyleDivButton={"actns__itm__bttn actns__itm__bttn--myPrgrss"}
-                                            link={item.link} 
+                                            link={item.name} 
                                             classStyleGrand="actns__itm actns__itm--myPrgrss" 
-                                            srcImage={item.imageSrc} 
-                                            altImage={item.imageAlt} 
+                                            srcImage={"https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png"} 
+                                            altImage={"item.imageAlt"} 
                                             classStyleImage="actns__itm__img actns__itm__img--myPrgrss" 
                                             classStyleSpan="actns__itm__nm actns__itm__nm--myPrgrss" 
                                             classStyleDiv="actns__itm__inf actns__itm__inf--myPrgrss" 
@@ -91,11 +75,13 @@ function NavigationMyProgress () {
                                             classStyleDivProgressDiv="actns__itm__prcnt"
                                             classStyleSpanHit="actns__itm__ht"
                                             title={item.name}
-                                            progressValue={item.progressValue}
+                                            progressValue={item.id}
                                         />
                                     </SwiperSlide>
                                 )
                             })
+                            :
+                            ""
                         }
                 </Swiper>
             </div>
