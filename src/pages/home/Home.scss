@@ -2,3 +2,92 @@
     position: relative;
     overflow-y: hidden;
 }
+
+.swiper {
+    img {
+        width: 100%;
+    }
+}
+
+.actns {
+    padding: 20px 10px;
+    &__crds {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    &__dscrptn {
+        background-color: #000;
+    }
+    &__itm {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        box-sizing: border-box;
+        min-height: 150px;
+        min-width: 200px;
+        width: auto;
+        max-width: 30px;
+        height: 100%;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 0 20px 10px 0;
+        cursor: pointer;
+        &__img {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+        &__nm {
+            font-size: 1.1rem;
+            color: #000;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin: 10px 0;
+            width: 100%;
+        }
+        &__inf {
+            padding: 10px;   
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        &__icn {
+            display: none;
+        }
+        &__bttn {
+            width: 100px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 2px;
+            justify-content: center;
+            margin: 10px 0 0;
+            font-size: .9em;
+            svg {
+                margin: 2px 5px 0 0;
+            }
+
+            &:hover {
+                background-color: #efebebe0;
+            }
+        }
+        &__dscrptn {
+            font-size: 1rem;
+            color: #000;
+            svg {
+                display: none;
+            }
+        }
+
+        &:hover {
+            box-shadow: inset 0px 0px 20px #efebebe0;
+        }
+    }
+}
