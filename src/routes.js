@@ -9,6 +9,8 @@ import Feed from "./pages/feed/Feed";
 import Matter from "./pages/matter/Matter";
 import Quiz from "./pages/quiz/Quiz";
 import AllMatters from "./pages/matter/AllMatters";
+import Help from "./pages/help/Help";
+import Profile from "./pages/profile/Profile";
 
 function SiteRoutes () {
     return (
@@ -20,6 +22,8 @@ function SiteRoutes () {
                 <Route path='/materia/:id/:contentid' element={<Matter />} />
                 <Route path='/quiz' element={<Quiz />} />
                 <Route path='/materias' element={<AllMatters />} />
+                <Route path='/ajuda' element={<Help />} />
+                <Route path='/perfil' element={<Profile />} />
 
                 <Route path='*' element={<Error />} />
             </Routes>

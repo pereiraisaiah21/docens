@@ -138,16 +138,17 @@
     // Sm
     @media (min-width: 576px) {
         &__allMttrs {
-            justify-content: space-between;
+            justify-content: center;
         }
         &__itm {
             width: 48%;
+            margin-right: 10px;
         }
     }
     // Md
     @media (min-width: 768px) {
         &__itm {
-            width: 30%;
+            width: 22%;
         }
     }
     // Lg

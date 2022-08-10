@@ -59,7 +59,7 @@ function Matter () {
                                         <p className="mttr__dtls__wrtr">Por Editorial Cursos Educacionais</p>
                                         <p className="mttr__dtls__dt">19/07/2022 <span className="mttr__dtls__lstpdt">- Atualizado a 2 dias</span></p>
                                     </div>
-                                    <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://blog.mackenzie.br/wp-content/uploads/2021/11/shutterstock_1702863208-1-1024x539.jpg" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/"/>
+                                    <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj7E45JK-WJ9ERO8Oj_DVTnfKQ7X47pr7QdaQtpZvvgYhtToIIQVEeiWLma69nWIEkvFY&usqp=CAU" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/"/>
                                 </div>
                                 <div className="mttr__prmryWrp mttr__prmryWrp--cntnt">
                                     {item.body}
