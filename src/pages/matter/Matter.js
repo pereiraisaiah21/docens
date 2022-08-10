@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+import ImageWithCredits from "./components/ImageWithCredits";
+
 import "./Matter.scss"
 
 /**
@@ -11,7 +13,7 @@ import "./Matter.scss"
 
 function Matter () {
 
-    const textTestP = "<p>Às vezes, problemas que parecem muito ?</p><p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><img class='img' src='https://rockcontent.com/br/wp-content/uploads/sites/2/2019/01/como-funciona-algoritmo-do-google-1.png' alt=''/>";  
+    const textTestP = "<p>Às vezes, problemas que parecem muito ?</p><p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><img class='img' src='https://img.freepik.com/vetores-premium/formulas-de-fisica-equacoes-matematicas-calculos-aritmeticos-blackboard-com-formulas-cientificas_461812-424.jpg' alt=''/>";  
 
     let {id} = useParams();
     let {contentid} = useParams();
@@ -57,6 +59,7 @@ function Matter () {
                                         <p className="mttr__dtls__wrtr">Por Editorial Cursos Educacionais</p>
                                         <p className="mttr__dtls__dt">19/07/2022 <span className="mttr__dtls__lstpdt">- Atualizado a 2 dias</span></p>
                                     </div>
+                                    <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://blog.mackenzie.br/wp-content/uploads/2021/11/shutterstock_1702863208-1-1024x539.jpg" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/"/>
                                 </div>
                                 <div className="mttr__prmryWrp mttr__prmryWrp--cntnt">
                                     {item.body}

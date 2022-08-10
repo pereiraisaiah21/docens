@@ -6,9 +6,17 @@
         background-color: #ebeaea;
     }
     &__cntnt {}
-
+    &__img {
+        max-width: 100%;
+        &__crdts {
+            font-size: .7em;
+            text-align: center;
+        }
+    }
     &__dtls {
-        line-height: 8px;
+        line-height: 3px;
+        font-size: .9em;
+        margin: 0 0 25px;
         &__writer {}
         &__date {}
         &__lastUpdate {}
@@ -50,7 +58,7 @@
     &__scndtyTtl {
         color: #4a4a4a;
         margin: 0 0 30px;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     &__wrn {
         display: none;
@@ -76,6 +84,26 @@
             list-style-type: armenian;
         }
     }
+    &__allMttrs {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__itm {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin: 0 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #af95ac;
+        padding: 10px;
+        &__img {
+            width: 90px;
+        }
+        &__ttl {
+            margin: 0 10px;
+        }
+    }
 
     // Xs
     @media (max-width: 575px) {
@@ -91,11 +119,25 @@
             width: fit-content;
             margin: 10px auto;
         }
+        &__itm {
+            width: 100%;
+        }
     }
     // Sm
-    @media (min-width: 576px) {}
+    @media (min-width: 576px) {
+        &__allMttrs {
+            justify-content: space-between;
+        }
+        &__itm {
+            width: 48%;
+        }
+    }
     // Md
-    @media (min-width: 768px) {}
+    @media (min-width: 768px) {
+        &__itm {
+            width: 30%;
+        }
+    }
     // Lg
     @media (min-width: 991px) {}
     // Xl
