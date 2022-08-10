@@ -40,7 +40,7 @@ function Header () {
                     }
                 </div>
                 <div className="hdr__optns">
-                    <HeaderButtons />
+                    <HeaderButtons userIsLogged={true}/>
                     <div className="hdr__bttns--mbl" onClick={menuBarClick}> 
                         <FaBars/>
                     </div>

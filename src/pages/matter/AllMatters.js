@@ -16,6 +16,7 @@ function AllMatters () {
         data: [],
         error: ""
     });
+    const [inputSearch, setInputSearch] = useState("");
 
     const getMatters = function () {
 
@@ -47,25 +48,25 @@ function AllMatters () {
                     </span>
                 </div>
                 <div className="mttr__allMttrs">
+                    <div className="mttr__srch">
+                        <input className="mttr__srch__inpt" placeholder="Busque alguma matéria" onChange={(e) => setInputSearch(e.target.value)}/>
+                    </div>
                     {
-                        console.log(matters.data)
+                        matters.data !== null 
+                        ?
+                        matters.data.map((item, key) => {
+                            return (
+                                <div className="mttr__itm" key={key}>
+                                    <img src="https://imagepng.org/wp-content/uploads/2019/05/dinheiro-icone.png" className="mttr__itm__img" alt="" />
+                                    <span className="mttr__itm__ttl">
+                                        {item.name}
+                                    </span>
+                                </div>
+                            )
+                        })
+                        :
+                        ""
                     }
-                {
-                    matters.data !== null 
-                    ?
-                    matters.data.map((item, key) => {
-                        return (
-                            <div className="mttr__itm" key={key}>
-                                <img src="https://imagepng.org/wp-content/uploads/2019/05/dinheiro-icone.png" className="mttr__itm__img" alt="" />
-                                <span className="mttr__itm__ttl">
-                                    {item.name}
-                                </span>
-                            </div>
-                        )
-                    })
-                    :
-                    ""
-                }
                 </div>
             </div>
            

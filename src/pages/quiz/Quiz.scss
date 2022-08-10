@@ -66,45 +66,6 @@
                 padding: 20px;
                 color: #4a4a4a;
             }
-            &__about {
-                padding: 10px 0px;
-                &__icon {
-                    margin: 0 5px 0 0;
-                }
-                &__title {
-                    padding: 5px 15px;
-                    cursor: pointer;
-                    background-color: #00000082;
-                    color: #fff;
-                    border-radius: 10px;
-                }
-                &__observation {
-                    position: absolute;
-                    right: 0;
-                    top: 45px;
-                    width: 100%;
-                    height: 240px;
-                    background-color: #fff;
-                    border-top: 2px solid #d90bff82;
-                    padding: 10px 20px;
-                    p {
-                        white-space: break-spaces;
-                        margin: 15px 20px;
-                        font-size: 1.2em;
-                    }
-                }
-                &__close {
-                    display: block;
-                    position: relative;
-                    width: 100%;
-                    text-align: center;
-                    padding: 5px 15px;
-                    cursor: pointer;
-                    background-color: rgba(0, 0, 0, 0.5098039216);
-                    color: #fff;
-                    border-radius: 10px;
-                }
-            }
         }
         &__content {
             width: 100%;

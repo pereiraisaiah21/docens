@@ -1,5 +1,7 @@
 import React from "react";
 
+import StudentEmblems from "./components/StudentEmblems";
+
 import "./User.scss";
 
 /**
@@ -32,12 +34,9 @@ function StudentInfo ({
                             {userInfo.occupation}
                         </p>
                     </div>
-                    <div className="stdnt__inf__emblm">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                </div>
+                <div className="stdnt__inf__emblm">
+                    <StudentEmblems emblemId={17} />
                 </div>
             </section>
         </section>

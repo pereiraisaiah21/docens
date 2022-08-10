@@ -21,28 +21,78 @@
             align-items: center;
             width: 100%;
         }
-        &__idntfctn {}
-        &__emblm {
-            display: flex;
-            span {
-                width: 30px;
-                height: 30px;background-color: black;
-                display: block;
-                margin-left: 5px;
+        &__idntfctn {
+            p {
+                margin: 5px 0;
             }
         }
+        &__emblm {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            &__xp {
+                border-radius: 10px;
+                background-color: rgba(177, 8, 253, 0.8);
+                padding: 5px;
+                color: #fff;
+                height: 30px;
+            }
+            &__bx {
+                width: 70%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 20px 0 0;
+            }
+        }
+    }
+    &__mdl {
+        margin: 0 10px 10px 10px;
+        margin-left: 10px;
+        &--smth1  {color: rgb(138, 223, 81);}
+        &--smth2  {color: rgb(239, 112, 224);}
+        &--mdl1   {color: rgb(255, 225, 0);}
+        &--mdl2   {color: rgb(144, 144, 143);}
+        &--mdl3   {color: rgb(247, 247, 5);}
+        &--dmnd1  {color: rgb(198, 198, 13);}
+        &--dmnd2  {color: rgb(13, 138, 4);}
+        &--dmnd3  {color: rgb(255, 255, 0);}
+        &--dmnd4  {color: rgba(40, 116, 249, 0.857);}
+        &--dmnd5  {color: rgb(255, 25, 0);}
+        &--dmnd6  {color: rgb(230, 230, 221);}
+        &--trphy1 {color: rgb(255, 213, 0);}
+        &--trphy2 {color: rgb(185, 185, 178);}
+        &--trphy3 {color: rgba(255, 255, 0, 0.715);}
+        &--rckt1  {color: rgb(170, 170, 165);}
+        &--rckt2  {color: rgb(98, 98, 93);}
+        &--rckt3  {color: rgb(16, 16, 15);}
     }
 
     // Xs
     @media (max-width: 575px) {
         &__inf {
+            flex-wrap: wrap;
+            &__img {
+                width: 50%;
+            }
             &__abt {
                 flex-wrap: wrap;
+                width: 50%;
+                padding: 0;
             }
             &__idntfctn {
                 width: 100%;
             }
+            &__emblm {
+                width: 100%;
+                padding: 10px;
+                &__bx {
+                    padding: 0 5px;
+                }
+            }
+
         }
+
     }
     // Sm
     @media (min-width: 576px) {}

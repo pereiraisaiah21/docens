@@ -23,7 +23,6 @@ function QuestionAlternative ({
     optionsDisable}) {
 
     const [selected, setSelected] = useState(null);
-    const [aboutSeleted, setAboutSeleted] = useState(false);
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const customStyles = {
         content: {
@@ -43,9 +42,6 @@ function QuestionAlternative ({
     const handleAlternativeChange = function (e) {
         setSelected(e.target.value);
     };
-    const handleAboutClick = function (e) {
-        setAboutSeleted(!aboutSeleted);
-    };
     const closeModal = function () {
         setIsOpen(false);
     }
@@ -60,29 +56,6 @@ function QuestionAlternative ({
                 <span className="Question__info__title">
                     {title}
                 </span>
-                <div className="Question__info__about" onClick={handleAboutClick}>
-                    <span className="Question__info__about__title">
-                        <span className="Question__info__about__desc">O que fazer?</span>
-                    </span>
-                    {
-                        aboutSeleted 
-                        ?
-                        <pre className="Question__info__about__observation">
-                            <p>
-                                Abaixo contém uma pergunta sobre a matéria que você selecionou.
-                            </p>
-                            <p>
-                                Com isto, agora você tem que responder as perguntas. Clicando em uma das opções que estão em baixo da descrição da pergunta.
-                            </p>
-                            <p>
-                                Em seguida, clique no botão "Próxima" para você avançar as perguntas.
-                            </p>
-                            <span className="Question__info__about__close"> x Fechar</span>
-                        </pre>
-                        :
-                        ""
-                    }
-                </div>
             </section>
             <section className="Question__content">
                 <p className="Question__paragraph">

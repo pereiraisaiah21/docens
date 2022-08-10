@@ -84,6 +84,18 @@
             list-style-type: armenian;
         }
     }
+    &__srch {
+        width: 100%;
+        padding: 10px 0 30px;
+        text-align: left;
+        &__inpt {
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            width: 100%;
+            padding: 10px;
+        }
+    }
     &__allMttrs {
         display: flex;
         flex-wrap: wrap;
