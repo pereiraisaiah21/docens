@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Modal from 'react-modal';
 
+import { TailSpin } from "react-loader-spinner";
 import QuestionAlternative from "./components/QuestionAlternative";
 import Progress from "./components/Progress";
 import { FaTimes } from 'react-icons/fa';
@@ -16,6 +17,7 @@ import WarnResult from "./components/WarnResult";
 
 function Quiz () {
 
+    const [loader, setLoader] = useState(true);
     const [answer, setAnswer] = useState(null);
     const [showResolution, setShowResolution] = useState(false);
     const [isChoiceCorrect, setIsChoiceCorrect] = useState("");
@@ -76,6 +78,7 @@ function Quiz () {
                 }
             });
             setAnswerReturn({...answerReturn, correctAnswer : response.data.results[0].correct_answer});
+            setTimeout(() => setLoader(false), 2000);
         }).catch(err => {
             setQuestion({...question, error: err});
         });
@@ -113,79 +116,89 @@ function Quiz () {
     }, []);
 
     return (
-        <div className="qz">
-            <section className={`Question${disableOptions && isChoiceCorrect ? " Question__congrats" : ""}`}>
-                <div className="Question__progress">
-                    <a href="/fasd" title="Sair das perguntas" className="Question__exit">
-                        <FaTimes />
-                    </a>
-                    <Progress progress={30 } />
-                </div>
-                <QuestionAlternative 
-                    title={question.data.title}
-                    content={question.data.content}
-                    alternatives={question.data.alternatives} 
-                    setOption={setAnswer}
-                    optionsDisable={disableOptions}
-                />
-                <section className="Question__send">
-                    <a href="/" className={`Question__send__button${showResolution === true ? " next" : ""}`} title="itemTitle" onClick={updateAnswers}>
-                        Próxima
-                    </a>
-                    <a href="/" className="Question__send__tip" title="itemTitle" onClick={openModal}>
-                        Dica
-                    </a>
+        <>
+        {
+            loader
+            ?
+            <div className="ldr">
+                <TailSpin color = "rgba(255, 255, 255)"/>
+            </div>
+            :
+            <div className="qz">
+                <section className={`Question${disableOptions && isChoiceCorrect ? " Question__congrats" : ""}`}>
+                    <div className="Question__progress">
+                        <a href="/fasd" title="Sair das perguntas" className="Question__exit">
+                            <FaTimes />
+                        </a>
+                        <Progress progress={30 } />
+                    </div>
+                    <QuestionAlternative 
+                        title={question.data.title}
+                        content={question.data.content}
+                        alternatives={question.data.alternatives} 
+                        setOption={setAnswer}
+                        optionsDisable={disableOptions}
+                    />
+                    <section className="Question__send">
+                        <a href="/" className={`Question__send__button${showResolution === true ? " next" : ""}`} title="itemTitle" onClick={updateAnswers}>
+                            Próxima
+                        </a>
+                        <a href="/" className="Question__send__tip" title="itemTitle" onClick={openModal}>
+                            Dica
+                        </a>
+                    </section>
+                    {
+                        disableOptions
+                        ?
+                        <div className="Question__verification">
+                            {
+                                disableOptions && isChoiceCorrect
+                                ?
+                                <WarnResult alertText="Parabéns, você acertou a questão. Confira abaixo a explicação." classStyle="Question__alert Question__alert--correct"/>
+                                :
+                                ""
+                            }
+                            {
+                                disableOptions && !isChoiceCorrect
+                                ?
+                                <WarnResult alertText="Você errou a questão. Confira abaixo a explicação." classStyle="Question__alert Question__alert--incorrect"/>
+                                :
+                                ""
+                            }
+                        </div>
+                        :
+                        ""
+                    }
                 </section>
                 {
-                    disableOptions
+                    showResolution
                     ?
-                    <div className="Question__verification">
-                        {
-                            disableOptions && isChoiceCorrect
-                            ?
-                            <WarnResult alertText="Parabéns, você acertou a questão. Confira abaixo a explicação." classStyle="Question__alert Question__alert--correct"/>
-                            :
-                            ""
-                        }
-                        {
-                            disableOptions && !isChoiceCorrect
-                            ?
-                            <WarnResult alertText="Você errou a questão. Confira abaixo a explicação." classStyle="Question__alert Question__alert--incorrect"/>
-                            :
-                            ""
-                        }
-                    </div>
+                    <section className="Question__resolution">
+                        <h4>RESOLUÇÃO</h4>
+                        <p>
+                        Na maioria das vezes, o soluço é causado por uma irritação no nervo chamado frênico, que auxilia os movimentos do diafragma, músculo que separa o tórax do abdome, na respiração. A expiração do ar acontece quando o diafragma relaxa e, a inspiração, quando ele se contrai.
+                        </p>
+                        <p>
+                        Na maioria das vezes, o soluço é causado por uma irritação no nervo chamado frênico, que auxilia os movimentos do diafragma, músculo que separa o tórax do abdome, na respiração. A expiração do ar acontece quando o diafragma relaxa e, a inspiração, quando ele se contrai.
+                        </p>
+                    </section>
                     :
                     ""
                 }
-            </section>
-            {
-                showResolution
-                ?
-                <section className="Question__resolution">
-                    <h4>RESOLUÇÃO</h4>
-                    <p>
-                    Na maioria das vezes, o soluço é causado por uma irritação no nervo chamado frênico, que auxilia os movimentos do diafragma, músculo que separa o tórax do abdome, na respiração. A expiração do ar acontece quando o diafragma relaxa e, a inspiração, quando ele se contrai.
-                    </p>
-                    <p>
-                    Na maioria das vezes, o soluço é causado por uma irritação no nervo chamado frênico, que auxilia os movimentos do diafragma, músculo que separa o tórax do abdome, na respiração. A expiração do ar acontece quando o diafragma relaxa e, a inspiração, quando ele se contrai.
-                    </p>
-                </section>
-                :
-                ""
-            }
-            
-            <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
-                style={customStyles}
-                contentLabel={"Example Modal"}
-            >
-                <div className="Question__tip">
-                    <p>Esta aqui é a dica</p>
-                </div>
-            </Modal>
-        </div>
+                
+                <Modal
+                    isOpen={modalIsOpen}
+                    onRequestClose={closeModal}
+                    style={customStyles}
+                    contentLabel={"Example Modal"}
+                >
+                    <div className="Question__tip">
+                        <p>Esta aqui é a dica</p>
+                    </div>
+                </Modal>
+            </div>
+        }
+        </>
     );
 }
 

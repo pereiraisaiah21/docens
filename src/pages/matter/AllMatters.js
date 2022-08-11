@@ -40,8 +40,8 @@ function AllMatters () {
 
         if(results !== "" && results !== undefined) {
             setSearchResult({...searchResult, data : results})
-        }
-    }
+        };
+    };
 
 
     return (

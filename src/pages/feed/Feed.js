@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { TailSpin } from "react-loader-spinner";
 
 import { FaRegCalendarTimes } from 'react-icons/fa';
 import CardFeed from "../../components/card/CardFeed";
@@ -74,6 +75,7 @@ function Feed () {
 
     return (
         <section className="fd">
+            <TailSpin color = 'red'/>
             <div className="fd__wrppr">
                 <div className="actns__dscrptn">
                     <span className="actns__dscrptn__icn">

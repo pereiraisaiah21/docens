@@ -31,4 +31,12 @@ a {
   color: #000;
 }
 
-
+.ldr {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  background-color: #b9b9b9;
+  align-items: center;
+}
