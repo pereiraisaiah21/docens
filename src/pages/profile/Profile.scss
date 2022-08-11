@@ -1,0 +1,112 @@
+.prfl {
+    &__wrpp {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        background-color: #fff;
+        padding: 0 10px;
+        border-radius: 10px;
+        flex-wrap: wrap;
+    }
+    &__bg {
+        position: relative;
+        width: 100%;
+        img {
+            width: 100%;
+            max-height: 300px;
+        }
+    }
+    &__dt {
+        width: 300px;
+        position: absolute;
+        top: 80%;
+        padding: 10px 20px;
+        border-radius: 10px;
+        background-color: rgb(208, 221, 216);
+    }
+    &__img {
+        img {
+            width: 200px;
+            border-radius: 50%;
+        }
+    }
+    &__inf {
+        &__lst {
+            text-align: left;
+        }
+        &__itm {
+            padding: 10px 0;
+            svg {
+                margin-right: 10px;
+                color: #3a3939;
+            }
+            &--nm {
+                font-size: 1.2em;
+                font-weight: 700;
+                padding: 15px 0 5px;
+            }
+            &--usrnm {
+                padding: 0px 0 10px;
+            }
+            &--occptn {
+                padding: 20px 0;
+            }
+        }
+        &__edtr {
+            background-color: rgb(134, 134, 134);
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 10px;
+            text-align: center;
+            a {
+                color: #fff;
+            }
+        }
+    }
+    &__updts {
+        padding: 10px;
+        width: 100%;
+        margin: 10px 10px 10px 310px;
+        height: 600px;
+        background-color: rgb(208, 221, 216);
+        border-radius: 10px;
+    }
+
+    // Xs
+    @media (max-width: 575px) {
+        &__wrpp {
+            flex-wrap: wrap;
+        }
+        &__bg {
+
+        }
+        &__dt {
+            position: relative;
+            top: -50px;
+            margin: 0 auto;
+            width: 90%;
+        }
+        &__updts {
+            padding: 10px;
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+    // Sm
+    @media (min-width: 576px) {
+    }
+    // Md
+    @media (min-width: 768px) {
+        &__updts {
+            padding: 10px;
+            width: 100%;
+            margin: 10px 10px 10px 310px;
+        }    
+    }
+    // Lg
+    @media (min-width: 991px) {}
+    // Xl
+    @media (min-width: 1200px) {}
+    // Xxl
+    @media (min-width: 1400px) {}
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaQuestionCircle, FaDoorOpen, FaBell, FaAngleDown, FaUser } from 'react-icons/fa';
+import { FaQuestionCircle, FaDoorOpen, FaBell, FaCaretDown, FaUser } from 'react-icons/fa';
 
 import "../Header.scss";
 
@@ -29,7 +29,7 @@ function HeaderButtons ({
                 ""
             }
             <li className="hdr__lst"> 
-                <a href="/a" title="" className="hdr__itm">
+                <a href="/ajuda" title="" className="hdr__itm">
                     <span className="hdr__itm__icn">
                         <FaQuestionCircle />
                     </span>
@@ -56,7 +56,7 @@ function HeaderButtons ({
                             <FaUser />
                         </span>
                         <span className="hdr__itm__nm">
-                            MINHA CONTA
+                            <FaCaretDown />
                         </span>
                     </a>
                 </li>

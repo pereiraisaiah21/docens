@@ -14,7 +14,7 @@ import "./Home.scss";
 function Home () {
     return (
         <>  
-            <StudentInfo userInfo={{name : "Mattew McHugh", occupation : "Student", level : "5", avatar : "https://i.pinimg.com/736x/59/74/d0/5974d04323d9efbaf170c72cfdb07b44.jpg"}}/>
+            <StudentInfo userInfo={{name : "Mattew McHugh", occupation : "Student", level : "5", avatar : "https://i.pinimg.com/736x/59/74/d0/5974d04323d9efbaf170c72cfdb07b44.jpg"}} />
             <NavigationActions />
             <NavigationMyProgress />
             <NavigationTeachers />

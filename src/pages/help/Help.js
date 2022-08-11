@@ -45,7 +45,7 @@ function Help () {
 
     useEffect(() => {
         getFaq();
-        getFaq("1");
+        // getFaq("1");
     }, [getFaq]);
 
     return (
