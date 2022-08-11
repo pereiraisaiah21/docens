@@ -23,7 +23,7 @@ function SiteRoutes () {
                 <Route path='/quiz' element={<Quiz />} />
                 <Route path='/materias' element={<AllMatters />} />
                 <Route path='/ajuda' element={<Help />} />
-                <Route path='/perfil' element={<Profile />} />
+                <Route path='/perfil/:username' element={<Profile />} />
 
                 <Route path='*' element={<Error />} />
             </Routes>

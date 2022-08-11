@@ -17,9 +17,11 @@ function AllMatters () {
         error: ""
     });
     const [inputSearch, setInputSearch] = useState("");
+    const [searchResult, setSearchResult] = useState({
+        data : []
+    });
 
-    const getMatters = function () {
-
+    useEffect( () => {
         axios.get(`https://jsonplaceholder.typicode.com/users/`)
         .then((response) => {
 
@@ -27,11 +29,20 @@ function AllMatters () {
         }).catch(err => {
             setAllMatters({ ...matters, error: err });
         });
-    };
+    }, []);
 
-    useEffect( () => {
-        getMatters();
-    }, [getMatters]);
+    const handleSearch = function (digit) {
+        setInputSearch(digit);
+
+        let results = matters.data.filter(item => {
+            return item.name.includes(digit)
+        });
+
+        if(results !== "" && results !== undefined) {
+            setSearchResult({...searchResult, data : results})
+        }
+    }
+
 
     return (
         <section className="mttr">
@@ -49,10 +60,26 @@ function AllMatters () {
                 </div>
                 <div className="mttr__allMttrs">
                     <div className="mttr__srch">
-                        <input className="mttr__srch__inpt" placeholder="Busque alguma matéria" onChange={(e) => setInputSearch(e.target.value)}/>
+                        <input className="mttr__srch__inpt" placeholder="Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)}/>
                     </div>
                     {
-                        matters.data !== null 
+                        searchResult.data !== null 
+                        ?
+                        searchResult.data.map((item, key) => {
+                            return (
+                                <div className="mttr__itm" key={key}>
+                                    <img src="https://imagepng.org/wp-content/uploads/2019/05/dinheiro-icone.png" className="mttr__itm__img" alt="" />
+                                    <span className="mttr__itm__ttl">
+                                        {item.name}
+                                    </span>
+                                </div>
+                            )
+                        })
+                        :
+                        ""
+                    }
+                    {
+                        matters.data !== null && inputSearch === ""
                         ?
                         matters.data.map((item, key) => {
                             return (

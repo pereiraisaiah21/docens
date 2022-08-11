@@ -4,8 +4,8 @@
         margin: 0 auto;
         display: flex;
         background-color: #fff;
-        padding: 0 10px;
         border-radius: 10px;
+        padding: 0 10px;
         flex-wrap: wrap;
     }
     &__bg {
@@ -13,21 +13,26 @@
         width: 100%;
         img {
             width: 100%;
-            max-height: 300px;
+            max-width: 100%;
         }
     }
     &__dt {
-        width: 300px;
-        position: absolute;
-        top: 80%;
-        padding: 10px 20px;
+        position: relative;
+        top: -70px;
+        width: 97%;
+        margin: 0 auto;
+        padding: 10px;
         border-radius: 10px;
-        background-color: rgb(208, 221, 216);
+        background-color: rgb(239 239 239);
     }
     &__img {
         img {
-            width: 200px;
+            width: 100%;
             border-radius: 50%;
+            max-width: 200px;
+        }
+        &--myPrfl {
+            max-width: unset;
         }
     }
     &__inf {
@@ -54,8 +59,8 @@
         }
         &__edtr {
             background-color: rgb(134, 134, 134);
-            padding: 5px 10px;
-            margin: 5px 0;
+            padding: 10px 10px;
+            margin: 20px 0;
             border-radius: 10px;
             text-align: center;
             a {
@@ -65,10 +70,9 @@
     }
     &__updts {
         padding: 10px;
-        width: 100%;
-        margin: 10px 10px 10px 310px;
-        height: 600px;
-        background-color: rgb(208, 221, 216);
+        width: 97%;
+        margin: 0 auto;
+        background-color: rgb(239 239 239);
         border-radius: 10px;
     }
 
@@ -82,26 +86,120 @@
         }
         &__dt {
             position: relative;
-            top: -50px;
-            margin: 0 auto;
-            width: 90%;
         }
         &__updts {
             padding: 10px;
-            width: 90%;
-            margin: 0 auto;
         }
     }
     // Sm
     @media (min-width: 576px) {
+        &__wrpp {
+            padding: 0 10px;
+        }
     }
     // Md
     @media (min-width: 768px) {
+        &__bg {
+            width: 100%;
+        }
+        &__dt {
+            padding: 10px 20px;
+            width: 300px;
+            top: 70%;
+            left: 10px;
+            position: absolute;
+        }
         &__updts {
             padding: 10px;
             width: 100%;
-            margin: 10px 10px 10px 310px;
+            margin: 10px 10px 10px 320px;
         }    
+    }
+    // Lg
+    @media (min-width: 991px) {}
+    // Xl
+    @media (min-width: 1200px) {}
+    // Xxl
+    @media (min-width: 1400px) {}
+}
+
+.actns {
+    &__crds {
+        &--myPrfl {
+            padding: 0;
+        }
+    }
+    &__itm {
+        &__img {
+            &--myPrfl {
+                height: 100%;
+                width: 100%;
+                border-radius: 10px;
+                grid-area: img;
+            }
+        }
+        &__nm {
+            &--myPrfl {
+                width: 80%;
+                grid-area: nm;
+            }
+        }
+        .description {
+            width: 80%;
+            grid-area: dsc;
+        }
+        &__inf {
+            &--myPrfl {
+                grid-area: inf;
+            }
+        }
+        &__ht {}
+        &__prgss {
+            &--myPrfl {}
+        }
+        &__bttn {
+            &--myPrfl {
+                margin-top: 5px;
+                padding: 5px 2px;
+            }
+        }
+        &--myPrfl {
+            width: 100%;
+            max-width: unset;
+            border: none;
+            padding: 20px;
+            margin: 10px 0;
+            display: grid;
+            text-align: left;
+            font-size: .9em;
+            column-gap: 10px;
+            height: unset;
+
+            grid-template: "img nm nm" 30px
+            "img dsc dsc" auto
+            "inf inf inf" 100px
+            / 30% 70%;
+        }
+    }
+        
+    // Xs
+    @media (max-width: 575px) {
+    }
+    // Sm
+    @media (min-width: 576px) {
+        
+    }
+    // Md
+    @media (min-width: 768px) {
+        &__itm {
+            &--myPrfl {
+                height: auto;
+                grid-template: "img nm nm" 30px
+                "img dsc dsc" auto
+                "inf inf inf" 100px
+                / 30% 70%;
+            } 
+        }
     }
     // Lg
     @media (min-width: 991px) {}

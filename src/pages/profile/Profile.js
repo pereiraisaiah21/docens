@@ -1,6 +1,8 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 import ProfileCard from "./components/ProfileCard";
+import NavigationMyProgress from "../home/components/NavigationMyProgress";
 
 import "./Profile.scss";
 
@@ -11,6 +13,7 @@ import "./Profile.scss";
 
 function Profile () {
 
+    let {username} = useParams();
 
     return (
         <section className="prfl">
@@ -33,7 +36,7 @@ function Profile () {
                     </div>
                 </div>
                 <div className="prfl__updts">
-                    
+                    <NavigationMyProgress slider={false} />
                 </div>
             </div>
         </section>

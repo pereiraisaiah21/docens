@@ -21,6 +21,7 @@ function CardSubjectProgress ({
     classStyleDivProgressDiv, 
     classStyleSpanHit,
     title, 
+    description,
     progressValue
 }) {
 
@@ -28,6 +29,7 @@ function CardSubjectProgress ({
         <div className={classStyleGrand}>
             <img alt={altImage} className={classStyleImage} src={srcImage} />
             <span className={`${classStyleSpan} title`}>{title}</span>
+            <p className={`description`}>{description}</p>
             <div className={classStyleDiv}>
                 {
                     progressValue 
