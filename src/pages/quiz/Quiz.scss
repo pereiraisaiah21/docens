@@ -9,8 +9,12 @@
         height: 100px;
         background-size: cover;
         z-index: 20;
+        display: none;
         &--active {
-            background: url(../../components/images/xp.gif) no-repeat;
+            display: block;
+        }
+        img {
+            width: 100%;
         }
     }
     .Progress {

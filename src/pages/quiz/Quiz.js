@@ -6,8 +6,10 @@ import Modal from 'react-modal';
 import { TailSpin } from "react-loader-spinner";
 import QuestionAlternative from "./components/QuestionAlternative";
 import Progress from "./components/Progress";
-import { FaTimes, FaRegCheckCircle, FaPlus } from 'react-icons/fa';
+import { FaTimes, FaRegCheckCircle } from 'react-icons/fa';
 import WarnResult from "./components/WarnResult";
+
+import XpGif from "../../components/images/xp.gif";
 
 import "./Quiz.scss";
 
@@ -116,8 +118,7 @@ function Quiz () {
                 setProgressColor("rgb(147, 53, 48)");
             };
             sendQuestionFeedback();
-            setTimeout(getQuestion, 7000);
-            ;
+            setTimeout(getQuestion, 3000);
         };
     };
 
@@ -145,6 +146,7 @@ function Quiz () {
             :
             <div className="qz">
                 <div className={`qzPls ${isChoiceCorrect ? "qzPls--active" : ""}`}>
+                    <img src={XpGif}/>
                 </div>
                 <section className={`Question${disableOptions && isChoiceCorrect ? " " : ""}`}>
                     <div className="Question__progress">
