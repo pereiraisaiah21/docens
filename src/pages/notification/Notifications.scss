@@ -1,0 +1,33 @@
+.ntfct {
+    padding: 10px;
+    &__wrppr {
+        max-width: 1200px;
+        margin: 10px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    &__cntnt {
+        width: 100%;
+        text-align: left;
+        li {
+            padding: 20px 10px 15px;
+            background-color: #f9f9f9;
+            margin: 0 0 10px;
+            border-bottom: 2px solid #c4c4c4;
+            span {
+                font-size: 1.2em;
+            }
+            svg {
+                margin-right: 10px;
+                color: rgb(182, 10, 182);
+            }
+            p {
+
+            }
+        }
+    }
+}

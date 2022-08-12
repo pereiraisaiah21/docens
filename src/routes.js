@@ -12,6 +12,7 @@ import AllMatters from "./pages/matter/AllMatters";
 import Help from "./pages/help/Help";
 import Profile from "./pages/profile/Profile";
 import Login from "./pages/login/Login";
+import Notification from "./pages/notification/Notification";
 
 function SiteRoutes () {
     return (
@@ -26,6 +27,7 @@ function SiteRoutes () {
                 <Route path='/ajuda' element={<Help />} />
                 <Route path='/perfil/:username' element={<Profile />} />
                 <Route path='/entrar' element={<Login />} />
+                <Route path='/mensagens' element={<Notification />} />
 
                 <Route path='*' element={<Error />} />
             </Routes>

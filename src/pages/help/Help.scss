@@ -53,6 +53,8 @@
         }
         &__doubt {
             padding: 15px 10px;
+            display: flex;
+            justify-content: space-between;
         }
         &__icon {
             position: absolute;
@@ -71,7 +73,7 @@
     @media (max-width: 767px) {
         margin: 0 15px;
         width: auto;
-        padding: 0;
+        padding: 10px 0;
         &__nav {
             margin: 0 0 10px;
             width: 100%;

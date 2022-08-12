@@ -18,7 +18,7 @@ function HeaderButtons ({
                 userIsLogged
                 ?
                 <li className="hdr__lst"> 
-                    <a href="/a" title="" className="hdr__itm hdr__itm--ntfctn">
+                    <a href="/mensagens" title="" className="hdr__itm hdr__itm--ntfctn">
                         <span className="hdr__itm__icn hdr__itm__icn--ntfctn">
                             <FaBell />
                         </span>

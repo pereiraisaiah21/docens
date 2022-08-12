@@ -6,9 +6,9 @@ import { TailSpin } from "react-loader-spinner";
 import QuestionAlternative from "./components/QuestionAlternative";
 import Progress from "./components/Progress";
 import { FaTimes } from 'react-icons/fa';
+import WarnResult from "./components/WarnResult";
 
 import "./Quiz.scss";
-import WarnResult from "./components/WarnResult";
 
 /**
  * 
