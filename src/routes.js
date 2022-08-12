@@ -11,6 +11,7 @@ import Quiz from "./pages/quiz/Quiz";
 import AllMatters from "./pages/matter/AllMatters";
 import Help from "./pages/help/Help";
 import Profile from "./pages/profile/Profile";
+import Login from "./pages/login/Login";
 
 function SiteRoutes () {
     return (
@@ -24,6 +25,7 @@ function SiteRoutes () {
                 <Route path='/materias' element={<AllMatters />} />
                 <Route path='/ajuda' element={<Help />} />
                 <Route path='/perfil/:username' element={<Profile />} />
+                <Route path='/entrar' element={<Login />} />
 
                 <Route path='*' element={<Error />} />
             </Routes>
