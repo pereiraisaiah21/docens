@@ -63,6 +63,21 @@
     &__wrn {
         display: none;
     }
+    &__actvty {
+        display: block;
+        margin-bottom: 20px;
+        padding: 10px;
+        text-align: left;
+        border-left: 3px solid;
+        &__bttn {
+            padding: 10px;
+            background-color: #ebeaea;
+            border-radius: 10px;
+            svg {
+                margin: 0 10px 0 0;
+            }
+        }
+    }
     &__rf {
         display: block;
         margin-bottom: 10px;

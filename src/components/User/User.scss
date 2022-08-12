@@ -29,6 +29,7 @@
         &__emblm {
             display: flex;
             justify-content: flex-end;
+            flex-wrap: wrap;
             align-items: center;
             &__xp {
                 border-radius: 10px;
@@ -38,11 +39,11 @@
                 height: 30px;
             }
             &__bx {
-                width: 70%;
+                width: 100%;
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: center;
-                padding: 20px 0 0;
+                justify-content: flex-end;
+                padding: 10px 0;
 
                 &:hover {
                     cursor: pointer;
@@ -92,7 +93,7 @@
                 width: 100%;
                 padding: 10px;
                 &__bx {
-                    padding: 0 5px;
+                    justify-content: center;
                 }
             }
 

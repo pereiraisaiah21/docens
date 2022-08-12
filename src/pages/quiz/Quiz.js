@@ -1,27 +1,35 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Modal from 'react-modal';
 
 import { TailSpin } from "react-loader-spinner";
 import QuestionAlternative from "./components/QuestionAlternative";
 import Progress from "./components/Progress";
-import { FaTimes } from 'react-icons/fa';
+import { FaTimes, FaRegCheckCircle, FaPlus } from 'react-icons/fa';
 import WarnResult from "./components/WarnResult";
 
 import "./Quiz.scss";
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function Quiz () {
+
+    let {matter} = useParams();
+    let {contentId} = useParams();
 
     const [loader, setLoader] = useState(true);
     const [answer, setAnswer] = useState(null);
     const [showResolution, setShowResolution] = useState(false);
     const [isChoiceCorrect, setIsChoiceCorrect] = useState("");
     const [disableOptions, setDisableOptions] = useState(false);
+    const [questionIndex, setQuestionIndex] = useState(-1);
+    const [isAnswerEmpty, setIsAnswerEmpty] = useState(null);
+
+    const [progressColor, setProgressColor] = React.useState("");
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [question, setQuestion] = useState({data :  [{
         categoriaId: "",
@@ -53,21 +61,26 @@ function Quiz () {
         event.preventDefault();
         setIsOpen(true);
     };
+
     const closeModal = function () {
         setIsOpen(false);
     };
-    async function getQuestion () { 
 
+    const getQuestion = function () {
+
+        setAnswer(null);
+        setIsAnswerEmpty(null);
         setShowResolution(false);
         setIsChoiceCorrect(false);
         setDisableOptions(false);
+        setQuestionIndex(questionIndex + 1);
 
         axios.get(`https://opentdb.com/api.php?amount=1`)
         .then((response) => {
 
             let options = response.data.results[0].incorrect_answers;
             options.push(response.data.results[0].correct_answer);
-            
+
             setQuestion({...question, data: {
                 categoriaId: 5,
                 id : "",
@@ -78,40 +91,46 @@ function Quiz () {
                 }
             });
             setAnswerReturn({...answerReturn, correctAnswer : response.data.results[0].correct_answer});
-            setTimeout(() => setLoader(false), 2000);
+            setTimeout(() => setLoader(false), 3000);
         }).catch(err => {
             setQuestion({...question, error: err});
         });
     };
+
     const updateAnswers = function(e) {
         e.preventDefault();
 
+        if (answer === null) {
+            setIsAnswerEmpty(true);
+            return;
+        };
         if (answer !== null) {
             setDisableOptions(true);
             setShowResolution(true);
+            setIsAnswerEmpty(false);
             if (answer === answerReturn.correctAnswer) {
                 setIsChoiceCorrect(true);
+                setProgressColor("rgb(51, 147, 48)");
             } else {
                 setIsChoiceCorrect(false);
+                setProgressColor("rgb(147, 53, 48)");
             };
+            sendQuestionFeedback();
+            setTimeout(getQuestion, 7000);
+            ;
         };
-
-        if (answer === null) {
-            setAnswerReturn({...answerReturn, error : true});
-        };
-
-        sendQuestionFeedback();
     };
+
     const sendQuestionFeedback = function() {
         axios.post('/user/questionfeedback/', {
             result: isChoiceCorrect
         })
         .catch(function (error) {
-            console.log(error);
+            console.error(error);
         });
     };
 
-    useEffect( () => {
+    useEffect(() => {
         getQuestion();
     }, []);
 
@@ -125,28 +144,65 @@ function Quiz () {
             </div>
             :
             <div className="qz">
-                <section className={`Question${disableOptions && isChoiceCorrect ? " Question__congrats" : ""}`}>
+                <div className={`qzPls ${isChoiceCorrect ? "qzPls--active" : ""}`}>
+                </div>
+                <section className={`Question${disableOptions && isChoiceCorrect ? " " : ""}`}>
                     <div className="Question__progress">
                         <a href="/fasd" title="Sair das perguntas" className="Question__exit">
                             <FaTimes />
                         </a>
-                        <Progress progress={30 } />
+                        <Progress progress={`${questionIndex}0`} progressColor={progressColor}/>
                     </div>
-                    <QuestionAlternative 
+                    <QuestionAlternative
+                        number={questionIndex}
                         title={question.data.title}
                         content={question.data.content}
-                        alternatives={question.data.alternatives} 
+                        alternatives={question.data.alternatives}
                         setOption={setAnswer}
                         optionsDisable={disableOptions}
                     />
-                    <section className="Question__send">
-                        <a href="/" className={`Question__send__button${showResolution === true ? " next" : ""}`} title="itemTitle" onClick={updateAnswers}>
-                            Próxima
-                        </a>
-                        <a href="/" className="Question__send__tip" title="itemTitle" onClick={openModal}>
-                            Dica
-                        </a>
-                    </section>
+                    {
+                        questionIndex > 9
+                        ?
+                        "" 
+                        :
+                        <>
+                            <section className="Question__send">
+                                <a href="/" className={`Question__send__button${showResolution === true ? " next" : ""}`} title="itemTitle" onClick={updateAnswers}>
+                                    Próxima
+                                </a>
+                                <a href="/" className="Question__send__tip" title="itemTitle" onClick={openModal}>
+                                    Dica
+                                </a>
+                            </section>
+                            {
+                                isAnswerEmpty === true
+                                ?
+                                <span className="Question__warn">
+                                    Selecione alguma alternativa antes de avançar esta pergunta
+                                </span>
+                                :
+                                ""
+                            }
+                        </>
+                    }
+                    {
+                        questionIndex > 9
+                        ?
+                            <div className="Question__fineshed">
+                                <p>
+                                <FaRegCheckCircle /> Parabéns ! Você finalizou o questionário deste conteúdo.
+                                </p>
+                                <p>
+                                Volte para o <a href="/feed" className="Question__fineshed__anchor" alt="Ir para o Feed de matérias">Feed</a> ou <a href="/feed" className="Question__fineshed__anchor" alt="Ir para todas as matérias">Todas as matérias</a> para prosseguir na sua trajetória.
+                                </p>
+                                <p>
+                                    Para conferir seus resultados acesse <a href="/perfil/myProfile" className="Question__fineshed__anchor" alt="Ir para meu perfil">Meu perfil</a>
+                                </p>
+                            </div>
+                        :
+                        ""
+                    }
                     {
                         disableOptions
                         ?
@@ -154,14 +210,20 @@ function Quiz () {
                             {
                                 disableOptions && isChoiceCorrect
                                 ?
-                                <WarnResult alertText="Parabéns, você acertou a questão. Confira abaixo a explicação." classStyle="Question__alert Question__alert--correct"/>
+                                <WarnResult 
+                                    alertText="Parabéns, você acertou a questão. Confira abaixo a explicação." 
+                                    classStyle="Question__alert Question__alert--correct"
+                                />
                                 :
                                 ""
                             }
                             {
                                 disableOptions && !isChoiceCorrect
                                 ?
-                                <WarnResult alertText="Você errou a questão. Confira abaixo a explicação." classStyle="Question__alert Question__alert--incorrect"/>
+                                <WarnResult 
+                                    alertText="Você errou a questão. Confira abaixo a explicação." 
+                                    classStyle="Question__alert Question__alert--incorrect"
+                                />
                                 :
                                 ""
                             }
@@ -178,14 +240,11 @@ function Quiz () {
                         <p>
                         Na maioria das vezes, o soluço é causado por uma irritação no nervo chamado frênico, que auxilia os movimentos do diafragma, músculo que separa o tórax do abdome, na respiração. A expiração do ar acontece quando o diafragma relaxa e, a inspiração, quando ele se contrai.
                         </p>
-                        <p>
-                        Na maioria das vezes, o soluço é causado por uma irritação no nervo chamado frênico, que auxilia os movimentos do diafragma, músculo que separa o tórax do abdome, na respiração. A expiração do ar acontece quando o diafragma relaxa e, a inspiração, quando ele se contrai.
-                        </p>
                     </section>
                     :
                     ""
                 }
-                
+
                 <Modal
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}

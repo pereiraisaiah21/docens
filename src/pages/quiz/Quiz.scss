@@ -1,5 +1,18 @@
 .qz {
+    position: relative;
     padding: 10px;
+    .qzPls {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 100px;
+        height: 100px;
+        background-size: cover;
+        z-index: 20;
+        &--active {
+            background: url(../../components/images/xp.gif) no-repeat;
+        }
+    }
     .Progress {
         height: 25px;
         width: 92%;
@@ -17,6 +30,7 @@
             background-color: #00000082;
             border-radius: 20px;
             text-align: center;
+            transition: width 1s;
             &__number {
                 color: #fff;
             }
@@ -34,6 +48,16 @@
             background-image: url("../../components/images/gliter.gif");
             width: 100%;
             height: 100%;
+        }
+        &__fineshed {
+            line-height: 30px;
+            &__anchor {
+                padding: 5px;
+                background-color: #00b500;
+                border-radius: 10px;
+                white-space: nowrap;
+                color: #fff;
+            }
         }
         &__exit {
             width: 8%;
@@ -85,7 +109,7 @@
                 font-size: 1.1rem;
                 font-weight: 600;
                 display: inline-flex;
-                margin: 0 10px 10px 0;   
+                margin: 0 10px 10px 0;
                 padding: 4px 10px;
                 border: 1px solid #ccc;
                 border-radius: 10px;
@@ -143,6 +167,13 @@
                 cursor: pointer;
             }
         }
+        &__warn {
+            width: 100%;
+            color: rgba(0, 0, 0, 0.7);
+            border-left: 4px solid rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            display: block;
+        }
         &__resolution {
             background: #fefdffcc;
             position: relative;
@@ -191,7 +222,7 @@
             }
         }
         &__tutorial {}
-    
+
         @media (max-width: 767px) {
             &__info {
                 flex-wrap: wrap;

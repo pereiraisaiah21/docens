@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 import { TailSpin } from "react-loader-spinner";
+import { FaCalendarWeek } from 'react-icons/fa';
 import ImageWithCredits from "./components/ImageWithCredits";
 
 import "./Matter.scss"
@@ -71,15 +72,24 @@ function Matter () {
                                             {item.body}
                                             <div dangerouslySetInnerHTML={{__html:textTestP}}></div>
                                         </div>
+                                        {
+                                            !!item.userId
+                                            ?
+                                                <div className="mttr__prmryWrp txt-cntr fnt-df">
+                                                    <span className="mttr__actvty">Atividades</span>
+                                                    <a className="mttr__actvty__bttn" href="/quiz/algebra" title="modulo01">
+                                                       <FaCalendarWeek />
+                                                        <span>Atividade</span>
+                                                    </a>
+                                                </div>
+                                            :
+                                            ""
+                                        }
                                         {/* {
                                             item.existAtivity
                                             ?
                                             ""
                                             :
-                                            <div className="mttr__primaryWrap text-center font-def">
-                                                <span className="mttr__activity">Atividades</span>
-                                                <ButtonActivity className="mttr__activity__button" itemLink={`/atividades/${contentid}`} itemTitle="Módulo 01"/>
-                                            </div>
                                         } */}
                                         <div className="mttr__prmryWrp">
                                             <p className="mttr__rf">Referências</p>

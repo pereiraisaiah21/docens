@@ -57,42 +57,48 @@ function QuestionAlternative ({
                     {title}
                 </span>
             </section>
-            <section className="Question__content">
-                <p className="Question__paragraph">
-                    {content}
-                </p>
-                <section className="Question__alternatives">             
-                    {
-                        alternatives !== null && alternatives !== undefined
-                        ?
-                        alternatives.map((item,key) => {
-                            return (
-                                <div className={`Question__alternatives__option ${selected === item ? "selected" : ""}`} key={key}>
-                                    <label htmlFor={`a${key}`}>
-                                        {
-                                            optionsDisable
-                                            ?
-                                            ""
-                                            :
-                                            <input
-                                                type="radio"
-                                                id={`a${key}`}
-                                                name="choose"
-                                                value={`${item}`}
-                                                checked={`${item}`=== selected ? "selected" : ""}
-                                                onChange={handleAlternativeChange}
-                                                className={`${selected ? "selected" : ""}`}
-                                            />
-                                        }
-                                        {item}
-                                    </label>
-                                </div>)
-                            })
-                        : 
-                        ""
-                    } 
+            {
+                number > 9
+                ?
+                "" 
+                :
+                <section className="Question__content">
+                    <p className="Question__paragraph">
+                        {content}
+                    </p>
+                    <section className="Question__alternatives">             
+                        {
+                            alternatives !== null && alternatives !== undefined
+                            ?
+                            alternatives.map((item,key) => {
+                                return (
+                                    <div className={`Question__alternatives__option ${selected === item ? "selected" : ""}`} key={key}>
+                                        <label htmlFor={`a${key}`}>
+                                            {
+                                                optionsDisable
+                                                ?
+                                                ""
+                                                :
+                                                <input
+                                                    type="radio"
+                                                    id={`a${key}`}
+                                                    name="choose"
+                                                    value={`${item}`}
+                                                    checked={`${item}`=== selected ? "selected" : ""}
+                                                    onChange={handleAlternativeChange}
+                                                    className={`${selected ? "selected" : ""}`}
+                                                />
+                                            }
+                                            {item}
+                                        </label>
+                                    </div>)
+                                })
+                            : 
+                            ""
+                        } 
+                    </section>
                 </section>
-            </section>
+            }
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}

@@ -22,7 +22,7 @@ function SiteRoutes () {
                 <Route path='/' element={<Home />} />
                 <Route path='/feed' element={<Feed />} />
                 <Route path='/materia/:id/:contentid' element={<Matter />} />
-                <Route path='/quiz' element={<Quiz />} />
+                <Route path='/quiz/:matter/:contentId' element={<Quiz />} />
                 <Route path='/materias' element={<AllMatters />} />
                 <Route path='/ajuda' element={<Help />} />
                 <Route path='/perfil/:username' element={<Profile />} />
