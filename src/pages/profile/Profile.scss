@@ -28,8 +28,7 @@
     &__img {
         img {
             width: 100%;
-            border-radius: 50%;
-            max-width: 200px;
+            border-radius: 10px;
         }
         &--myPrfl {
             max-width: unset;
@@ -75,6 +74,36 @@
             display: block;
             svg {
                 margin-right: 10px;
+            }
+        }
+        &--upld {
+            &__wrppr {}
+            &__bttn {
+                padding: 10px;
+                background-color: rgb(186, 18, 133);
+                border: none;
+                border-radius: 10px;
+                color: #fff;
+                svg {
+                    color: #fff;
+                }
+            }
+            &__bttnDwn {
+                margin: 0 5px 0 0;
+                padding: 10px;
+                background-color: rgb(186, 18, 133);
+                border: none;
+                border-radius: 10px;
+                color: #fff;
+                svg {
+                    color: #fff;
+                }
+            }
+            &__img {
+                img {
+                    padding: 10px 0;
+                    border-radius: 15px;
+                }
             }
         }
     }

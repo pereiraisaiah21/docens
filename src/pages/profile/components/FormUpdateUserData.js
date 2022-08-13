@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import ImageUploading from 'react-images-uploading';
 
 import axios from "axios";
 
-import { FaInfoCircle } from 'react-icons/fa';
+import { FaInfoCircle, FaFileImport, FaTimes, FaCaretSquareUp } from 'react-icons/fa';
 
 import "../Profile.scss";
 
@@ -16,6 +17,9 @@ function FormUpdateUserData ({
     data,
     setUpdateOpen
 }) {
+
+    const [images, setImages] = React.useState([]);
+    const maxNumber = 69;
 
     const [avatar, setAvatar]               = useState("");
     const [fullname, setFullname]           = useState("");
@@ -40,19 +44,65 @@ function FormUpdateUserData ({
             birthdayDate: birthdayDate  === "" ? "" : birthdayDate,
         })
         .then(function (response) {
-            setUpdateOpen(false);
+            setUpdateOpen(true);
         })
         .catch(function (error) {
             console.log(error);
         });
     };
 
+    const onChange = (imageList, addUpdateIndex) => {
+        // data for submit
+        console.log(imageList, addUpdateIndex);
+        setImages(imageList);
+      };
+
     return (
-        <form>
+        <form onSubmit={(e) => e.preventDefault()}>
             <div className="prfl__inf">
                 <ul className="prfl__inf__lst">
-                    <li className="prfl__inf__itm">
-                        <input className="prfl__inpt" value={avatar} placeholder={data.avatar} onChange={(e) => setAvatar(e.target.value)}/>
+                    <li className="prfl__inf__itm prfl__inf__itm--upld">
+                        <ImageUploading
+                            multiple
+                            value={images}
+                            onChange={onChange}
+                            maxNumber={maxNumber}
+                            dataURLKey="data_url"
+                            acceptType={["jpg"]}
+                        >
+                            {({
+                            imageList,
+                            onImageUpload,
+                            onImageRemoveAll,
+                            onImageUpdate,
+                            onImageRemove,
+                            isDragging,
+                            dragProps
+                            }) => (
+                            // write your building UI
+                            <div className="prfl__inf--upld__wrppr">
+                                <button
+                                style={isDragging ? { color: "red" } : null}
+                                onClick={onImageUpload}
+                                {...dragProps}
+                                className="prfl__inf--upld__bttn"
+                                >
+                                    <FaFileImport />Clique, ou arraste a imagem
+                                </button>
+                                &nbsp;
+                                <button onClick={onImageRemoveAll} className="prfl__inf--upld__bttn"><FaTimes />Remover Imagem</button>
+                                {imageList.map((image, index) => (
+                                <div key={index} className="prfl__inf--upld__img">
+                                    <img src={image.data_url ? image.data_url : "https://static.vecteezy.com/ti/vetor-gratis/p1/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg"} alt="" width="100" />
+                                    <div className="image-item__btn-wrapper">
+                                    <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageUpdate(index)}><FaCaretSquareUp />Atualizar</button>
+                                    <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageRemove(index)}>Remover imagem</button>
+                                    </div>
+                                </div>
+                                ))}
+                            </div>
+                            )}
+                        </ImageUploading>
                     </li>
                     <li className="prfl__inf__itm">
                         <input className="prfl__inpt" value={fullname} placeholder={data.name} onChange={(e) => setFullname(e.target.value)}/>
