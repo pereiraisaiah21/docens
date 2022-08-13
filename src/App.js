@@ -1,13 +1,32 @@
-import Home from "./pages/home/Home";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+import UserData from "./UserData";
 
 import SiteRoutes from "./routes";
 
 import './App.css';
 
 function App() {
+
+  const [userDataValues, setUserDataValues] = useState({
+    data  : [],
+    error : ""
+  });
+
+  useEffect(() => {
+    axios.get("https://jsonplaceholder.typicode.com/users/1")
+    .then(response => {
+      setUserDataValues({...userDataValues, data : response.data});
+    })
+    .catch(err => setUserDataValues({...userDataValues, error : err}));
+  }, []);
+
   return (
     <div className="App">
-      <SiteRoutes />
+      <UserData.Provider value={{userDataValues}}>
+        <SiteRoutes />
+      </UserData.Provider>
     </div>
   );
 }

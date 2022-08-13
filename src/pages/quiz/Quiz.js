@@ -72,7 +72,7 @@ function Quiz () {
 
         setAnswer(null);
         setIsAnswerEmpty(null);
-        setShowResolution(false);
+        //setShowResolution(false);
         setIsChoiceCorrect(false);
         setDisableOptions(false);
         setQuestionIndex(questionIndex + 1);
@@ -108,7 +108,7 @@ function Quiz () {
         };
         if (answer !== null) {
             setDisableOptions(true);
-            setShowResolution(true);
+            //setShowResolution(true);
             setIsAnswerEmpty(false);
             if (answer === answerReturn.correctAnswer) {
                 setIsChoiceCorrect(true);
@@ -145,7 +145,7 @@ function Quiz () {
             </div>
             :
             <div className="qz">
-                <div className={`qzPls ${isChoiceCorrect ? "qzPls--active" : ""}`}>
+                <div className={`qzPls${isChoiceCorrect ? " qzPls--active" : ""}`}>
                     <img src={XpGif}/>
                 </div>
                 <section className={`Question${disableOptions && isChoiceCorrect ? " " : ""}`}>
@@ -209,7 +209,7 @@ function Quiz () {
                         disableOptions
                         ?
                         <div className="Question__verification">
-                            {
+                            {/* {
                                 disableOptions && isChoiceCorrect
                                 ?
                                 <WarnResult 
@@ -228,7 +228,7 @@ function Quiz () {
                                 />
                                 :
                                 ""
-                            }
+                            } */}
                         </div>
                         :
                         ""

@@ -17,7 +17,7 @@ function ProfileCard ({
     const handleEditUserData = function (event) {
         event.preventDefault();
         setUpdateUserData(true);
-    }
+    };
 
     return (
         <>
@@ -26,13 +26,13 @@ function ProfileCard ({
             </div>
             <div className="prfl__inf">
                 <ul className="prfl__inf__lst">
-                    <li className="prfl__inf__itm prfl__inf__itm--nm">{data.fullname}</li>
+                    <li className="prfl__inf__itm prfl__inf__itm--nm">{data.name}</li>
                     <li className="prfl__inf__itm prfl__inf__itm--usrnm">{data.username}</li>
-                    <li className="prfl__inf__itm prfl__inf__itm--occptn">{data.occupation}</li>
+                    <li className="prfl__inf__itm prfl__inf__itm--occptn">{data.name}</li>
                     <li className="prfl__inf__itm"><FaRegEnvelope />{data.email}</li>
-                    <li className="prfl__inf__itm"><FaMap />{data.city}</li>
-                    <li className="prfl__inf__itm"><FaGenderless />{data.gender}</li>
-                    <li className="prfl__inf__itm"><FaCalendarWeek />{data.birthdayDate}</li>
+                    <li className="prfl__inf__itm"><FaMap />{data.username}</li>
+                    <li className="prfl__inf__itm"><FaGenderless />{data.website}</li>
+                    <li className="prfl__inf__itm"><FaCalendarWeek />{data.phone}</li>
                     <li className="prfl__inf__edtr">
                         <a href="/ds" title="Editar perfil" onClick={handleEditUserData}>
                             Editar Perfil

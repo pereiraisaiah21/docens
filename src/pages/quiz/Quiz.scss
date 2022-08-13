@@ -1,6 +1,7 @@
 .qz {
     position: relative;
     padding: 10px;
+    min-height: 80vh;
     .qzPls {
         position: absolute;
         right: 20px;
@@ -34,7 +35,7 @@
             background-color: #00000082;
             border-radius: 20px;
             text-align: center;
-            transition: width 1s;
+            transition: width 2s;
             &__number {
                 color: #fff;
             }

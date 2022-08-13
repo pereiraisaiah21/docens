@@ -67,6 +67,16 @@
                 color: #fff;
             }
         }
+        &__flr {
+            width: 100%;
+            color: rgba(0, 0, 0, 0.7);
+            border-left: 4px solid rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            display: block;
+            svg {
+                margin-right: 10px;
+            }
+        }
     }
     &__updts {
         padding: 10px;
@@ -180,11 +190,14 @@
             font-size: .9em;
             column-gap: 10px;
             height: unset;
-
             grid-template: "img nm nm" 30px
             "img dsc dsc" auto
             "inf inf inf" 100px
             / 30% 70%;
+            
+            &:hover {
+                height: unset;
+            }
         }
     }
         

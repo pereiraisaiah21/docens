@@ -36,7 +36,7 @@ function StudentInfo ({
                     </div>
                 </div>
                 <div className="stdnt__inf__emblm">
-                    <StudentEmblems emblemId={17} />
+                    <StudentEmblems emblemId={userInfo.level} />
                 </div>
             </section>
         </section>

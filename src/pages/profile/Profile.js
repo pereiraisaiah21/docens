@@ -1,5 +1,7 @@
-import React, { useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { useParams } from "react-router-dom";
+
+import UserData from "../../UserData";
 
 import ProfileCard from "./components/ProfileCard";
 import NavigationMyProgress from "../home/components/NavigationMyProgress";
@@ -14,6 +16,8 @@ import "./Profile.scss";
 
 function Profile () {
 
+    const {userDataValues} = useContext(UserData);
+
     let {username} = useParams();
     const [updateUserData, setUpdateUserData] = useState(false);
 
@@ -26,33 +30,12 @@ function Profile () {
                         updateUserData
                         ?
                         <div className="prfl__dt prfl__dt--updt">
-                            <FormUpdataUserData data={{
-                                fullname        : "Wilson Wilson",
-                                username        : "@Wilsoon_943289",  
-                                email           : "Student@ronald.com",
-                                birthdayDate    : "02/01/1996",
-                                city            : "São Paulo",
-                                avatar          : "https://static.vecteezy.com/ti/vetor-gratis/p1/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg",
-                                xp              : 100,
-                                level           : 17
-                            }}/>
+                            <FormUpdataUserData data={userDataValues.data} setUpdateOpen={setUpdateUserData}/>
                         </div>
                         :
                         <>
                             <div className="prfl__dt">
-                                <ProfileCard data={{
-                                    fullname        : "Wilson Wilson",
-                                    username        : "@Wilsoon_943289",  
-                                    email           : "Student@ronald.com",
-                                    birthdayDate    : "02/01/1996",
-                                    gender          : "Não especificado",
-                                    age             : 40,  
-                                    city            : "São Paulo",
-                                    avatar          : "https://static.vecteezy.com/ti/vetor-gratis/p1/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg",
-                                    occupation      : "Student",
-                                    xp              : 100,
-                                    level           : 17
-                                }} setUpdateUserData={setUpdateUserData} />
+                                <ProfileCard data={userDataValues.data} setUpdateUserData={setUpdateUserData} />
                             </div>
                         </>
                     }

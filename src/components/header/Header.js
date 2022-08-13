@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+
+import UserData from "../../UserData";
 
 import HeaderButtons from "./components/HeaderButtons";
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -11,6 +13,8 @@ import "./Header.scss";
  */
 
 function Header () {
+
+    const {userDataValues} = useContext(UserData);
 
     const pages = [
         { name : "Atividades", url : "/atividades", title : "Alternative" },
@@ -40,50 +44,49 @@ function Header () {
                     }
                 </div>
                 <div className="hdr__optns">
-                    <HeaderButtons userIsLogged={true}/>
+                    <HeaderButtons userIsLogged={!!userDataValues.data.name} username={userDataValues.data.username} />
                     <div className="hdr__bttns--mbl" onClick={menuBarClick}> 
                         <FaBars/>
                     </div>
                 </div>
             </div>
-            {
-                menuIsOpen
-                ?
-                <div className="hdr--mbl">
-                    <div className="hdr--mbl__bckdrp"></div>
-                    <div className="hdr__wrppr--m">
-                        <section className="hdr--mbl__actns">
-                            <div className="hdr--mbl__cls" onClick={menuBarClick}>
-                                <span className="hdr--mbl__clsnm">
-                                    <FaTimes />
-                                    Fechar
-                                </span>
-                            </div>
-                        </section>
-                        <section className="hdr--mbl__usr">
-                            <div className="hdr--mbl__prfl">
-                                <div className="hdr--mbl__icon">
-                                    <img className="hdr--mbl__icn" src={"https://cdn.icon-icons.com/icons2/2859/PNG/512/avatar_face_man_boy_male_profile_smiley_happy_people_icon_181657.png"} alt="Ícone do usuário"/>
+            <div className={`hdr--mbl${menuIsOpen ? " hdr--mbl--opn" : ""}`}>
+                {
+                    menuIsOpen
+                    ?
+                        <div className="hdr__wrppr--m">
+                            <section className="hdr--mbl__actns">
+                                <div className="hdr--mbl__cls" onClick={menuBarClick}>
+                                    <span className="hdr--mbl__clsnm">
+                                        <FaTimes />
+                                        Fechar
+                                    </span>
                                 </div>
-                                <div className="hdr--mbl__inf">
-                                    <span className="hdr--mbl__nm">Michael Douglas</span>
-                                    <span className="hdr--mbl__ocptn">Estudante</span>
+                            </section>
+                            <section className="hdr--mbl__usr">
+                                <div className="hdr--mbl__prfl">
+                                    <div className="hdr--mbl__icon">
+                                        <img className="hdr--mbl__icn" src={"https://cdn.icon-icons.com/icons2/2859/PNG/512/avatar_face_man_boy_male_profile_smiley_happy_people_icon_181657.png"} alt="Ícone do usuário"/>
+                                    </div>
+                                    <div className="hdr--mbl__inf">
+                                        <span className="hdr--mbl__nm">Michael Douglas</span>
+                                        <span className="hdr--mbl__ocptn">Estudante</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </section>
-                        <section className="hdr--mbl__pgs">
-                            <ul className="hdr--mbl__lst">
-                                <li><a href="/" alt="">Wanderson</a></li>
-                                <li><a href="/" alt="">Wanderson</a></li>
-                                <li><a href="/" alt="">Wanderson</a></li>
-                                <li><a href="/" alt="">Wanderson</a></li>
-                            </ul>
-                        </section>
-                    </div>
-                </div>
-                :
-                ""
-            }
+                            </section>
+                            <section className="hdr--mbl__pgs">
+                                <ul className="hdr--mbl__lst">
+                                    <li><a href="/" alt="">Wanderson</a></li>
+                                    <li><a href="/" alt="">Wanderson</a></li>
+                                    <li><a href="/" alt="">Wanderson</a></li>
+                                    <li><a href="/" alt="">Wanderson</a></li>
+                                </ul>
+                            </section>
+                        </div>
+                    :
+                    ""
+                }
+            </div>
         </header>
     );
 }
