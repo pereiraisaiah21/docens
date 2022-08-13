@@ -25,57 +25,9 @@ function FormUpdateUserData ({
     const [gender, setGender]               = useState("");
     const [birthdayDate, setBirthdayDate]   = useState("");
 
-    // const [avatarValid, setAvatarValid]               = useState(true);
-    // const [fullnameValid, setFullnameValid]           = useState(true);
-    // const [usernameValid, setUsernameValid]           = useState(true);
-    // const [emailValid, setEmailValid]                 = useState(true);
-    // const [cityValid, setCityValid]                   = useState(true);
-    // const [genderValid, setGenderValid]               = useState(true);
-    // const [birthdayDateValid, setBirthdayDateValid]   = useState(true);
-
     const handleUpdateData = function (event) {
         event.preventDefault();
 
-        // if (avatar !== null && avatar !== undefined && avatar !== "") {
-        //     setAvatarValid(true);
-        // } else {
-        //     setAvatarValid(false);
-        // }
-        // if (fullname !== null && fullname !== undefined && fullname !== "") {
-        //     setFullnameValid(true);
-        // } else {
-        //     setFullnameValid(false);
-        // }
-        // if (username !== null && username !== undefined && username !== "") {
-        //     setUsernameValid(true);
-        // } else {
-        //     setUsernameValid(false);
-        // }
-        // if (email !== null && email !== undefined && email !== "") {
-        //     setEmailValid(true);
-        // } else {
-        //     setEmailValid(false);
-        // }
-        // if (city !== null && city !== undefined && city !== "") {
-        //     setCityValid(true);
-        // } else {
-        //     setCityValid(false);
-        // }
-        // if (gender !== null && gender !== undefined && gender !== "") {
-        //     setGenderValid(true);
-        // } else {
-        //     setGenderValid(false);
-        // }
-        // if (birthdayDate !== null && birthdayDate !== undefined && birthdayDate !== "") {
-        //     setBirthdayDateValid(true);
-        // } else {
-        //     setBirthdayDateValid(false);
-        // }
-
-        FormUpdateUserData(avatar, fullname, username, email, city, gender, birthdayDate);
-    };
-
-    const FormUpdateUserData = function (avatar, fullname, username, email, city, gender, birthdayDate) {
         console.log("Atualizar dados do usuário");
 
         axios.post("/user", {
@@ -93,7 +45,7 @@ function FormUpdateUserData ({
         .catch(function (error) {
             console.log(error);
         });
-    }
+    };
 
     return (
         <form>
