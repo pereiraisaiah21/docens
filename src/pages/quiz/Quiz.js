@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import axios from "axios";
 import Modal from 'react-modal';
 
@@ -7,7 +7,7 @@ import { TailSpin } from "react-loader-spinner";
 import QuestionAlternative from "./components/QuestionAlternative";
 import Progress from "./components/Progress";
 import { FaTimes, FaRegCheckCircle } from 'react-icons/fa';
-import WarnResult from "./components/WarnResult";
+// import WarnResult from "./components/WarnResult";
 
 import XpGif from "../../components/images/xp.gif";
 
@@ -20,19 +20,19 @@ import "./Quiz.scss";
 
 function Quiz () {
 
-    let {matter} = useParams();
-    let {contentId} = useParams();
+    // let {matter} = useParams();
+    // let {contentId} = useParams();
 
-    const [loader, setLoader] = useState(true);
-    const [answer, setAnswer] = useState(null);
-    const [showResolution, setShowResolution] = useState(false);
-    const [isChoiceCorrect, setIsChoiceCorrect] = useState("");
-    const [disableOptions, setDisableOptions] = useState(false);
-    const [questionIndex, setQuestionIndex] = useState(-1);
-    const [isAnswerEmpty, setIsAnswerEmpty] = useState(null);
+    const [loader, setLoader] = useState( true );
+    const [answer, setAnswer] = useState( null );
+    //const [showResolution, setShowResolution] = useState(false);
+    const [isChoiceCorrect, setIsChoiceCorrect] = useState( "" );
+    const [disableOptions, setDisableOptions] = useState( false );
+    const [questionIndex, setQuestionIndex] = useState( -1 );
+    const [isAnswerEmpty, setIsAnswerEmpty] = useState( null );
 
-    const [progressColor, setProgressColor] = React.useState("");
-    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [progressColor, setProgressColor] = React.useState( "" );
+    const [modalIsOpen, setIsOpen] = React.useState( false );
     const [question, setQuestion] = useState({data :  [{
         categoriaId: "",
         id : 1,
@@ -57,77 +57,91 @@ function Quiz () {
         },
     };
 
-    Modal.setAppElement('#root');
+    Modal.setAppElement( '#root' );
 
-    const openModal = function (event) {
+    const openModal = function( event ) {
         event.preventDefault();
-        setIsOpen(true);
+        setIsOpen( true );
     };
 
-    const closeModal = function () {
-        setIsOpen(false);
+    const closeModal = function() {
+        setIsOpen( false );
     };
 
-    const getQuestion = function () {
+    const getQuestion = function() {
 
-        setAnswer(null);
-        setIsAnswerEmpty(null);
+        setAnswer( null );
+        setIsAnswerEmpty( null );
         //setShowResolution(false);
-        setIsChoiceCorrect(false);
-        setDisableOptions(false);
-        setQuestionIndex(questionIndex + 1);
+        setIsChoiceCorrect( false );
+        setDisableOptions( false );
+        setQuestionIndex( questionIndex + 1 );
 
-        axios.get(`https://opentdb.com/api.php?amount=1`)
-        .then((response) => {
+        axios.get( `https://opentdb.com/api.php?amount=1` )
+        .then( response => {
 
             let options = response.data.results[0].incorrect_answers;
             options.push(response.data.results[0].correct_answer);
 
-            setQuestion({...question, data: {
-                categoriaId: 5,
-                id : "",
-                title : response.data.results[0].category,
-                content : response.data.results[0].question,
-                alternatives : options,
-                progressBar: 65
+            setQuestion({
+                ...question, 
+                data: {
+                    categoriaId: 5,
+                    id : "",
+                    title : response.data.results[0].category,
+                    content : response.data.results[0].question,
+                    alternatives : options,
+                    progressBar: 65
                 }
             });
-            setAnswerReturn({...answerReturn, correctAnswer : response.data.results[0].correct_answer});
-            setTimeout(() => setLoader(false), 3000);
-        }).catch(err => {
-            setQuestion({...question, error: err});
+            setAnswerReturn({
+                ...answerReturn,
+                correctAnswer : response.data.results[0].correct_answer
+            });
+            setTimeout( () => 
+                setLoader( false ),
+                3000
+            );
+        }).catch( err => {
+            setQuestion({
+                ...question,
+                error: err
+            });
         });
     };
 
-    const updateAnswers = function(e) {
+    const updateAnswers = function( e ) {
         e.preventDefault();
 
-        if (answer === null) {
-            setIsAnswerEmpty(true);
+        if ( answer === null ) {
+            setIsAnswerEmpty( true );
             return;
         };
-        if (answer !== null) {
-            setDisableOptions(true);
+        if ( answer !== null ) {
+            setDisableOptions( true );
             //setShowResolution(true);
-            setIsAnswerEmpty(false);
-            if (answer === answerReturn.correctAnswer) {
-                setIsChoiceCorrect(true);
-                setProgressColor("rgb(51, 147, 48)");
+            setIsAnswerEmpty( false );
+            if ( answer === answerReturn.correctAnswer ) {
+                setIsChoiceCorrect( true );
+                setProgressColor( "rgb(51, 147, 48)" );
             } else {
-                setIsChoiceCorrect(false);
-                setProgressColor("rgb(147, 53, 48)");
+                setIsChoiceCorrect( false );
+                setProgressColor( "rgb(147, 53, 48)" );
             };
             sendQuestionFeedback();
-            setTimeout(getQuestion, 3000);
+            setTimeout(
+                getQuestion, 
+                3000
+            );
         };
     };
 
     const sendQuestionFeedback = function() {
-        axios.post('/user/questionfeedback/', {
+        axios.post( '/user/questionfeedback/', {
             result: isChoiceCorrect
         })
-        .catch(function (error) {
-            console.error(error);
+        .catch( err => {
+            console.error( err );
         });
     };
 
@@ -141,19 +155,19 @@ function Quiz () {
             loader
             ?
             <div className="ldr">
-                <TailSpin color = "rgba(255, 255, 255)"/>
+                <TailSpin color = "rgba(255, 255, 255)" />
             </div>
             :
             <div className="qz">
                 <div className={`qzPls${isChoiceCorrect ? " qzPls--active" : ""}`}>
-                    <img src={XpGif}/>
+                    <img alt="Gif + xp" src={XpGif} />
                 </div>
                 <section className={`Question${disableOptions && isChoiceCorrect ? " " : ""}`}>
                     <div className="Question__progress">
                         <a href="/fasd" title="Sair das perguntas" className="Question__exit">
                             <FaTimes />
                         </a>
-                        <Progress progress={`${questionIndex}0`} progressColor={progressColor}/>
+                        <Progress progress={`${questionIndex}0`} progressColor={progressColor} />
                     </div>
                     <QuestionAlternative
                         number={questionIndex}
@@ -170,7 +184,7 @@ function Quiz () {
                         :
                         <>
                             <section className="Question__send">
-                                <a href="/" className={`Question__send__button${showResolution === true ? " next" : ""}`} title="itemTitle" onClick={updateAnswers}>
+                                <a href="/" className={`Question__send__button`} title="itemTitle" onClick={updateAnswers}>
                                     Próxima
                                 </a>
                                 <a href="/" className="Question__send__tip" title="itemTitle" onClick={openModal}>
@@ -191,17 +205,28 @@ function Quiz () {
                     {
                         questionIndex > 9
                         ?
-                            <div className="Question__fineshed">
-                                <p>
-                                <FaRegCheckCircle /> Parabéns ! Você finalizou o questionário deste conteúdo.
-                                </p>
-                                <p>
-                                Volte para o <a href="/feed" className="Question__fineshed__anchor" alt="Ir para o Feed de matérias">Feed</a> ou <a href="/feed" className="Question__fineshed__anchor" alt="Ir para todas as matérias">Todas as matérias</a> para prosseguir na sua trajetória.
-                                </p>
-                                <p>
-                                    Para conferir seus resultados acesse <a href="/perfil/myProfile" className="Question__fineshed__anchor" alt="Ir para meu perfil">Meu perfil</a>
-                                </p>
-                            </div>
+                        <div className="Question__fineshed">
+                            <p>
+                                <FaRegCheckCircle /> 
+                                Parabéns ! Você finalizou o questionário deste conteúdo.
+                            </p>
+                            <p>
+                                Volte para o 
+                                <a href="/feed" className="Question__fineshed__anchor" alt="Ir para o Feed de matérias">
+                                    Feed
+                                </a> ou 
+                                <a href="/feed" className="Question__fineshed__anchor" alt="Ir para todas as matérias">
+                                    Todas as matérias
+                                </a> 
+                                para prosseguir na sua trajetória.
+                            </p>
+                            <p>
+                                Para conferir seus resultados acesse 
+                                <a href="/perfil/myProfile" className="Question__fineshed__anchor" alt="Ir para meu perfil">
+                                    Meu perfil
+                                </a>
+                            </p>
+                        </div>
                         :
                         ""
                     }
@@ -235,16 +260,16 @@ function Quiz () {
                     }
                 </section>
                 {
-                    showResolution
-                    ?
-                    <section className="Question__resolution">
-                        <h4>RESOLUÇÃO</h4>
-                        <p>
-                        Na maioria das vezes, o soluço é causado por uma irritação no nervo chamado frênico, que auxilia os movimentos do diafragma, músculo que separa o tórax do abdome, na respiração. A expiração do ar acontece quando o diafragma relaxa e, a inspiração, quando ele se contrai.
-                        </p>
-                    </section>
-                    :
-                    ""
+                    // showResolution
+                    // ?
+                    // <section className="Question__resolution">
+                    //     <h4>RESOLUÇÃO</h4>
+                    //     <p>
+                    //     Na maioria das vezes, o soluço é causado por uma irritação no nervo chamado frênico, que auxilia os movimentos do diafragma, músculo que separa o tórax do abdome, na respiração. A expiração do ar acontece quando o diafragma relaxa e, a inspiração, quando ele se contrai.
+                    //     </p>
+                    // </section>
+                    // :
+                    // ""
                 }
 
                 <Modal

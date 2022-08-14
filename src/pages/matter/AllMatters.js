@@ -22,24 +22,33 @@ function AllMatters () {
     });
 
     useEffect( () => {
-        axios.get(`https://jsonplaceholder.typicode.com/users/`)
-        .then((response) => {
+        axios.get( `https://jsonplaceholder.typicode.com/users/` )
+        .then( response => {
 
-            setAllMatters({ ...matters, data: response.data});
-        }).catch(err => {
-            setAllMatters({ ...matters, error: err });
+            setAllMatters({ 
+                ...matters,
+                data: response.data
+            });
+        }).catch( err => {
+            setAllMatters({
+                ...matters,
+                error: err
+            });
         });
     }, []);
 
-    const handleSearch = function (digit) {
-        setInputSearch(digit);
+    const handleSearch = function( digit ) {
+        setInputSearch( digit );
 
-        let results = matters.data.filter(item => {
-            return item.name.includes(digit)
+        let results = matters.data.filter( item => {
+            return item.name.includes( digit )
         });
 
-        if(results !== "" && results !== undefined) {
-            setSearchResult({...searchResult, data : results})
+        if( results !== "" && results !== undefined ) {
+            setSearchResult({
+                ...searchResult,
+                data : results
+            })
         };
     };
 
@@ -60,7 +69,7 @@ function AllMatters () {
                 </div>
                 <div className="mttr__allMttrs">
                     <div className="mttr__srch">
-                        <input className="mttr__srch__inpt" placeholder="Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)}/>
+                        <input className="mttr__srch__inpt" placeholder="Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)} />
                     </div>
                     {
                         searchResult.data !== null 
@@ -96,7 +105,6 @@ function AllMatters () {
                     }
                 </div>
             </div>
-           
         </section>
     );
 }

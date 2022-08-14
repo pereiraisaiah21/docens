@@ -1,9 +1,8 @@
 import React, { useState } from "react";
+import axios from "axios";
 import ImageUploading from 'react-images-uploading';
 
-import axios from "axios";
-
-import { FaInfoCircle, FaFileImport, FaTimes, FaCaretSquareUp } from 'react-icons/fa';
+import { FaInfoCircle, FaFileImport, FaCaretSquareUp } from 'react-icons/fa';
 
 import "../Profile.scss";
 
@@ -19,46 +18,46 @@ function FormUpdateUserData ({
 }) {
 
     const [images, setImages] = React.useState([]);
-    const maxNumber = 69;
+    const maxNumber = 1;
 
-    const [avatar, setAvatar]               = useState("");
-    const [fullname, setFullname]           = useState("");
-    const [username, setUsername]           = useState("");
-    const [email, setEmail]                 = useState("");
-    const [city, setCity]                   = useState("");
-    const [gender, setGender]               = useState("");
-    const [birthdayDate, setBirthdayDate]   = useState("");
+    const [avatar, setAvatar] = useState( "" );
+    const [fullname, setFullname] = useState( "" );
+    const [username, setUsername] = useState( "" );
+    const [email, setEmail] = useState( "" );
+    const [city, setCity] = useState( "" );
+    const [gender, setGender] = useState( "" );
+    const [birthdayDate, setBirthdayDate] = useState( "" );
 
-    const handleUpdateData = function (event) {
+    const handleUpdateData = function( event ) {
         event.preventDefault();
 
-        console.log("Atualizar dados do usuário");
+        console.log( "Atualizar dados do usuário" );
 
-        axios.post("/user", {
-            avatar      : avatar        === "" ? "" : avatar,
-            fullname    : fullname      === "" ? "" : fullname,
-            username    : username      === "" ? "" : username,
-            email       : email         === "" ? "" : email,
-            city        : city          === "" ? "" : city,
-            gender      : gender        === "" ? "" : gender,
-            birthdayDate: birthdayDate  === "" ? "" : birthdayDate,
+        axios.post( "/user", {
+            avatar : avatar === "" ? "" : avatar,
+            fullname : fullname === "" ? "" : fullname,
+            username : username === "" ? "" : username,
+            email : email === "" ? "" : email,
+            city : city === "" ? "" : city,
+            gender : gender === "" ? "" : gender,
+            birthdayDate: birthdayDate === "" ? "" : birthdayDate,
         })
-        .then(function (response) {
-            setUpdateOpen(true);
+        .then( response => {
+            setUpdateOpen( true );
         })
-        .catch(function (error) {
-            console.log(error);
+        .catch( err =>  {
+            console.log( err );
         });
     };
 
-    const onChange = (imageList, addUpdateIndex) => {
+    const onChange = function( imageList, addUpdateIndex ) {
         // data for submit
-        console.log(imageList, addUpdateIndex);
-        setImages(imageList);
+        console.log( imageList, addUpdateIndex );
+        setImages( imageList );
       };
 
     return (
-        <form onSubmit={(e) => e.preventDefault()}>
+        <form onSubmit={( e ) => e.preventDefault()}>
             <div className="prfl__inf">
                 <ul className="prfl__inf__lst">
                     <li className="prfl__inf__itm prfl__inf__itm--upld">
@@ -73,7 +72,6 @@ function FormUpdateUserData ({
                             {({
                             imageList,
                             onImageUpload,
-                            onImageRemoveAll,
                             onImageUpdate,
                             onImageRemove,
                             isDragging,
@@ -90,7 +88,7 @@ function FormUpdateUserData ({
                                     <FaFileImport />Clique, ou arraste a imagem
                                 </button>
                                 &nbsp;
-                                <button onClick={onImageRemoveAll} className="prfl__inf--upld__bttn"><FaTimes />Remover Imagem</button>
+                               
                                 {imageList.map((image, index) => (
                                 <div key={index} className="prfl__inf--upld__img">
                                     <img src={image.data_url ? image.data_url : "https://static.vecteezy.com/ti/vetor-gratis/p1/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg"} alt="" width="100" />
@@ -105,29 +103,29 @@ function FormUpdateUserData ({
                         </ImageUploading>
                     </li>
                     <li className="prfl__inf__itm">
-                        <input className="prfl__inpt" value={fullname} placeholder={data.name} onChange={(e) => setFullname(e.target.value)}/>
+                        <input className="prfl__inpt" value={fullname} placeholder={data.name} onChange={(e) => setFullname(e.target.value)} />
                     </li>
                     <li className="prfl__inf__itm">
-                        <input className="prfl__inpt" value={username} placeholder={data.username} onChange={(e) => setUsername(e.target.value)}/>
+                        <input className="prfl__inpt" value={username} placeholder={data.username} onChange={(e) => setUsername(e.target.value)} />
                     </li>
                     <li className="prfl__inf__itm">
-                        <input className="prfl__inpt" value={email} placeholder={data.email} onChange={(e) => setEmail(e.target.value)}/>
+                        <input className="prfl__inpt" value={email} placeholder={data.email} onChange={(e) => setEmail(e.target.value)} />
                     </li>
                     <li className="prfl__inf__itm">
-                        <input className="prfl__inpt" value={city} placeholder={data.address.city} onChange={(e) => setCity(e.target.value)}/>
+                        <input className="prfl__inpt" value={city} placeholder={data.address.city} onChange={(e) => setCity(e.target.value)} />
                     </li>
                     <li className="prfl__inf__itm">
-                        <input className="prfl__inpt" value={gender} placeholder={data.city} onChange={(e) => setGender(e.target.value)}/>
+                        <input className="prfl__inpt" value={gender} placeholder={data.city} onChange={(e) => setGender(e.target.value)} />
                     </li>
                     <li className="prfl__inf__itm">
-                        <input className="prfl__inpt" value={birthdayDate} placeholder={data.phone} onChange={(e) => setBirthdayDate(e.target.value)}/>
+                        <input className="prfl__inpt" value={birthdayDate} placeholder={data.phone} onChange={(e) => setBirthdayDate(e.target.value)} />
                     </li>
                     <li className="prfl__inf__edtr">
                         <a href="/ds" title="Editar perfil" onClick={handleUpdateData}>
                             Salvar
                         </a>
                     </li>
-                    <li  className="prfl__inf__flr">
+                    <li className="prfl__inf__flr">
                         <span>
                             <FaInfoCircle />Estamos com problemas para atualizar seu cadastro. Tente novamente mais tarde.
                         </span>

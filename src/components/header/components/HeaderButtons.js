@@ -1,4 +1,5 @@
 import React from "react";
+
 import { FaQuestionCircle, FaDoorOpen, FaBell, FaCaretDown, FaUser } from 'react-icons/fa';
 
 import "../Header.scss";
@@ -23,7 +24,7 @@ function HeaderButtons ({
                         <span className="hdr__itm__icn hdr__itm__icn--ntfctn">
                             <FaBell />
                         </span>
-                        <span className="hdr__itm__nm"></span>
+                        <span className="hdr__itm__nm" />
                     </a>
                 </li>
                 :

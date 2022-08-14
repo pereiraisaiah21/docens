@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
+import DragAlert from "../../../components/carousel/DragAlert";
 import { Navigation, Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
-import DragAlert from "../../../components/carousel/DragAlert";
+import { FaChalkboardTeacher } from 'react-icons/fa';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import { FaChalkboardTeacher } from 'react-icons/fa';
 
 function NavigationTeachers () {
 
@@ -26,11 +27,19 @@ function NavigationTeachers () {
     });
 
     useEffect(() => {
-        axios.get("https://jsonplaceholder.typicode.com/users/")
-        .then(response => {
-            setTeachers({...teachers, data : response.data});
+        axios.get( "https://jsonplaceholder.typicode.com/users/" )
+        .then( response => {
+            setTeachers({
+                ...teachers,
+                data : response.data
+            });
         })
-        .catch(err => setTeachers({...teachers, error : err}));
+        .catch( err => {
+            setTeachers({ 
+                ...teachers,
+                error : err 
+            })
+        });
     }, []);
 
     return (
@@ -56,15 +65,16 @@ function NavigationTeachers () {
                         pagination={{ clickable: true }}
                         scrollbar={{ draggable: true }}
                         onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}>
+                        onSlideChange={() => console.log('slide change')}
+                    >
                         {
                             teachers.data !== null && teachers.data !== undefined
                             ?
-                            teachers.data.map((item, key) => {
+                            teachers.data.map( ( item, key ) => {
                                 return(
                                     <SwiperSlide key={key}>
                                         <div className="actns__tchrs__itm">
-                                            <a className="actns__tchrs__anchr">
+                                            <a className="actns__tchrs__anchr" alt="´Ícone professor" href="/professor">
                                                 <img className="actns__tchrs__img" alt="" src="https://cdn.icon-icons.com/icons2/2859/PNG/512/avatar_face_man_boy_male_profile_smiley_happy_people_icon_181657.png" />
                                                 <span className="actns__tchrs__nm">
                                                     {item.name}

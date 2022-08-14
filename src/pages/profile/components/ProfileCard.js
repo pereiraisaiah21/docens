@@ -14,15 +14,15 @@ function ProfileCard ({
     setUpdateUserData
 }) {
 
-    const handleEditUserData = function (event) {
+    const handleEditUserData = function( event ) {
         event.preventDefault();
-        setUpdateUserData(true);
+        setUpdateUserData( true );
     };
 
     return (
         <>
             <div className="prfl__img">
-                <img src={data.avatar} alt="Avatar do usuário"/> 
+                <img src={data.avatar} alt="Avatar do usuário" /> 
             </div>
             <div className="prfl__inf">
                 <ul className="prfl__inf__lst">

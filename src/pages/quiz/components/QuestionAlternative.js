@@ -1,7 +1,5 @@
-// Libs
 import React, { useState, useEffect } from "react"
 
-// Components
 import Modal from 'react-modal';
 
 /**
@@ -22,8 +20,8 @@ function QuestionAlternative ({
     setOption, 
     optionsDisable}) {
 
-    const [selected, setSelected] = useState(null);
-    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [selected, setSelected] = useState( null );
+    const [modalIsOpen, setIsOpen] = React.useState( false );
     const customStyles = {
         content: {
             top: '50%',
@@ -37,17 +35,18 @@ function QuestionAlternative ({
 
     console.log(selected)
 
-    Modal.setAppElement('#root');
+    Modal.setAppElement( '#root' );
 
-    const handleAlternativeChange = function (e) {
-        setSelected(e.target.value);
+    const handleAlternativeChange = function( e ) {
+        setSelected( e.target.value );
     };
-    const closeModal = function () {
-        setIsOpen(false);
+
+    const closeModal = function() {
+        setIsOpen( false );
     }
 
     useEffect(()=>{
-        setOption(selected)
+        setOption( selected )
     }, [selected])
 
     return (

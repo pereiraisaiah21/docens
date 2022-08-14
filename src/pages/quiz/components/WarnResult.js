@@ -13,7 +13,9 @@ function WarnResult ({
 
     return (
        <div className={classStyle}>
-            <p>{alertText}</p>
+            <p>
+                {alertText}
+            </p>
        </div>
     );
 }

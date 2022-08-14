@@ -15,13 +15,18 @@ import "./Home.scss";
 
 function Home () {
 
-    const {userDataValues} = useContext(UserData);
+    const { userDataValues } = useContext( UserData );
 
     return (
         <> 
-            <StudentInfo userInfo={{name : userDataValues.data.name, occupation : userDataValues.data.email, level : userDataValues.data.id, avatar : "https://i.pinimg.com/736x/59/74/d0/5974d04323d9efbaf170c72cfdb07b44.jpg"}} />
+            <StudentInfo userInfo={{
+                name : userDataValues.data.name,
+                occupation : userDataValues.data.email,
+                level : userDataValues.data.id,
+                avatar : "https://i.pinimg.com/736x/59/74/d0/5974d04323d9efbaf170c72cfdb07b44.jpg"
+            }} />
             <NavigationActions />
-            <NavigationMyProgress slider={true}/>
+            <NavigationMyProgress slider={"true"} />
             <NavigationTeachers />
         </>
     );

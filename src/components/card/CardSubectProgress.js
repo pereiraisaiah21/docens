@@ -28,8 +28,12 @@ function CardSubjectProgress ({
     return (
         <div className={classStyleGrand}>
             <img alt={altImage} className={classStyleImage} src={srcImage} />
-            <span className={`${classStyleSpan} title`}>{title}</span>
-            <p className={`description`}>{description}</p>
+            <span className={`${classStyleSpan} title`}>
+                {title}
+            </span>
+            <p className={`description`}>
+                {description}
+            </p>
             <div className={classStyleDiv}>
                 {
                     progressValue 
@@ -39,9 +43,9 @@ function CardSubjectProgress ({
                     </span>
                     :
                     ""
-                } 
+                }
                 <div className={classStyleDivProgress}>
-                    <div className={classStyleDivProgressDiv} style={{width: `${progressValue}%`}}></div>
+                    <div className={classStyleDivProgressDiv} style={{width: `${progressValue}%`}} />
                 </div>
                 <a href={`${link}`} className={classStyleDivButton} title={title}>
                     <FaEye />

@@ -15,51 +15,51 @@ function Login () {
     const [emailRecoverValid, setEmailRecoverValid] = useState(true);
     const [isEmailRecoverSent, setIsEmailRecoverSent] = useState(false);
 
-    const loginSubmit = function (event) {
+    const loginSubmit = function( event ) {
         event.preventDefault();
-        if (username !== null && username !== undefined && username !== "") {
-            usernameValid(true);
+        if ( username !== null && username !== undefined && username !== "" ) {
+            usernameValid( true );
         } else {
-            setUsernameValid(false);
+            setUsernameValid( false );
         }
-        if (password !== null && password !== undefined && password !== "") {
-            passwordValid(true);
+        if ( password !== null && password !== undefined && password !== "" ) {
+            passwordValid( true );
         } else {
-            setPasswordValid(false);
+            setPasswordValid( false );
         }
 
-        if (usernameValid && passwordValid) {
-            submitUserCredentials(username, password);
+        if ( usernameValid && passwordValid ) {
+            submitUserCredentials( username, password );
         }
     };
 
-    const submitUserCredentials = function (username, password) {
-        console.log(username, password);
+    const submitUserCredentials = function( username, password ) {
+        console.log( username, password );
     };
 
-    const recoverClick = function (event) {
+    const recoverClick = function( event ) {
         event.preventDefault();
-        setShowFormRecover(!showFormRecover);
+        setShowFormRecover( !showFormRecover );
     };
     
-    const recoverClickReturn = function (event) {
+    const recoverClickReturn = function( event ) {
         event.preventDefault();
-        setShowFormRecover(!showFormRecover);
+        setShowFormRecover( !showFormRecover );
     };
 
-    const sendRecoverEmail = function (event) {
+    const sendRecoverEmail = function( event ) {
         event.preventDefault();
-        if (emailRecover !== null && emailRecover !== undefined && emailRecover !== "" && emailRecover.includes("@") && emailRecover.includes(".")) {
-            setEmailRecoverValid(true);
-            submitUserPasswordRecover(emailRecover);
+        if ( emailRecover !== null && emailRecover !== undefined && emailRecover !== "" && emailRecover.includes("@") && emailRecover.includes(".") ) {
+            setEmailRecoverValid( true );
+            submitUserPasswordRecover( emailRecover );
         } else {
-            setEmailRecoverValid(false);
+            setEmailRecoverValid( false );
         }
     };
     
-    const submitUserPasswordRecover = function (emailRecover) {
+    const submitUserPasswordRecover = function( emailRecover ) {
         console.log("Método de recuperação de senha. Retornar confirmação.", emailRecover);
-        setIsEmailRecoverSent(true);
+        setIsEmailRecoverSent( true );
     }
 
     return (
@@ -77,7 +77,7 @@ function Login () {
                     showFormRecover
                     ?
                     <fieldset className="lgn__flst lgn__flst--optns">
-                        <input type="text" className="lgn__inpt lgn__inpt--rcvr" placeholder="Digite seu email" onChange={e => setEmailRecover(e.target.value)}/>
+                        <input type="text" className="lgn__inpt lgn__inpt--rcvr" placeholder="Digite seu email" onChange={e => setEmailRecover(e.target.value)} />
                         {
                             emailRecoverValid
                             ?
@@ -85,7 +85,9 @@ function Login () {
                             :
                             <FaInfoCircle className="lgn__inpt--warn" />
                         }
-                        <button className="lgn__snd lgn__snd--rcvr" onClick={sendRecoverEmail}>Enviar senha</button>
+                        <button className="lgn__snd lgn__snd--rcvr" onClick={sendRecoverEmail}>
+                            Enviar senha
+                        </button>
                         {
                             isEmailRecoverSent
                             ?
@@ -107,8 +109,11 @@ function Login () {
                     :
                     <>
                         <fieldset className="lgn__flst">
-                            <legend><FaUserGraduate/>Nome de usuário</legend>
-                            <input type="text" className="lgn__inpt" placeholder="Digite seu nome" onChange={e => setUsername(e.target.value)}/>
+                            <legend>
+                                <FaUserGraduate />
+                                Nome de usuário
+                            </legend>
+                            <input type="text" className="lgn__inpt" placeholder="Digite seu nome" onChange={e => setUsername(e.target.value)} />
                             {
                                 usernameValid
                                 ?
@@ -118,8 +123,11 @@ function Login () {
                             }
                         </fieldset>
                         <fieldset className="lgn__flst">
-                            <legend><FaLock />Senha</legend>
-                            <input type="password" className="lgn__inpt" placeholder="Digite sua senha" onChange={e => setPassword(e.target.value)}/>
+                            <legend>
+                                <FaLock />
+                                Senha
+                            </legend>
+                            <input type="password" className="lgn__inpt" placeholder="Digite sua senha" onChange={e => setPassword(e.target.value)} />
                             {
                                 passwordValid
                                 ?
@@ -132,7 +140,9 @@ function Login () {
                             <a href="/fasd" title="" className="lgn__rcvr" onClick={recoverClick}>
                                 Esqueceu a senha?
                             </a>
-                            <button className="lgn__snd" onClick={loginSubmit}>Entrar</button>
+                            <button className="lgn__snd" onClick={loginSubmit}>
+                                Entrar
+                            </button>
                         </fieldset>
                     </>
                 }

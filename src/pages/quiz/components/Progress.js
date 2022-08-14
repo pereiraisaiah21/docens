@@ -13,13 +13,13 @@ function Progress ({
     progressColor
 }) {
 
-    const progressValue = (progress < 10 ? 5 : progress > 100 ? 100 : progress);
+    const progressValue = ( progress < 10 ? 5 : progress > 100 ? 100 : progress );
 
     return (
         <div className="Progress">
             <span className="Progress__made" style={{width: progressValue + "%", backgroundColor : progressColor}}>
                 <span className="Progress__made__number">
-                {progress > 100 ? 100 : progress} %
+                    {progress > 100 ? 100 : progress} %
                 </span>
             </span>
         </div>

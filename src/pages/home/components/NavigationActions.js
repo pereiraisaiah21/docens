@@ -55,7 +55,7 @@ function NavigationActions () {
                     description={"Feed de matérias"}
                 />
                 {
-                    cardsContent.map((item, key) => {
+                    cardsContent.map( ( item, key ) => {
                         return (
                             <CardWithImage 
                                 classStyleDivButton={"actns__itm__bttn"}

@@ -19,17 +19,17 @@ function SiteRoutes () {
         <Router>
             <BannerAndHeader />
             <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/feed' element={<Feed />} />
-                <Route path='/materia/:id/:contentid' element={<Matter />} />
-                <Route path='/quiz/:matter/:contentId' element={<Quiz />} />
-                <Route path='/materias' element={<AllMatters />} />
-                <Route path='/ajuda' element={<Help />} />
-                <Route path='/perfil/:username' element={<Profile />} />
-                <Route path='/entrar' element={<Login />} />
-                <Route path='/mensagens' element={<Notification />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/feed" element={<Feed />} />
+                <Route path="/materia/:id/:contentid" element={<Matter />} />
+                <Route path="/quiz/:matter/:contentId" element={<Quiz />} />
+                <Route path="/materias" element={<AllMatters />} />
+                <Route path="/ajuda" element={<Help />} />
+                <Route path="/perfil/:username" element={<Profile />} />
+                <Route path="/entrar" element={<Login />} />
+                <Route path="/mensagens" element={<Notification />} />
 
-                <Route path='*' element={<Error />} />
+                <Route path="*" element={<Error />} />
             </Routes>
             <Footer />
        </Router>

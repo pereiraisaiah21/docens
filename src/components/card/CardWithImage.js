@@ -26,9 +26,11 @@ function CardWithImage ({
     return (
         <div className={classStyleGrand}>
             <img alt={altImage} className={classStyleImage} src={srcImage} />
-            <span className={`${classStyleSpan} title`}>{title}</span>
+            <span className={`${classStyleSpan} title`}>
+                {title}
+            </span>
             <div className={classStyleDiv}>
-                <span className={classStyleDivSpan}></span>
+                <span className={classStyleDivSpan} />
                 <label className={`${classStyleDivLabel} open`}>
                     {description}
                 </label>

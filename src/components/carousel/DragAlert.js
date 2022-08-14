@@ -12,6 +12,7 @@ import "./Carousel.scss";
 function DragAlert ({
     classSyle
 }) {
+    
     return (
         <div className={classSyle}>
             Arraste para o lado
