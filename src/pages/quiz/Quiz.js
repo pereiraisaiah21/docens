@@ -7,8 +7,6 @@ import QuestionAlternative from "./components/QuestionAlternative";
 import Progress from "./components/Progress";
 import QuizFinishedMessage from "./components/QuizFinishedMessage";
 import { TailSpin } from "react-loader-spinner";
-import { FaTimes } from 'react-icons/fa';
-// import WarnResult from "./components/WarnResult";
 
 import XpGif from "../../components/images/xp.gif";
 
@@ -26,12 +24,10 @@ function Quiz () {
 
     const [loader, setLoader] = useState( true );
     const [answer, setAnswer] = useState( null );
-    //const [showResolution, setShowResolution] = useState(false);
     const [isChoiceCorrect, setIsChoiceCorrect] = useState( "" );
     const [disableOptions, setDisableOptions] = useState( false );
     const [questionIndex, setQuestionIndex] = useState( -1 );
     const [isAnswerEmpty, setIsAnswerEmpty] = useState( null );
-
     const [progressColor, setProgressColor] = React.useState( "" );
     const [modalIsOpen, setIsOpen] = React.useState( false );
     const [question, setQuestion] = useState({data :  [{
@@ -73,7 +69,6 @@ function Quiz () {
 
         setAnswer( null );
         setIsAnswerEmpty( null );
-        //setShowResolution(false);
         setIsChoiceCorrect( false );
         setDisableOptions( false );
         setQuestionIndex( questionIndex + 1 );
@@ -120,7 +115,6 @@ function Quiz () {
         };
         if ( answer !== null ) {
             setDisableOptions( true );
-            //setShowResolution(true);
             setIsAnswerEmpty( false );
             if ( answer === answerReturn.correctAnswer ) {
                 setIsChoiceCorrect( true );
@@ -205,48 +199,7 @@ function Quiz () {
                         :
                         ""
                     }
-                    
-                    {
-                        disableOptions
-                        ?
-                        <div className="Question__verification">
-                            {/* {
-                                disableOptions && isChoiceCorrect
-                                ?
-                                <WarnResult 
-                                    alertText="Parabéns, você acertou a questão. Confira abaixo a explicação." 
-                                    classStyle="Question__alert Question__alert--correct"
-                                />
-                                :
-                                ""
-                            }
-                            {
-                                disableOptions && !isChoiceCorrect
-                                ?
-                                <WarnResult 
-                                    alertText="Você errou a questão. Confira abaixo a explicação." 
-                                    classStyle="Question__alert Question__alert--incorrect"
-                                />
-                                :
-                                ""
-                            } */}
-                        </div>
-                        :
-                        ""
-                    }
                 </section>
-                {
-                    // showResolution
-                    // ?
-                    // <section className="Question__resolution">
-                    //     <h4>RESOLUÇÃO</h4>
-                    //     <p>
-                    //     Na maioria das vezes, o soluço é causado por uma irritação no nervo chamado frênico, que auxilia os movimentos do diafragma, músculo que separa o tórax do abdome, na respiração. A expiração do ar acontece quando o diafragma relaxa e, a inspiração, quando ele se contrai.
-                    //     </p>
-                    // </section>
-                    // :
-                    // ""
-                }
 
                 <Modal
                     isOpen={modalIsOpen}

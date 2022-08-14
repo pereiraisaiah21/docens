@@ -179,53 +179,53 @@
             padding: 10px;
             display: block;
         }
-        &__resolution {
-            background: #fefdffcc;
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            border-radius: 0 0 10px 10px;
-            padding: 10px;
-            text-align: left;
-            margin: 0 auto;
-            h4 {
-                color: #4a4a4a;
-                font-size: 1.5rem;
-                text-align: end;
-                padding: 10px;
-                border-right: 5px solid #4a4a4a;
-                margin: 0;
-            }
-            p {
-                line-height: 22px;
-                color: #4a4a4a;
-                font-size: 1rem;
-            }
-        }
-        &__alert {
-            border-radius: 20px;
-            margin: 10px 0;
-            background-color: #efefefba;
-            padding: 10px 20px;
-            text-align: left;
-            display: flex;
-            align-items: center;
-            p {
-                padding: 0 0 0 10px;
-            }
-            &--correct {
-                background-color: #f0f7f2;
-                p {
-                    color: #00b500;
-                }
-            }
-            &--incorrect {
-                background-color: #f7ddf5;
-                p {
-                    color: #a10303;
-                }
-            }
-        }
+        // &__resolution {
+        //     background: #fefdffcc;
+        //     position: relative;
+        //     width: 100%;
+        //     max-width: 1200px;
+        //     border-radius: 0 0 10px 10px;
+        //     padding: 10px;
+        //     text-align: left;
+        //     margin: 0 auto;
+        //     h4 {
+        //         color: #4a4a4a;
+        //         font-size: 1.5rem;
+        //         text-align: end;
+        //         padding: 10px;
+        //         border-right: 5px solid #4a4a4a;
+        //         margin: 0;
+        //     }
+        //     p {
+        //         line-height: 22px;
+        //         color: #4a4a4a;
+        //         font-size: 1rem;
+        //     }
+        // }
+        // &__alert {
+        //     border-radius: 20px;
+        //     margin: 10px 0;
+        //     background-color: #efefefba;
+        //     padding: 10px 20px;
+        //     text-align: left;
+        //     display: flex;
+        //     align-items: center;
+        //     p {
+        //         padding: 0 0 0 10px;
+        //     }
+        //     &--correct {
+        //         background-color: #f0f7f2;
+        //         p {
+        //             color: #00b500;
+        //         }
+        //     }
+        //     &--incorrect {
+        //         background-color: #f7ddf5;
+        //         p {
+        //             color: #a10303;
+        //         }
+        //     }
+        // }
         &__tutorial {}
 
         @media (max-width: 767px) {
@@ -252,7 +252,7 @@
                     font-size: 1rem;
                 }
             }
-            &__resolution {}
+            // &__resolution {}
         }
     }
 }
