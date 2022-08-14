@@ -3,6 +3,13 @@ import React from "react";
 import CardWithImage from "../../../components/card/CardWithImage";
 import { FaOptinMonster } from 'react-icons/fa';
 
+import MainTitle from "../../../components/title/MainTitle";
+
+/**
+ * 
+ * @returns 
+ */
+
 function NavigationActions () {
 
     const cardsContent = [
@@ -31,14 +38,7 @@ function NavigationActions () {
 
     return (
         <section className="actns actns--bg-01">
-            <div className="actns__dscrptn">
-                <span className="actns__dscrptn__icn">
-                    <FaOptinMonster />
-                </span>
-                <span className="actns__dscrptn__ttl">
-                    NAVEGUE PELO SITE
-                </span>
-            </div>
+            <MainTitle description="NAVEGUE PELO SITE" isCarousel={false} icon={<FaOptinMonster />} />
             <div className="actns__crds">
                 <CardWithImage 
                     classStyleDivButton={"actns__itm__bttn actns__itm__bttn--fd"}

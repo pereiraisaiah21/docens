@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { TailSpin } from "react-loader-spinner";
 
+import MainTitle from "../../components/title/MainTitle";
 import { FaRegBookmark, FaTag } from 'react-icons/fa';
 
 import "./Notifications.scss";
@@ -44,14 +45,7 @@ function Notification () {
                 </div>
                 :
                 <section className="ntfct">
-                    <div className="actns__dscrptn">
-                        <span className="actns__dscrptn__icn">
-                            <FaTag />
-                        </span>
-                        <span className="actns__dscrptn__ttl">
-                            NOTIFICAÇÕES
-                        </span>
-                    </div>
+                    <MainTitle description="NAVEGUE PELO SITE" isCarousel={false} icon={<FaTag />} />
                     <div className="ntfct__wrppr">
                         <ul className="ntfct__cntnt">
                             {

@@ -2,15 +2,21 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import CardSubjectProgress from "../../../components/card/CardSubectProgress";
-import DragAlert from "../../../components/carousel/DragAlert";
+import MainTitle from "../../../components/title/MainTitle"
 import { Navigation, Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FaGuitar } from 'react-icons/fa';
+import { FaOptinMonster } from 'react-icons/fa';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+
+/**
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
 
 function NavigationMyProgress ({
     slider
@@ -48,21 +54,7 @@ function NavigationMyProgress ({
 
     return (
         <section className="actns">
-            <div className="actns__dscrptn">
-                <span className="actns__dscrptn__icn">
-                    <FaGuitar />
-                </span>
-                <span className="actns__dscrptn__ttl">
-                    MEU PROGRESSO
-                </span>
-                {
-                    slider
-                    ?
-                    <DragAlert classSyle="dragAlert dragAlert--tp-01" />
-                    :
-                    ""
-                }
-            </div>
+            <MainTitle description="MEU PROGRESSO" icon={<FaOptinMonster />} />
             <div className="actns__crds actns__crds--myPrfl">
                 {
                     slider

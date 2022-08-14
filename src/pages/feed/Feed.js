@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { TailSpin } from "react-loader-spinner";
 
+import MainTitle from "../../components/title/MainTitle";
 import CardFeed from "../../components/card/CardFeed";
 import { FaRegCalendarTimes } from 'react-icons/fa';
 
@@ -77,17 +78,7 @@ function Feed () {
         <section className="fd">
             <TailSpin color = "#f00" />
             <div className="fd__wrppr">
-                <div className="actns__dscrptn">
-                    <span className="actns__dscrptn__icn">
-                        <FaRegCalendarTimes />
-                    </span>
-                    <span className="actns__dscrptn__ttl actns__dscrptn__ttl--dscrptn">
-                        Meu feed
-                        <p>
-                            Pubicações recentes
-                        </p>
-                    </span>
-                </div>
+                <MainTitle description="MEU FEED" descriptionUnder="Pubicações recentes" icon={<FaRegCalendarTimes />} />
                 <div className="fd__psts">
                     {
                         posts.data !== null

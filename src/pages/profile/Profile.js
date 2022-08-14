@@ -35,7 +35,7 @@ function Profile () {
                         :
                         <>
                             <div className="prfl__dt">
-                                <ProfileCard data={userDataValues.data} setUpdateUserData={setUpdateUserData} />
+                                <ProfileCard userData={userDataValues.data} setUpdateUserData={setUpdateUserData} />
                             </div>
                         </>
                     }

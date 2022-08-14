@@ -10,11 +10,11 @@ import "../Profile.scss";
  */
 
 function ProfileCard ({
-    data,
+    userData,
     setUpdateUserData
 }) {
 
-    const handleEditUserData = function( event ) {
+    const handleEditUseruserData = function( event ) {
         event.preventDefault();
         setUpdateUserData( true );
     };
@@ -22,19 +22,19 @@ function ProfileCard ({
     return (
         <>
             <div className="prfl__img">
-                <img src={data.avatar} alt="Avatar do usuário" /> 
+                <img src={userData.avatar} alt="Avatar do usuário" /> 
             </div>
             <div className="prfl__inf">
                 <ul className="prfl__inf__lst">
-                    <li className="prfl__inf__itm prfl__inf__itm--nm">{data.name}</li>
-                    <li className="prfl__inf__itm prfl__inf__itm--usrnm">{data.username}</li>
-                    <li className="prfl__inf__itm prfl__inf__itm--occptn">{data.name}</li>
-                    <li className="prfl__inf__itm"><FaRegEnvelope />{data.email}</li>
-                    <li className="prfl__inf__itm"><FaMap />{data.username}</li>
-                    <li className="prfl__inf__itm"><FaGenderless />{data.website}</li>
-                    <li className="prfl__inf__itm"><FaCalendarWeek />{data.phone}</li>
+                    <li className="prfl__inf__itm prfl__inf__itm--nm">{userData.name}</li>
+                    <li className="prfl__inf__itm prfl__inf__itm--usrnm">{userData.username}</li>
+                    <li className="prfl__inf__itm prfl__inf__itm--occptn">{userData.name}</li>
+                    <li className="prfl__inf__itm"><FaRegEnvelope />{userData.email}</li>
+                    <li className="prfl__inf__itm"><FaMap />{userData.username}</li>
+                    <li className="prfl__inf__itm"><FaGenderless />{userData.website}</li>
+                    <li className="prfl__inf__itm"><FaCalendarWeek />{userData.phone}</li>
                     <li className="prfl__inf__edtr">
-                        <a href="/ds" title="Editar perfil" onClick={handleEditUserData}>
+                        <a href="/ds" title="Editar perfil" onClick={handleEditUseruserData}>
                             Editar Perfil
                         </a>
                     </li>

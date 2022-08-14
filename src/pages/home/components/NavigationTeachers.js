@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import DragAlert from "../../../components/carousel/DragAlert";
+import MainTitle from "../../../components/title/MainTitle";
 import { Navigation, Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { FaChalkboardTeacher } from 'react-icons/fa';
+import { FaOptinMonster } from 'react-icons/fa';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -44,18 +44,7 @@ function NavigationTeachers () {
 
     return (
         <section className="actns actns--bg-01">
-            <div className="actns__dscrptn">
-                <span className="actns__dscrptn__icn">
-                    <FaChalkboardTeacher />
-                </span>
-                <span className="actns__dscrptn__ttl actns__dscrptn__ttl--dscrptn">
-                    PROFESSORES
-                    <p>
-                        Confira os professores
-                    </p>
-                </span>
-                <DragAlert classSyle="dragAlert dragAlert--tp-01" />
-            </div>
+            <MainTitle description="MEU PROGRESSO" isCarousel={false} icon={<FaOptinMonster />} />
             <div className="actns__crds">
                 <section className="actns__tchrs">
                     <Swiper

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import ImageUploading from 'react-images-uploading';
+import Select from 'react-select'
+import DatePicker from "react-datepicker";
 
 import { FaInfoCircle, FaFileImport, FaCaretSquareUp } from 'react-icons/fa';
 
+import "react-datepicker/dist/react-datepicker.css";
 import "../Profile.scss";
 
 /**
@@ -26,7 +29,12 @@ function FormUpdateUserData ({
     const [email, setEmail] = useState( "" );
     const [city, setCity] = useState( "" );
     const [gender, setGender] = useState( "" );
-    const [birthdayDate, setBirthdayDate] = useState( "" );
+    const [birthdayDate, setBirthdayDate] = useState( new Date() );
+    const genderOptions = [
+        { value: "feminino", label: "Feminino" },
+        { value: "masculino", label: "Masculino" },
+        { value: "indefinido", label: "Prefiro não dizer" }
+    ];
 
     const handleUpdateData = function( event ) {
         event.preventDefault();
@@ -69,37 +77,39 @@ function FormUpdateUserData ({
                             dataURLKey="data_url"
                             acceptType={["jpg"]}
                         >
-                            {({
-                            imageList,
-                            onImageUpload,
-                            onImageUpdate,
-                            onImageRemove,
-                            isDragging,
-                            dragProps
-                            }) => (
-                            // write your building UI
-                            <div className="prfl__inf--upld__wrppr">
-                                <button
-                                style={isDragging ? { color: "red" } : null}
-                                onClick={onImageUpload}
-                                {...dragProps}
-                                className="prfl__inf--upld__bttn"
-                                >
-                                    <FaFileImport />Clique, ou arraste a imagem
-                                </button>
-                                &nbsp;
-                               
-                                {imageList.map((image, index) => (
-                                <div key={index} className="prfl__inf--upld__img">
-                                    <img src={image.data_url ? image.data_url : "https://static.vecteezy.com/ti/vetor-gratis/p1/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg"} alt="" width="100" />
-                                    <div className="image-item__btn-wrapper">
-                                    <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageUpdate(index)}><FaCaretSquareUp />Atualizar</button>
-                                    <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageRemove(index)}>Remover imagem</button>
+                            {
+                                ({
+                                    imageList,
+                                    onImageUpload,
+                                    onImageUpdate,
+                                    onImageRemove,
+                                    isDragging,
+                                    dragProps
+                                }) => (
+                                    <div className="prfl__inf--upld__wrppr">
+                                        <button
+                                            style={isDragging ? { color: "red" } : null}
+                                            onClick={onImageUpload}
+                                            {...dragProps}
+                                            className="prfl__inf--upld__bttn"
+                                        >
+                                            <FaFileImport />
+                                            Clique, ou arraste a imagem
+                                        </button>
+                                        {
+                                            imageList.map( (image, index ) => (
+                                                <div key={index} className="prfl__inf--upld__img">
+                                                    <img src={image.data_url ? image.data_url : "https://static.vecteezy.com/ti/vetor-gratis/p1/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg"} alt="" width="100" />
+                                                    <div className="image-item__btn-wrapper">
+                                                    <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageUpdate(index)}><FaCaretSquareUp />Atualizar</button>
+                                                    <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageRemove(index)}>Remover imagem</button>
+                                                    </div>
+                                                </div>
+                                            ))
+                                        }
                                     </div>
-                                </div>
-                                ))}
-                            </div>
-                            )}
+                                )
+                            }
                         </ImageUploading>
                     </li>
                     <li className="prfl__inf__itm">
@@ -115,10 +125,10 @@ function FormUpdateUserData ({
                         <input className="prfl__inpt" value={city} placeholder={data.address.city} onChange={(e) => setCity(e.target.value)} />
                     </li>
                     <li className="prfl__inf__itm">
-                        <input className="prfl__inpt" value={gender} placeholder={data.city} onChange={(e) => setGender(e.target.value)} />
+                        <Select className="" options={genderOptions} onChange={(e) => setGender(e.value)}/>
                     </li>
                     <li className="prfl__inf__itm">
-                        <input className="prfl__inpt" value={birthdayDate} placeholder={data.phone} onChange={(e) => setBirthdayDate(e.target.value)} />
+                        <DatePicker className="prfl__inpt" selected={birthdayDate} onChange={(birthdayDate) => setBirthdayDate(birthdayDate)} />           
                     </li>
                     <li className="prfl__inf__edtr">
                         <a href="/ds" title="Editar perfil" onClick={handleUpdateData}>
@@ -133,7 +143,7 @@ function FormUpdateUserData ({
                 </ul>
             </div>
         </form>
-    )
+    );
 }
 
 export default FormUpdateUserData;

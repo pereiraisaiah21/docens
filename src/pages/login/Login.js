@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 
+import MainTitle from "../../components/title/MainTitle";
 import { FaUserGraduate, FaLock, FaUserCircle, FaInfoCircle} from 'react-icons/fa';
 
 import "./Login.scss";
+
+/**
+ * 
+ * @returns 
+ */
 
 function Login () {
 
@@ -65,14 +71,7 @@ function Login () {
     return (
         <section className="lgn">
             <form className="lgn__frm">
-                <div className="actns__dscrptn">
-                    <span className="actns__dscrptn__icn">
-                        <FaUserCircle />
-                    </span>
-                    <span className="actns__dscrptn__ttl">
-                        Entrar
-                    </span>
-                </div>
+                <MainTitle description="Entrar" isCarousel={false} icon={<FaUserCircle />} />
                 {
                     showFormRecover
                     ?

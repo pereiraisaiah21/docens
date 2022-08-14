@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import MainTitle from "../../components/title/MainTitle";
 import { FaNewspaper } from 'react-icons/fa';
 
 import "./Matter.scss"
@@ -52,21 +53,10 @@ function AllMatters () {
         };
     };
 
-
     return (
         <section className="mttr">
             <div className="mttr__wrppr">
-            <div className="actns__dscrptn">
-                    <span className="actns__dscrptn__icn">
-                        <FaNewspaper />
-                    </span>
-                    <span className="actns__dscrptn__ttl actns__dscrptn__ttl--dscrptn">
-                        Todas matérias
-                        <p>
-                            Materias disponíveis
-                        </p>
-                    </span>
-                </div>
+                <MainTitle description="TODAS MATÉRIAS" descriptionUnder="Materias disponíveis" icon={<FaNewspaper />} />
                 <div className="mttr__allMttrs">
                     <div className="mttr__srch">
                         <input className="mttr__srch__inpt" placeholder="Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)} />
