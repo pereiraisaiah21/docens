@@ -33,8 +33,6 @@ function QuestionAlternative ({
         }
     };
 
-    console.log(selected)
-
     Modal.setAppElement( '#root' );
 
     const handleAlternativeChange = function( e ) {

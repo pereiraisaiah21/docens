@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { FaTimes } from 'react-icons/fa';
+
 import "../Quiz.scss";
 
 /**
@@ -16,12 +18,17 @@ function Progress ({
     const progressValue = ( progress < 10 ? 5 : progress > 100 ? 100 : progress );
 
     return (
-        <div className="Progress">
-            <span className="Progress__made" style={{width: progressValue + "%", backgroundColor : progressColor}}>
-                <span className="Progress__made__number">
-                    {progress > 100 ? 100 : progress} %
+        <div className="Question__progress">
+            <a href="/fasd" title="Sair das perguntas" className="Question__exit">
+                <FaTimes />
+            </a>
+            <div className="Progress">
+                <span className="Progress__made" style={{width: progressValue + "%", backgroundColor : progressColor}}>
+                    <span className="Progress__made__number">
+                        {progress > 100 ? 100 : progress} %
+                    </span>
                 </span>
-            </span>
+            </div>
         </div>
     );
 }

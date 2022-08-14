@@ -3,10 +3,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Modal from 'react-modal';
 
-import { TailSpin } from "react-loader-spinner";
 import QuestionAlternative from "./components/QuestionAlternative";
 import Progress from "./components/Progress";
-import { FaTimes, FaRegCheckCircle } from 'react-icons/fa';
+import QuizFinishedMessage from "./components/QuizFinishedMessage";
+import { TailSpin } from "react-loader-spinner";
+import { FaTimes } from 'react-icons/fa';
 // import WarnResult from "./components/WarnResult";
 
 import XpGif from "../../components/images/xp.gif";
@@ -100,7 +101,7 @@ function Quiz () {
             });
             setTimeout( () => 
                 setLoader( false ),
-                3000
+                1500
             );
         }).catch( err => {
             setQuestion({
@@ -163,12 +164,7 @@ function Quiz () {
                     <img alt="Gif + xp" src={XpGif} />
                 </div>
                 <section className={`Question${disableOptions && isChoiceCorrect ? " " : ""}`}>
-                    <div className="Question__progress">
-                        <a href="/fasd" title="Sair das perguntas" className="Question__exit">
-                            <FaTimes />
-                        </a>
-                        <Progress progress={`${questionIndex}0`} progressColor={progressColor} />
-                    </div>
+                    <Progress progress={`${questionIndex}0`} progressColor={progressColor} />
                     <QuestionAlternative
                         number={questionIndex}
                         title={question.data.title}
@@ -205,31 +201,11 @@ function Quiz () {
                     {
                         questionIndex > 9
                         ?
-                        <div className="Question__fineshed">
-                            <p>
-                                <FaRegCheckCircle /> 
-                                Parabéns ! Você finalizou o questionário deste conteúdo.
-                            </p>
-                            <p>
-                                Volte para o 
-                                <a href="/feed" className="Question__fineshed__anchor" alt="Ir para o Feed de matérias">
-                                    Feed
-                                </a> ou 
-                                <a href="/feed" className="Question__fineshed__anchor" alt="Ir para todas as matérias">
-                                    Todas as matérias
-                                </a> 
-                                para prosseguir na sua trajetória.
-                            </p>
-                            <p>
-                                Para conferir seus resultados acesse 
-                                <a href="/perfil/myProfile" className="Question__fineshed__anchor" alt="Ir para meu perfil">
-                                    Meu perfil
-                                </a>
-                            </p>
-                        </div>
+                        <QuizFinishedMessage />
                         :
                         ""
                     }
+                    
                     {
                         disableOptions
                         ?

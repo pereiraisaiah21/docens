@@ -97,12 +97,17 @@ function FormUpdateUserData ({
                                             Clique, ou arraste a imagem
                                         </button>
                                         {
-                                            imageList.map( (image, index ) => (
+                                            imageList.map( ( image, index ) => (
                                                 <div key={index} className="prfl__inf--upld__img">
                                                     <img src={image.data_url ? image.data_url : "https://static.vecteezy.com/ti/vetor-gratis/p1/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg"} alt="" width="100" />
                                                     <div className="image-item__btn-wrapper">
-                                                    <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageUpdate(index)}><FaCaretSquareUp />Atualizar</button>
-                                                    <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageRemove(index)}>Remover imagem</button>
+                                                        <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageUpdate( index )}>
+                                                            <FaCaretSquareUp />
+                                                            Atualizar
+                                                        </button>
+                                                        <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageRemove( index )}>
+                                                            Remover imagem
+                                                        </button>
                                                     </div>
                                                 </div>
                                             ))

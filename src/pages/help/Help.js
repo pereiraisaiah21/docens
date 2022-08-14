@@ -18,10 +18,6 @@ function Help () {
         data : [],
         error : ""
     });
-    const [faqCategories, setFaqCategories] = useState({
-        data : [],
-        error : ""
-    });
 
     const handleQuestionClick = function( e ) {
         if ( e.target.nextSibling.classList.contains( "open" ) ) {
@@ -60,26 +56,6 @@ function Help () {
                 </div>
                 :
                 <div className="Help">
-                    <nav className="Help__nav">
-                        <ul className="Help__nav__list">
-                            <li className="Help__nav__title">
-                                CATEGORIAS
-                            </li>
-                            {
-                                faqCategories.data !== null
-                                ?
-                                faqCategories.data.map( ( item, key ) => {
-                                    return (
-                                        <li className="Help__nav__item" key={key}>
-                                            <a className="Help__nav__anchor" href="/" title={item.name}>{item.email}</a>
-                                        </li>
-                                    )
-                                })
-                                :
-                                ""
-                            }
-                        </ul>
-                    </nav>
                     <section className="Help__content">
                         <h4>Dúvidas frequentes</h4>
                         <ul className="Help__question">

@@ -18,7 +18,7 @@ import "./Header.scss";
 function Header () {
 
     const {userDataValues} = useContext( UserData );
-	const [ isMenuMobileOpen, setIsMenuMobileOpen ] = useState( false );
+	const [isMenuMobileOpen, setIsMenuMobileOpen] = useState( false );
 
     return (
      	<header className="hdr">
@@ -37,7 +37,7 @@ function Header () {
 				?
 				<div className="hdr__wrppr--m">
 					<ActionsMobile setMenuMobileClose={setIsMenuMobileOpen} />
-					<UserDataMobile userData={userDataValues} />
+					<UserDataMobile userData={userDataValues.data} />
 					<PagesMobile />
 				</div>
 				:
