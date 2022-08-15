@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+import ImageWithCredits from "./components/ImageWithCredits";
+import RelatedMatters from "./components/RelatedMatters";
 import { TailSpin } from "react-loader-spinner";
 import { FaCalendarWeek } from 'react-icons/fa';
-import ImageWithCredits from "./components/ImageWithCredits";
 
 import "./Matter.scss"
+import MatterTags from "./components/MatterTags";
 
 /**
  * 
@@ -22,6 +24,14 @@ function Matter () {
 
     const [loader, setLoader] = useState( true );
     const [matterContent, setMatterContent] = useState({
+        data: [],
+        error: ""
+    });
+    const [matterRelated, setMatterRelated] = useState({
+        data: [],
+        error: ""
+    });
+    const [matterTag, setMatterTag] = useState({
         data: [],
         error: ""
     });
@@ -44,6 +54,36 @@ function Matter () {
                 error: err 
             });
         });
+
+        axios.get( `https://jsonplaceholder.typicode.com/users/3` )
+        .then( response => {
+
+            setMatterRelated({
+                ...matterRelated,
+                data: [response.data]
+            });
+        }).catch( err => {
+            setMatterRelated({
+                ...matterRelated,
+                error: err 
+            });
+        });
+
+        axios.get( `https://jsonplaceholder.typicode.com/users` )
+        .then( response => {
+
+            setMatterTag({
+                ...matterTag,
+                data: response.data
+            });
+        }).catch( err => {
+            setMatterTag({
+                ...matterTag,
+                error: err 
+            });
+        });
+
+
     }, []);
 
     return (
@@ -63,8 +103,11 @@ function Matter () {
                             ?
                             matterContent.data.map((item, key) => {
                                 return (
-                                    <div className="mttr__cntnt" key={key}>
-                                        <div className="mttr__prmryWrp" key={key}>
+                                    <React.Fragment key={key}>
+                                        <div className="mttr__prmryWrp">
+                                            <p className="mttr__trcryTtl">
+                                                Algebra Quântica
+                                            </p>
                                             <h4 className="mttr__prmryTtl">
                                                 {item.title}
                                             </h4>
@@ -75,7 +118,7 @@ function Matter () {
                                                 <p className="mttr__dtls__wrtr">Por Editorial Cursos Educacionais</p>
                                                 <p className="mttr__dtls__dt">19/07/2022 <span className="mttr__dtls__lstpdt">- Atualizado a 2 dias</span></p>
                                             </div>
-                                            <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj7E45JK-WJ9ERO8Oj_DVTnfKQ7X47pr7QdaQtpZvvgYhtToIIQVEeiWLma69nWIEkvFY&usqp=CAU" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/" />
+                                            <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://council.science/wp-content/uploads/2017/04/IUPAC-feature-image-1400x600.jpg" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/" />
                                         </div>
                                         <div className="mttr__prmryWrp mttr__prmryWrp--cntnt">
                                             {item.body}
@@ -165,14 +208,16 @@ function Matter () {
                                                 </li>
                                             </ol>
                                         </div>
-                                    </div>
+                                    </React.Fragment>
                                 )
                             })
                             :
                             ""
                         }
                         </div>
+                        <RelatedMatters relatedMatter={matterRelated.data}/>
                     </div>
+                    <MatterTags tagMatter={matterTag.data} />
                 </section>
             }
         </>

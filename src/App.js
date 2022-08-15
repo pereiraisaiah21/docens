@@ -27,7 +27,7 @@ function App() {
         error : err
       })
     );
-  }, [userDataValues]);
+  }, []);
 
   return (
     <div className="App">

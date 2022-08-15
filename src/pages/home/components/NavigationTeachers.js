@@ -44,7 +44,7 @@ function NavigationTeachers () {
 
     return (
         <section className="actns actns--bg-01">
-            <MainTitle description="MEU PROGRESSO" isCarousel={false} icon={<FaOptinMonster />} />
+            <MainTitle description="PROFESSORES" descriptionUnder="Professores contribuintes" isCarousel={true} icon={<FaOptinMonster />} />
             <div className="actns__crds">
                 <section className="actns__tchrs">
                     <Swiper
