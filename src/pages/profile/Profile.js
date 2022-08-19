@@ -7,8 +7,6 @@ import ProfileCard from "./components/ProfileCard";
 import NavigationMyProgress from "../home/components/NavigationMyProgress";
 import FormUpdataUserData from "./components/FormUpdateUserData";
 
-import "./Profile.scss";
-
 /**
  * 
  * @returns 

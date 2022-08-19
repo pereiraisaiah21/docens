@@ -4,8 +4,6 @@ import axios from "axios";
 import MainTitle from "../../components/title/MainTitle";
 import { FaNewspaper } from 'react-icons/fa';
 
-import "./Matter.scss"
-
 /**
  * 
  * @returns 
@@ -42,7 +40,7 @@ function AllMatters () {
         setInputSearch( digit );
 
         let results = matters.data.filter( item => {
-            return item.name.includes( digit )
+            return item.name.toLowerCase().includes( digit.toLowerCase() )
         });
 
         if( results !== "" && results !== undefined ) {
@@ -55,8 +53,8 @@ function AllMatters () {
 
     return (
         <section className="mttr">
-            <div className="mttr__wrppr">
-                <MainTitle description="TODAS MATÉRIAS" descriptionUnder="Materias disponíveis" icon={<FaNewspaper />} />
+            <MainTitle description="TODAS MATÉRIAS" descriptionUnder="Busque alguma matéria" icon={<FaNewspaper />} />
+            <div className="mttr__wrpprAll">
                 <div className="mttr__allMttrs">
                     <div className="mttr__srch">
                         <input className="mttr__srch__inpt" placeholder="Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)} />

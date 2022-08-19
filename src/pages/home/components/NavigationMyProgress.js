@@ -54,7 +54,7 @@ function NavigationMyProgress ({
 
     return (
         <section className="actns">
-            <MainTitle description="MEU PROGRESSO" icon={<FaOptinMonster />} />
+            <MainTitle description="MEU PROGRESSO" isCarousel={true}    icon={<FaOptinMonster />} />
             <div className="actns__crds actns__crds--myPrfl">
                 {
                     slider
@@ -65,8 +65,7 @@ function NavigationMyProgress ({
                         slidesPerView={(window.innerWidth < 768) ? 2 : 3}
                         pagination={{ clickable: true }}
                         scrollbar={{ draggable: true }}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
+                        loop={true}
                     >
                         {
                             cardsContent.data !== null 

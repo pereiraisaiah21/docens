@@ -8,8 +8,6 @@ import ActionsMobile from "./components/ActionsMobile";
 import UserDataMobile from "./components/UserDataMobile";
 import HeaderButtons from "./components/HeaderButtons";
 
-import "./Header.scss";
-
 /**
  * 
  * @returns 

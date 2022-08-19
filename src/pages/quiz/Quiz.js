@@ -10,8 +10,6 @@ import { TailSpin } from "react-loader-spinner";
 
 import XpGif from "../../components/images/xp.gif";
 
-import "./Quiz.scss";
-
 /**
  *
  * @returns

@@ -1,13 +1,41 @@
+.Home {
+    &__arrowDown {
+        display: block;
+        margin: -10px auto 0;
+        font-size: 25px;
+        color: #a9a1a1;
+    }
+}
 .hmBnnrs {
     position: relative;
     overflow-y: hidden;
-    height: 10vh;
+    max-height: 10vh;
+    min-height: 58px;
     .swiper {
         padding: 0 0 35px;
         img {
             width: 100%;
         }
     }
+    // Xs
+    @media (max-width: 575px) {
+    }
+    // Sm
+    @media (min-width: 576px) {
+        
+    }
+    // Md
+    @media (min-width: 768px) {
+      
+    }
+    // Lg
+    @media (min-width: 991px) {
+       
+    }
+    // Xl
+    @media (min-width: 1200px) {}
+    // Xxl
+    @media (min-width: 1400px) {}
 }
 
 .swiper {
@@ -108,6 +136,7 @@
             width: 100%;
             border: 1px solid #ccc;
             border-radius: 10px;
+            background-color: #efebebe0;;
             display: inline-flex;
             align-items: center;
             padding: 8px 2px;
@@ -115,7 +144,7 @@
             margin: 10px 0 0;
             font-size: .9em;
             &--fd {
-                background-color: rgb(99 37 126 / 80%);
+                background-color: rgb(133 88 153 / 55%);
                 color: #fff;
             }
             svg {
@@ -155,7 +184,7 @@
             padding: 10px 0;
         }
         &--fd {
-            background-color: #b108fdcc;
+            background-color: rgb(133 88 153 / 55%);
         }
         &--myPrgrss {
         }
@@ -256,6 +285,7 @@
                 }
             }
             &__inf {
+                height: 150px;
                 &--myPrgrss {
                     width: 100%;
                     justify-content: flex-end;
@@ -269,7 +299,7 @@
             }
             &__bttn {
                 &--myPrgrss {
-                    margin: 10px 10px 10px 0;
+                    //margin: 10px 10px 10px 0;
                 }
             }
             &--myPrgrss {
@@ -283,13 +313,8 @@
     @media (min-width: 991px) {
         &__itm {
             &--fd {
-                height: 300px;
             }
             &--myPrgrss {
-            }
-
-            &:hover:not(.actns__itm--myPrgrss) {
-                height: 300px;
             }
         }
     }

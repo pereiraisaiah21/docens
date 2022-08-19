@@ -7,7 +7,6 @@ import DatePicker from "react-datepicker";
 import { FaInfoCircle, FaFileImport, FaCaretSquareUp } from 'react-icons/fa';
 
 import "react-datepicker/dist/react-datepicker.css";
-import "../Profile.scss";
 
 /**
  * 

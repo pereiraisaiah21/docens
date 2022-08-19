@@ -2,8 +2,6 @@ import React from "react";
 
 import { FaTags } from 'react-icons/fa';
 
-import "../Matter.scss";
-
 /**
  * 
  * @param {*} param0 

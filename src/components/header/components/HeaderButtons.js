@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 import { FaQuestionCircle, FaDoorOpen, FaBell, FaCaretDown, FaUser, FaBars } from 'react-icons/fa';
 
-import "../Header.scss";
-
 /**
  * 
  * @param {*} param0 

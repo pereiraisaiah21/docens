@@ -2,7 +2,6 @@ import React from "react";
 
 import { FaHandPointRight } from 'react-icons/fa';
 
-import "./Carousel.scss";
 
 /**
  * 

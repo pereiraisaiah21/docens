@@ -2,8 +2,6 @@ import React from "react";
 
 import { FaRegEnvelope, FaMap, FaCalendarWeek, FaGenderless } from 'react-icons/fa';
 
-import "../Profile.scss";
-
 /**
  * 
  * @returns 

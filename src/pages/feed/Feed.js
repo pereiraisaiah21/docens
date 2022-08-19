@@ -5,8 +5,6 @@ import MainTitle from "../../components/title/MainTitle";
 import CardFeed from "../../components/card/CardFeed";
 import { FaRegCalendarTimes } from 'react-icons/fa';
 
-import "./Feed.scss";
-
 /**
  * 
  * @returns 

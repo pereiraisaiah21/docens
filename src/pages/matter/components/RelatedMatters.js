@@ -2,8 +2,6 @@ import React from "react";
 
 import { FaEye, FaArrowRight } from 'react-icons/fa';
 
-import "../Matter.scss";
-
 /**
  * 
  * @param {*} param0 

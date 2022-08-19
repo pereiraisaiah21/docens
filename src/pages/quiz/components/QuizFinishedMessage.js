@@ -2,8 +2,6 @@ import React from 'react';
 
 import { FaRegCheckCircle } from 'react-icons/fa';
 
-import "../Quiz.scss";
-
 /**
  *
  * @param {*} param0

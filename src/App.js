@@ -4,7 +4,7 @@ import axios from "axios";
 import UserData from "./UserData";
 import SiteRoutes from "./routes";
 
-import './App.css';
+import './App.scss';
 
 function App() {
 

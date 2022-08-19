@@ -53,8 +53,7 @@ function NavigationTeachers () {
                         slidesPerView={(window.innerWidth < 768) ? 2 : 5}
                         pagination={{ clickable: true }}
                         scrollbar={{ draggable: true }}
-                        onSwiper={(swiper) => console.log(swiper)}
-                        onSlideChange={() => console.log('slide change')}
+                        loop={true}
                     >
                         {
                             teachers.data !== null && teachers.data !== undefined

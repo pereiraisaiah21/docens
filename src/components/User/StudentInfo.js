@@ -2,7 +2,8 @@ import React from "react";
 
 import StudentEmblems from "./components/StudentEmblems";
 
-import "./User.scss";
+import { FaPencilAlt } from 'react-icons/fa';
+
 
 /**
  * 
@@ -27,16 +28,22 @@ function StudentInfo ({
                 </div>
                 <div className="stdnt__inf__abt">
                     <div className="stdnt__inf__idntfctn">
-                        <p>
+                        <p className="stdnt__inf__grtng">
+                            Olá! seja bem-vindo,
+                        </p>
+                        <p className="stdnt__inf__nm">
                             {userInfo.name}
                         </p>
-                        <p>
-                            {userInfo.occupation}
+                        <p className="stdnt__inf__b">
+                            "Nunca existiu uma grande inteligência sem uma veia de loucura."
                         </p>
                     </div>
                 </div>
                 <div className="stdnt__inf__emblm">
                     <StudentEmblems emblemId={userInfo.level} />
+                    <div className="stdnt__inf__emblm__edt">
+                        <FaPencilAlt /> Editar
+                    </div>
                 </div>
             </section>
         </section>

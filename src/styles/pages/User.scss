@@ -1,17 +1,31 @@
 .stdnt {
     padding: 10px;
+    background: #e1e1e1;
     &__inf {
         max-width: 1200px;
         margin: 10px auto;
         display: flex;
-        background-color: #fff;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(187, 179, 187, 0.46);
+        position: relative;
         padding: 10px;
         border-radius: 10px;
+        &__grtng {
+            display: none;
+            font-size: .8em;
+            font-weight: 700;
+        }
         &__img {
             img {
                 width: 100px;
+                max-width: 100%;
+                vertical-align: middle;
             }
         }
+        &__nm {}
+
+        &__b {}
         &__abt {
             text-align: left;
             padding: 0 10px;
@@ -19,7 +33,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
         }
         &__idntfctn {
             p {
@@ -30,34 +43,48 @@
             display: flex;
             justify-content: flex-end;
             flex-wrap: wrap;
+            width: 30%;
+            padding: 10px 0 0;
             align-items: center;
+            flex-direction: row;
             &__xp {
                 border-radius: 10px;
                 background-color: rgba(177, 8, 253, 0.8);
-                padding: 5px;
+                padding: 10px;
                 color: #fff;
-                height: 30px;
+                margin-right: 10px;
             }
             &__bx {
-                width: 100%;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                padding: 10px 0;
-                margin: 10px 0 0;
-                background: rgb(133 133 133 / 70%);
+                padding: 10px;
+                background: rgba(177, 8, 253, 0.8);
                 border-radius: 10px;
                 position: relative;
-
-                &:before {
-                    content: "Emblemas";
-                    position: absolute;
-                    top: -15px;
-                    font-size: .7em;
+                margin-right: 10px;
+                span {
+                    color: #fff;
                 }
+                // &:before {
+                    //     content: "Emblemas";
+                    //     position: absolute;
+                    //     top: -15px;
+                    //     font-size: .7em;
+                    // }
                 &:hover {
                     cursor: pointer;
                 }
+            }
+            &__edt {
+                text-decoration: underline;
+                border-radius: 10px;
+                padding: 2px 5px;
+                color: rgba(177, 8, 253, 0.8);
+
+                position: absolute;
+                top: 10px;
+                right: 20px;
             }
         }
     }
@@ -88,18 +115,26 @@
     @media (max-width: 575px) {
         &__inf {
             flex-wrap: wrap;
+            &__grtng {
+                display: block;
+            }
             &__img {
-                width: 50%;
+                width: 30%;
+            }
+            &__b {
+                display: none;
             }
             &__abt {
                 flex-wrap: wrap;
-                width: 50%;
-                padding: 0;
+                text-align: center;
+                width: 70%;
+                padding: 10px;
             }
             &__idntfctn {
                 width: 100%;
             }
             &__emblm {
+                display: none;
                 width: 100%;
                 padding: 10px;
                 &__bx {

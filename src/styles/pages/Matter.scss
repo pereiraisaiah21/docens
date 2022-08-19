@@ -1,11 +1,19 @@
 .mttr {
+    padding: 15px 0;
     &__wrppr {
         max-width: 1200px;
+        position: relative;
         margin: auto;
-        padding: 10px;
-        background-color: #ebeaea;
+        padding: 30px 10px 10px;
         display: flex;
         justify-content: space-between;
+    }
+    &__wrpprAll {
+        max-width: 1200px;
+        position: relative;
+        margin: auto;
+        padding: 10px;
+        display: flex;
     }
     &__rltd {
         display: flex;
@@ -53,7 +61,6 @@
         max-width: 1200px;
         margin: auto;
         padding: 10px;
-        background-color: #ebeaea;
         display: flex;
         text-align: left;
         flex-wrap: wrap;
@@ -131,6 +138,8 @@
         border-radius: 10px;
         white-space: nowrap;
         color: #fff;
+        margin: 0 0 10px;
+        width: fit-content;
     }
     &__wrn {
         display: none;
@@ -150,16 +159,16 @@
             }
         }
     }
-    &__rf {
-        display: block;
-        margin-bottom: 10px;
-        padding: 10px;
-        text-align: left;
-        border-left: 3px solid;
-        &__lst {
-            list-style-type: lower-greek;
-        }
-    }
+    // &__rf {
+    //     display: block;
+    //     margin-bottom: 10px;
+    //     padding: 10px;
+    //     text-align: left;
+    //     border-left: 3px solid;
+    //     &__lst {
+    //         list-style-type: lower-greek;
+    //     }
+    // }
     &__spprt {
         display: block;
         margin-bottom: 10px;
@@ -185,22 +194,41 @@
     }
     &__allMttrs {
         display: flex;
+        width: 100%;
         flex-wrap: wrap;
     }
     &__itm {
-        border: 1px solid #ccc;
-        border-radius: 10px;
+        border-bottom: 3px solid #ccc;
         margin: 0 0 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #af95ac;
         padding: 10px;
         &__img {
             width: 90px;
         }
         &__ttl {
             margin: 0 10px;
+        }
+    }
+    &__workout {
+        position: fixed;
+        right: 6%;
+        bottom: 50px;
+        width: 70px;
+        height: 70px;
+        padding: 10px;
+        box-shadow: inset 0px 0px 3px #ccc;
+        background-color: rgba(255, 255, 255, 0.76);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        svg {
+            font-size: 3.5em;
+            padding: 10px;
+            box-shadow: inset 0px 0px 3px #ccc;
+            border-radius: 10px;
         }
     }
 
@@ -222,9 +250,6 @@
     }
     // Sm
     @media (min-width: 576px) {
-        &__allMttrs {
-            justify-content: center;
-        }
         &__itm {
             width: 48%;
             margin-right: 10px;
@@ -233,7 +258,7 @@
     // Md
     @media (min-width: 768px) {
         &__itm {
-            width: 22%;
+            width: 23%;
         }
     }
     // Lg

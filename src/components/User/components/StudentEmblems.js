@@ -2,8 +2,6 @@ import React from "react";
 
 import { FaMedal, FaTrophy, FaRegGem, FaRedhat, FaRocket } from 'react-icons/fa';
 
-import "../User.scss";
-
 /**
  * 
  * @param {*} param0 
@@ -20,6 +18,7 @@ function studentEmblems ({
                 268 xp
             </span>
             <div className="stdnt__inf__emblm__bx">
+                <span>Level </span>
                 {emblemId ? <FaRedhat className="stdnt__mdl stdnt__mdl--smth1" /> : "" }
                 {emblemId >= 2 ? <FaRedhat className="stdnt__mdl stdnt__mdl--smth2" /> : "" }
                 {emblemId >= 3 ? <FaMedal className="stdnt__mdl stdnt__mdl--mdl1" /> : "" }

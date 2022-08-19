@@ -4,8 +4,6 @@ import axios from "axios";
 import { FaCaretDown } from 'react-icons/fa';
 import { TailSpin } from "react-loader-spinner";
 
-import "./Help.scss";
-
 /**
  * 
  * @returns 

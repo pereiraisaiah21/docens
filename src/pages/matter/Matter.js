@@ -4,10 +4,10 @@ import axios from "axios";
 
 import ImageWithCredits from "./components/ImageWithCredits";
 import RelatedMatters from "./components/RelatedMatters";
+import ButtonWorkout from "../../components/button/ButtonWorkout";
 import { TailSpin } from "react-loader-spinner";
 import { FaCalendarWeek } from 'react-icons/fa';
 
-import "./Matter.scss"
 import MatterTags from "./components/MatterTags";
 
 /**
@@ -148,40 +148,8 @@ function Matter () {
                                             :
                                         } */}
                                         <div className="mttr__prmryWrp">
-                                            <p className="mttr__rf">
-                                                Referências
-                                            </p>
-                                            <ol className="mttr__rf__lst">
-                                                <li>
-                                                    <p>
-                                                        A física clássica de cabeça para baixo: como Einstein descobriu a teoria da relatividade especial
-                                                    </p>
-                                                    <p>
-                                                        Autor: 
-                                                        <span>
-                                                            Julio Verne
-                                                        </span>
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p>
-                                                        A física clássica de cabeça para baixo: como Einstein descobriu a teoria da relatividade especial
-                                                    </p>
-                                                    <p>
-                                                        Autor: 
-                                                        <span>
-                                                            Julio Verne
-                                                        </span>
-                                                    </p>
-                                                </li>
-                                            </ol>
-                                        </div>
-                                        <div className="mttr__prmryWrp">
                                             <p className="mttr__spprt">
-                                                Precisa de ajuda?
-                                            </p>
-                                            <p className="mttr__spprt">
-                                                Confira a seguir alguns conteúdos de apoio para te ajudar.
+                                                Precisa de ajuda? <br /><br /> Confira a seguir alguns conteúdos de apoio para te ajudar.
                                             </p>
                                             <ol className="mttr__spprt__lst">
                                                 <li>
@@ -195,17 +163,6 @@ function Matter () {
                                                         </span>
                                                     </p>
                                                 </li>
-                                                <li>
-                                                    <p>
-                                                        A física clássica de cabeça para baixo: como Einstein descobriu a teoria da relatividade especial
-                                                    </p>
-                                                    <p>
-                                                        Autor: 
-                                                        <span>
-                                                            Julio Verne
-                                                        </span>
-                                                    </p>
-                                                </li>
                                             </ol>
                                         </div>
                                     </React.Fragment>
@@ -216,6 +173,7 @@ function Matter () {
                         }
                         </div>
                         <RelatedMatters relatedMatter={matterRelated.data}/>
+                        <ButtonWorkout classStyle={"mttr__workout"} url={"/quiz/posts/1"} />
                     </div>
                     <MatterTags tagMatter={matterTag.data} />
                 </section>

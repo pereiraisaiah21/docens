@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import MainTitle from "../../components/title/MainTitle";
 import { FaUserGraduate, FaLock, FaUserCircle, FaInfoCircle} from 'react-icons/fa';
 
-import "./Login.scss";
-
 /**
  * 
  * @returns 
