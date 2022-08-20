@@ -23,7 +23,7 @@ function Content () {
 
     const categoryOptions = [
         { value: "tecnologia", label: "Tecnologia" },
-        { value: "matemática", label: "Matemática" },
+        { value: "matematica", label: "Matemática" },
         { value: "fisica", label: "Física" },
         { value: "quimica", label: "Química" },
         { value: "filosofia", label: "Filosofia" },
@@ -31,7 +31,7 @@ function Content () {
     ];
     const subjectOptions = [
         { value: "tecnologia", label: "Tecnologia" },
-        { value: "matemática", label: "Matemática" },
+        { value: "matematica", label: "Matemática" },
         { value: "fisica", label: "Física" },
         { value: "quimica", label: "Química" },
         { value: "filosofia", label: "Filosofia" },
@@ -128,11 +128,11 @@ function Content () {
                     {
                         formSendSuccess !== null && formSendSuccess
                         ?
-                        "Contato enviado com sucesso, assim que respondido, você verá em seu painel de notificações."
+                        "Artigo cadastrado com sucesso."
                         :
                         (!formSendSuccess
                         ?
-                        "Estamos com problemas para enviar seu contato. Tente novamente mais tarde."
+                        "Estamos com problemas para salvar seu artigo. Tente novamente mais tarde."
                         :
                         "")
                     }

@@ -53,7 +53,12 @@ function Contact () {
                 <form className="cntct__frm" onSubmit={handleSubmit}>
                     <fieldset className="cntct__fldst">
                         <legend className="cntct__lgnd">Selecione o assunto</legend>
-                        <Select className="cntct__slct" options={subjectOptions} onChange={(e) => setSubject(e.value)}/>
+                        <Select 
+                            className="cntct__slct"
+                            options={subjectOptions}
+                            onChange={(e) => setSubject(e.value)}
+                            placeholder="Selecione um assunto"
+                        />
                     </fieldset>
                     <fieldset className="cntct__fldst">
                         <legend className="cntct__lgnd">Digite sua mensagem</legend>
