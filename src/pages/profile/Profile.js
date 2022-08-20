@@ -4,6 +4,7 @@ import React, { useState, useContext } from "react";
 import UserData from "../../UserData";
 
 import ProfileCard from "./components/ProfileCard";
+import NavigationMyStats from "./components/NavigationMyStats";
 import NavigationMyProgress from "../home/components/NavigationMyProgress";
 import FormUpdataUserData from "./components/FormUpdateUserData";
 
@@ -39,6 +40,7 @@ function Profile () {
                     }
                 </div>
                 <div className="prfl__updts">
+                    <NavigationMyStats className="chrt__myStts" slider={true} />
                     <NavigationMyProgress slider={false} />
                 </div>
             </div>

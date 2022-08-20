@@ -20,7 +20,7 @@ function ProfileCard ({
     return (
         <>
             <div className="prfl__img">
-                <img src={userData.avatar} alt="Avatar do usuário" /> 
+                <img src={"https://imagepng.org/wp-content/uploads/2019/05/dinheiro-icone.png"} alt="Avatar do usuário" /> 
             </div>
             <div className="prfl__inf">
                 <ul className="prfl__inf__lst">

@@ -44,6 +44,13 @@
                 margin-right: 10px;
                 color: #3a3939;
             }
+            &--slct {
+                div {
+                    border: none;
+                    border-radius: 10px;
+                    font-size: 1em;
+                }
+            }
             &--nm {
                 font-size: 1.2em;
                 font-weight: 700;
@@ -88,6 +95,15 @@
                     color: #fff;
                 }
             }
+            &__bttnProfile {
+                padding: 10px;
+                border: none;
+                border-radius: 10px;
+                color: #000;
+                svg {
+                    color: #000;
+                }
+            }
             &__bttnDwn {
                 margin: 0 5px 0 0;
                 padding: 10px;
@@ -119,6 +135,8 @@
         border-radius: 10px;
         border: none;
         width: 100%;
+        font-size: 1em;
+        font-weight: 500;
     }
 
     // Xs

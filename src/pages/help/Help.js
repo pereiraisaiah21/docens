@@ -78,6 +78,14 @@ function Help () {
                             }
                         </ul>
                     </section>
+                    <section className="Help__rdrct">
+                        <p className="Help__rdrct__txt Help__rdrct__txt--highlight">
+                            Continua com dúvida ?
+                        </p>
+                        <p className="Help__rdrct__txt">
+                            Envie uma mensagem, <a className="Help__rdrct__anchr" href="/contato" title="Ir para página de contato">Clique aqui.</a>
+                        </p>
+                    </section>
                 </div>
             }
         </>

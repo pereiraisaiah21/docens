@@ -32,7 +32,7 @@ function FormUpdateUserData ({
     const genderOptions = [
         { value: "feminino", label: "Feminino" },
         { value: "masculino", label: "Masculino" },
-        { value: "indefinido", label: "Prefiro não dizer" }
+        { value: "naoBinário", label: "Nao binário" }
     ];
 
     const handleUpdateData = function( event ) {
@@ -68,6 +68,59 @@ function FormUpdateUserData ({
             <div className="prfl__inf">
                 <ul className="prfl__inf__lst">
                     <li className="prfl__inf__itm prfl__inf__itm--upld">
+                        <a>
+                            
+                        </a>
+                        <ImageUploading
+                            multiple
+                            value={images}
+                            onChange={onChange}
+                            maxNumber={maxNumber}
+                            dataURLKey="data_url"
+                            acceptType={["jpg"]}
+                        >
+                            {
+                                ({
+                                    imageList,
+                                    onImageUpload,
+                                    onImageUpdate,
+                                    onImageRemove,
+                                    isDragging,
+                                    dragProps
+                                }) => (
+                                    <div className="prfl__inf--upld__wrppr">
+                                        <button
+                                            style={isDragging ? { color: "red" } : null}
+                                            onClick={onImageUpload}
+                                            {...dragProps}
+                                            className="prfl__inf--upld__bttnProfile"
+                                        >
+                                            <img alt="" className="" src={"https://imagepng.org/wp-content/uploads/2019/05/dinheiro-icone.png"} />
+                                            <FaFileImport />
+                                            Clique, ou arraste a imagem
+                                        </button>
+                                        {
+                                            imageList.map( ( image, index ) => (
+                                                <div key={index} className="prfl__inf--upld__img">
+                                                    <img src={image.data_url ? image.data_url : "https://static.vecteezy.com/ti/vetor-gratis/p1/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg"} alt="" width="100" />
+                                                    <div className="image-item__btn-wrapper">
+                                                        <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageUpdate( index )}>
+                                                            <FaCaretSquareUp />
+                                                            Atualizar
+                                                        </button>
+                                                        <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageRemove( index )}>
+                                                            Remover imagem
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
+                                )
+                            }
+                        </ImageUploading>
+                    </li>
+                    {/* <li className="prfl__inf__itm prfl__inf__itm--upld">
                         <ImageUploading
                             multiple
                             value={images}
@@ -115,7 +168,7 @@ function FormUpdateUserData ({
                                 )
                             }
                         </ImageUploading>
-                    </li>
+                    </li> */}
                     <li className="prfl__inf__itm">
                         <input className="prfl__inpt" value={fullname} placeholder={data.name} onChange={(e) => setFullname(e.target.value)} />
                     </li>
@@ -128,7 +181,7 @@ function FormUpdateUserData ({
                     <li className="prfl__inf__itm">
                         <input className="prfl__inpt" value={city} placeholder={data.address.city} onChange={(e) => setCity(e.target.value)} />
                     </li>
-                    <li className="prfl__inf__itm">
+                    <li className="prfl__inf__itm prfl__inf__itm--slct">
                         <Select className="" options={genderOptions} onChange={(e) => setGender(e.value)}/>
                     </li>
                     <li className="prfl__inf__itm">
