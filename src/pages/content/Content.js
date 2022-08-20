@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Select from 'react-select'
 import ImageUploading from 'react-images-uploading';
@@ -20,6 +20,7 @@ function Content () {
     const {id} = useParams();
     const {contentid} = useParams();
     const {editar} = useParams();
+    let navigate = useNavigate();
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
@@ -95,6 +96,10 @@ function Content () {
 
     useEffect(() => {
         setTypeUser( userDataValues.typeUser )
+        console.log(typeUser)
+        if ( typeUser === "default" ) {
+            return navigate("/");
+        }
     }, [userDataValues]);
 
     useEffect(() => {

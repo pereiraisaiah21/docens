@@ -16,7 +16,7 @@ function App() {
   const [userDataValues, setUserDataValues] = useState({
     data  : [],
     isLogged : false,
-    typeUser : "teacher",
+    typeUser : "default",
     error : ""
   });
 
