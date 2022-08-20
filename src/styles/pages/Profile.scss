@@ -3,17 +3,17 @@
         max-width: 1200px;
         margin: 0 auto;
         display: flex;
-        background-color: #fff;
-        border-radius: 10px;
+        background-color: $bgwhite;
+        border-radius: $brdef ;
         padding: 0 10px;
         flex-wrap: wrap;
     }
     &__bg {
         position: relative;
-        width: 100%;
+        width: $wmax;
         img {
-            width: 100%;
-            max-width: 100%;
+            width: $wmax;
+            max-width: $wmax;
         }
     }
     &__dt {
@@ -22,13 +22,13 @@
         width: 97%;
         margin: 0 auto;
         padding: 10px;
-        border-radius: 10px;
-        background-color: rgb(239 239 239);
+        border-radius: $brdef;
+        background-color: $bgwhitealt;
     }
     &__img {
         img {
-            width: 100%;
-            border-radius: 10px;
+            width: $wmax;
+            border-radius: $brdef ;
         }
         &--myPrfl {
             max-width: unset;
@@ -47,7 +47,7 @@
             &--slct {
                 div {
                     border: none;
-                    border-radius: 10px;
+                    border-radius: $brdef ;
                     font-size: 1em;
                 }
             }
@@ -64,19 +64,19 @@
             }
         }
         &__edtr {
-            background-color: rgb(134, 134, 134);
+            background-color: $bgblue80;
             padding: 10px 10px;
             margin: 20px 0;
-            border-radius: 10px;
+            border-radius: $brdef ;
             text-align: center;
             a {
-                color: #fff;
+                color: $white;
             }
         }
         &__flr {
-            width: 100%;
-            color: rgba(0, 0, 0, 0.7);
-            border-left: 4px solid rgba(0, 0, 0, 0.7);
+            width: $wmax;
+            color: $cblack70;
+            border-left: 4px solid $bc-black70;
             padding: 10px;
             display: block;
             svg {
@@ -89,19 +89,19 @@
                 padding: 10px;
                 background-color: rgb(186, 18, 133);
                 border: none;
-                border-radius: 10px;
-                color: #fff;
+                border-radius: $brdef ;
+                color: $white;
                 svg {
-                    color: #fff;
+                    color: $white;
                 }
             }
             &__bttnProfile {
                 padding: 10px;
                 border: none;
-                border-radius: 10px;
-                color: #000;
+                border-radius: $brdef ;
+                color: $black;
                 svg {
-                    color: #000;
+                    color: $black;
                 }
             }
             &__bttnDwn {
@@ -109,10 +109,10 @@
                 padding: 10px;
                 background-color: rgb(186, 18, 133);
                 border: none;
-                border-radius: 10px;
-                color: #fff;
+                border-radius: $brdef ;
+                color: $white;
                 svg {
-                    color: #fff;
+                    color: $white;
                 }
             }
             &__img {
@@ -127,14 +127,14 @@
         padding: 10px;
         width: 97%;
         margin: 0 auto;
-        background-color: rgb(239 239 239);
-        border-radius: 10px;
+        background-color: $bgwhitealt;
+        border-radius: $brdef ;
     }
     &__inpt {
         padding: 10px;
-        border-radius: 10px;
+        border-radius: $brdef ;
         border: none;
-        width: 100%;
+        width: $wmax;
         font-size: 1em;
         font-weight: 500;
     }
@@ -163,7 +163,7 @@
     // Md
     @media (min-width: 768px) {
         &__bg {
-            width: 100%;
+            width: $wmax;
         }
         &__dt {
             padding: 10px 20px;
@@ -174,7 +174,7 @@
         }
         &__updts {
             padding: 10px;
-            width: 100%;
+            width: $wmax;
             margin: 10px 10px 10px 320px;
         }    
     }
@@ -196,8 +196,8 @@
         &__img {
             &--myPrfl {
                 height: 100%;
-                width: 100%;
-                border-radius: 10px;
+                width: $wmax;
+                border-radius: $brdef ;
                 grid-area: img;
             }
         }
@@ -227,7 +227,7 @@
             }
         }
         &--myPrfl {
-            width: 100%;
+            width: $wmax;
             max-width: unset;
             border: none;
             padding: 20px;

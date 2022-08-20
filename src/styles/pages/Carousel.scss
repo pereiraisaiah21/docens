@@ -1,7 +1,7 @@
 .dragAlert {
     width: fit-content;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: $brdef ;
     padding: 10px;
     &--tp-01 {
         position: absolute;

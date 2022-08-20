@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Select from 'react-select'
+import ImageUploading from 'react-images-uploading';
 
 import MainTitle from "../../components/title/MainTitle";
 
-import { FaOptinMonster, FaInfoCircle } from 'react-icons/fa';
+import { FaOptinMonster, FaInfoCircle, FaFileImport } from 'react-icons/fa';
 
 /**
  * 
@@ -19,6 +20,7 @@ function Content () {
     const [activityUrl, setActivityUtl] = useState( null );
     const [subjectContent, setSubjectContent] = useState( null );
     const [hightlighImage, setHightlighImage] = useState( null );
+    const [images, setImages] = useState([]);
     const [formSendSuccess, setFormSendSuccess] = useState( null );
 
     const categoryOptions = [
@@ -37,6 +39,12 @@ function Content () {
         { value: "filosofia", label: "Filosofia" },
         { value: "sociologia", label: "Sociologia" },
     ];
+
+    const onChange = function( imageList, addUpdateIndex ) {
+        // data for submit
+        console.log( imageList, addUpdateIndex );
+        setImages( imageList );
+    };
 
     function handleSelectCategory( data ) {
         setCategory( data );
@@ -85,17 +93,25 @@ function Content () {
                             onChange={handleSelectCategory}
                         />
                     </fieldset>
-                    <fieldset className="content__fldst">
+                    <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Nome da matéria *</legend>
+                        <input className="content__inpt" type="text" />
+                    </fieldset>
+                    <fieldset className="content__fldst content__fldst--hlf">
+                        <legend className="content__lgnd">Url da matéria *</legend>
+                        <input className="content__inpt" type="text" />
+                    </fieldset>
+                    <fieldset className="content__fldst content__fldst--hlf">
+                        <legend className="content__lgnd">Url da atividade *</legend>
+                        <input className="content__inpt" type="text" />
+                    </fieldset>
+                    <fieldset className="content__fldst content__fldst--hlf">
+                        <legend className="content__lgnd">Url do próximo conteúdo ( Opcional )</legend>
                         <input className="content__inpt" type="text" />
                     </fieldset>
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Escopo do artigo *</legend>
                         <textarea className="content__inpt" onChange={(e) => setContent(e.target.value)} placeholder="Digite" rows="20" type="text" />
-                    </fieldset>
-                    <fieldset className="content__fldst">
-                        <legend className="content__lgnd">Url da atividade *</legend>
-                        <input className="content__inpt" type="text" />
                     </fieldset>
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Tags ( Opcional )</legend>
@@ -111,12 +127,53 @@ function Content () {
                         />
                     </fieldset>
                     <fieldset className="content__fldst">
-                        <legend className="content__lgnd">Url do próximo conteúdo ( Opcional )</legend>
-                        <input className="content__inpt" type="text" />
-                    </fieldset>
-                    <fieldset className="content__fldst">
                         <legend className="content__lgnd">Imagem de destaque *</legend>
-                        <input className="content__inpt" type="text" />
+                        <ImageUploading
+                            multiple
+                            value={images}
+                            onChange={onChange}
+                            maxNumber={1}
+                            dataURLKey="data_url"
+                            acceptType={["jpg"]}
+                        >
+                            {
+                                ({
+                                    imageList,
+                                    onImageUpload,
+                                    onImageUpdate,
+                                    onImageRemove,
+                                    isDragging,
+                                    dragProps
+                                }) => (
+                                    <div className="prfl__inf--upld__wrppr">
+                                        <button
+                                            style={isDragging ? { color: "red" } : null}
+                                            onClick={onImageUpload}
+                                            {...dragProps}
+                                            className="content__upld__bttn"
+                                        >
+                                            <FaFileImport />
+                                            Clique, ou arraste a imagem
+                                        </button>
+                                        {
+                                            imageList.map( ( image, index ) => (
+                                                <div key={index} className="prfl__inf--upld__img">
+                                                    <img src={image.data_url ? image.data_url : "https://static.vecteezy.com/ti/vetor-gratis/p1/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg"} alt="" width="100" />
+                                                    <div className="image-item__btn-wrapper">
+                                                        <button className="content__upld__bttnDown" onClick={() => onImageUpdate( index )}>
+                                                            Atualizar
+                                                        </button>
+                                                        <button className="content__upld__bttn" onClick={() => onImageRemove( index )}>
+                                                            Remover imagem
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
+                                )
+                            }
+                        </ImageUploading>
                     </fieldset>
 
                     <fieldset className="content__fldst">

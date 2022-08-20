@@ -3,7 +3,7 @@
         display: block;
         margin: -10px auto 0;
         font-size: 25px;
-        color: #a9a1a1;
+        color: #f4ebeb;
     }
 }
 .hmBnnrs {
@@ -14,7 +14,7 @@
     .swiper {
         padding: 0 0 35px;
         img {
-            width: 100%;
+            width: $wmax;
         }
     }
     // Xs
@@ -46,7 +46,7 @@
 }
 
 .actns {
-    background-color: #edededbd;
+    //background-color: #edededbd;
     padding: 20px 10px;
     &__dscrptn {
         position: relative;
@@ -59,12 +59,12 @@
         &__icn {
             display: inline-block;
             height: 100%;
-            background-color: #000;
-            border-radius: 10px;
+            background-color: $black;
+            border-radius: $brdef ;
             padding: 5px 10px;
             font-size: 30px;
             svg {
-                color: #fff;
+                color: $white;
             }
         }
         &__ttl {
@@ -80,29 +80,23 @@
         }
     }
     &__crds {
+        @include flexcencenwrap;
         max-width: 1200px;
         margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
         &--myPrgrss {
             justify-content: flex-start;
         }
     }
     &__itm {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: center;
+        @include flexcencenwrap;
         box-sizing: border-box;
         min-height: 150px;
         width: 24%;
         max-width: 300px;
         height: 100%;
-        background-color: #ffffff85;
+        background-color: $bgwhite95;
         border: 1px solid #ccc;
-        border-radius: 10px;
+        border-radius: $brdef ;
         padding: 10px;
         margin: 0 0px 10px 0;
         cursor: pointer;
@@ -112,30 +106,27 @@
         }
         &__nm {
             font-size: 1.1rem;
-            color: #000;
+            color: $black;
             text-transform: uppercase;
             font-weight: 700;
             margin: 10px 0;
-            width: 100%;
+            width: $wmax;
             &--fd {
-                color: #fff;
+                color: $white;
             }
         }
         &__inf {
             padding: 10px;   
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
+            width: $wmax;
+            @include flexcencenwrap;
         }
         &__icn {
             display: none;
         }
         &__bttn {
-            width: 100%;
+            width: $wmax;
             border: 1px solid #ccc;
-            border-radius: 10px;
+            border-radius: $brdef ;
             background-color: #efebebe0;;
             display: inline-flex;
             align-items: center;
@@ -145,7 +136,7 @@
             font-size: .9em;
             &--fd {
                 background-color: rgb(133 88 153 / 55%);
-                color: #fff;
+                color: $white;
             }
             svg {
                 margin: 2px 5px 0 0;
@@ -157,34 +148,34 @@
         }
         &__dscrptn {
             font-size: 1rem;
-            color: #000;
-            width: 100%;
+            color: $black;
+            width: $wmax;
             height: 30px;
             &--fd {
-                color: #fff;
+                color: $white;
             }
             svg {
                 display: none;
             }
         }
         &__prgrss {
-            width: 100%;
+            width: $wmax;
             height: 20px;
             padding: 5px;
-            border: 2px solid rgba(177, 8, 253, 0.8);
-            border-radius: 10px;
+            border: 2px solid rgb(40 96 213 / 80%);
+            border-radius: $brdef ;
         }
         &__prcnt {
             height: 100%;
-            background-color: rgba(177, 8, 253, 0.8);
-            border-radius: 10px;
+            background-color: rgb(40 96 213 / 80%);
+            border-radius: $brdef ;
         }
         &__ht {
             font-size: .8em;
             padding: 10px 0;
         }
         &--fd {
-            background-color: rgb(133 88 153 / 55%);
+            background-color: rgb(108 162 181);
         }
         &--myPrgrss {
         }
@@ -194,18 +185,16 @@
         }
     }
     &__tchrs {
-        width: 100%;
+        width: $wmax;
         &__lst {
-            width: 100%;
-            display: flex;
-            justify-content: center;
+            width: $wmax;
+            @include flexunscen;
         }
         &__itm {
         }
         &__anchr {
-            display: flex;
+            @include flexunscen;
             flex-wrap: wrap;
-            justify-content: center;
         }
         &__img {
             width: 90px;
@@ -215,7 +204,7 @@
             margin: 0 0 10px;
         }
         &__nm {
-            width: 100%;
+            width: $wmax;
             font-size: .9em;
             color: #706f6f;
         }
@@ -225,7 +214,7 @@
         }
     }
     &--bg-01 {
-        background-color: #eef5f5;
+        //background-color: #eef5f5;
     }
 
     // Xs
@@ -245,7 +234,7 @@
             &__bttn {}
             &--myPrgrss {
                 margin: 0 auto;
-                width: 100%;
+                width: $wmax;
                 height: 330px;
             }
         }
@@ -275,7 +264,7 @@
             &__img {
                 &--myPrgrss {
                     width: 50%;
-                    border-radius: 10px;
+                    border-radius: $brdef ;
                 }
             }
             &__nm {
@@ -287,7 +276,7 @@
             &__inf {
                 height: 150px;
                 &--myPrgrss {
-                    width: 100%;
+                    width: $wmax;
                     justify-content: flex-end;
                     padding: 0;
                 }
@@ -303,7 +292,7 @@
                 }
             }
             &--myPrgrss {
-                width: 100%;
+                width: $wmax;
                 max-width: 500px;
                 justify-content: space-between;
             }

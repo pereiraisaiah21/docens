@@ -19,9 +19,8 @@ function FormUpdateUserData ({
     setUpdateOpen
 }) {
 
-    const [images, setImages] = React.useState([]);
+    const [images, setImages] = useState([]);
     const maxNumber = 1;
-
     const [avatar, setAvatar] = useState( "" );
     const [bio, setBio] = useState( "" );
     const [fullname, setFullname] = useState( "" );
@@ -69,9 +68,6 @@ function FormUpdateUserData ({
             <div className="prfl__inf">
                 <ul className="prfl__inf__lst">
                     <li className="prfl__inf__itm prfl__inf__itm--upld">
-                        <a>
-                            
-                        </a>
                         <ImageUploading
                             multiple
                             value={images}

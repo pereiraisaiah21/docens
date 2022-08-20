@@ -1,16 +1,14 @@
 .stdnt {
     padding: 10px;
-    background: #e1e1e1;
     &__inf {
+        @include flexcenuns;
         max-width: 1200px;
         margin: 10px auto;
-        display: flex;
-        align-items: center;
         justify-content: space-between;
-        background-color: rgba(187, 179, 187, 0.46);
+        background-color: rgba(255, 255, 255, 0.5215686275);
         position: relative;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: $brdef ;
         &__grtng {
             display: none;
             font-size: .8em;
@@ -19,7 +17,7 @@
         &__img {
             img {
                 width: 100px;
-                max-width: 100%;
+                max-width: $wmax;
                 vertical-align: middle;
             }
         }
@@ -40,18 +38,17 @@
             }
         }
         &__emblm {
-            display: flex;
+            @include flexcenuns;
             justify-content: flex-end;
             flex-wrap: wrap;
             width: 30%;
             padding: 10px 0 0;
-            align-items: center;
             flex-direction: row;
             &__xp {
-                border-radius: 10px;
-                background-color: rgba(177, 8, 253, 0.8);
+                border-radius: $brdef ;
+                background-color: $bgblue80;
                 padding: 10px;
-                color: #fff;
+                color: $white;
                 margin-right: 10px;
             }
             &__bx {
@@ -59,12 +56,12 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 padding: 10px;
-                background: rgba(177, 8, 253, 0.8);
-                border-radius: 10px;
+                background: $bgblue80;
+                border-radius: $brdef ;
                 position: relative;
                 margin-right: 10px;
                 span {
-                    color: #fff;
+                    color: $white;
                 }
                 // &:before {
                     //     content: "Emblemas";
@@ -78,10 +75,9 @@
             }
             &__edt {
                 text-decoration: underline;
-                border-radius: 10px;
+                border-radius: $brdef ;
                 padding: 2px 5px;
-                color: rgba(177, 8, 253, 0.8);
-
+                color: $cblue80;
                 position: absolute;
                 top: 10px;
                 right: 20px;
@@ -131,11 +127,11 @@
                 padding: 10px;
             }
             &__idntfctn {
-                width: 100%;
+                width: $wmax;
             }
             &__emblm {
                 display: none;
-                width: 100%;
+                width: $wmax;
                 padding: 10px;
                 &__bx {
                     justify-content: center;

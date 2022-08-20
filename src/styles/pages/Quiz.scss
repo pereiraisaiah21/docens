@@ -15,14 +15,14 @@
             display: block;
         }
         img {
-            width: 100%;
+            width: $wmax;
         }
     }
     .Progress {
         height: 25px;
         width: 92%;
         border: 2px solid #fff;
-        background-color: #ebe4e4;
+        background-color: $bgwhite;
         border-radius: 20px;
         position: relative;
         max-width: 1200px;
@@ -37,21 +37,21 @@
             text-align: center;
             transition: width 2s;
             &__number {
-                color: #fff;
+                color: $white;
             }
         }
     }
     .Question {
-        background: #ffffff85;
+        background: $bgwhite95;
         position: relative;
-        width: 100%;
+        width: $wmax;
         max-width: 1200px;
         border-radius: 10px 10px 0 0;
         margin: 0 auto;
         padding: 15px 10px;
         &__congrats {
             background-image: url("../../components/images/gliter.gif");
-            width: 100%;
+            width: $wmax;
             height: 100%;
         }
         &__fineshed {
@@ -59,9 +59,9 @@
             &__anchor {
                 padding: 5px;
                 background-color: #00b500;
-                border-radius: 10px;
+                border-radius: $brdef ;
                 white-space: nowrap;
-                color: #fff;
+                color: $white;
             }
         }
         &__exit {
@@ -74,18 +74,17 @@
         }
         &__progress {
             display: flex;
-            width: 100%;
+            width: $wmax;
         }
         &__info {
-            display: flex;
-            width: 100%;
+            @include flexcenuns;
+            width: $wmax;
             justify-content: space-between;
-            align-items: center;
             background: #ebe4e4;
             margin: 10px 0;
             position: relative;
             padding: 0 10px 0 0;
-            border-radius: 10px;
+            border-radius: $brdef ;
             &__icon {
                 color: #00000082;
                 margin: 0 10px 0 0;
@@ -97,7 +96,7 @@
             }
         }
         &__content {
-            width: 100%;
+            width: $wmax;
         }
         &__paragraph {
             font-size: 1.2rem;
@@ -106,7 +105,7 @@
             text-align: center;
         }
         &__alternatives {
-            width: 100%;
+            width: $wmax;
             color: #4a4a4a;
             text-align: center;
             padding: 20px 0;
@@ -116,8 +115,8 @@
                 display: inline-flex;
                 margin: 0 10px 10px 0;
                 padding: 4px 10px;
-                border: 1px solid #ccc;
-                border-radius: 10px;
+                border: 1px solid $bc-gray ;
+                border-radius: $brdef ;
                 label {
                     &:hover {
                         cursor: pointer;
@@ -133,7 +132,7 @@
             }
         }
         &__send {
-            width: 100%;
+            width: $wmax;
             display: flex;
             justify-content: space-around;
             padding: 20px 0;
@@ -143,8 +142,8 @@
                 align-items: center;
                 width: 75%;
                 border: none;
-                background-color: #b9006a;
-                color: #fff;
+                background-color: $bgblue80;
+                color: $white;
                 text-decoration: none;
                 font-size: 1.1rem;
                 text-transform: uppercase;
@@ -153,7 +152,7 @@
                 border-radius: 10px 0 0 10px;
                 &.next {
                     background-color: #7ced2fcc;
-                    color: #fff;
+                    color: $white;
                 }
             }
             &__tip {
@@ -163,7 +162,7 @@
                 width: 25%;
                 border-radius: 0 10px 10px 0;
                 border: none;
-                background-color: #ebe4e4;
+                background-color: $bgwhite;
                 height: 40px;
                 text-decoration: none;
                 font-size: 1,1rem;
@@ -173,7 +172,7 @@
             }
         }
         &__warn {
-            width: 100%;
+            width: $wmax;
             color: rgba(0, 0, 0, 0.7);
             border-left: 4px solid rgba(0, 0, 0, 0.7);
             padding: 10px;
@@ -182,7 +181,7 @@
         // &__resolution {
         //     background: #fefdffcc;
         //     position: relative;
-        //     width: 100%;
+        //     width: $wmax;
         //     max-width: 1200px;
         //     border-radius: 0 0 10px 10px;
         //     padding: 10px;

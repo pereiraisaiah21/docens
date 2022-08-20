@@ -1,10 +1,9 @@
 .Help {
-    width: 100%;
+    width: $wmax;
     padding: 10px;
     &__wrp {
-        display: flex;
+        @include flexwrap;
         align-items: stretch;
-        flex-wrap: wrap;
         justify-content: space-between;
         max-width: 1200px;
         padding: 20px auto;
@@ -21,7 +20,7 @@
     //         padding: 10px;
     //     }
     //     &__title {
-    //         color: #fff;
+    //         color: $white;
     //         font-size: 1.2rem;
     //         padding: 20px 0 20px;
     //     }    
@@ -29,15 +28,15 @@
     //         padding: 15px 0;
     //     }    
     //     &__anchor {
-    //         color: #fff;
+    //         color: $white;
     //     }    
     // }
     &__content {
-        width: 100%;
+        width: $wmax;
         background-color: rgb(211 211 211 / 52%);
         border-radius: 20px;
         h4 {
-            color: #fff;
+            color: $white;
             font-size: 2rem;
         }
     }
@@ -47,7 +46,7 @@
         padding: 0 10px;
         color: #000000a1;
         &__item {
-            background-color: #ffffff96;
+            background-color: $bgwhite95;
             border-radius: 20px;
             position: relative;
             cursor: pointer;
@@ -71,7 +70,7 @@
         }
     }
     &__rdrct {
-        width: 100%;
+        width: $wmax;
         margin: 10px 0 0;
         background-color: rgb(211 211 211 / 52%);
         border-radius: 20px;
@@ -84,9 +83,9 @@
         &__anchr {
             padding: 0 10px;
             background-color: aqua;
-            border-radius: 10px;
+            border-radius: $brdef ;
             font-size: 1.2em;
-            color: #000;
+            color: $black;
         }
     }
 
@@ -96,10 +95,10 @@
         padding: 10px 0;
         &__nav {
             margin: 0 0 10px;
-            width: 100%;
+            width: $wmax;
         }
         &__content {
-            width: 100%;
+            width: $wmax;
         }
     }
 }

@@ -4,8 +4,8 @@
         max-width: 1200px;
         margin: auto;
         padding: 10px;
-        background-color: #ffffff85;
-        border-radius: 10px;
+        background-color: $bgwhite;
+        border-radius: $brdef ;
     }
     &__frm {}
     &__fldst {
@@ -20,29 +20,29 @@
     &__slct {
         div {
             border: none;
-            border-radius: 10px;
+            border-radius: $brdef ;
             font-size: 1em;
         }
     }
     &__inpt {
         padding: 10px;
-        border-radius: 10px;
+        border-radius: $brdef ;
         border: none;
-        width: 100%;
+        width: $wmax;
         font-size: 1em;
         font-weight: 500;
     }
     &__sbmt {
         border: none;
-        width: 100%;
+        width: $wmax;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: $brdef ;
         cursor: pointer;
         background-color: rgba(177, 8, 253, 0.8);
-        color: #fff;
+        color: $white;
     }
     &__rtrn {
-        width: 100%;
+        width: $wmax;
         color: rgba(0, 0, 0, 0.7);
         border-left: 4px solid rgba(0, 0, 0, 0.7);
         padding: 10px;

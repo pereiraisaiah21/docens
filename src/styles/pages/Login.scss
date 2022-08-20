@@ -4,15 +4,14 @@
     display: flex;
     justify-content: center;
     padding: 10px;
-    border-radius: 10px;
-    background: url(https://images.unsplash.com/photo-1454117096348-e4abbeba002c?ixlib=rb-1.2.1);
+    border-radius: $brdef ;
     background-size: cover;
     &__frm {
         text-align: left;
         width: 400px;
         padding: 10px;
-        background-color: rgb(243 243 243 / 73%);
-        border-radius: 10px;
+        background-color: $bgwhite95;
+        border-radius: $brdef ;
         svg {
             margin: 7px 0 0 0;
         }
@@ -22,15 +21,14 @@
         padding: 10px 0;
         position: relative;
         &--optns {
-            display: flex;
+            @include flexunscen;
             flex-wrap: wrap;
-            justify-content: center;
         }
         &__rtrn {
-            border-radius: 10px;
+            border-radius: $brdef ;
             font-size: .8em;
             margin: 5px 0;
-            background-color: rgba(239, 239, 239, 0.7294117647);
+            background-color: $bgwhite95;
             padding: 10px 20px;
             text-align: left;
             display: flex;
@@ -42,9 +40,9 @@
     }
     &__inpt {
         padding: 10px;
-        border-radius: 10px;
+        border-radius: $brdef ;
         border: none;
-        width: 100%;
+        width: $wmax;
         &--rcvr {
             margin: 0 0 10px;
         }
@@ -52,26 +50,26 @@
             position: absolute;
             right: 0px;
             top: 12px;
-            color: rgb(197, 10, 10);
+            color: $bgdarred;
         }
     }
     &__rcvr {
         text-align: center;
-        width: 100%;
+        width: $wmax;
         padding: 10px 0;
         margin: 10px 0 0;
         font-size: .8em;
         text-decoration: underline;
-        color: rgb(194, 33, 194);
+        color: $cblue80;
     }
     &__snd {
-        width: 100%;
+        width: $wmax;
         text-align: center;
         border: none;
-        background-color: rgb(196, 4, 145);
+        background-color: $bgblue80;
         padding: 10px 0;
-        color: #fff;
-        border-radius: 10px;
+        color: $white;
+        border-radius: $brdef ;
         &--rcvr {
             margin: 0 0 10px;
         }

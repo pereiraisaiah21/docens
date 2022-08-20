@@ -19,9 +19,9 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        background-color: #ffffff85;
+        background-color: $bgwhite95;
         padding: 20px 10px;
-        border-radius: 10px;
+        border-radius: $brdef ;
         width: 30%;
         height: fit-content;
         &__ttl {
@@ -35,16 +35,16 @@
         &__anchr {
             padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 10px;
+            border-radius: $brdef ;
             margin: 3px 0;
-            width: 100%;
+            width: $wmax;
         }
         &__img {
-            max-width: 100%;
+            max-width: $wmax;
         }
         &__bttn {
             border: 1px solid #ccc;
-            border-radius: 10px;
+            border-radius: $brdef ;
             padding: 5px 10px;
             white-space: nowrap;
             display: block;
@@ -65,7 +65,7 @@
         text-align: left;
         flex-wrap: wrap;
         &__ttl {
-            width: 100%;
+            width: $wmax;
             padding: 10px 0;
             svg {
                 margin-right: 10px;
@@ -75,11 +75,11 @@
             margin: 0 10px 10px 0;
             padding: 5px;
             border: 1px solid #ccc;
-            border-radius: 10px;
+            border-radius: $brdef ;
         }
     }
     &__img {
-        max-width: 100%;
+        max-width: $wmax;
         &__crdts {
             font-size: .7em;
             text-align: center;
@@ -96,9 +96,9 @@
     &__prmryWrp {
         max-width: 1200px;
         margin: 0 auto;
-        background-color: #ffffff85;
+        background-color: $bgwhite95;
         color: #4a4a4a;
-        border-radius: 10px;
+        border-radius: $brdef ;
         text-align: left;
         margin: 0px auto 20px;
         padding: 30px;
@@ -107,7 +107,7 @@
             line-height: 25px;
             text-align: left; 
             .img {
-                max-width: 100%;
+                max-width: $wmax;
             }
             .wrnPrgrph {
                 border: 1px solid #e7e5d8;
@@ -133,11 +133,11 @@
         font-size: 1.1rem;
     }
     &__trcryTtl {
-        background-color: #ccc;
+        background-color: $bggray;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: $brdef ;
         white-space: nowrap;
-        color: #fff;
+        color: $white;
         margin: 0 0 10px;
         width: fit-content;
     }
@@ -153,7 +153,7 @@
         &__bttn {
             padding: 10px;
             background-color: #ebeaea;
-            border-radius: 10px;
+            border-radius: $brdef ;
             svg {
                 margin: 0 10px 0 0;
             }
@@ -181,28 +181,26 @@
         }
     }
     &__srch {
-        width: 100%;
+        width: $wmax;
         padding: 10px 0 30px;
         text-align: left;
         &__inpt {
             height: 50px;
-            border-radius: 10px;
+            border-radius: $brdef ;
             border: none;
-            width: 100%;
+            width: $wmax;
             padding: 10px;
         }
     }
     &__allMttrs {
         display: flex;
-        width: 100%;
+        width: $wmax;
         flex-wrap: wrap;
     }
     &__itm {
+        @include flexcencen;
         border-bottom: 3px solid #ccc;
         margin: 0 0 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         padding: 10px;
         cursor: pointer;
         &__img {
@@ -213,8 +211,8 @@
         }
         
         &:hover {
-            border-radius: 10px;
-            background-color: #ffffff85;
+            border-radius: $brdef ;
+            background-color: $bgwhite95;
         }
     }
     &__workout {
@@ -226,15 +224,13 @@
         padding: 10px;
         box-shadow: inset 0px 0px 3px #ccc;
         background-color: rgba(255, 255, 255, 0.76);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
+        @include flexcencen;
+        border-radius: $brdef ;
         svg {
             font-size: 3.5em;
             padding: 10px;
             box-shadow: inset 0px 0px 3px #ccc;
-            border-radius: 10px;
+            border-radius: $brdef ;
         }
     }
 
@@ -246,12 +242,12 @@
             padding: 10px;
             background-color: #300aff2b;
             margin-bottom: 10px;
-            border-radius: 10px;
+            border-radius: $brdef ;
             width: fit-content;
             margin: 10px auto;
         }
         &__itm {
-            width: 100%;
+            width: $wmax;
         }
     }
     // Sm

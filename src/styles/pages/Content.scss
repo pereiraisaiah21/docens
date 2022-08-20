@@ -4,14 +4,21 @@
         max-width: 1200px;
         margin: auto;
         padding: 10px;
-        background-color: #ffffff85;
-        border-radius: 10px;
+        background-color: $bgwhite;
+        border-radius: $brdef ;
     }
-    &__frm {}
+    &__frm {
+        display: flex;
+        flex-wrap: wrap;
+    }
     &__fldst {
         margin: 0 0 10px;
         border: none;
         text-align: left;
+        width: $wmax;
+        &--hlf {
+            width: 50%;
+        }
     }
     &__lgnd {
         padding: 0;
@@ -20,29 +27,29 @@
     &__slct {
         div {
             border: none;
-            border-radius: 10px;
+            border-radius: $brdef ;
             font-size: 1em;
         }
     }
     &__inpt {
         padding: 10px;
-        border-radius: 10px;
+        border-radius: $brdef ;
         border: none;
-        width: 100%;
+        width: $wmax;
         font-size: 1em;
         font-weight: 500;
     }
     &__sbmt {
         border: none;
-        width: 100%;
+        width: $wmax;
         padding: 10px;
-        border-radius: 10px;
+        border-radius: $brdef ;
         cursor: pointer;
-        background-color: rgba(177, 8, 253, 0.8);
-        color: #fff;
+        background-color: $bgblue80;
+        color: $white;
     }
     &__rtrn {
-        width: 100%;
+        width: $wmax;
         color: rgba(0, 0, 0, 0.7);
         border-left: 4px solid rgba(0, 0, 0, 0.7);
         padding: 10px;
@@ -50,6 +57,28 @@
         display: block;
         svg {
             margin-right: 10px;
+        }
+    }
+    &__upld {
+        &__bttn {
+            margin: 0 5px 0 0;
+            padding: 10px;
+            background-color: $bgblue80;
+            border: none;
+            font-size: 1em;
+            border-radius: $brdef ;
+            color: $white;
+            svg {
+                margin-right: 5px;
+            }
+        }
+        &__bttnDown {
+            margin: 0 5px 0 0;
+            padding: 10px;
+            background-color: $bgblue80;
+            border: none;
+            border-radius: $brdef ;
+            color: $white;
         }
     }
 }
