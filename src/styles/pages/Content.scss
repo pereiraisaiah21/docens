@@ -1,0 +1,53 @@
+.content {
+    padding: 30px 10px;
+    &__wrp {
+        max-width: 1200px;
+        margin: auto;
+        padding: 10px;
+        background-color: #ffffff85;
+        border-radius: 10px;
+    }
+    &__frm {}
+    &__fldst {
+        margin: 0 0 10px;
+        border: none;
+        text-align: left;
+    }
+    &__lgnd {
+        padding: 0;
+        margin: 0;
+    }
+    &__slct {
+        div {
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+    }
+    &__inpt {
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        width: 100%;
+        font-size: 1em;
+        font-weight: 500;
+    }
+    &__sbmt {
+        border: none;
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    &__rtrn {
+        width: 100%;
+        color: rgba(0, 0, 0, 0.7);
+        border-left: 4px solid rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        text-align: left;
+        display: block;
+        svg {
+            margin-right: 10px;
+        }
+    }
+}

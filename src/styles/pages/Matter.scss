@@ -19,7 +19,7 @@
         display: flex;
         flex-direction: column;
         text-align: center;
-        background-color: #fbfbfb;
+        background-color: #ffffff85;
         padding: 20px 10px;
         border-radius: 10px;
         width: 30%;
@@ -96,7 +96,7 @@
     &__prmryWrp {
         max-width: 1200px;
         margin: 0 auto;
-        background-color: #fbfbfb;
+        background-color: #ffffff85;
         color: #4a4a4a;
         border-radius: 10px;
         text-align: left;
@@ -204,11 +204,17 @@
         align-items: center;
         justify-content: center;
         padding: 10px;
+        cursor: pointer;
         &__img {
             width: 90px;
         }
         &__ttl {
             margin: 0 10px;
+        }
+        
+        &:hover {
+            border-radius: 10px;
+            background-color: #ffffff85;
         }
     }
     &__workout {

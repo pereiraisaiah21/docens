@@ -23,6 +23,7 @@ function FormUpdateUserData ({
     const maxNumber = 1;
 
     const [avatar, setAvatar] = useState( "" );
+    const [bio, setBio] = useState( "" );
     const [fullname, setFullname] = useState( "" );
     const [username, setUsername] = useState( "" );
     const [email, setEmail] = useState( "" );
@@ -171,6 +172,9 @@ function FormUpdateUserData ({
                     </li> */}
                     <li className="prfl__inf__itm">
                         <input className="prfl__inpt" value={fullname} placeholder={data.name} onChange={(e) => setFullname(e.target.value)} />
+                    </li>
+                    <li className="prfl__inf__itm">
+                        <input className="prfl__inpt" value={bio} placeholder={data.username} onChange={(e) => setBio(e.target.value)} />
                     </li>
                     <li className="prfl__inf__itm">
                         <input className="prfl__inpt" value={username} placeholder={data.username} onChange={(e) => setUsername(e.target.value)} />

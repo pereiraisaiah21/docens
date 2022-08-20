@@ -13,7 +13,9 @@ import Help from "./pages/help/Help";
 import Profile from "./pages/profile/Profile";
 import Login from "./pages/login/Login";
 import Notification from "./pages/notification/Notification";
+import Emblem from "./pages/emblem/Emblem";
 import Contact from "./pages/contact/Contact";
+import Content from "./pages/content/Content";
 
 function SiteRoutes () {
     return (
@@ -29,7 +31,9 @@ function SiteRoutes () {
                 <Route path="/perfil/:username" element={<Profile />} />
                 <Route path="/entrar" element={<Login />} />
                 <Route path="/mensagens" element={<Notification />} />
+                <Route path="/emblemas" element={<Emblem />} />
                 <Route path="/contato" element={<Contact />} />
+                <Route path="/conteudo" element={<Content />} />
 
                 <Route path="*" element={<Error />} />
             </Routes>

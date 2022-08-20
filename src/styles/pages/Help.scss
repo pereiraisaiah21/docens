@@ -1,13 +1,14 @@
 .Help {
     width: 100%;
-    max-width: 1200px;
-    margin: 20px auto;
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    flex-wrap: wrap;
     padding: 10px;
-    box-sizing: border-box;
+    &__wrp {
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1200px;
+        padding: 20px auto;
+    }
     // &__nav {
     //     width: 28%;
     //     background-color: #968a9b6b;
@@ -33,7 +34,7 @@
     // }
     &__content {
         width: 100%;
-        background-color: #968a9b6b;
+        background-color: rgb(211 211 211 / 52%);
         border-radius: 20px;
         h4 {
             color: #fff;
@@ -72,7 +73,7 @@
     &__rdrct {
         width: 100%;
         margin: 10px 0 0;
-        background-color: rgba(150, 138, 155, 0.4196078431);
+        background-color: rgb(211 211 211 / 52%);
         border-radius: 20px;
         font-size: 1em;
         &__txt {
@@ -85,7 +86,7 @@
             background-color: aqua;
             border-radius: 10px;
             font-size: 1.2em;
-            color: #fff;
+            color: #000;
         }
     }
 
