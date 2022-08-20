@@ -10,9 +10,11 @@ import MainTitle from "../../../components/title/MainTitle";
  * @returns 
  */
 
-function NavigationActions () {
+function NavigationActions ({
+    typeUser
+}) {
 
-    const cardsContent = [
+    const cardsContentDefault = [
         {
             name        : "Tutorial",
             description : "Acesse o tutorial de navegação",
@@ -23,16 +25,32 @@ function NavigationActions () {
         {
             name        : "Materias",
             description : "Acesse as matérias disponíveis",
-            link        : "",
+            link        : "/materias",
             imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
             imageAlt    : "Image alternative"   
         },
         {
             name        : "Emblemas",
             description : "Confira os emblemas disponíveis",
+            link        : "/emblems",
+            imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
+            imageAlt    : "Image alternative"
+        }
+    ];
+    const cardsContentTeacher = [
+        {
+            name        : "Tutorial",
+            description : "Acesse o tutorial de navegação",
             link        : "",
             imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
             imageAlt    : "Image alternative"
+        },
+        {
+            name        : "Materias",
+            description : "Acesse as matérias disponíveis",
+            link        : "/materias",
+            imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
+            imageAlt    : "Image alternative"   
         }
     ];
 
@@ -55,7 +73,29 @@ function NavigationActions () {
                     description={"Feed de matérias"}
                 />
                 {
-                    cardsContent.map( ( item, key ) => {
+                    typeUser === "default"
+                    ?
+                    cardsContentDefault.map( ( item, key ) => {
+                        return (
+                            <CardWithImage 
+                                classStyleDivButton={"actns__itm__bttn"}
+                                link={item.link} 
+                                classStyleGrand="actns__itm" 
+                                srcImage={item.imageSrc} 
+                                altImage={item.imageAlt} 
+                                classStyleImage="actns__itm__img" 
+                                classStyleSpan="actns__itm__nm" 
+                                classStyleDiv="actns__itm__inf" 
+                                classStyleDivSpan="actns__itm__icn" 
+                                classStyleDivLabel="actns__itm__dscrptn" 
+                                title={item.name} 
+                                description={item.description}
+                                key={key}
+                            />
+                        )
+                    })
+                    :
+                    cardsContentTeacher.map( ( item, key ) => {
                         return (
                             <CardWithImage 
                                 classStyleDivButton={"actns__itm__bttn"}

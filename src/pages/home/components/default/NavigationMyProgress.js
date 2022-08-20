@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import CardSubjectProgress from "../../../components/card/CardSubectProgress";
-import MainTitle from "../../../components/title/MainTitle"
+import CardSubjectProgress from "../../../../components/card/CardSubectProgress";
+import MainTitle from "../../../../components/title/MainTitle"
 import { Navigation, Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaOptinMonster } from 'react-icons/fa';

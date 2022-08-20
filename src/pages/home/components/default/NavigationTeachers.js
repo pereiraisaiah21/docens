@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import MainTitle from "../../../components/title/MainTitle";
+import MainTitle from "../../../../components/title/MainTitle";
 import { Navigation, Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaOptinMonster } from 'react-icons/fa';

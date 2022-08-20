@@ -23,17 +23,22 @@ function SiteRoutes () {
             <BannerAndHeader />
             <Routes>
                 <Route path="/" element={<Home />} />
+
                 <Route path="/feed" element={<Feed />} />
-                <Route path="/materia/:id/:contentid" element={<Matter />} />
-                <Route path="/quiz/:matter/:contentId" element={<Quiz />} />
+
                 <Route path="/materias" element={<AllMatters />} />
+                <Route path="/materias/:id/:contentid" element={<AllMatters />} />
+                <Route path="/materias/:id/:contentid/:editar" element={<Content />} />
+                <Route path="/materias/:id/:contentid/:criar" element={<Content />} />
+                
+                <Route path="/quiz/:matter/:contentId" element={<Quiz />} />
+
                 <Route path="/ajuda" element={<Help />} />
                 <Route path="/perfil/:username" element={<Profile />} />
                 <Route path="/entrar" element={<Login />} />
                 <Route path="/mensagens" element={<Notification />} />
                 <Route path="/emblemas" element={<Emblem />} />
                 <Route path="/contato" element={<Contact />} />
-                <Route path="/conteudo" element={<Content />} />
 
                 <Route path="*" element={<Error />} />
             </Routes>

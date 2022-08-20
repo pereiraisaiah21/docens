@@ -70,11 +70,10 @@ function Feed () {
             }
         ],
         error: ""
-    })
+    });
 
     return (
         <section className="fd">
-            <TailSpin color = "#f00" />
             <div className="fd__wrppr">
                 <MainTitle description="MEU FEED" descriptionUnder="Pubicações recentes" icon={<FaRegCalendarTimes />} />
                 <div className="fd__psts">

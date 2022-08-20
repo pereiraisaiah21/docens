@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 import UserData from "../../UserData";
 
 import StudentInfo from "../../components/User/StudentInfo";
-import SeparationDots from "./components/SeparationDots";
+import SeparationDots from "./components/default/SeparationDots";
 import NavigationActions from "./components/NavigationActions";
-import NavigationMyProgress from "./components/NavigationMyProgress";
+import NavigationMyProgress from "./components/default/NavigationMyProgress";
 import Tutorial from "./components/Tutotial";
-import NavigationTeachers from "./components/NavigationTeachers";
+import NavigationTeachers from "./components/default/NavigationTeachers";
 
 /**
  * 
@@ -17,21 +17,35 @@ import NavigationTeachers from "./components/NavigationTeachers";
 function Home () {
 
     const { userDataValues } = useContext( UserData );
+    const [ typeUser, setTypeUser ] = useState( null );
+
+    useEffect(() => {
+        setTypeUser( userDataValues.typeUser )
+    }, [userDataValues]);
 
     return (
         <> 
-            <StudentInfo userInfo={{
-                name : userDataValues.data.name,
-                occupation : userDataValues.data.email,
-                level : userDataValues.data.id,
-                avatar : "https://i.pinimg.com/736x/59/74/d0/5974d04323d9efbaf170c72cfdb07b44.jpg"
-            }} />
-            <NavigationActions />
-            <SeparationDots />
-            <NavigationMyProgress slider={"true"} />
-            <SeparationDots />
-            <Tutorial />
-            <NavigationTeachers />
+
+        {
+            typeUser === "default"
+            ?
+            <>
+                <StudentInfo userInfo={{
+                    name : userDataValues.data.name,
+                    occupation : userDataValues.data.email,
+                    level : userDataValues.data.id,
+                    avatar : "https://i.pinimg.com/736x/59/74/d0/5974d04323d9efbaf170c72cfdb07b44.jpg"
+                }} />
+                <NavigationActions typeUser={typeUser} />
+                <SeparationDots />
+                <NavigationMyProgress slider={"true"} />
+                <SeparationDots />
+                <Tutorial />
+                <NavigationTeachers />
+            </>
+            :
+            <NavigationActions typeUser={typeUser} />
+        }
         </>
     );
 }

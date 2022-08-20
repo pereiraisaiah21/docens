@@ -63,5 +63,5 @@ $wmax : 100%;
 }
 @mixin flexwrap {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
 }

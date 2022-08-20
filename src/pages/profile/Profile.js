@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 //import { useParams } from "react-router-dom";
 
 import UserData from "../../UserData";
 
 import ProfileCard from "./components/ProfileCard";
 import NavigationMyStats from "./components/NavigationMyStats";
-import NavigationMyProgress from "../home/components/NavigationMyProgress";
+import NavigationMyProgress from "../home/components/default/NavigationMyProgress";
 import FormUpdataUserData from "./components/FormUpdateUserData";
 
 /**
@@ -15,7 +15,12 @@ import FormUpdataUserData from "./components/FormUpdateUserData";
 
 function Profile () {
 
-    const {userDataValues} = useContext( UserData );
+    const { userDataValues } = useContext( UserData );
+    const [ typeUser, setTypeUser ] = useState( null );
+
+    useEffect(() => {
+        setTypeUser( userDataValues.typeUser )
+    }, [userDataValues]);
 
     //let {username} = useParams();
     const [updateUserData, setUpdateUserData] = useState( false );
@@ -39,10 +44,16 @@ function Profile () {
                         </>
                     }
                 </div>
-                <div className="prfl__updts">
-                    <NavigationMyStats className="chrt__myStts" slider={true} />
-                    <NavigationMyProgress slider={false} />
-                </div>
+                {
+                    typeUser === "default"
+                    ?
+                    <div className="prfl__updts">
+                        <NavigationMyStats className="chrt__myStts" slider={true} />
+                        <NavigationMyProgress slider={false} />
+                    </div>
+                    :
+                    ""
+                }
             </div>
         </section>
     );

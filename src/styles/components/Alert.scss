@@ -1,0 +1,24 @@
+.conectionTimeout {
+    @include flexcencenwrap;
+    position: absolute;
+    top: 58px;
+    width: 100%;
+    height: 100%;
+    background-color: $bgwhite;
+    &__anchr {
+        background-color: $bgblue80;
+        color: $white;
+        padding: 0 10px;
+        border-radius: $brdef;
+        white-space: nowrap;
+    }
+    p {
+        width: 100%;
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+    svg {
+        font-size: 2em;
+        margin: 0 10px -4px 0;
+    }
+}

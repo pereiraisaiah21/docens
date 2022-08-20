@@ -6,10 +6,17 @@ import SiteRoutes from "./routes";
 
 import './App.scss';
 
+/**
+ * 
+ * @returns 
+ */
+
 function App() {
 
   const [userDataValues, setUserDataValues] = useState({
     data  : [],
+    isLogged : false,
+    typeUser : "teacher",
     error : ""
   });
 

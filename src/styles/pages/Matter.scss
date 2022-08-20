@@ -209,6 +209,24 @@
         &__ttl {
             margin: 0 10px;
         }
+        &__edt {
+            @include flexwrap;
+            justify-content: flex-end;
+            &__anchr {
+                padding: 3px 10px;
+                border: 1px solid $bc-gray;
+                background-color: $bgblue80;
+                color: $bgwhite;
+                border-radius: $brdef;
+                white-space: nowrap;
+                width: -webkit-fill-available;
+                max-width: 120px;
+                margin: 0 0 10px;
+                svg {
+                    margin: 0 10px -2px 0;
+                }
+            }
+        }
         
         &:hover {
             border-radius: $brdef ;
@@ -259,12 +277,14 @@
     }
     // Md
     @media (min-width: 768px) {
-        &__itm {
-            width: 23%;
-        }
     }
     // Lg
-    @media (min-width: 991px) {}
+    @media (min-width: 991px) {
+        &__itm {
+            width: 32%;
+        }
+
+    }
     // Xl
     @media (min-width: 1200px) {}
     // Xxl

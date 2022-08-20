@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Select from 'react-select'
 import ImageUploading from 'react-images-uploading';
 
+import UserData from "../../UserData";
+
 import MainTitle from "../../components/title/MainTitle";
 
-import { FaOptinMonster, FaInfoCircle, FaFileImport } from 'react-icons/fa';
+import { FaOptinMonster, FaInfoCircle, FaFileImport, FaUnderline } from 'react-icons/fa';
 
 /**
  * 
@@ -14,11 +17,25 @@ import { FaOptinMonster, FaInfoCircle, FaFileImport } from 'react-icons/fa';
 
 function Content () {
 
+    const {id} = useParams();
+    const {contentid} = useParams();
+    const {editar} = useParams();
+
+    const { userDataValues } = useContext( UserData );
+    const [ typeUser, setTypeUser ] = useState( null );
+
+    const [matterEditData, setMatterEditData] = useState({
+        data : [],
+        error : ""
+    });
+
     const [category, setCategory] = useState( null );
-    const [name, setName] = useState( null );
-    const [content, setContent] = useState( null );
-    const [activityUrl, setActivityUtl] = useState( null );
+    const [name, setName] = useState( "" );
+    const [activityUrl, setActivityUrl] = useState( null ); 
     const [subjectContent, setSubjectContent] = useState( null );
+    const [content, setContent] = useState( null );
+    const [articleUrl, setArticleUrl] = useState( null ); 
+    const [nextContentUrl, setNextContentUrl] = useState( null );
     const [hightlighImage, setHightlighImage] = useState( null );
     const [images, setImages] = useState([]);
     const [formSendSuccess, setFormSendSuccess] = useState( null );
@@ -76,12 +93,42 @@ function Content () {
         }
     }
 
+    useEffect(() => {
+        setTypeUser( userDataValues.typeUser )
+    }, [userDataValues]);
+
+    useEffect(() => {
+        axios.get( `https://jsonplaceholder.typicode.com/${id}/${contentid}` )
+        .then( response => {
+            setMatterEditData({ 
+                ...matterEditData,
+                data: response.data
+            });
+        }).catch( err => {
+            setMatterEditData({
+                ...matterEditData,
+                error: err
+            });
+        });
+    }, []);
+
+    useEffect(() => {
+        if ( matterEditData.data !== undefined && editar === "editar" ) {
+            setName(matterEditData.data.title);
+            setActivityUrl(matterEditData.data.title);
+            setSubjectContent(matterEditData.data.body);
+            setContent(matterEditData.data.body);
+            setArticleUrl(matterEditData.data.title);
+            setNextContentUrl(matterEditData.data.title);
+        }
+    }, [ matterEditData ]);
+ 
     return (
         
         <section className="content">
             <div className="content__wrp">
                 <MainTitle description="Conteúdo" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
-                <form className="content__frm" onSubmit={handleSubmit}>
+                <form className="content__frm" onSubmit={(e) => e.preventDefault()}>
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Matéria *</legend>
                         <Select
@@ -95,23 +142,23 @@ function Content () {
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Nome da matéria *</legend>
-                        <input className="content__inpt" type="text" />
+                        <input className="content__inpt" type="text" onChange={(e) => setName(e.target.value)} placeholder={name} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Url da matéria *</legend>
-                        <input className="content__inpt" type="text" />
+                        <input className="content__inpt" type="text" onChange={(e) => setArticleUrl(e.target.value)} placeholder={name} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Url da atividade *</legend>
-                        <input className="content__inpt" type="text" />
+                        <input className="content__inpt" type="text" onChange={(e) => setActivityUrl(e.target.value)} placeholder={activityUrl}/>
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Url do próximo conteúdo ( Opcional )</legend>
-                        <input className="content__inpt" type="text" />
+                        <input className="content__inpt" type="text" onChange={(e) => setNextContentUrl(e.target.value)} placeholder={nextContentUrl}/>
                     </fieldset>
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Escopo do artigo *</legend>
-                        <textarea className="content__inpt" onChange={(e) => setContent(e.target.value)} placeholder="Digite" rows="20" type="text" />
+                        <textarea className="content__inpt" onChange={(e) => setContent(e.target.value)} rows="20" cols="20" type="text" placeholder={content}/>
                     </fieldset>
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Tags ( Opcional )</legend>
@@ -175,9 +222,8 @@ function Content () {
                             }
                         </ImageUploading>
                     </fieldset>
-
                     <fieldset className="content__fldst">
-                        <input className="content__sbmt" type="submit" />
+                        <input className="content__sbmt" type="submit" onClick={handleSubmit} />
                     </fieldset>
                 </form>
                 <span className="content__rtrn">

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 
 import ImageWithCredits from "./components/ImageWithCredits";
@@ -7,6 +6,7 @@ import RelatedMatters from "./components/RelatedMatters";
 import ButtonWorkout from "../../components/button/ButtonWorkout";
 import { TailSpin } from "react-loader-spinner";
 import { FaCalendarWeek } from 'react-icons/fa';
+import ConnectionTimeoutWarn from "../../components/alert/ConnectionTimeoutWarn";
 
 import MatterTags from "./components/MatterTags";
 
@@ -15,12 +15,12 @@ import MatterTags from "./components/MatterTags";
  * @returns 
  */
 
-function Matter () {
+function Matter ({
+    idMatter,
+    topicMatter
+}) {
 
     const textTestP = "<p>Às vezes, problemas que parecem muito ?</p><p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><img class='img' src='https://img.freepik.com/vetores-premium/formulas-de-fisica-equacoes-matematicas-calculos-aritmeticos-blackboard-com-formulas-cientificas_461812-424.jpg' alt=''/>";  
-
-    let {id} = useParams();
-    let {contentid} = useParams();
 
     const [loader, setLoader] = useState( true );
     const [matterContent, setMatterContent] = useState({
@@ -35,9 +35,10 @@ function Matter () {
         data: [],
         error: ""
     });
+    const [failToLoad, setFailToLoad] = useState( false );
 
     useEffect( () => {
-        axios.get( `https://jsonplaceholder.typicode.com/${id}/${contentid}` )
+        axios.get( `https://jsonplaceholder.typicode.com/${idMatter}/${topicMatter}` )
         .then( response => {
 
             setMatterContent({
@@ -53,6 +54,7 @@ function Matter () {
                 ...matterContent,
                 error: err 
             });
+            setFailToLoad( true );
         });
 
         axios.get( `https://jsonplaceholder.typicode.com/users/3` )
@@ -82,8 +84,6 @@ function Matter () {
                 error: err 
             });
         });
-
-
     }, []);
 
     return (
@@ -91,9 +91,13 @@ function Matter () {
             {
                 loader
                 ?
-                <div className="ldr">
-                    <TailSpin color = "rgba(255, 255, 255)" />
-                </div>
+                    failToLoad 
+                    ?
+                    <ConnectionTimeoutWarn />
+                    :
+                    <div className="ldr">
+                        <TailSpin color = "rgba(255, 255, 255)" />
+                    </div>
                 :
                 <section className="mttr">
                     <div className="mttr__wrppr">
