@@ -32,7 +32,7 @@ function NavigationActions ({
         {
             name        : "Emblemas",
             description : "Confira os emblemas disponíveis",
-            link        : "/emblems",
+            link        : "/emblemas",
             imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
             imageAlt    : "Image alternative"
         }

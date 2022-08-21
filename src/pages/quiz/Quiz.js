@@ -8,8 +8,6 @@ import Progress from "./components/Progress";
 import QuizFinishedMessage from "./components/QuizFinishedMessage";
 import { TailSpin } from "react-loader-spinner";
 
-import XpGif from "../../components/images/xp.gif";
-
 /**
  *
  * @returns
@@ -40,17 +38,6 @@ function Quiz () {
         explication : "",
         error : false
     });
-    const customStyles = {
-        content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            width: "300px",
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-        },
-    };
 
     Modal.setAppElement( '#root' );
 
@@ -124,7 +111,7 @@ function Quiz () {
             sendQuestionFeedback();
             setTimeout(
                 getQuestion, 
-                3000
+                1000
             );
         };
     };
@@ -152,11 +139,8 @@ function Quiz () {
             </div>
             :
             <div className="qz">
-                <div className={`qzPls${isChoiceCorrect ? " qzPls--active" : ""}`}>
-                    <img alt="Gif + xp" src={XpGif} />
-                </div>
                 <section className={`Question${disableOptions && isChoiceCorrect ? " " : ""}`}>
-                    <Progress progress={`${questionIndex}0`} progressColor={progressColor} />
+                    <Progress progress={`${questionIndex}0`} progressColor={progressColor} showImage={disableOptions} />
                     <QuestionAlternative
                         number={questionIndex}
                         title={question.data.title}
@@ -202,7 +186,6 @@ function Quiz () {
                 <Modal
                     isOpen={modalIsOpen}
                     onRequestClose={closeModal}
-                    style={customStyles}
                     contentLabel={"Example Modal"}
                 >
                     <div className="Question__tip">

@@ -1,0 +1,27 @@
+.emblm {
+    padding: 10px;
+    &__wrp {
+        @include flexunscen;
+        max-width: 1200px;
+        margin: auto;
+    }
+    &__tbl {
+        width: 100%;
+        &__ttl {
+            height: 70px;
+            font-weight: 700;
+            background-color: #90b3b373;
+            color: $white;
+        }
+        &__rw {
+            height: 53px;
+            color: $white;
+        }
+    }
+    tr:nth-child(even) {
+        background-color: rgba(145, 206, 192, 0.557);
+    }
+    tr:nth-child(odd) {
+        background-color: rgba(56, 95, 87, 0.557);
+    }
+}

@@ -2,6 +2,8 @@ import React from 'react';
 
 import { FaTimes } from 'react-icons/fa';
 
+import XpGif from "../../../components/images/xp.gif";
+
 /**
  *
  * @param {*} param0
@@ -10,10 +12,8 @@ import { FaTimes } from 'react-icons/fa';
 
 function Progress ({
     progress,
-    progressColor
+    showImage
 }) {
-
-    const progressValue = ( progress < 10 ? 5 : progress > 100 ? 100 : progress );
 
     return (
         <div className="Question__progress">
@@ -21,10 +21,19 @@ function Progress ({
                 <FaTimes />
             </a>
             <div className="Progress">
-                <span className="Progress__made" style={{width: progressValue + "%", backgroundColor : progressColor}}>
+                <span className="Progress__made" style={{width: progress + "%"}}>
                     <span className="Progress__made__number">
                         {progress > 100 ? 100 : progress} %
                     </span>
+                    {
+                        showImage
+                        ?
+                        <div className={`qzPls`}>
+                            <img alt="Gif + xp" src={XpGif} />
+                        </div>
+                        :
+                        ""
+                    }
                 </span>
             </div>
         </div>

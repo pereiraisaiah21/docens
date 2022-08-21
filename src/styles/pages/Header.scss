@@ -46,6 +46,7 @@
         justify-content: center;
         &--mbl {
             display: none;
+            color: $cblue80;
         }
     }
     &__lst {
@@ -117,7 +118,7 @@
             margin-right: 10px;
         }
         &__clsnm {
-            background-color: #d20be36b;
+            background-color: $bgblue80;
             border-radius: 20px;
             padding: 10px 15px;
             color: $white;

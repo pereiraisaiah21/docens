@@ -1,16 +1,15 @@
 .qz {
     position: relative;
-    padding: 10px;
     min-height: 80vh;
+    padding: 10px 10px;
     .qzPls {
         position: absolute;
-        right: 20px;
-        top: 20px;
+        right: -40px;
+        top: -30px;
         width: 100px;
         height: 100px;
         background-size: cover;
         z-index: 20;
-        display: none;
         &--active {
             display: block;
         }
@@ -19,25 +18,37 @@
         }
     }
     .Progress {
-        height: 25px;
+        height: 15px;
         width: 92%;
-        border: 2px solid #fff;
+        border: 2px solid $bc-white;
         background-color: $bgwhite;
         border-radius: 20px;
         position: relative;
         max-width: 1200px;
         &__made {
+            position: relative;
             display: block;
             width: 30%;
             padding: 3px;
             height: 100%;
-            font-size: .8em;
+            font-size: .0em;
             background-color: #00000082;
             border-radius: 20px;
             text-align: center;
             transition: width 2s;
             &__number {
                 color: $white;
+            }
+
+            &:after {
+                position: absolute;
+                content: "";
+                top: -5px;
+                right: 0;
+                width: 20px;
+                height: 20px;
+                background-color: $bgblue;
+                border-radius: 50%;
             }
         }
     }
@@ -46,7 +57,7 @@
         position: relative;
         width: $wmax;
         max-width: 1200px;
-        border-radius: 10px 10px 0 0;
+        border-radius: $brdef;
         margin: 0 auto;
         padding: 15px 10px;
         &__congrats {
@@ -55,7 +66,7 @@
             height: 100%;
         }
         &__fineshed {
-            line-height: 30px;
+            line-height: 40px;
             &__anchor {
                 padding: 5px;
                 background-color: #00b500;
@@ -74,13 +85,14 @@
         }
         &__progress {
             display: flex;
+            align-items: center;
             width: $wmax;
+            margin-bottom: 20px
         }
         &__info {
-            @include flexcenuns;
+            @include flexcencen;
             width: $wmax;
-            justify-content: space-between;
-            background: #ebe4e4;
+            //background-color: $bgwhitealt;
             margin: 10px 0;
             position: relative;
             padding: 0 10px 0 0;
@@ -227,7 +239,12 @@
         // }
         &__tutorial {}
 
-        @media (max-width: 767px) {
+       
+    }
+
+    // Xs
+    @media (max-width: 575px) {
+        .Question {
             &__info {
                 flex-wrap: wrap;
                 align-items: center;
@@ -240,6 +257,7 @@
                 }
                 &__title {
                     font-size: 1.3rem;
+                    padding: 0;
                 }
             }
             &__paragraph {
@@ -249,9 +267,22 @@
             &__alternatives {
                 &__option {
                     font-size: 1rem;
+                    justify-content: center;
+                    width: 100%;
                 }
             }
-            // &__resolution {}
         }
     }
+    // Sm
+    @media (min-width: 576px) {}
+    // Md
+    @media (min-width: 768px) {
+        padding: 40px 10px;
+    }
+    // Lg
+    @media (min-width: 991px) {}
+    // Xl
+    @media (min-width: 1200px) {}
+    // Xxl
+    @media (min-width: 1400px) {}
 }

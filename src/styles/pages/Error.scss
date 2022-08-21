@@ -2,6 +2,11 @@
     width: 100%;
     height: 100%;
     background-color: $white;
+    padding: 10px;
+    min-height: 60vh;
+    figure {
+        margin: 0;
+    }
     &__dsc {
         font-size: 1.2em;
         padding: 20px 0;

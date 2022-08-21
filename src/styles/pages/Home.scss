@@ -79,7 +79,9 @@
         }
     }
     &__crds {
-        @include flexcencenwrap;
+        @include flexcenuns;
+        flex-wrap: wrap;
+        justify-content: space-between;
         max-width: 1200px;
         margin: 0 auto;
         &--myPrgrss {
@@ -90,9 +92,9 @@
         @include flexcencenwrap;
         box-sizing: border-box;
         min-height: 150px;
-        width: 24%;
         max-width: 300px;
         height: 100%;
+        width: 49%;
         background-color: $bgwhite95;
         border: 1px solid #ccc;
         border-radius: $brdef ;
@@ -100,8 +102,11 @@
         margin: 0 0px 10px 0;
         cursor: pointer;
         &__img {
-            max-width: 100px;
-            border-radius: 50%;
+            max-width: 80%;
+            border-radius: $brdef;
+            &--tutorial {
+                max-width: 100%;
+            }
         }
         &__nm {
             font-size: 1.1rem;
@@ -110,9 +115,6 @@
             font-weight: 700;
             margin: 10px 0;
             width: $wmax;
-            &--fd {
-                color: $white;
-            }
         }
         &__inf {
             padding: 10px;   
@@ -134,7 +136,7 @@
             margin: 10px 0 0;
             font-size: .9em;
             &--fd {
-                background-color: rgb(133 88 153 / 55%);
+                background-color: $bgblue80;
                 color: $white;
             }
             svg {
@@ -150,9 +152,6 @@
             color: $black;
             width: $wmax;
             height: 30px;
-            &--fd {
-                color: $white;
-            }
             svg {
                 display: none;
             }
@@ -174,13 +173,19 @@
             padding: 10px 0;
         }
         &--fd {
-            background-color: rgb(108 162 181);
+            background-color: $white;
         }
         &--myPrgrss {
         }
+        &--tutorial {
+            width: 100% !important;
+            max-width: unset;
+            height: unset !important;
+            max-height: unset;
+        }
 
         &:hover {
-            box-shadow: inset 0px 0px 20px #efebebe0;
+            box-shadow: inset 0px 0px 5px #efebebe0;
         }
     }
     &__tchrs {
@@ -249,6 +254,7 @@
     }
     // Md
     @media (min-width: 768px) {
+        padding: 40px 10px;
         &__crds {
             &--myPrgrss {
                 padding: 0 20px;
@@ -300,6 +306,7 @@
     // Lg
     @media (min-width: 991px) {
         &__itm {
+            width: 24%;
             &--fd {
             }
             &--myPrgrss {
