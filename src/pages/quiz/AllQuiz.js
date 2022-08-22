@@ -5,7 +5,7 @@ import axios from "axios";
 import UserData from "../../UserData";
 
 import MainTitle from "../../components/title/MainTitle";
-import MatterEditButtons from "./components/MatterEditButtons";
+import MatterEditButtons from "./components/QuestionEditButtons";
 import { FaNewspaper } from 'react-icons/fa';
 
 /**
@@ -13,7 +13,7 @@ import { FaNewspaper } from 'react-icons/fa';
  * @returns 
  */
 
-function AllMatters () {
+function AllQuiz () {
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
@@ -66,11 +66,11 @@ function AllMatters () {
     return (
         <>
             <section className="mttr">
-                <MainTitle description="TODAS MATÉRIAS" descriptionUnder="Busque alguma matéria" icon={<FaNewspaper />} />
+                <MainTitle description="TODOS OS QUIZ" descriptionUnder="Busque algum quiz" icon={<FaNewspaper />} />
                 <div className="mttr__wrpprAll">
                     <div className="mttr__allMttrs">
                         <div className="mttr__srch">
-                            <input className="mttr__srch__inpt" placeholder="Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)} />
+                            <input className="mttr__srch__inpt" placeholder="Busque algum quiz" onChange={(e) => handleSearch(e.target.value)} />
                         </div>
                         {
                             searchResult.data !== null 
@@ -118,4 +118,4 @@ function AllMatters () {
     );
 }
 
-export default AllMatters;
+export default AllQuiz;

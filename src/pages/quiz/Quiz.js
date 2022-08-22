@@ -16,7 +16,7 @@ import { TailSpin } from "react-loader-spinner";
 function Quiz () {
 
     // let {matter} = useParams();
-    // let {contentId} = useParams();
+    // let {contentid} = useParams();
 
     const [loader, setLoader] = useState( true );
     const [answer, setAnswer] = useState( null );
