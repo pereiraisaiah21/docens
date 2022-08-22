@@ -16,6 +16,7 @@ import Notification from "./pages/notification/Notification";
 import Emblem from "./pages/emblem/Emblem";
 import Contact from "./pages/contact/Contact";
 import Content from "./pages/content/Content";
+import Edit from "./pages/content/components/Edit";
 
 function SiteRoutes () {
     return (
@@ -27,9 +28,11 @@ function SiteRoutes () {
                 <Route path="/feed" element={<Feed />} />
 
                 <Route path="/materias" element={<AllMatters />} />
-                <Route path="/materias/:id/:contentid" element={<AllMatters />} />
-                <Route path="/materias/:id/:contentid/:editar" element={<Content />} />
-                <Route path="/materias/:id/:contentid/:criar" element={<Content />} />
+                <Route path="/materias/:id/:contentid" element={<Matter />} />
+                
+                <Route path="/materias/alt/:id/:contentid/" element={<Edit />} />
+                <Route path="/materias/alt/" element={<Edit />} />
+
                 
                 <Route path="/quiz/:matter/:contentId" element={<Quiz />} />
 

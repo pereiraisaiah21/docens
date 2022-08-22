@@ -16,17 +16,10 @@ import { FaNewspaper } from 'react-icons/fa';
 
 function AllMatters () {
 
-    const {id} = useParams();
-    const {contentid} = useParams();
-
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
 
-    useEffect(() => {
-        setTypeUser( userDataValues.typeUser )
-    }, [userDataValues]);
-
-
+    
     const [matters, setAllMatters] = useState({
         data: [],
         error: ""
@@ -35,7 +28,11 @@ function AllMatters () {
     const [searchResult, setSearchResult] = useState({
         data : []
     });
-
+    
+    useEffect(() => {
+        setTypeUser( userDataValues.typeUser )
+    }, [userDataValues]);
+    
     useEffect( () => {
         axios.get( `https://jsonplaceholder.typicode.com/users/` )
         .then( response => {
@@ -69,11 +66,6 @@ function AllMatters () {
 
     return (
         <>
-        {
-            id !== undefined && contentid !== undefined
-            ?
-            <Matter idMatter={id} topicMatter={contentid} />
-            :
             <section className="mttr">
                 <MainTitle description="TODAS MATÉRIAS" descriptionUnder="Busque alguma matéria" icon={<FaNewspaper />} />
                 <div className="mttr__wrpprAll">
@@ -91,7 +83,6 @@ function AllMatters () {
                                         <span className="mttr__itm__ttl">
                                             {item.name}
                                         </span>
-
                                     </div>
                                 )
                             })
@@ -124,7 +115,6 @@ function AllMatters () {
                     </div>
                 </div>
             </section>
-        }
         </>
     );
 }

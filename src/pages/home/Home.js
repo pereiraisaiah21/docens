@@ -41,6 +41,7 @@ function Home () {
                 <NavigationMyProgress slider={"true"} />
                 <SeparationDots />
                 <Tutorial />
+                <SeparationDots />
                 <NavigationTeachers />
             </>
             :

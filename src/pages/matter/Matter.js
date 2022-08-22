@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 import ImageWithCredits from "./components/ImageWithCredits";
 import RelatedMatters from "./components/RelatedMatters";
@@ -15,10 +16,10 @@ import MatterTags from "./components/MatterTags";
  * @returns 
  */
 
-function Matter ({
-    idMatter,
-    topicMatter
-}) {
+function Matter () {
+
+    const {id} = useParams();
+    const {contentid} = useParams();
 
     const textTestP = "<p>Às vezes, problemas que parecem muito ?</p><p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><img class='img' src='https://img.freepik.com/vetores-premium/formulas-de-fisica-equacoes-matematicas-calculos-aritmeticos-blackboard-com-formulas-cientificas_461812-424.jpg' alt=''/>";  
 
@@ -38,7 +39,7 @@ function Matter ({
     const [failToLoad, setFailToLoad] = useState( false );
 
     useEffect( () => {
-        axios.get( `https://jsonplaceholder.typicode.com/${idMatter}/${topicMatter}` )
+        axios.get( `https://jsonplaceholder.typicode.com/${id}/${contentid}` )
         .then( response => {
 
             setMatterContent({

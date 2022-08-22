@@ -64,6 +64,7 @@
             font-size: 30px;
             svg {
                 color: $white;
+                margin: 0 0px -2px 0;
             }
         }
         &__ttl {
@@ -92,7 +93,7 @@
         @include flexcencenwrap;
         box-sizing: border-box;
         min-height: 150px;
-        max-width: 300px;
+        // max-width: 300px;
         height: 100%;
         width: 49%;
         background-color: $bgwhite95;
@@ -310,6 +311,7 @@
             &--fd {
             }
             &--myPrgrss {
+                width: auto;
             }
         }
     }

@@ -17,7 +17,7 @@
         text-align: left;
         width: $wmax;
         &--hlf {
-            width: 50%;
+            width: 100%;
         }
     }
     &__lgnd {
@@ -81,4 +81,25 @@
             color: $white;
         }
     }
+
+    // Sm
+    @media (min-width: 576px) {
+        
+    }
+    // Md
+    @media (min-width: 768px) {
+        
+    }
+    // Lg
+    @media (min-width: 991px) {
+        &__fldst {
+            &--hlf {
+                width: 48%;
+            }
+        }
+    }
+    // Xl
+    @media (min-width: 1200px) {}
+    // Xxl
+    @media (min-width: 1400px) {}
 }
