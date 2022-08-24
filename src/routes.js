@@ -14,6 +14,9 @@ import Notification from "./pages/notification/Notification";
 import Emblem from "./pages/emblem/Emblem";
 import Contact from "./pages/contact/Contact";
 
+import AllCourses from "./pages/course/AllCourses";
+import Course from "./pages/course/Course";
+
 import Matter from "./pages/matter/Matter";
 import AllMatters from "./pages/matter/AllMatters";
 import CreateUpdateMatter from "./pages/content/components/CreateUpdateMatter";
@@ -37,6 +40,10 @@ function SiteRoutes () {
                 <Route path="/mensagens" element={<Notification />} />
                 <Route path="/emblemas" element={<Emblem />} />
                 <Route path="/contato" element={<Contact />} />
+
+                <Route path="/cursos" element={<AllCourses />} />
+                <Route path="/cursos/:id" element={<Course />} />
+               
 
                 <Route path="/materias" element={<AllMatters />} />
                 <Route path="/materias/:id/:contentid" element={<Matter />} />
