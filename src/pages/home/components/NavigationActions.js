@@ -56,7 +56,7 @@ function NavigationActions ({
 
     return (
         <section className="actns actns--bg-01">
-            <MainTitle description="NAVEGUE PELO SITE" isCarousel={false} icon={<FaOptinMonster />} />
+            <MainTitle description="navegue pelo site" isCarousel={false} icon={<FaOptinMonster />} />
             <div className="actns__crds">
                 <CardWithImage 
                     classStyleDivButton={"actns__itm__bttn actns__itm__bttn--fd"}

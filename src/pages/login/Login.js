@@ -69,7 +69,7 @@ function Login () {
     return (
         <section className="lgn">
             <form className="lgn__frm">
-                <MainTitle description="Entrar" isCarousel={false} icon={<FaUserCircle />} />
+                <MainTitle description="entrar" isCarousel={false} icon={<FaUserCircle />} />
                 {
                     showFormRecover
                     ?

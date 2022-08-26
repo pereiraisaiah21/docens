@@ -3,10 +3,10 @@
         max-width: 1200px;
         margin: 0 auto;
         display: flex;
-        background-color: $bgwhite;
-        border-radius: $brdef ;
-        padding: 0 10px;
+        background-color: $bgligblue80;
+        border-radius: $brdef;
         flex-wrap: wrap;
+        padding-bottom: 10px;
     }
     &__bg {
         position: relative;
@@ -27,7 +27,7 @@
     }
     &__img {
         img {
-            width: $wmax;
+            width: 200px;
             border-radius: $brdef ;
         }
         &--myPrfl {
@@ -130,6 +130,33 @@
         background-color: $bgwhitealt;
         border-radius: $brdef ;
     }
+    &__nav {
+        width: 100%;
+        padding-bottom: 20px;
+        &__list {
+            display: flex;
+        }
+        &__item {
+            
+        }
+        &__button {
+            border: none;
+            font-size: 1.1em;
+            padding: 10px;
+            &--active {
+                border-bottom: 3px solid;
+            }
+        }
+        &__section {
+            display: none;
+            &--active {
+                display: block;
+            }
+            .actns {
+                padding: 0;
+            }
+        }
+    }
     &__inpt {
         padding: 10px;
         border-radius: $brdef ;
@@ -157,7 +184,7 @@
     // Sm
     @media (min-width: 576px) {
         &__wrpp {
-            padding: 0 10px;
+           //padding: 0 10px;
         }
     }
     // Md
@@ -195,8 +222,8 @@
     &__itm {
         &__img {
             &--myPrfl {
-                height: 100%;
-                width: $wmax;
+                height: 100px;
+                max-width: 100px;
                 border-radius: $brdef ;
                 grid-area: img;
             }
@@ -214,6 +241,7 @@
         &__inf {
             &--myPrfl {
                 grid-area: inf;
+                height: unset;
             }
         }
         &__ht {}
@@ -230,17 +258,19 @@
             width: $wmax;
             max-width: unset;
             border: none;
-            padding: 20px;
+            padding: 10px 20px;
             margin: 10px 0;
             display: grid;
             text-align: left;
             font-size: .9em;
             column-gap: 10px;
             height: unset;
-            grid-template: "img nm nm" 30px
-            "img dsc dsc" auto
-            "inf inf inf" 100px
-            / 40% 60%;
+            grid-template: "img nm inf" 100px / 20% 40% 40%;
+            min-height: unset;
+     
+            .description {
+                display: none;
+            }
             
             &:hover {
                 height: unset;
@@ -260,10 +290,6 @@
         &__itm {
             &--myPrfl {
                 height: auto;
-                grid-template: "img nm nm" 30px
-                "img dsc dsc" auto
-                "inf inf inf" 100px
-                / 20% 80%;
             } 
         }
     }

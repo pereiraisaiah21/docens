@@ -1,9 +1,9 @@
 .crs {
+    padding: 10px;
     &__wrppr {
         max-width: 1200px;
         position: relative;
         margin: auto;
-        padding: 10px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -12,48 +12,59 @@
         max-width: 1200px;
         position: relative;
         margin: auto;
-        padding: 10px;
         display: flex;
     }
-    &__rltd {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        background-color: $bgwhite95;
-        padding: 20px 10px;
-        border-radius: $brdef ;
+    &__artcls {
         width: 100%;
-        height: fit-content;
+        margin: 0 auto 10px;
+        padding: 10px;
+        background-color: $bgwhitealt;
+        border-radius: $brdef;
         &__ttl {
             font-size: 1.2em;
-            padding: 10px 0;
-            margin: 0 0 10px;
-            svg {
-                font-size: 1.2em;
-            }
-        }
-        &__anchr {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: $brdef ;
-            margin: 3px 0;
-            width: $wmax;
-        }
-        &__img {
-            max-width: $wmax;
-        }
-        &__bttn {
-            border: 1px solid #ccc;
-            border-radius: $brdef ;
-            padding: 5px 10px;
-            white-space: nowrap;
-            display: block;
-            margin: 5px 0;
-            svg {
-                margin-right: 10px;
-            }
+            text-align: left;
+            padding: 0 10px;
         }
     }
+    // &__rltd {
+    //     display: flex;
+    //     flex-direction: column;
+    //     text-align: center;
+    //     background-color: $bgwhite95;
+    //     padding: 20px 10px;
+    //     border-radius: $brdef ;
+    //     width: 100%;
+    //     height: fit-content;
+    //     &__ttl {
+    //         font-size: 1.2em;
+    //         padding: 10px 0;
+    //         margin: 0 0 10px;
+    //         svg {
+    //             font-size: 1.2em;
+    //         }
+    //     }
+    //     &__anchr {
+    //         padding: 10px;
+    //         border: 1px solid #ccc;
+    //         border-radius: $brdef ;
+    //         margin: 3px 0;
+    //         width: $wmax;
+    //     }
+    //     &__img {
+    //         max-width: $wmax;
+    //     }
+    //     &__bttn {
+    //         border: 1px solid #ccc;
+    //         border-radius: $brdef ;
+    //         padding: 5px 10px;
+    //         white-space: nowrap;
+    //         display: block;
+    //         margin: 5px 0;
+    //         svg {
+    //             margin-right: 10px;
+    //         }
+    //     }
+    // }
     &__cntnt {
         width: 100%;
     }
@@ -78,87 +89,87 @@
             border-radius: $brdef ;
         }
     }
-    &__img {
-        max-width: $wmax;
-        &__crdts {
-            font-size: .7em;
-            text-align: center;
-        }
-    }
-    &__dtls {
-        line-height: 3px;
-        font-size: .9em;
-        margin: 0 0 25px;
-        &__writer {}
-        &__date {}
-        &__lastUpdate {}
-    }
-    &__prmryWrp {
-        max-width: 1200px;
-        margin: 0 auto;
-        background-color: $bgwhite95;
-        color: #4a4a4a;
-        border-radius: $brdef ;
-        text-align: left;
-        margin: 0px auto 20px;
-        padding: 30px;
-        box-sizing: border-box;
-        &--cntnt {
-            line-height: 25px;
-            text-align: left; 
-            .img {
-                max-width: $wmax;
-            }
-            .wrnPrgrph {
-                border: 1px solid #e7e5d8;
-                border-left: 5px solid #f1f19c;
-                padding: 20px;
-                background-color: #ebeba46e;
-                &::before {
-                    content: "Observação";
-                    display: block;
-                }
-            }
-        }
-    }
-    &__prmryTtl {
-        color: #4a4a4a;
-        font-size: 1.3em;
-        text-transform: uppercase;
-        margin: 15px 0;
-    }
-    &__scndtyTtl {
-        color: #4a4a4a;
-        margin: 0 0 30px;
-        font-size: 1.1rem;
-    }
-    &__trcryTtl {
-        background-color: $bggray;
-        padding: 10px;
-        border-radius: $brdef ;
-        white-space: nowrap;
-        color: $white;
-        margin: 0 0 10px;
-        width: fit-content;
-    }
-    &__wrn {
-        display: none;
-    }
-    &__actvty {
-        display: block;
-        margin-bottom: 20px;
-        padding: 10px;
-        text-align: left;
-        border-left: 3px solid;
-        &__bttn {
-            padding: 10px;
-            background-color: #ebeaea;
-            border-radius: $brdef ;
-            svg {
-                margin: 0 10px 0 0;
-            }
-        }
-    }
+    // &__img {
+    //     max-width: $wmax;
+    //     &__crdts {
+    //         font-size: .7em;
+    //         text-align: center;
+    //     }
+    // }
+    // &__dtls {
+    //     line-height: 3px;
+    //     font-size: .9em;
+    //     margin: 0 0 25px;
+    //     &__writer {}
+    //     &__date {}
+    //     &__lastUpdate {}
+    // }
+    // &__prmryWrp {
+    //     max-width: 1200px;
+    //     margin: 0 auto;
+    //     background-color: $bgwhite95;
+    //     color: #4a4a4a;
+    //     border-radius: $brdef ;
+    //     text-align: left;
+    //     margin: 0px auto 20px;
+    //     padding: 30px;
+    //     box-sizing: border-box;
+    //     &--cntnt {
+    //         line-height: 25px;
+    //         text-align: left; 
+    //         .img {
+    //             max-width: $wmax;
+    //         }
+    //         .wrnPrgrph {
+    //             border: 1px solid #e7e5d8;
+    //             border-left: 5px solid #f1f19c;
+    //             padding: 20px;
+    //             background-color: #ebeba46e;
+    //             &::before {
+    //                 content: "Observação";
+    //                 display: block;
+    //             }
+    //         }
+    //     }
+    // }
+    // &__prmryTtl {
+    //     color: #4a4a4a;
+    //     font-size: 1.3em;
+    //     text-transform: uppercase;
+    //     margin: 15px 0;
+    // }
+    // &__scndtyTtl {
+    //     color: #4a4a4a;
+    //     margin: 0 0 30px;
+    //     font-size: 1.1rem;
+    // }
+    // &__trcryTtl {
+    //     background-color: $bggray;
+    //     padding: 10px;
+    //     border-radius: $brdef ;
+    //     white-space: nowrap;
+    //     color: $white;
+    //     margin: 0 0 10px;
+    //     width: fit-content;
+    // }
+    // &__wrn {
+    //     display: none;
+    // }
+    // &__actvty {
+    //     display: block;
+    //     margin-bottom: 20px;
+    //     padding: 10px;
+    //     text-align: left;
+    //     border-left: 3px solid;
+    //     &__bttn {
+    //         padding: 10px;
+    //         background-color: #ebeaea;
+    //         border-radius: $brdef ;
+    //         svg {
+    //             margin: 0 10px 0 0;
+    //         }
+    //     }
+    // }
     // &__rf {
     //     display: block;
     //     margin-bottom: 10px;
@@ -169,17 +180,17 @@
     //         list-style-type: lower-greek;
     //     }
     // }
-    &__spprt {
-        display: block;
-        margin-bottom: 10px;
-        padding: 10px;
-        font-size: 1.1em;
-        text-align: left;
-        border-left: 3px solid;
-        &__lst {
-            list-style-type: armenian;
-        }
-    }
+    // &__spprt {
+    //     display: block;
+    //     margin-bottom: 10px;
+    //     padding: 10px;
+    //     font-size: 1.1em;
+    //     text-align: left;
+    //     border-left: 3px solid;
+    //     &__lst {
+    //         list-style-type: armenian;
+    //     }
+    // }
     &__srch {
         width: $wmax;
         padding: 10px 0 30px;
@@ -199,7 +210,8 @@
     }
     &__itm {
         @include flexcencen;
-        border-bottom: 3px solid #ccc;
+        border: 3px solid #ccc;
+        border-radius: 10px;
         margin: 0 0 10px;
         padding: 10px;
         cursor: pointer;
@@ -252,26 +264,93 @@
         }
     }
 
-    &__cntnt {
+    &__crd {
+        @include flexcencen;
+        flex-wrap: nowrap;
+        background-color: #e9e9e9eb;
+        padding: 10px 0;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        position: relative;
+        &__img {
+            &__cntnt {
+                max-width: $wmax;
+            }
+        }
+        &__inf {
+            text-align: left;
+            padding: 0 10px;
+            display: flex;
+            flex-wrap: wrap;
+            h6 {
+                margin: 0 0 10px; 
+                font-size: 1.3em;
+                width: $wmax;
+            }
+        }
+        &__vw {
+            position: absolute;
+            top: 15px;
+            border: 1px solid #ccc;
+            border-radius: $brdef ;
+            height: 30px;
+            right: 20px;
+            padding: 0 10px;
+            svg {
+                margin: 0px 0 -2px 7px;
+            }
+        }
+        &__sbjct {
+            background-color: #b3b3b3;
+            border-radius: $brdef ;
+            padding: 0 10px;
+            color: $white;
+        }
+    }
 
+    &__cntnt {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+    }
+    &__ttl {
+        width: 100%;
     }
     &__br {
         width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        &__ttl {}
+        margin: 0 auto;
+        background-color: $bgwhitealt;
+        border-radius: $brdef;
+        margin-bottom: 10px;
+        height: fit-content;
         &__optns {
             width: 100%;
+            padding: 10px 0;
             display: flex;
+            flex-wrap: wrap;
         }
-        &__itm {}
+        &__itm {
+            width: 100%;
+        }
         &__anchr {
             display: block;
-            padding: 0 10px 0 0;
-            &--actv {
+            padding: 10px 10px 20px;
+            margin-bottom: 10px;
+            &--ttl {
                 border-bottom: 3px solid $white;
+                font-size: 1.1em;
+                font-weight: 700;
             }
         }
+    }
+
+    &__allMttrs {
+        width: 68%;
+        padding: 10px;
+        margin: 0 auto;
+        background-color: $bgwhitealt;
+        border-radius: $brdef ;
+        margin-right: 10px;
     }
 
     // Xs
@@ -308,11 +387,27 @@
         &__cntnt {
            //width: 68%;
         }
+        &__br {
+            width: 30%;
+            padding: 10px;
+            margin-right: 10px;
+            &__optns {
+                text-align: left;
+            }
+        }
+        &__artcls {
+            width: 68%;
+            padding: 10px;
+        }
+        &__crd {
+            padding: 10px 10px 20px;
+        }
         &__rltd {
             width: 30%;
         }
         &__itm {
-            width: 32%;
+            width: 24%;
+            height: 150px;
         }
 
     }

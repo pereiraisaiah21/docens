@@ -19,7 +19,8 @@ import 'swiper/css/scrollbar';
  */
 
 function NavigationMyProgress ({
-    slider
+    slider,
+    sliderTitle
 }) {
 
     const [cardsContent, setCardsContent] = useState({
@@ -54,7 +55,7 @@ function NavigationMyProgress ({
 
     return (
         <section className="actns">
-            <MainTitle description="MEU PROGRESSO" isCarousel={true} icon={<FaOptinMonster />} />
+            <MainTitle description="meu progresso" isCarousel={sliderTitle} icon={<FaOptinMonster />} />
             <div className="actns__crds actns__crds--myPrfl">
                 {
                     slider

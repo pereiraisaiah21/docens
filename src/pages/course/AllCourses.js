@@ -66,11 +66,12 @@ function AllCourses () {
     return (
         <>
             <section className="crs">
-                <MainTitle description="TODOS OS CURSOS" descriptionUnder="Busque alguma CURSO" icon={<FaNewspaper />} />
+
+                <MainTitle description="todos os cursos" descriptionUnder="Busque alguma CURSO" icon={<FaNewspaper />} />
                 <div className="crs__wrpprAll">
                     <div className="crs__allCrs">
                         <div className="crs__srch">
-                            <input className="crs__srch__inpt" placeholder="Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)} />
+                            <input className="crs__srch__inpt" placeholder="Busque algum curso" onChange={(e) => handleSearch(e.target.value)} />
                         </div>
                         {
                             searchResult.data !== null 

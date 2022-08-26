@@ -51,8 +51,8 @@
     &__dscrptn {
         position: relative;
         text-align: left;
-        padding-left: 5px;
-        padding: 10px;
+        //padding-left: 5px;
+        //padding: 10px;
         max-width: 1200px;
         margin: 0 auto 20px;
         &__icn {
@@ -224,6 +224,9 @@
 
     // Xs
     @media (max-width: 575px) {
+        &__dscrptn {
+            padding: 10px;
+        }
         &__crds {
             justify-content: space-between;
         }

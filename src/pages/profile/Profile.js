@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from "react";
-//import { useParams } from "react-router-dom";
 
 import UserData from "../../UserData";
 
@@ -17,13 +16,25 @@ function Profile () {
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
+    const [updateUserData, setUpdateUserData] = useState( false );
 
     useEffect(() => {
         setTypeUser( userDataValues.typeUser )
     }, [userDataValues]);
 
-    //let {username} = useParams();
-    const [updateUserData, setUpdateUserData] = useState( false );
+    const navTabsHandler = function( event ) {
+        event.preventDefault();
+        
+        let buttonActive = document.querySelector( ".prfl__nav__button--active" );
+        let sectionActive = document.querySelector( `div[vop='${event.target.getAttribute("vop")}']` );
+        let sectionWillActive = document.querySelector( "div.prfl__nav__section--active" );
+
+        buttonActive.classList.remove( "prfl__nav__button--active" );
+        sectionWillActive.classList.remove( "prfl__nav__section--active" );
+ 
+        event.target.classList.add( "prfl__nav__button--active" );
+        sectionActive.classList.add( "prfl__nav__section--active" );
+    }
 
     return (
         <section className="prfl">
@@ -48,8 +59,26 @@ function Profile () {
                     typeUser === "default"
                     ?
                     <div className="prfl__updts">
-                        <NavigationMyStats className="chrt__myStts" slider={true} />
-                        <NavigationMyProgress slider={false} />
+                        <nav className="prfl__nav">
+                            <ul className="prfl__nav__list">
+                                <li className="prfl__nav__item">
+                                    <button onClick={navTabsHandler} vop="#stats" className="prfl__nav__button prfl__nav__button--active">
+                                        Minha estatística
+                                    </button>
+                                </li>
+                                <li className="prfl__nav__item">
+                                    <button onClick={navTabsHandler} vop="#matter" className="prfl__nav__button">
+                                        Minhas matérias
+                                    </button>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div className="prfl__nav__section prfl__nav__section--active" vop="#stats">
+                            <NavigationMyStats className="chrt__myStts" slider={true} siderTitle={false} />
+                        </div>
+                        <div className="prfl__nav__section" vop="#matter">
+                            <NavigationMyProgress slider={false} />
+                        </div>
                     </div>
                     :
                     ""

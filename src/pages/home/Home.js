@@ -38,7 +38,7 @@ function Home () {
                 }} />
                 <NavigationActions typeUser={typeUser} />
                 <SeparationDots />
-                <NavigationMyProgress slider={"true"} />
+                <NavigationMyProgress slider={"true"} NavigationMyStats={true} />
                 <SeparationDots />
                 <Tutorial />
                 <SeparationDots />

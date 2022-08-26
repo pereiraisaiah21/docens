@@ -75,7 +75,7 @@ function Feed () {
     return (
         <section className="fd">
             <div className="fd__wrppr">
-                <MainTitle description="MEU FEED" descriptionUnder="Pubicações recentes" icon={<FaRegCalendarTimes />} />
+                <MainTitle description="meu feed" descriptionUnder="Pubicações recentes" icon={<FaRegCalendarTimes />} />
                 <div className="fd__psts">
                     {
                         posts.data !== null

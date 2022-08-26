@@ -33,7 +33,7 @@ function Tutorial ({
 
     return (
         <section className="actns">
-            <MainTitle description="Tutorial" isCarousel={true} icon={<FaOptinMonster />} />
+            <MainTitle description="tutorial" isCarousel={true} icon={<FaOptinMonster />} />
             <div className="actns__crds actns__crds--myPrfl">
                 <Swiper
                     modules={[Navigation, Pagination, A11y]}

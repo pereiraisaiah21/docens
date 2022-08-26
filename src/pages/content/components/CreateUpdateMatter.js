@@ -135,7 +135,7 @@ function CreateUpdateMatter () {
         
         <section className="content">
             <div className="content__wrp">
-                <MainTitle description="Conteúdo" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
+                <MainTitle description="conteúdo" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
                 <form className="content__frm" onSubmit={(e) => e.preventDefault()}>
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Matéria *</legend>

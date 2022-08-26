@@ -66,7 +66,7 @@ function AllQuiz () {
     return (
         <>
             <section className="mttr">
-                <MainTitle description="TODOS OS QUIZ" descriptionUnder="Busque algum quiz" icon={<FaNewspaper />} />
+                <MainTitle description="todos os quiz" descriptionUnder="Busque algum quiz" icon={<FaNewspaper />} />
                 <div className="mttr__wrpprAll">
                     <div className="mttr__allMttrs">
                         <div className="mttr__srch">

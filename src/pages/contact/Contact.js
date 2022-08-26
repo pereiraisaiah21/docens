@@ -49,7 +49,7 @@ function Contact () {
 
         <section className="cntct">
             <div className="cntct__wrp">
-                <MainTitle description="Contato" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
+                <MainTitle description="contato" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
                 <form className="cntct__frm" onSubmit={handleSubmit}>
                     <fieldset className="cntct__fldst">
                         <legend className="cntct__lgnd">Selecione o assunto</legend>

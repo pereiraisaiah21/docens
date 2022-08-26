@@ -66,7 +66,7 @@ function AllMatters () {
     return (
         <>
             <section className="mttr">
-                <MainTitle description="TODAS MATÉRIAS" descriptionUnder="Busque alguma matéria" icon={<FaNewspaper />} />
+                <MainTitle description="todas as matérias" descriptionUnder="Busque alguma matéria" icon={<FaNewspaper />} />
                 <div className="mttr__wrpprAll">
                     <div className="mttr__allMttrs">
                         <div className="mttr__srch">

@@ -43,7 +43,7 @@ function Notification () {
                 </div>
                 :
                 <section className="ntfct">
-                    <MainTitle description="NAVEGUE PELO SITE" isCarousel={false} icon={<FaTag />} />
+                    <MainTitle description="navegue pelo site" isCarousel={false} icon={<FaTag />} />
                     <div className="ntfct__wrppr">
                         <ul className="ntfct__cntnt">
                             {

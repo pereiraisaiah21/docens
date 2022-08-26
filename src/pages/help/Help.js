@@ -56,7 +56,7 @@ function Help () {
                 </div>
                 :
                 <section className="Help">
-                    <MainTitle description="Dúvidas frequentes" descriptionUnder="" icon={<FaOptinMonster />} />
+                    <MainTitle description="dúvidas frequentes" descriptionUnder="" icon={<FaOptinMonster />} />
                     <div className="Help__wrp">
                         <section className="Help__content">
                             <ul className="Help__question">
