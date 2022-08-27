@@ -74,6 +74,9 @@ function Course () {
                     <h1 className="crs__ttl">
                             Algebra binária
                     </h1>
+                    <p className="crs__dscrptn">
+                        Um sistema de equações é constituído por um conjunto de equações que apresentam mais de uma incógnita. Para resolver um sistema é necessário encontrar os valores que satisfaçam simultaneamente todas as equações.
+                    </p>
                     <nav className="crs__br">
                         <ul className="crs__br__optns">
                             <li className="crs__br__itm">

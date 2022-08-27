@@ -314,7 +314,14 @@
         justify-content: left;
     }
     &__ttl {
+        text-align: left;
+        padding: 10px;
         width: 100%;
+        margin: 10px 0;
+    }
+    &__dscrptn {
+        text-align: left;
+        padding: 0 10px 20px;
     }
     &__br {
         width: 100%;

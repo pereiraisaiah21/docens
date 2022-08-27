@@ -7,6 +7,7 @@ import ImageUploading from 'react-images-uploading';
 import UserData from "../../../UserData";
 
 import MainTitle from "../../../components/title/MainTitle";
+import MatterEditor from "../../matter/components/MatterEditor";
 
 import { FaOptinMonster, FaInfoCircle, FaFileImport, FaUnderline } from 'react-icons/fa';
 
@@ -166,7 +167,8 @@ function CreateUpdateMatter () {
                     </fieldset>
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Escopo do artigo *</legend>
-                        <textarea className="content__inpt" onChange={(e) => setContent(e.target.value)} rows="20" cols="20" type="text" placeholder={content} value={content || ""} />
+                        <MatterEditor />
+                        
                     </fieldset>
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Tags ( Opcional )</legend>

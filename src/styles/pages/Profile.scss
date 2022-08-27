@@ -237,6 +237,7 @@
         .description {
             width: 80%;
             grid-area: dsc;
+            display: none;
         }
         &__inf {
             &--myPrfl {

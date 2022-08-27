@@ -272,20 +272,24 @@
         &__itm {
             &__img {
                 &--myPrgrss {
-                    width: 50%;
+                    width: 30%;
                     border-radius: $brdef ;
                 }
             }
             &__nm {
                 &--myPrgrss {
-                    width: 50%;
+                    width: 70%;
                     height: 40px;
+                }
+                &--tutorial {
+                    margin: 15px 0;
                 }
             }
             &__inf {
                 height: 150px;
                 &--myPrgrss {
                     width: $wmax;
+                    height: unset;
                     justify-content: flex-end;
                     padding: 0;
                 }
@@ -304,6 +308,9 @@
                 width: $wmax;
                 max-width: 500px;
                 justify-content: space-between;
+            }
+            &--tutorial {
+                text-align: left;
             }
         }
     }

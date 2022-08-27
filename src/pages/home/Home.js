@@ -40,9 +40,10 @@ function Home () {
                 <SeparationDots />
                 <NavigationMyProgress slider={"true"} NavigationMyStats={true} />
                 <SeparationDots />
-                <Tutorial />
-                <SeparationDots />
                 <NavigationTeachers />
+                <SeparationDots />
+                <Tutorial />
+
             </>
             :
             <NavigationActions typeUser={typeUser} />

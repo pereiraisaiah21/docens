@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import CardSubjectProgress from "../../../components/card/CardSubectProgress";
+import CardTutorial from "../../../components/card/CardTutorial";
 import MainTitle from "../../../components/title/MainTitle";
 import { Navigation, Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -47,7 +47,7 @@ function Tutorial ({
                     tutorialContent.data.map((item, key) => {
                         return (
                             <SwiperSlide key={key}>
-                                <CardSubjectProgress 
+                                <CardTutorial 
                                     classStyleGrand="actns__itm actns__itm--tutorial" 
                                     srcImage={"https://conceito.de/wp-content/uploads/2012/11/tutorial-1.jpg"} 
                                     altImage={"item.imageAlt"} 
