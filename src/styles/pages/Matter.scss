@@ -1,4 +1,5 @@
 .mttr {
+    padding: 10px 0;
     &__wrppr {
         max-width: 1200px;
         position: relative;
@@ -14,39 +15,46 @@
         margin: auto;
         padding: 10px;
         display: flex;
+        background-color: $bg-box;
+        border-radius: $brdef;
     }
     &__rltd {
         display: flex;
         flex-direction: column;
         text-align: center;
-        background-color: $bgwhite95;
-        padding: 20px 10px;
+        background-color: $bg-box;
+        padding: 20px;
         border-radius: $brdef ;
         width: 100%;
         height: fit-content;
+        color: $white;
         &__ttl {
             font-size: 1.2em;
             padding: 10px 0;
             margin: 0 0 10px;
             svg {
                 font-size: 1.2em;
+                margin: 0 0 -4px 0;
             }
         }
         &__anchr {
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid $bc-box;
             border-radius: $brdef ;
             margin: 3px 0;
+            color: $white;
             width: $wmax;
         }
         &__img {
             max-width: $wmax;
+            border-radius: $brdef;
         }
         &__bttn {
-            border: 1px solid #ccc;
+            border: 1px solid $bc-box;
             border-radius: $brdef ;
             padding: 5px 10px;
             white-space: nowrap;
+            color: $white;
             display: block;
             margin: 5px 0;
             svg {
@@ -67,13 +75,15 @@
         &__ttl {
             width: $wmax;
             padding: 10px 0;
+            color: $white;
             svg {
                 margin-right: 10px;
             }
         }
         &__anchr {
             margin: 0 10px 10px 0;
-            padding: 5px;
+            background-color: $bg-white80;
+            padding: 5px 10px;
             border: 1px solid #ccc;
             border-radius: $brdef ;
         }
@@ -96,8 +106,8 @@
     &__prmryWrp {
         max-width: 1200px;
         margin: 0 auto;
-        background-color: $bgwhite95;
-        color: #4a4a4a;
+        background-color: $bg-box;
+        color: $white;
         border-radius: $brdef ;
         text-align: left;
         margin: 0px auto 20px;
@@ -122,13 +132,13 @@
         }
     }
     &__prmryTtl {
-        color: #4a4a4a;
+        color: $white;
         font-size: 1.3em;
         text-transform: uppercase;
         margin: 15px 0;
     }
     &__scndtyTtl {
-        color: #4a4a4a;
+        color: $white;
         margin: 0 0 30px;
         font-size: 1.1rem;
     }
@@ -137,7 +147,7 @@
         padding: 10px;
         border-radius: $brdef ;
         white-space: nowrap;
-        color: $white;
+        color: $black;
         margin: 0 0 10px;
         width: fit-content;
     }
@@ -149,11 +159,10 @@
         margin-bottom: 20px;
         padding: 10px;
         text-align: left;
-        border-left: 3px solid;
         &__bttn {
-            padding: 10px;
+            padding: 10px 20px;
             background-color: #ebeaea;
-            border-radius: $brdef ;
+            border-radius: $brdef;
             svg {
                 margin: 0 10px 0 0;
             }
@@ -196,6 +205,7 @@
         display: flex;
         width: $wmax;
         flex-wrap: wrap;
+        color: $fc-white;
     }
     &__itm {
         @include flexcencen;

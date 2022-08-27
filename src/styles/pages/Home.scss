@@ -58,21 +58,23 @@
         &__icn {
             display: inline-block;
             height: 100%;
-            background-color: $black;
-            border-radius: $brdef ;
+            border-bottom: 3px solid $bc-white;
             padding: 5px 10px;
             font-size: 30px;
             svg {
-                color: $white;
-                margin: 0 0px -2px 0;
+                color: $fc-white;
+                margin: 0 0px -7px 0;
             }
         }
         &__ttl {
             padding: 0 10px;
             font-size: 1em;
+            font-weight: 600;
+            color: $fc-white;
             p {
                 margin: 0;
                 font-size: .7em;
+                color: $fc-white;
             }
             &--dscrptn {
                 display: inline-block;
@@ -96,14 +98,14 @@
         // max-width: 300px;
         height: 100%;
         width: 49%;
-        background-color: $bgwhite95;
-        border: 1px solid #ccc;
+        background-color: $bg-box;
+        //border: 1px solid $bc-box;
         border-radius: $brdef ;
         padding: 10px;
         margin: 0 0px 10px 0;
         cursor: pointer;
         &__img {
-            max-width: 80%;
+            max-width: 100%;
             border-radius: $brdef;
             &--tutorial {
                 max-width: 100%;
@@ -111,14 +113,17 @@
         }
         &__nm {
             font-size: 1.1rem;
-            color: $black;
+            color: $fc-white;
             text-transform: uppercase;
             font-weight: 700;
             margin: 10px 0;
             width: $wmax;
+            &--fd {
+                color: $black;
+            }
         }
         &__inf {
-            padding: 10px;   
+            padding: 10px 0 0;
             width: $wmax;
             @include flexcencenwrap;
         }
@@ -138,7 +143,7 @@
             font-size: .9em;
             &--fd {
                 background-color: $bgblue80;
-                color: $white;
+                color: $black;
             }
             svg {
                 margin: 2px 5px 0 0;
@@ -150,11 +155,14 @@
         }
         &__dscrptn {
             font-size: 1rem;
-            color: $black;
+            color: $fc-white;
             width: $wmax;
             height: 30px;
             svg {
                 display: none;
+            }
+            &--fd {
+                color: $black;
             }
         }
         &__prgrss {
@@ -171,6 +179,7 @@
         }
         &__ht {
             font-size: .8em;
+            color: $fc-white;
             padding: 10px 0;
         }
         &--fd {
@@ -186,7 +195,7 @@
         }
 
         &:hover {
-            box-shadow: inset 0px 0px 5px #efebebe0;
+            box-shadow: inset 0px 0px 3px $bgblue80;
         }
     }
     &__tchrs {
@@ -196,6 +205,9 @@
             @include flexunscen;
         }
         &__itm {
+            background: $bg-box;
+            border-radius: 20px;
+            padding: 20px;
         }
         &__anchr {
             @include flexunscen;
@@ -211,11 +223,12 @@
         &__nm {
             width: $wmax;
             font-size: .9em;
-            color: #706f6f;
+            color: $fc-white;
         }
         &__dscrptn {
             margin: 0;
             font-size: .9em;
+            color: $fc-white;
         }
     }
     &--bg-01 {
@@ -286,7 +299,7 @@
                 }
             }
             &__inf {
-                height: 150px;
+                height: 116px;
                 &--myPrgrss {
                     width: $wmax;
                     height: unset;

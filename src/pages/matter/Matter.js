@@ -178,9 +178,9 @@ function Matter () {
                         }
                         </div>
                         <RelatedMatters relatedMatter={matterRelated.data}/>
+                        <MatterTags tagMatter={matterTag.data} />
                         <ButtonWorkout classStyle={"mttr__workout"} url={"/quiz/posts/1"} />
                     </div>
-                    <MatterTags tagMatter={matterTag.data} />
                 </section>
             }
         </>

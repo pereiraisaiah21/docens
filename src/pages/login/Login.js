@@ -108,7 +108,7 @@ function Login () {
                         <fieldset className="lgn__flst">
                             <legend>
                                 <FaUserGraduate />
-                                Nome de usuário
+                                nome de usuário
                             </legend>
                             <input type="text" className="lgn__inpt" placeholder="Digite seu nome" onChange={e => setUsername(e.target.value)} />
                             {
@@ -122,7 +122,7 @@ function Login () {
                         <fieldset className="lgn__flst">
                             <legend>
                                 <FaLock />
-                                Senha
+                                senha
                             </legend>
                             <input type="password" className="lgn__inpt" placeholder="Digite sua senha" onChange={e => setPassword(e.target.value)} />
                             {

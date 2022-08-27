@@ -18,12 +18,13 @@
         width: 100%;
         margin: 0 auto 10px;
         padding: 10px;
-        background-color: $bgwhitealt;
+        background-color: $bg-box;;
         border-radius: $brdef;
         &__ttl {
             font-size: 1.2em;
             text-align: left;
             padding: 0 10px;
+            color: $fc-white;
         }
     }
     // &__rltd {
@@ -45,7 +46,7 @@
     //     }
     //     &__anchr {
     //         padding: 10px;
-    //         border: 1px solid #ccc;
+    //         border: 1px solid $bc-gray;
     //         border-radius: $brdef ;
     //         margin: 3px 0;
     //         width: $wmax;
@@ -54,7 +55,7 @@
     //         max-width: $wmax;
     //     }
     //     &__bttn {
-    //         border: 1px solid #ccc;
+    //         border: 1px solid $bc-gray;
     //         border-radius: $brdef ;
     //         padding: 5px 10px;
     //         white-space: nowrap;
@@ -85,8 +86,8 @@
         &__anchr {
             margin: 0 10px 10px 0;
             padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: $brdef ;
+            border: 1px solid $bc-gray;
+            border-radius: $brdef;
         }
     }
     // &__img {
@@ -197,7 +198,7 @@
         text-align: left;
         &__inpt {
             height: 50px;
-            border-radius: $brdef ;
+            border-radius: $brdef;
             border: none;
             width: $wmax;
             padding: 10px;
@@ -210,8 +211,8 @@
     }
     &__itm {
         @include flexcencen;
-        border: 3px solid #ccc;
-        border-radius: 10px;
+        border: 3px solid $bc-gray;
+        border-radius: $brdef;
         margin: 0 0 10px;
         padding: 10px;
         cursor: pointer;
@@ -220,6 +221,7 @@
         }
         &__ttl {
             margin: 0 10px;
+            color: $fc-white;
         }
         &__edt {
             @include flexwrap;
@@ -252,14 +254,14 @@
         width: 70px;
         height: 70px;
         padding: 10px;
-        box-shadow: inset 0px 0px 3px #ccc;
+        box-shadow: inset 0px 0px 3px $gray;
         background-color: rgba(255, 255, 255, 0.76);
         @include flexcencen;
         border-radius: $brdef ;
         svg {
             font-size: 3.5em;
             padding: 10px;
-            box-shadow: inset 0px 0px 3px #ccc;
+            box-shadow: inset 0px 0px 3px $bc-gray;
             border-radius: $brdef ;
         }
     }
@@ -267,7 +269,6 @@
     &__crd {
         @include flexcencen;
         flex-wrap: nowrap;
-        background-color: #e9e9e9eb;
         padding: 10px 0;
         margin-bottom: 10px;
         border-radius: 10px;
@@ -282,6 +283,7 @@
             padding: 0 10px;
             display: flex;
             flex-wrap: wrap;
+            color: $fc-white;
             h6 {
                 margin: 0 0 10px; 
                 font-size: 1.3em;
@@ -291,8 +293,8 @@
         &__vw {
             position: absolute;
             top: 15px;
-            border: 1px solid #ccc;
-            border-radius: $brdef ;
+            border: 1px solid $bc-gray;
+            border-radius: $brdef;
             height: 30px;
             right: 20px;
             padding: 0 10px;
@@ -301,8 +303,8 @@
             }
         }
         &__sbjct {
-            background-color: #b3b3b3;
-            border-radius: $brdef ;
+            background-color: $bgwhite95;
+            border-radius: $brdef;
             padding: 0 10px;
             color: $white;
         }
@@ -315,6 +317,7 @@
     }
     &__ttl {
         text-align: left;
+        color: $fc-white;
         padding: 10px;
         width: 100%;
         margin: 10px 0;
@@ -322,11 +325,12 @@
     &__dscrptn {
         text-align: left;
         padding: 0 10px 20px;
+        color: $fc-white;
     }
     &__br {
         width: 100%;
         margin: 0 auto;
-        background-color: $bgwhitealt;
+        background-color: $bg-box;
         border-radius: $brdef;
         margin-bottom: 10px;
         height: fit-content;
@@ -342,9 +346,10 @@
         &__anchr {
             display: block;
             padding: 10px 10px 20px;
+            color: $fc-white;
             margin-bottom: 10px;
             &--ttl {
-                border-bottom: 3px solid $white;
+                border-bottom: 3px solid $bc-white;
                 font-size: 1.1em;
                 font-weight: 700;
             }

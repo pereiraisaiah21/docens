@@ -6,6 +6,8 @@ $cblack70 : rgb(0, 0, 0, 1);
 $black : #000000;
 $white : #ffffff;
 $cblue80 : rgb(92, 161, 171);
+$gray : #cccccc;
+$green : #00b500;
 
 // Background
 
@@ -20,20 +22,28 @@ $bgblack70 : rgba(0, 0, 0, 0.7);
 $bgdarred : #e63c3c;
 $bgred : #ff0000;
 $bgwhitealt : rgb(239 239 239);
+$bggreen80 : #7ced2fcc;
 // FontFamily
 
 // FontSize
+// FontColor
+$fc-white: #FFF;
+$fc-black: #000;
 
 // FontWeight
 
 // Border
 
-$brdef : 10px;
+$brdef : 20px;
 
 // BorderColor
 $bc-gray : #cccccc;
 $bc-black70 : rgb(0, 0, 0, 70%);
 $bc-white : #ffffff;
+$bg-white80 : rgb(255 255 249 / 74%);
+
+$bg-box: rgb(6, 6, 6);
+$bc-box: rgb(92 161 171 / 80%);
 
 
 // BorderRadius

@@ -20,6 +20,7 @@
         border: none;
         padding: 10px 0;
         position: relative;
+        font-size: .9em;
         &--optns {
             @include flexunscen;
             flex-wrap: wrap;
