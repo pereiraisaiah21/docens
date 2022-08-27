@@ -33,7 +33,7 @@
     // }
     &__content {
         width: $wmax;
-        background-color: rgb(211 211 211 / 52%);
+        background-color: $bg-box;
         border-radius: 20px;
         h4 {
             color: $white;
@@ -44,7 +44,7 @@
         list-style-type: none;
         text-align: left;
         padding: 0 10px;
-        color: #000000a1;
+        color: $fc-black;
         &__item {
             background-color: $bgwhite95;
             border-radius: 20px;
@@ -54,14 +54,17 @@
         &__doubt {
             padding: 15px 10px;
             display: flex;
+            color: $white;
             justify-content: space-between;
         }
         &__icon {
+            color: $white;
             position: absolute;
             right: 20px;
         }
         &__answer {
             padding: 0 10px 10px;
+            color: $white;
             display: none;
             line-height: 22px;
             &.open {
@@ -72,18 +75,20 @@
     &__rdrct {
         width: $wmax;
         margin: 10px 0 0;
-        background-color: rgb(211 211 211 / 52%);
-        border-radius: 20px;
+        background-color: $bg-box;
+        border-radius: $brdef;
         font-size: 1em;
         &__txt {
+            color: $fc-white;
             &--highlight {
                 font-size: 1.2em;
             }
         }
         &__anchr {
             padding: 0 10px;
-            background-color: aqua;
-            border-radius: $brdef ;
+            background-color: $bgblue80;
+            color: $fc-white;
+            border-radius: $brdef;
             font-size: 1.2em;
             color: $black;
         }

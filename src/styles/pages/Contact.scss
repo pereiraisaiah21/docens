@@ -4,8 +4,8 @@
         max-width: 1200px;
         margin: auto;
         padding: 10px;
-        background-color: $bgwhite;
-        border-radius: $brdef ;
+        background-color: $bg-box;
+        border-radius: $brdef;
     }
     &__frm {}
     &__fldst {
@@ -16,17 +16,18 @@
     &__lgnd {
         padding: 0;
         margin: 0;
+        color: $fc-white;
     }
     &__slct {
         div {
             border: none;
-            border-radius: $brdef ;
+            border-radius: $brdef;
             font-size: 1em;
         }
     }
     &__inpt {
         padding: 10px;
-        border-radius: $brdef ;
+        border-radius: $brdef;
         border: none;
         width: $wmax;
         font-size: 1em;
@@ -36,15 +37,15 @@
         border: none;
         width: $wmax;
         padding: 10px;
-        border-radius: $brdef ;
+        border-radius: $brdef;
         cursor: pointer;
-        background-color: rgba(177, 8, 253, 0.8);
+        background-color: $bgblue80;
         color: $white;
     }
     &__rtrn {
         width: $wmax;
-        color: rgba(0, 0, 0, 0.7);
-        border-left: 4px solid rgba(0, 0, 0, 0.7);
+        color: $black;
+        border-left: 4px solid $bc-black70;
         padding: 10px;
         text-align: left;
         display: block;

@@ -6,7 +6,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        background-color: $white;
+        background-color: $bg-box;
         padding: 10px;
         border-radius: $brdef ;
     }
@@ -15,18 +15,18 @@
         text-align: left;
         li {
             padding: 20px 10px 15px;
-            background-color: #f9f9f9;
             margin: 0 0 10px;
-            border-bottom: 2px solid #c4c4c4;
+            border-bottom: 2px solid $bc-gray;
             span {
                 font-size: 1.2em;
+                color: $fc-white;
             }
             svg {
                 margin-right: 10px;
-                color: rgb(182, 10, 182);
+                color: $cblue80;
             }
             p {
-
+                color: $fc-white;
             }
         }
     }

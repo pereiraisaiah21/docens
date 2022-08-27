@@ -10,8 +10,8 @@
         text-align: left;
         width: 400px;
         padding: 10px;
-        background-color: $bgwhite95;
-        border-radius: $brdef ;
+        background-color: $bg-box;
+        border-radius: $brdef;
         svg {
             margin: 7px 0 0 0;
         }
@@ -21,12 +21,15 @@
         padding: 10px 0;
         position: relative;
         font-size: .9em;
+        legend {
+            color: $fc-white;
+        }
         &--optns {
             @include flexunscen;
             flex-wrap: wrap;
         }
         &__rtrn {
-            border-radius: $brdef ;
+            border-radius: $brdef;
             font-size: .8em;
             margin: 5px 0;
             background-color: $bgwhite95;
