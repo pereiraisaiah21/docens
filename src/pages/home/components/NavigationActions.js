@@ -15,13 +15,13 @@ function NavigationActions ({
 }) {
 
     const cardsContentDefault = [
-        {
-            name        : "Tutorial",
-            description : "Acesse o tutorial de navegação",
-            link        : "",
-            imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
-            imageAlt    : "Image alternative"
-        },
+        // {
+        //     name        : "Tutorial",
+        //     description : "Acesse o tutorial de navegação",
+        //     link        : "",
+        //     imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
+        //     imageAlt    : "Image alternative"
+        // },
         {
             name        : "Materias",
             description : "Acesse as matérias disponíveis",
@@ -38,13 +38,13 @@ function NavigationActions ({
         }
     ];
     const cardsContentTeacher = [
-        {
-            name        : "Tutorial",
-            description : "Acesse o tutorial de navegação",
-            link        : "",
-            imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
-            imageAlt    : "Image alternative"
-        },
+        // {
+        //     name        : "Tutorial",
+        //     description : "Acesse o tutorial de navegação",
+        //     link        : "",
+        //     imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
+        //     imageAlt    : "Image alternative"
+        // },
         {
             name        : "Materias",
             description : "Acesse as matérias disponíveis",

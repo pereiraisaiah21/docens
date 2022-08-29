@@ -6,7 +6,7 @@ import StudentInfo from "../../components/User/StudentInfo";
 import SeparationDots from "./components/default/SeparationDots";
 import NavigationActions from "./components/NavigationActions";
 import NavigationMyProgress from "./components/default/NavigationMyProgress";
-import Tutorial from "./components/Tutotial";
+// import Tutorial from "./components/Tutotial";
 import NavigationTeachers from "./components/default/NavigationTeachers";
 
 /**
@@ -41,8 +41,7 @@ function Home () {
                 <NavigationMyProgress slider={"true"} NavigationMyStats={true} />
                 <SeparationDots />
                 <NavigationTeachers />
-                <SeparationDots />
-                <Tutorial />
+                {/* <Tutorial /> */}
 
             </>
             :

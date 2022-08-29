@@ -3,7 +3,7 @@
         max-width: 1200px;
         margin: 0 auto;
         display: flex;
-        background-color: $bgligblue80;
+        padding: 0 0 10px;
         border-radius: $brdef;
         flex-wrap: wrap;
         padding-bottom: 10px;
@@ -23,12 +23,12 @@
         margin: 0 auto;
         padding: 10px;
         border-radius: $brdef;
-        background-color: $bgwhitealt;
+        background-color: $bg-box;
     }
     &__img {
         img {
             width: 200px;
-            border-radius: $brdef ;
+            border-radius: $brdef;
         }
         &--myPrfl {
             max-width: unset;
@@ -40,14 +40,15 @@
         }
         &__itm {
             padding: 10px 0;
+            color: $fc-white;
             svg {
                 margin-right: 10px;
-                color: #3a3939;
+                color: $fc-white;
             }
             &--slct {
                 div {
                     border: none;
-                    border-radius: $brdef ;
+                    border-radius: $brdef;
                     font-size: 1em;
                 }
             }
@@ -67,7 +68,7 @@
             background-color: $bgblue80;
             padding: 10px 10px;
             margin: 20px 0;
-            border-radius: $brdef ;
+            border-radius: $brdef;
             text-align: center;
             a {
                 color: $white;
@@ -127,7 +128,7 @@
         padding: 10px;
         width: 97%;
         margin: 0 auto;
-        background-color: $bgwhitealt;
+        background-color: $bg-box;
         border-radius: $brdef ;
     }
     &__nav {
@@ -143,8 +144,11 @@
             border: none;
             font-size: 1.1em;
             padding: 10px;
+            color: $fc-white;
+            background-color: $bgunset;
+            cursor: pointer;
             &--active {
-                border-bottom: 3px solid;
+                border-bottom: 3px solid $bc-white;
             }
         }
         &__section {
@@ -224,7 +228,7 @@
             &--myPrfl {
                 height: 100px;
                 max-width: 100px;
-                border-radius: $brdef ;
+                border-radius: $brdef;
                 grid-area: img;
             }
         }
@@ -268,7 +272,7 @@
             height: unset;
             grid-template: "img nm inf" 100px / 20% 40% 40%;
             min-height: unset;
-     
+
             .description {
                 display: none;
             }
