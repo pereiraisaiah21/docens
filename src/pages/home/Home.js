@@ -7,6 +7,7 @@ import SeparationDots from "./components/default/SeparationDots";
 import NavigationActions from "./components/NavigationActions";
 import NavigationMyProgress from "./components/default/NavigationMyProgress";
 // import Tutorial from "./components/Tutotial";
+import Topics from "./components/Topics";
 import NavigationTeachers from "./components/default/NavigationTeachers";
 
 /**
@@ -38,7 +39,9 @@ function Home () {
                 }} />
                 <NavigationActions typeUser={typeUser} />
                 <SeparationDots />
-                <NavigationMyProgress slider={"true"} NavigationMyStats={true} />
+                <NavigationMyProgress slider={"true"} sliderTitle={true}  NavigationMyStats={true} />
+                <SeparationDots />
+                <Topics />
                 <SeparationDots />
                 <NavigationTeachers />
                 {/* <Tutorial /> */}

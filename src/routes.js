@@ -18,6 +18,7 @@ import AllCourses from "./pages/course/AllCourses";
 import Course from "./pages/course/Course";
 
 import Matter from "./pages/matter/Matter";
+import Article from "./pages/matter/Article";
 import AllMatters from "./pages/matter/AllMatters";
 import CreateUpdateMatter from "./pages/content/components/CreateUpdateMatter";
 
@@ -46,7 +47,8 @@ function SiteRoutes () {
                
 
                 <Route path="/materias" element={<AllMatters />} />
-                <Route path="/materias/:id/:contentid" element={<Matter />} />
+                <Route path="/materias/:id/" element={<Matter />} />
+                <Route path="/materias/:id/:contentid" element={<Article />} />
                 <Route path="/materias/alt/" element={<CreateUpdateMatter />} />
                 <Route path="/materias/alt/:id/:contentid/" element={<CreateUpdateMatter />} />
 

@@ -17,25 +17,6 @@
             width: $wmax;
         }
     }
-    // Xs
-    @media (max-width: 575px) {
-    }
-    // Sm
-    @media (min-width: 576px) {
-        
-    }
-    // Md
-    @media (min-width: 768px) {
-      
-    }
-    // Lg
-    @media (min-width: 991px) {
-       
-    }
-    // Xl
-    @media (min-width: 1200px) {}
-    // Xxl
-    @media (min-width: 1400px) {}
 }
 
 .swiper {
@@ -46,13 +27,10 @@
 }
 
 .actns {
-    //background-color: #edededbd;
     padding: 20px 10px;
     &__dscrptn {
         position: relative;
         text-align: left;
-        //padding-left: 5px;
-        //padding: 10px;
         max-width: 1200px;
         margin: 0 auto 20px;
         &__icn {
@@ -231,6 +209,26 @@
             color: $fc-white;
         }
     }
+    &__tpcs {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px 0 0;
+        max-width: 1200px;
+        margin: auto;
+        &__srvc {
+            border-right: none;
+            padding: 10px;
+            &__img {
+                max-width: 100%;
+                border-radius: $brdef;
+            }
+        }
+        &__dscrptn {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: $white;
+        }
+    }
     &--bg-01 {
         //background-color: #eef5f5;
     }
@@ -279,7 +277,7 @@
         }
         &__dscrptn {
             &__ttl {
-                font-size: 1.2em;
+                font-size: 1.4em;
             }
         }
         &__itm {
@@ -324,6 +322,17 @@
             }
             &--tutorial {
                 text-align: left;
+            }
+        }
+        &__tpcs {
+            flex-wrap: nowrap;
+            &__srvc {
+                border-right: 3px solid $bc-black70;
+                &__img {
+                    max-height: 250px;
+                    max-width: unset;
+                    margin-right: 20px;
+                }
             }
         }
     }

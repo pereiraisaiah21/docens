@@ -40,7 +40,7 @@ function Profile () {
         <section className="prfl">
             <div className="prfl__wrpp">
                 <div className="prfl__bg">
-                    <img src="https://thumbs.dreamstime.com/b/fb-cover-facebook-watercolor-style-isolated-set-elements-wild-flowers-aquarelle-image-could-be-used-profile-78323435.jpg" alt="" className="" />
+                    <img src="https://placehold.jp/1700x250.png" alt="" className="" />
                     {
                         updateUserData
                         ?

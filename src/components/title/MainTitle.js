@@ -18,7 +18,7 @@ function MainTitle ({
     return (
         <div className="actns__dscrptn">
             <span className="actns__dscrptn__icn">
-                {icon}
+                {/* {icon} */}
             </span>
             <span className={`actns__dscrptn__ttl${descriptionUnder ? " actns__dscrptn__ttl--dscrptn" : ""}`}>
                 {description}

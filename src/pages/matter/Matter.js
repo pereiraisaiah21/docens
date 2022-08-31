@@ -1,189 +1,104 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useParams } from "react-router-dom";
+import React, { useState } from "react";
 
-import ImageWithCredits from "./components/ImageWithCredits";
-import RelatedMatters from "./components/RelatedMatters";
-import ButtonWorkout from "../../components/button/ButtonWorkout";
-import { TailSpin } from "react-loader-spinner";
-import { FaCalendarWeek } from 'react-icons/fa';
-import ConnectionTimeoutWarn from "../../components/alert/ConnectionTimeoutWarn";
+import CardCourse from "../../components/card/CardCourse";
 
-import MatterTags from "./components/MatterTags";
-
-/**
- * 
- * @returns 
- */
+import MainTitle from "../../components/title/MainTitle";
+import NavigationMyProgress from "../home/components/NavigationActions"
 
 function Matter () {
 
-    const {id} = useParams();
-    const {contentid} = useParams();
-
-    const textTestP = "<p>Às vezes, problemas que parecem muito ?</p><p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><img class='img' src='https://img.freepik.com/vetores-premium/formulas-de-fisica-equacoes-matematicas-calculos-aritmeticos-blackboard-com-formulas-cientificas_461812-424.jpg' alt=''/>";  
-
-    const [loader, setLoader] = useState( true );
-    const [matterContent, setMatterContent] = useState({
-        data: [],
+    const [posts, setPosts] = useState({
+        data : [
+            {
+                imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                subject     : "Direitos humanos",
+                title       : "Fundamentos de Realidade aumentada",
+                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                link        : "/hfs",
+                views       : 200
+            },
+            {
+                imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                subject     : "Direitos humanos",
+                title       : "Fundamentos de Realidade aumentada",
+                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                link        : "/hfs",
+                views       : 200
+            },
+            {
+                imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                subject     : "Direitos humanos",
+                title       : "Fundamentos de Realidade aumentada",
+                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                link        : "/hfs",
+                views       : 200
+            },
+            {
+                imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                subject     : "Direitos humanos",
+                title       : "Fundamentos de Realidade aumentada",
+                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                link        : "/hfs",
+                views       : 200
+            },
+            {
+                imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                subject     : "Direitos humanos",
+                title       : "Fundamentos de Realidade aumentada",
+                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                link        : "/hfs",
+                views       : 200
+            },
+            {
+                imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                subject     : "Direitos humanos",
+                title       : "Fundamentos de Realidade aumentada",
+                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                link        : "/hfs",
+                views       : 200
+            }
+        ],
         error: ""
     });
-    const [matterRelated, setMatterRelated] = useState({
-        data: [],
-        error: ""
-    });
-    const [matterTag, setMatterTag] = useState({
-        data: [],
-        error: ""
-    });
-    const [failToLoad, setFailToLoad] = useState( false );
-
-    useEffect( () => {
-        axios.get( `https://jsonplaceholder.typicode.com/${id}/${contentid}` )
-        .then( response => {
-
-            setMatterContent({
-                ...matterContent,
-                data: [response.data]
-            });
-            setTimeout( () => 
-                setLoader( false ),
-                3000
-            );
-        }).catch( err => {
-            setMatterContent({
-                ...matterContent,
-                error: err 
-            });
-            setFailToLoad( true );
-        });
-
-        axios.get( `https://jsonplaceholder.typicode.com/users/3` )
-        .then( response => {
-
-            setMatterRelated({
-                ...matterRelated,
-                data: [response.data]
-            });
-        }).catch( err => {
-            setMatterRelated({
-                ...matterRelated,
-                error: err 
-            });
-        });
-
-        axios.get( `https://jsonplaceholder.typicode.com/users` )
-        .then( response => {
-
-            setMatterTag({
-                ...matterTag,
-                data: response.data
-            });
-        }).catch( err => {
-            setMatterTag({
-                ...matterTag,
-                error: err 
-            });
-        });
-    }, []);
 
     return (
-        <>
-            {
-                loader
-                ?
-                    failToLoad 
-                    ?
-                    <ConnectionTimeoutWarn />
-                    :
-                    <div className="ldr">
-                        <TailSpin color = "rgba(255, 255, 255)" />
-                    </div>
-                :
-                <section className="mttr">
-                    <div className="mttr__wrppr">
-                        <div className="mttr__cntnt">
-                        {
-                            matterContent.data !== null 
-                            ?
-                            matterContent.data.map((item, key) => {
-                                return (
-                                    <React.Fragment key={key}>
-                                        <div className="mttr__prmryWrp">
-                                            <p className="mttr__trcryTtl">
-                                                Algebra Quântica
-                                            </p>
-                                            <h4 className="mttr__prmryTtl">
-                                                {item.title}
-                                            </h4>
-                                            <p className="mttr__scndtyTtl">
-                                                {item.title}
-                                            </p>
-                                            <div className="mttr__dtls">
-                                                <p className="mttr__dtls__wrtr">Por Editorial Cursos Educacionais</p>
-                                                <p className="mttr__dtls__dt">19/07/2022 <span className="mttr__dtls__lstpdt">- Atualizado a 2 dias</span></p>
-                                            </div>
-                                            <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://council.science/wp-content/uploads/2017/04/IUPAC-feature-image-1400x600.jpg" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/" />
-                                        </div>
-                                        <div className="mttr__prmryWrp mttr__prmryWrp--cntnt">
-                                            {item.body}
-                                            <div dangerouslySetInnerHTML={{__html:textTestP}} />
-                                        </div>
-                                        {
-                                            !!item.userId
-                                            ?
-                                                <div className="mttr__prmryWrp txt-cntr fnt-df">
-                                                    <span className="mttr__actvty">
-                                                        Atividades
-                                                    </span>
-                                                    <a className="mttr__actvty__bttn" href="/quiz/algebra" title="modulo01">
-                                                        <FaCalendarWeek />
-                                                        <span>
-                                                            Atividade
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            :
-                                            ""
-                                        }
-                                        {/* {
-                                            item.existAtivity
-                                            ?
-                                            ""
-                                            :
-                                        } */}
-                                        <div className="mttr__prmryWrp">
-                                            <p className="mttr__spprt">
-                                                Precisa de ajuda? <br /><br /> Confira a seguir alguns conteúdos de apoio para te ajudar.
-                                            </p>
-                                            <ol className="mttr__spprt__lst">
-                                                <li>
-                                                    <p>
-                                                        A física clássica de cabeça para baixo: como Einstein descobriu a teoria da relatividade especial
-                                                    </p>
-                                                    <p>
-                                                        Autor: 
-                                                        <span>
-                                                            Michael Douglas
-                                                        </span>
-                                                    </p>
-                                                </li>
-                                            </ol>
-                                        </div>
-                                    </React.Fragment>
-                                )
-                            })
-                            :
-                            ""
-                        }
-                        </div>
-                        <RelatedMatters relatedMatter={matterRelated.data}/>
-                        <MatterTags tagMatter={matterTag.data} />
-                        <ButtonWorkout classStyle={"mttr__workout"} url={"/quiz/posts/1"} />
-                    </div>
-                </section>
-            }
-        </>
+        <section className="crs">
+            <div className="crs__wrppr">
+                <div className="crs__cntnt">
+                    <h1 className="crs__ttl">
+                            Algebra binária
+                    </h1>
+                    <p className="crs__dscrptn">
+                        Esta matéria diz sobre um sistema de equações é constituído por um conjunto de equações que apresentam mais de uma incógnita. Para resolver um sistema é necessário encontrar os valores que satisfaçam simultaneamente todas as equações.
+                    </p>
+                    <nav className="crs__br crs__br--mttr">
+                        <ul className="crs__br__optns">
+                            <li className="crs__br__itm">
+                                <a className="crs__br__anchr crs__br__anchr--ttl" href="" title="">
+                                    Todos os artigos
+                                </a>
+                            </li>
+                            <li className="crs__br__itm">
+                                <a className="crs__br__anchr" href="" title="">
+                                    Introdução
+                                </a>
+                            </li>
+                            <li className="crs__br__itm">
+                                <a className="crs__br__anchr" href="" title="">
+                                    Equação do primeiro grau
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
     );
 }
 
