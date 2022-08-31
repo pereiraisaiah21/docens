@@ -1,5 +1,7 @@
 import React from "react";
 
+import FooterLogo from "../../images/FooterLogo.png";
+
 /**
  * 
  * @returns 
@@ -31,7 +33,8 @@ function Footer () {
                     </li>
                 </ul>
                 <div className="fttr__dvl">
-                    Desenvolvido por CE
+                    Desenvolvido por 
+                    <img className="fttr__dvl__img" src={FooterLogo} title="Logo" />
                 </div>
             </div>
         </footer>

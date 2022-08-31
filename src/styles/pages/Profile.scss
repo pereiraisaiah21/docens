@@ -76,8 +76,8 @@
         }
         &__flr {
             width: $wmax;
-            color: $cblack70;
-            border-left: 4px solid $bc-black70;
+            color: $fc-white;
+            border-left: 4px solid $bc-white;
             padding: 10px;
             display: block;
             svg {
@@ -247,6 +247,7 @@
             &--myPrfl {
                 grid-area: inf;
                 height: unset;
+                justify-content: flex-end;
             }
         }
         &__ht {}
@@ -256,7 +257,7 @@
         &__bttn {
             &--myPrfl {
                 margin-top: 5px;
-                padding: 5px 2px;
+                padding: 0px 2px;
             }
         }
         &--myPrfl {

@@ -32,7 +32,7 @@ function FormUpdateUserData ({
     const genderOptions = [
         { value: "feminino", label: "Feminino" },
         { value: "masculino", label: "Masculino" },
-        { value: "naoBinário", label: "Nao binário" }
+        { value: "naoinformar", label: "Prefiro não dizer" }
     ];
 
     const handleUpdateData = function( event ) {

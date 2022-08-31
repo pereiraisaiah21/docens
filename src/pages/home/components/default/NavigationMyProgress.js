@@ -55,7 +55,7 @@ function NavigationMyProgress ({
 
     return (
         <section className="actns">
-            <MainTitle description="meu progresso" isCarousel={sliderTitle} icon={<FaOptinMonster />} />
+            <MainTitle description="meu progresso" descriptionUnder="minhas matérias" isCarousel={sliderTitle} icon={<FaOptinMonster />} />
             <div className="actns__crds actns__crds--myPrfl">
                 {
                     slider

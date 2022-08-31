@@ -40,7 +40,7 @@ function Profile () {
         <section className="prfl">
             <div className="prfl__wrpp">
                 <div className="prfl__bg">
-                    <img src="https://placehold.jp/1700x250.png" alt="" className="" />
+                    <img src="https://placehold.jp/1500x550.png" alt="" className="" />
                     {
                         updateUserData
                         ?
