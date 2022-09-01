@@ -16,11 +16,12 @@ import Contact from "./pages/contact/Contact";
 
 import AllCourses from "./pages/course/AllCourses";
 import Course from "./pages/course/Course";
+import CreateUpdateCourse from "./pages/content/components/CreateUpdateCourse"
 
 import Matter from "./pages/matter/Matter";
 import Article from "./pages/matter/Article";
 import AllMatters from "./pages/matter/AllMatters";
-import CreateUpdateMatter from "./pages/content/components/CreateUpdateMatter";
+import CreateUpdateMatter from "./pages/content/components/CreateUpdateArticler";
 
 import Quiz from "./pages/quiz/Quiz";
 import AllQuiz from "./pages/quiz/AllQuiz";
@@ -44,6 +45,7 @@ function SiteRoutes () {
 
                 <Route path="/cursos" element={<AllCourses />} />
                 <Route path="/cursos/:id" element={<Course />} />
+                <Route path="/cursos/alt/:id" element={<CreateUpdateCourse />} />
                
 
                 <Route path="/materias" element={<AllMatters />} />

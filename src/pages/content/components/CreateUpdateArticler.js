@@ -16,7 +16,7 @@ import { FaOptinMonster, FaInfoCircle, FaFileImport, FaUnderline } from 'react-i
  * @returns 
  */
 
-function CreateUpdateMatter () {
+function CreateUpdateArticle () {
 
     const {id} = useParams();
     const {contentid} = useParams();
@@ -255,4 +255,4 @@ function CreateUpdateMatter () {
     );
 }
 
-export default CreateUpdateMatter;
+export default CreateUpdateArticle;
