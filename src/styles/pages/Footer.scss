@@ -27,14 +27,32 @@
         }
     }
     &__dvl {
-        color: $fc-white;
-        width: 100%;
-        text-align: center;
-        border-top: 2px solid $bc-gray;
-        padding: 30px;
-        margin: 30px 0 0;
-        &__img {
-            max-width: 50px;
+      @include flexcencen;
+      color: $fc-white;
+      width: 100%;
+      border-top: 2px solid $bc-gray;
+      padding: 30px;
+      margin: 30px 0 0;
+      &__img {
+          max-width: 50px;
+          margin-left: 10px;
+      }
+    }
+
+    // Xs
+    @media (max-width: 575px) {
+        &__lst {
+          flex-direction: column;
         }
     }
+    // Sm
+    @media (min-width: 576px) {}
+    // Md
+    @media (min-width: 768px) {}
+    // Lg
+    @media (min-width: 991px) {}
+    // Xl
+    @media (min-width: 1200px) {}
+    // Xxl
+    @media (min-width: 1400px) {}
 }

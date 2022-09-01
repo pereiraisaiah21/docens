@@ -3,9 +3,9 @@ import React from "react";
 import { FaPlus, FaPencilAlt, FaEye } from 'react-icons/fa';
 
 /**
- * 
- * @param {*} param0 
- * @returns 
+ *
+ * @param {*} param0
+ * @returns
  */
 
 function MatterEditButtons ({
@@ -17,22 +17,22 @@ function MatterEditButtons ({
     return (
 
         <div className={classParent}>
-            <a className={classAnchor} href={`/materias/${matter}/editar`} title="">
+            <a className={classAnchor} href="materias/alt/posts/1" title="">
                 <FaPencilAlt />
                 <span>
-                    Editar
+
                 </span>
             </a>
-            <a className={classAnchor} href="" title=""> 
+            <a className={classAnchor} href="materias/alt" title="">
                 <FaPlus />
                 <span>
-                    Adicionar
+
                 </span>
             </a>
-            <a className={classAnchor} href="" title=""> 
+            <a className={classAnchor} href="" title="">
                 <FaEye />
                 <span>
-                    Visualizar
+
                 </span>
             </a>
         </div>

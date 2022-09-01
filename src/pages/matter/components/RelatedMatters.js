@@ -3,14 +3,16 @@ import React from "react";
 import { FaEye, FaArrowRight } from 'react-icons/fa';
 
 /**
- * 
- * @param {*} param0 
- * @returns 
+ *
+ * @param {*} param0
+ * @returns
  */
 
 function RelatedMatters ({
     relatedMatter
 }) {
+
+  console.log("x", relatedMatter)
 
     return (
         <section className="mttr__rltd">

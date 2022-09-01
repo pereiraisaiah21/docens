@@ -1,13 +1,14 @@
 import React from "react";
 
 import CardWithImage from "../../../components/card/CardWithImage";
+import Card from "../../../components/card/Card";
 import { FaOptinMonster } from 'react-icons/fa';
 
 import MainTitle from "../../../components/title/MainTitle";
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function NavigationActions ({
@@ -16,24 +17,31 @@ function NavigationActions ({
 
     const cardsContentDefault = [
         {
+            name        : "Feed",
+            description : "Acesse o feed",
+            link        : "",
+            imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
+            imageAlt    : "Image alternative"
+        },
+        {
             name        : "Tutorial",
             description : "Acesse o tutorial de navegação",
             link        : "",
-            imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
+            imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
             imageAlt    : "Image alternative"
         },
         {
             name        : "Materias",
             description : "Acesse as matérias disponíveis",
             link        : "/materias",
-            imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
-            imageAlt    : "Image alternative"   
+            imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
+            imageAlt    : "Image alternative"
         },
         {
             name        : "Emblemas",
             description : "Confira os emblemas disponíveis",
             link        : "/emblemas",
-            imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
+            imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
             imageAlt    : "Image alternative"
         }
     ];
@@ -42,15 +50,15 @@ function NavigationActions ({
             name        : "Tutorial",
             description : "Acesse o tutorial de navegação",
             link        : "",
-            imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
+            imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
             imageAlt    : "Image alternative"
         },
         {
             name        : "Materias",
             description : "Acesse as matérias disponíveis",
             link        : "/materias",
-            imageSrc    : "https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png",
-            imageAlt    : "Image alternative"   
+            imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
+            imageAlt    : "Image alternative"
         }
     ];
 
@@ -58,57 +66,40 @@ function NavigationActions ({
         <section className="actns actns--bg-01">
             <MainTitle description="navegue pelo site" isCarousel={false} icon={<FaOptinMonster />} />
             <div className="actns__crds">
-                <CardWithImage 
-                    classStyleDivButton={"actns__itm__bttn actns__itm__bttn--fd"}
-                    link={"/feed"} 
-                    classStyleGrand="actns__itm actns__itm--fd" 
-                    srcImage={"https://cdn-icons-png.flaticon.com/512/37/37430.png"} 
-                    altImage={"Ícone de feed."} 
-                    classStyleImage="actns__itm__img" 
-                    classStyleSpan="actns__itm__nm actns__itm__nm--fd" 
-                    classStyleDiv="actns__itm__inf" 
-                    classStyleDivSpan="actns__itm__icn" 
-                    classStyleDivLabel="actns__itm__dscrptn actns__itm__dscrptn--fd" 
-                    title={"Feed"} 
-                    description={"Feed de matérias"}
-                />
                 {
                     typeUser === "default"
                     ?
-                    cardsContentDefault.map( ( item, key ) => {
-                        return (
-                            <CardWithImage 
-                                classStyleDivButton={"actns__itm__bttn"}
-                                link={item.link} 
-                                classStyleGrand="actns__itm" 
-                                srcImage={item.imageSrc} 
-                                altImage={item.imageAlt} 
-                                classStyleImage="actns__itm__img" 
-                                classStyleSpan="actns__itm__nm" 
-                                classStyleDiv="actns__itm__inf" 
-                                classStyleDivSpan="actns__itm__icn" 
-                                classStyleDivLabel="actns__itm__dscrptn" 
-                                title={item.name} 
-                                description={item.description}
-                                key={key}
-                            />
-                        )
-                    })
+                      cardsContentDefault.map( ( item, key ) => {
+                          return (
+                              <Card
+                                  classStyleDivButton={"actns__itm__bttn"}
+                                  link={item.link}
+                                  classStyleGrand="actns__itm"
+                                  srcImage={item.imageSrc}
+                                  altImage={item.imageAlt}
+                                  classStyleImage="actns__itm__img"
+                                  classStyleSpan="actns__itm__nm"
+                                  classStyleDiv="actns__itm__inf"
+                                  classStyleDivSpan="actns__itm__icn"
+                                  classStyleDivLabel="actns__itm__dscrptn"
+                                  title={item.name}
+                                  description={item.description}
+                                  key={key}
+                              />
+                          )
+                      })
                     :
                     cardsContentTeacher.map( ( item, key ) => {
                         return (
-                            <CardWithImage 
+                            <Card
                                 classStyleDivButton={"actns__itm__bttn"}
-                                link={item.link} 
-                                classStyleGrand="actns__itm" 
-                                srcImage={item.imageSrc} 
-                                altImage={item.imageAlt} 
-                                classStyleImage="actns__itm__img" 
-                                classStyleSpan="actns__itm__nm" 
-                                classStyleDiv="actns__itm__inf" 
-                                classStyleDivSpan="actns__itm__icn" 
-                                classStyleDivLabel="actns__itm__dscrptn" 
-                                title={item.name} 
+                                link={item.link}
+                                classStyleGrand="actns__itm"
+                                classStyleSpan="actns__itm__nm"
+                                classStyleDiv="actns__itm__inf"
+                                classStyleDivSpan="actns__itm__icn"
+                                classStyleDivLabel="actns__itm__dscrptn"
+                                title={item.name}
                                 description={item.description}
                                 key={key}
                             />

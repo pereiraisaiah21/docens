@@ -78,7 +78,7 @@ function NavigationMyProgress ({
                                             classStyleDivButton={"actns__itm__bttn actns__itm__bttn--myPrgrss"}
                                             link={item.name} 
                                             classStyleGrand="actns__itm actns__itm--myPrgrss" 
-                                            srcImage={"https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png"} 
+                                            srcImage={"https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg"} 
                                             altImage={"item.imageAlt"} 
                                             classStyleImage="actns__itm__img actns__itm__img--myPrgrss" 
                                             classStyleSpan="actns__itm__nm actns__itm__nm--myPrgrss" 
@@ -105,7 +105,7 @@ function NavigationMyProgress ({
                                 classStyleDivButton={"actns__itm__bttn actns__itm__bttn--myPrfl"}
                                 link={item.name} 
                                 classStyleGrand="actns__itm actns__itm--myPrfl" 
-                                srcImage={"https://www.purarteadesivos.com.br/wp-content/uploads/2017/04/adesivo-personalizado-pokebola-pokemon-recorte-eletronico-geek-nerd-gamer-pura-arte-adesivos.png"} 
+                                srcImage={"https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg"} 
                                 altImage={"item.imageAlt"} 
                                 classStyleImage="actns__itm__img actns__itm__img--myPrfl" 
                                 classStyleSpan="actns__itm__nm actns__itm__nm--myPrfl" 

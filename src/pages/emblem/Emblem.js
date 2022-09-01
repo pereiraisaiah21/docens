@@ -1,10 +1,11 @@
 import React from "react";
 
+import MainTitle from "../../components/title/MainTitle";
 import { FaMedal, FaTrophy, FaRegGem, FaRedhat, FaRocket } from 'react-icons/fa';
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function Emblem () {
@@ -100,6 +101,7 @@ function Emblem () {
     }
     return (
         <section className="emblm">
+            <MainTitle description="Emblemas" descriptionUnder="Aqui estão todos os emblemas" isCarousel={false} />
             <div className="emblm__wrp">
                 <table className="emblm__tbl">
                     <thead>

@@ -23,13 +23,13 @@
     //         color: $white;
     //         font-size: 1.2rem;
     //         padding: 20px 0 20px;
-    //     }    
+    //     }
     //     &__item {
     //         padding: 15px 0;
-    //     }    
+    //     }
     //     &__anchor {
     //         color: $white;
-    //     }    
+    //     }
     // }
     &__content {
         width: $wmax;
@@ -46,7 +46,7 @@
         padding: 0 10px;
         color: $fc-black;
         &__item {
-            background-color: $bgwhite95;
+            background-color: $bg-main;
             border-radius: 20px;
             position: relative;
             cursor: pointer;
@@ -90,7 +90,6 @@
             color: $fc-white;
             border-radius: $brdef;
             font-size: 1.2em;
-            color: $black;
         }
     }
 

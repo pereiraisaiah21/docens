@@ -11,6 +11,9 @@
     &__wrpprAll {
         max-width: 1200px;
         position: relative;
+        background-color: $bg-box;
+        border-radius: $brdef;
+        padding: 10px;
         margin: auto;
         display: flex;
     }
@@ -69,8 +72,7 @@
         flex-wrap: wrap;
     }
     &__itm {
-        @include flexcencen;
-        border: 3px solid $bc-gray;
+        @include flexcencenwrap;
         border-radius: $brdef;
         margin: 0 0 10px;
         padding: 10px;
@@ -81,29 +83,31 @@
         &__ttl {
             margin: 0 10px;
             color: $fc-white;
+            width: $wmax;
         }
         &__edt {
             @include flexwrap;
             justify-content: flex-end;
+            padding: 10px 0;
             &__anchr {
-                padding: 3px 10px;
+                padding: 3px;
                 border: 1px solid $bc-gray;
-                background-color: $bgblue80;
                 color: $bgwhite;
                 border-radius: $brdef;
                 white-space: nowrap;
-                width: -webkit-fill-available;
-                max-width: 120px;
-                margin: 0 0 10px;
-                svg {
-                    margin: 0 10px -2px 0;
+                width: 40px;
+                height: 30px;
+                margin-right: 5px;
+                cursor: pointer;
+
+                &:hover {
+                  background-color: $bg-box;
                 }
             }
         }
-        
+
         &:hover {
-            border-radius: $brdef;
-            background-color: $bgwhite95;
+            background-color: $bg-main;
         }
     }
     &__workout {
@@ -143,7 +147,7 @@
             flex-wrap: wrap;
             color: $fc-white;
             h6 {
-                margin: 0 0 10px; 
+                margin: 0 0 10px;
                 font-size: 1.3em;
                 width: $wmax;
             }
@@ -167,7 +171,6 @@
             color: $white;
         }
     }
-
     &__cntnt {
         display: flex;
         flex-wrap: wrap;
@@ -244,7 +247,7 @@
             padding: 15px 10px 10px;
         }
         &__itm {
-            width: 48%;
+            width: 30%;
             margin-right: 10px;
         }
     }
@@ -278,7 +281,7 @@
             width: 30%;
         }
         &__itm {
-            width: 24%;
+            width: 19%;
             height: 150px;
         }
 

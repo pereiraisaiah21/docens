@@ -12,8 +12,8 @@ import ConnectionTimeoutWarn from "../../components/alert/ConnectionTimeoutWarn"
 
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function Article () {
@@ -21,7 +21,7 @@ function Article () {
     const {id} = useParams();
     const {contentid} = useParams();
 
-    const textTestP = "<p>Às vezes, problemas que parecem muito ?</p><p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><img class='img' src='https://img.freepik.com/vetores-premium/formulas-de-fisica-equacoes-matematicas-calculos-aritmeticos-blackboard-com-formulas-cientificas_461812-424.jpg' alt=''/>";  
+    const textTestP = "<p>Às vezes, problemas que parecem muito ?</p><p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><img class='img' src='https://img.freepik.com/vetores-premium/formulas-de-fisica-equacoes-matematicas-calculos-aritmeticos-blackboard-com-formulas-cientificas_461812-424.jpg' alt=''/>";
 
     const [loader, setLoader] = useState( true );
     const [articleContent, setArticleContent] = useState({
@@ -46,21 +46,21 @@ function Article () {
                 ...articleContent,
                 data: [response.data]
             });
-            setTimeout( () => 
+            setTimeout( () =>
                 setLoader( false ),
                 3000
             );
         }).catch( err => {
             setArticleContent({
                 ...articleContent,
-                error: err 
+                error: err
             });
             setFailToLoad( true );
         });
 
         axios.get( `https://jsonplaceholder.typicode.com/users/3` )
         .then( response => {
-
+          console.log(response.data)
             setArticleRelated({
                 ...articleRelated,
                 data: [response.data]
@@ -68,7 +68,7 @@ function Article () {
         }).catch( err => {
             setArticleRelated({
                 ...articleRelated,
-                error: err 
+                error: err
             });
         });
 
@@ -82,7 +82,7 @@ function Article () {
         }).catch( err => {
             setArticleTag({
                 ...articleTag,
-                error: err 
+                error: err
             });
         });
     }, []);
@@ -92,7 +92,7 @@ function Article () {
             {
                 loader
                 ?
-                    failToLoad 
+                    failToLoad
                     ?
                     <ConnectionTimeoutWarn />
                     :
@@ -104,7 +104,7 @@ function Article () {
                     <div className="mttr__wrppr">
                         <div className="mttr__cntnt">
                         {
-                            articleContent.data !== null 
+                            articleContent.data !== null
                             ?
                             articleContent.data.map((item, key) => {
                                 return (
@@ -156,7 +156,7 @@ function Article () {
                                                         A física clássica de cabeça para baixo: como Einstein descobriu a teoria da relatividade especial
                                                     </p>
                                                     <p>
-                                                        Autor: 
+                                                        Autor:
                                                         <span>
                                                             Michael Douglas
                                                         </span>
@@ -171,8 +171,11 @@ function Article () {
                             ""
                         }
                         </div>
-                        <RelatedMatters relatedArticle={articleRelated.data}/>
-                        <MatterTags tagArticle={articleTag.data} />
+                        {
+                          console.log('p',articleRelated.data)
+                        }
+                        <RelatedMatters relatedMatter={articleRelated.data}/>
+                        <MatterTags tagMatter={articleTag.data} />
                         <ButtonWorkout classStyle={"mttr__workout"} url={"/quiz/posts/1"} />
                     </div>
                 </section>

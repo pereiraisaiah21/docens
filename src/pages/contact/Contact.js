@@ -7,8 +7,8 @@ import MainTitle from "../../components/title/MainTitle";
 import { FaOptinMonster, FaInfoCircle } from 'react-icons/fa';
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function Contact () {
@@ -53,7 +53,7 @@ function Contact () {
                 <form className="cntct__frm" onSubmit={handleSubmit}>
                     <fieldset className="cntct__fldst">
                         <legend className="cntct__lgnd">Selecione o assunto</legend>
-                        <Select 
+                        <Select
                             className="cntct__slct"
                             options={subjectOptions}
                             onChange={(e) => setSubject(e.value)}
@@ -62,7 +62,7 @@ function Contact () {
                     </fieldset>
                     <fieldset className="cntct__fldst">
                         <legend className="cntct__lgnd">Digite sua mensagem</legend>
-                        <textarea className="cntct__inpt" onChange={(e) => setMessage(e.target.value)} placeholder="Digite" rows="5" type="text" />
+                        <textarea className="cntct__inpt" onChange={(e) => setMessage(e.target.value)} placeholder="Digite aqui sua dúvida" rows="5" type="text" />
                     </fieldset>
                     <fieldset className="cntct__fldst">
                         <input className="cntct__sbmt" type="submit" />

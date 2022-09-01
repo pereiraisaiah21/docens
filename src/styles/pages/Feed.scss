@@ -4,12 +4,13 @@
         margin: auto;
         padding: 10px;
     }
-    &__psts {}
+    &__psts {
+      background-color: $bg-box;
+      border-radius: $brdef;
+    }
     &__crd {
         @include flexcencen;
         flex-wrap: nowrap;
-        border-bottom: 2px solid #ccc;
-        background-color: #e9e9e9eb;
         padding: 10px 10px 20px;
         margin: 0 0 10px;
         position: relative;
@@ -24,9 +25,13 @@
             display: flex;
             flex-wrap: wrap;
             h6 {
-                margin: 0 0 10px; 
+                margin: 0 0 10px;
                 font-size: 1.3em;
                 width: $wmax;
+                color: $fc-white;
+            }
+            p {
+              color: $fc-white;
             }
         }
         &__vw {
@@ -37,6 +42,7 @@
             height: 30px;
             right: 20px;
             padding: 0 10px;
+            color: $fc-white;
             svg {
                 margin: 0px 0 -2px 7px;
             }

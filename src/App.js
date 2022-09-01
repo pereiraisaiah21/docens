@@ -7,8 +7,8 @@ import SiteRoutes from "./routes";
 import './App.scss';
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
         data : response.data
       });
     })
-    .catch( err => 
+    .catch( err =>
       setUserDataValues({
         ...userDataValues,
         error : err

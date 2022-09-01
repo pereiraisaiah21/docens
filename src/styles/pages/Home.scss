@@ -78,7 +78,7 @@
         width: 49%;
         background-color: $bg-box;
         //border: 1px solid $bc-box;
-        border-radius: $brdef ;
+        border-radius: $brdef;
         padding: 10px;
         margin: 0 0px 10px 0;
         cursor: pointer;
@@ -110,9 +110,8 @@
         }
         &__bttn {
             width: $wmax;
-            border: 1px solid #ccc;
-            border-radius: $brdef ;
-            background-color: #efebebe0;;
+            background-color: $bg-box;
+            color: $fc-white;
             display: inline-flex;
             align-items: center;
             padding: 8px 2px;
@@ -128,7 +127,7 @@
             }
 
             &:hover {
-                background-color: #efebebe0;
+                background-color: $bg-main;
             }
         }
         &__dscrptn {
@@ -224,9 +223,13 @@
             }
         }
         &__dscrptn {
+            margin: 10px;
+            display: flex;
+            align-items: center;
             padding: 10px 20px;
             font-size: 1.2em;
             color: $white;
+            border-radius: $brdef;
         }
     }
     &--bg-01 {
@@ -283,13 +286,13 @@
         &__itm {
             &__img {
                 &--myPrgrss {
-                    width: 30%;
-                    border-radius: $brdef ;
+                    //width: 30%;
+                    border-radius: $brdef;
                 }
             }
             &__nm {
                 &--myPrgrss {
-                    width: 70%;
+                    //width: 70%;
                     height: 40px;
                 }
                 &--tutorial {
@@ -327,7 +330,6 @@
         &__tpcs {
             flex-wrap: nowrap;
             &__srvc {
-                border-right: 3px solid $bc-black70;
                 &__img {
                     max-height: 250px;
                     max-width: unset;
