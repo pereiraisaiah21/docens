@@ -2,14 +2,12 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Select from 'react-select'
-import ImageUploading from 'react-images-uploading';
 
 import UserData from "../../../UserData";
 
 import MainTitle from "../../../components/title/MainTitle";
-import MatterEditor from "../../matter/components/MatterEditor";
 
-import { FaOptinMonster, FaInfoCircle, FaFileImport, FaUnderline } from 'react-icons/fa';
+import { FaOptinMonster, FaInfoCircle } from 'react-icons/fa';
 
 /**
  * 
@@ -26,35 +24,26 @@ function CreateUpdateCourse () {
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
 
-    const [matterEditData, setMatterEditData] = useState({
+    const [courseEditData, setCourseEditData] = useState({
         data : [],
         error : ""
     });
 
     const [name, setName] = useState( "" );
     const [url, setUrl] = useState( "" ); 
-    const [content, setContent] = useState( "" );
-
-    function handleSelectCategory( data ) {
-        setCategory( data );
-    }
-    function handleSelectSubject( data ) {
-        setTags( data );
-    }
+    const [description, setDescription] = useState( "" );
+    const [formSendSuccess, setFormSendSuccess] = useState( "" );
 
     const handleSubmit = function(event) {
         event.preventDefault();
 
-        if ( category !== null && name !== null && url !== null && content !== null && quizUrl !== null && tags !== null && hightlighImage !== null ) {
+        if ( name !== null && url !== null && description !== null ) {
             console.log("send");
 
             axios.post( "/new/content", {
-                category : category,
                 name : name,
-                content : content,
-                quizUrl : quizUrl,
-                tags : tags,
-                hightlighImage : hightlighImage
+                url : url,
+                description : description
             })
             .then( response => {
                 setFormSendSuccess( true );
@@ -78,13 +67,13 @@ function CreateUpdateCourse () {
         if ( id && contentid ) {
             axios.get( `https://jsonplaceholder.typicode.com/${id}/${contentid}` )
             .then( response => {
-                setMatterEditData({ 
-                    ...matterEditData,
+                setCourseEditData({ 
+                    ...courseEditData,
                     data: response.data
                 });
             }).catch( err => {
-                setMatterEditData({
-                    ...matterEditData,
+                setCourseEditData({
+                    ...courseEditData,
                     error: err
                 });
             });
@@ -92,15 +81,12 @@ function CreateUpdateCourse () {
     }, []);
 
     useEffect(() => {
-        if ( matterEditData.data !== undefined ) {
-            setName(matterEditData.data.title);
-            setQuizUrl(matterEditData.data.title);
-            setTags(matterEditData.data.body);
-            setContent(matterEditData.data.body);
-            setUrl(matterEditData.data.title);
-            setNextContentUrl(matterEditData.data.title);
+        if ( courseEditData.data !== undefined ) {
+            setName( courseEditData.data.title );
+            setUrl( courseEditData.data.title );
+            setDescription(  courseEditData.data.body);
         }
-    }, [ matterEditData ]);
+    }, [ courseEditData ]);
  
     return (
         
@@ -119,7 +105,7 @@ function CreateUpdateCourse () {
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Descrição</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setQuizUrl(e.target.value)} placeholder={quizUrl} value={quizUrl || ""} />
+                        <input className="content__inpt" type="text" onChange={(e) => setDescription(e.target.value)} placeholder={description} value={description || ""} />
                     </fieldset>
                     <fieldset className="content__fldst">
                         <input className="content__sbmt" type="submit" onClick={handleSubmit} />
