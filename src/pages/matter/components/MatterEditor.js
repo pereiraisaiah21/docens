@@ -12,7 +12,8 @@ import htmlToDraft from "html-to-draftjs";
 
 import { Select } from "antd";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
-// import "antd/dist/antd.css";
+// import "antd/dist/antd.min.css";
+
 
 import "react-color-picker/index.css";
 const { Option } = Select;
