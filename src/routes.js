@@ -21,7 +21,8 @@ import CreateUpdateCourse from "./pages/content/components/CreateUpdateCourse"
 import Matter from "./pages/matter/Matter";
 import Article from "./pages/matter/Article";
 import AllMatters from "./pages/matter/AllMatters";
-import CreateUpdateMatter from "./pages/content/components/CreateUpdateArticler";
+import CreateUpdateMatter from "./pages/content/components/CreateUpdateMatter";
+import CreateUpdateArticle from "./pages/content/components/CreateUpdateArticle";
 
 import Quiz from "./pages/quiz/Quiz";
 import AllQuiz from "./pages/quiz/AllQuiz";
@@ -46,18 +47,21 @@ function SiteRoutes () {
                 <Route path="/cursos" element={<AllCourses />} />
                 <Route path="/cursos/:id" element={<Course />} />
                 <Route path="/cursos/alt/:id" element={<CreateUpdateCourse />} />
-               
+
 
                 <Route path="/materias" element={<AllMatters />} />
                 <Route path="/materias/:id/" element={<Matter />} />
                 <Route path="/materias/:id/:contentid" element={<Article />} />
-                <Route path="/materias/alt/" element={<CreateUpdateMatter />} />
-                <Route path="/materias/alt/:id/:contentid/" element={<CreateUpdateMatter />} />
+
+                <Route path="/materias/alt/" element={<CreateUpdateArticle />} />
+
+                <Route path="/materias/alt/:id" element={<CreateUpdateMatter />} />
+                <Route path="/materias/alt/:id/:contentid/" element={<CreateUpdateArticle />} />
 
                 <Route path="/quiz/" element={<AllQuiz />} />
                 <Route path="/quiz/:matter/:contentId" element={<Quiz />} />
                 <Route path="/quiz/alt/" element={<CreateUpdateQuestion />} />
-                <Route path="/quiz/alt/:id/" element={<CreateUpdateQuestion />} />
+                <Route path="/quiz/alt/:id/:contentid" element={<CreateUpdateQuestion />} />
 
                 <Route path="*" element={<Error />} />
             </Routes>

@@ -27,9 +27,9 @@ function CreateUpdateQuestion () {
 
     const [category, setCategory] = useState( null );
     const [name, setName] = useState( "" );
-    const [description, setDescription] = useState( "" ); 
-    const [alternativesAmount, setAlternativesAmount] = useState( "" ); 
-    const [alternatives, setAlternatives] = useState( "" ); 
+    const [description, setDescription] = useState( "" );
+    const [alternativesAmount, setAlternativesAmount] = useState( "" );
+    const [alternatives, setAlternatives] = useState( "" );
     const [formSendSuccess, setFormSendSuccess] = useState( "" );
 
     const categoryOptions = [
@@ -62,7 +62,7 @@ function CreateUpdateQuestion () {
         if ( id && contentid ) {
             axios.get( `https://jsonplaceholder.typicode.com/${id}/${contentid}` )
             .then( response => {
-                setQuizEditData({ 
+                setQuizEditData({
                     ...quizEditData,
                     data: response.data
                 });
@@ -109,11 +109,8 @@ function CreateUpdateQuestion () {
                         <input className="content__inpt" type="text" onChange={(e) => setDescription(e.target.value)} placeholder={description} value={description || ""} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
-                        <legend className="content__lgnd">Quantidade de alternativas *</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setAlternativesAmount(e.target.value)}placeholder={"3"} />
-
-                       
-
+                        <legend className="content__lgnd">Alternativa correta [ A - D ] *</legend>
+                        <input className="content__inpt" type="text" onChange={(e) => setAlternativesAmount(e.target.value)}placeholder={"A"} />
                     </fieldset>
                     <fieldset className="content__fldst">
                         <input className="content__sbmt" type="submit" onClick={handleSubmit} />

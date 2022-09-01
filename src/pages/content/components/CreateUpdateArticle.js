@@ -12,8 +12,8 @@ import MatterEditor from "../../matter/components/MatterEditor";
 import { FaOptinMonster, FaInfoCircle, FaFileImport, FaUnderline } from 'react-icons/fa';
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function CreateUpdateArticle () {
@@ -33,8 +33,8 @@ function CreateUpdateArticle () {
 
     const [category, setCategory] = useState( null );
     const [name, setName] = useState( "" );
-    const [url, setUrl] = useState( "" ); 
-    const [quizUrl, setQuizUrl] = useState( "" ); 
+    const [url, setUrl] = useState( "" );
+    const [quizUrl, setQuizUrl] = useState( "" );
     const [content, setContent] = useState( "" );
     const [nextContentUrl, setNextContentUrl] = useState( "" );
     const [tags, setTags] = useState( "" );
@@ -108,7 +108,7 @@ function CreateUpdateArticle () {
         if ( id && contentid ) {
             axios.get( `https://jsonplaceholder.typicode.com/${id}/${contentid}` )
             .then( response => {
-                setMatterEditData({ 
+                setMatterEditData({
                     ...matterEditData,
                     data: response.data
                 });
@@ -131,9 +131,9 @@ function CreateUpdateArticle () {
             setNextContentUrl(matterEditData.data.title);
         }
     }, [ matterEditData ]);
- 
+
     return (
-        
+
         <section className="content">
             <div className="content__wrp">
                 <MainTitle description="conteúdo" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
@@ -168,7 +168,7 @@ function CreateUpdateArticle () {
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Escopo do artigo *</legend>
                         <MatterEditor />
-                        
+
                     </fieldset>
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Tags ( Opcional )</legend>
