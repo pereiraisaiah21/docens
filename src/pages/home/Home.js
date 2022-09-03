@@ -41,9 +41,9 @@ function Home () {
                 <SeparationDots />
                 <NavigationMyProgress slider={"true"} sliderTitle={true}  NavigationMyStats={true} />
                 <SeparationDots />
-                <Topics />
-                <SeparationDots />
                 <NavigationTeachers />
+                <SeparationDots />
+                <Topics />
                 {/* <Tutorial /> */}
 
             </>

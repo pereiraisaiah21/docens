@@ -16,7 +16,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 function FormUpdateUserData ({
     data,
-    setUpdateOpen
+    setUpdateOpen,
+    action
 }) {
 
     const [images, setImages] = useState([]);
@@ -37,10 +38,15 @@ function FormUpdateUserData ({
 
     const handleUpdateData = function( event ) {
         event.preventDefault();
+        let url = "/user/create";
 
         console.log( "Atualizar dados do usuário" );
 
-        axios.post( "/user", {
+        if ( action !== "create" ) {
+            url = "/user/update";
+        }
+
+        axios.post( url, {
             avatar : avatar === "" ? "" : avatar,
             fullname : fullname === "" ? "" : fullname,
             username : username === "" ? "" : username,
@@ -64,6 +70,7 @@ function FormUpdateUserData ({
       };
 
     return (
+        
         <form onSubmit={( e ) => e.preventDefault()}>
             <div className="prfl__inf">
                 <ul className="prfl__inf__lst">
@@ -117,55 +124,6 @@ function FormUpdateUserData ({
                             }
                         </ImageUploading>
                     </li>
-                    {/* <li className="prfl__inf__itm prfl__inf__itm--upld">
-                        <ImageUploading
-                            multiple
-                            value={images}
-                            onChange={onChange}
-                            maxNumber={maxNumber}
-                            dataURLKey="data_url"
-                            acceptType={["jpg"]}
-                        >
-                            {
-                                ({
-                                    imageList,
-                                    onImageUpload,
-                                    onImageUpdate,
-                                    onImageRemove,
-                                    isDragging,
-                                    dragProps
-                                }) => (
-                                    <div className="prfl__inf--upld__wrppr">
-                                        <button
-                                            style={isDragging ? { color: "red" } : null}
-                                            onClick={onImageUpload}
-                                            {...dragProps}
-                                            className="prfl__inf--upld__bttn"
-                                        >
-                                            <FaFileImport />
-                                            Clique, ou arraste a imagem
-                                        </button>
-                                        {
-                                            imageList.map( ( image, index ) => (
-                                                <div key={index} className="prfl__inf--upld__img">
-                                                    <img src={image.data_url ? image.data_url : "https://static.vecteezy.com/ti/vetor-gratis/p1/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg"} alt="" width="100" />
-                                                    <div className="image-item__btn-wrapper">
-                                                        <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageUpdate( index )}>
-                                                            <FaCaretSquareUp />
-                                                            Atualizar
-                                                        </button>
-                                                        <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageRemove( index )}>
-                                                            Remover imagem
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            ))
-                                        }
-                                    </div>
-                                )
-                            }
-                        </ImageUploading>
-                    </li> */}
                     <li className="prfl__inf__itm">
                         <input className="prfl__inpt" value={fullname} placeholder={data.name} onChange={(e) => setFullname(e.target.value)} />
                     </li>

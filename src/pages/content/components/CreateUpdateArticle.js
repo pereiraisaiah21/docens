@@ -168,7 +168,6 @@ function CreateUpdateArticle () {
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Escopo do artigo *</legend>
                         <MatterEditor />
-
                     </fieldset>
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Tags ( Opcional )</legend>

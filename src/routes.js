@@ -8,7 +8,10 @@ import Footer from "./components/footer/Footer";
 import Error from "./pages/error/Error";
 import Feed from "./pages/feed/Feed";
 import Help from "./pages/help/Help";
+
 import Profile from "./pages/profile/Profile";
+import CreateProfile from "./pages/profile/CreateProfile";
+
 import Login from "./pages/login/Login";
 import Notification from "./pages/notification/Notification";
 import Emblem from "./pages/emblem/Emblem";
@@ -28,6 +31,8 @@ import Quiz from "./pages/quiz/Quiz";
 import AllQuiz from "./pages/quiz/AllQuiz";
 import CreateUpdateQuestion from "./pages/quiz/components/CreateUpdateQuestion";
 
+import CreateUpdateTeacher from "./pages/content/components/CreateUpdateTeacher";
+
 
 function SiteRoutes () {
     return (
@@ -38,7 +43,10 @@ function SiteRoutes () {
 
                 <Route path="/feed" element={<Feed />} />
                 <Route path="/ajuda" element={<Help />} />
+
                 <Route path="/perfil/:username" element={<Profile />} />
+                <Route path="/perfil/alt/:username" element={<CreateProfile />} />
+
                 <Route path="/entrar" element={<Login />} />
                 <Route path="/mensagens" element={<Notification />} />
                 <Route path="/emblemas" element={<Emblem />} />
@@ -62,6 +70,9 @@ function SiteRoutes () {
                 <Route path="/quiz/:matter/:contentId" element={<Quiz />} />
                 <Route path="/quiz/alt/" element={<CreateUpdateQuestion />} />
                 <Route path="/quiz/alt/:id/:contentid" element={<CreateUpdateQuestion />} />
+
+                <Route path="/professor/alt" element={<CreateUpdateTeacher />} />
+                <Route path="/professor/alt/:id" element={<CreateUpdateTeacher />} />
 
                 <Route path="*" element={<Error />} />
             </Routes>
