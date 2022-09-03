@@ -45,7 +45,7 @@ function Profile () {
                         updateUserData
                         ?
                         <div className="prfl__dt prfl__dt--updt">
-                            <FormUpdataUserData data={userDataValues.data} setUpdateOpen={setUpdateUserData} />
+                            <FormUpdataUserData data={userDataValues.data} setUpdateOpen={setUpdateUserData} action="update" />
                         </div>
                         :
                         <>

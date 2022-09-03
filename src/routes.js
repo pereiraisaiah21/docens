@@ -10,7 +10,6 @@ import Feed from "./pages/feed/Feed";
 import Help from "./pages/help/Help";
 
 import Profile from "./pages/profile/Profile";
-import CreateProfile from "./pages/profile/CreateProfile";
 
 import Login from "./pages/login/Login";
 import Notification from "./pages/notification/Notification";
@@ -45,7 +44,6 @@ function SiteRoutes () {
                 <Route path="/ajuda" element={<Help />} />
 
                 <Route path="/perfil/:username" element={<Profile />} />
-                <Route path="/perfil/alt/:username" element={<CreateProfile />} />
 
                 <Route path="/entrar" element={<Login />} />
                 <Route path="/mensagens" element={<Notification />} />
