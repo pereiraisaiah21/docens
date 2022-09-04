@@ -64,7 +64,7 @@ function NavigationActions ({
 
     return (
         <section className="actns">
-            <MainTitle description="navegue pelo site" isCarousel={false} icon={<FaOptinMonster />} />
+            <MainTitle description="navegue pelo site" descriptionUnder="selecione uma opção" isCarousel={false} icon={<FaOptinMonster />} />
             <div className="actns__crds">
                 {
                     typeUser === "default"

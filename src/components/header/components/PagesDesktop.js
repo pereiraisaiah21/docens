@@ -4,7 +4,7 @@ function PagesDesktop () {
 
     const pagesDesktop = [{
 		name : "Cursos",
-		url : "/materias",
+		url : "/cursos",
 		title : "Ir para Todas as matérias"
 	}];
 
