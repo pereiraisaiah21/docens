@@ -54,13 +54,11 @@ function SiteRoutes () {
                 <Route path="/cursos/:id" element={<Course />} />
                 <Route path="/cursos/alt/:id" element={<CreateUpdateCourse />} />
 
-
                 <Route path="/materias" element={<AllMatters />} />
                 <Route path="/materias/:id/" element={<Matter />} />
                 <Route path="/materias/:id/:contentid" element={<Article />} />
 
                 <Route path="/materias/alt/" element={<CreateUpdateArticle />} />
-
                 <Route path="/materias/alt/:id" element={<CreateUpdateMatter />} />
                 <Route path="/materias/alt/:id/:contentid/" element={<CreateUpdateArticle />} />
 

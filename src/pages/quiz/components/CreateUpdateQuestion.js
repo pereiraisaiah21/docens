@@ -52,9 +52,9 @@ function CreateUpdateQuestion () {
     useEffect(() => {
         setTypeUser( userDataValues.typeUser )
 
-        if ( typeUser === "default" ) {
-            return navigate("/");
-        }
+        // if ( typeUser === "default" ) {
+        //     return navigate("/");
+        // }
     }, [userDataValues]);
 
     useEffect(() => {

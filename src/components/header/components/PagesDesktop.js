@@ -3,7 +3,7 @@ import React from "react";
 function PagesDesktop () {
 
     const pagesDesktop = [{
-		name : "Matérias",
+		name : "Cursos",
 		url : "/materias",
 		title : "Ir para Todas as matérias"
 	}];
