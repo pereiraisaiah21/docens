@@ -6,7 +6,7 @@ import { FaOptinMonster } from 'react-icons/fa';
 
 function Topics () {
     return (
-        <section className="actns">
+        <section className="actns actns--bg-01">
             <MainTitle description="Saba mais" icon={<FaOptinMonster />} />
             <div className="actns__tpcs">
                 <div className="actns__tpcs__srvc">

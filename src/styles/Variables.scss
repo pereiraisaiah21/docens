@@ -35,7 +35,7 @@ $fc-black: #000;
 
 // Border
 
-$brdef : 20px;
+$brdef : 10px;
 
 // BorderColor
 $bc-gray : #cccccc;
@@ -78,4 +78,42 @@ $wmax : 100%;
 @mixin flexwrap {
     display: flex;
     flex-wrap: wrap;
+}
+
+@mixin input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+}
+@mixin input-font {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    font-size: 1em;
+    font-weight: 500;
+}
+@mixin select {
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+@mixin warn {
+    width: 100%;
+    color: $fc-white;
+    border-left: 4px solid $bc-white;
+    padding: 10px;
+    text-align: left;
+    display: block;
+    margin: 0 5px;
+    svg {
+        margin-right: 10px;
+    }
+}
+
+.demo-editor {
+    background-color: #FFF;
+    padding: 10px;
 }

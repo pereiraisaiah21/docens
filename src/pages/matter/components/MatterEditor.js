@@ -133,10 +133,10 @@ class EditorConvertToHTML extends Component {
         {
           draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()))
         }
-        {
+        {/* {
           console.log( draftToHtml(convertToRaw(this.state.editorState.getCurrentContent())) )
-        }
-        <Select
+        } */}
+        {/* <Select
           defaultValue={"backg"}
           onChange={this.handlebackground}
           style={{ width: "100%" }}
@@ -190,7 +190,7 @@ class EditorConvertToHTML extends Component {
               {item.name}
             </Option>
           ))}
-        </Select>
+        </Select> */}
         <p id="para">test</p>
         <Editor
           editorState={editorState}
@@ -198,7 +198,7 @@ class EditorConvertToHTML extends Component {
           editorClassName="demo-editor"
           onEditorStateChange={this.onEditorStateChange}
         />
-        <button onClick={this.onsubmit}>Salvar</button>
+        {/* <button onClick={this.onsubmit}>Salvar</button> */}
       </div>
     );
   }

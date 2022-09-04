@@ -27,18 +27,11 @@
     }
     &__slct {
         div {
-            border: none;
-            border-radius: $brdef ;
-            font-size: 1em;
+            @include select;
         }
     }
     &__inpt {
-        padding: 10px;
-        border-radius: $brdef ;
-        border: none;
-        width: $wmax;
-        font-size: 1em;
-        font-weight: 500;
+        @include input-font;
     }
     &__sbmt {
         border: none;
@@ -50,15 +43,7 @@
         color: $white;
     }
     &__rtrn {
-        width: $wmax;
-        color: rgba(0, 0, 0, 0.7);
-        border-left: 4px solid rgba(0, 0, 0, 0.7);
-        padding: 10px;
-        text-align: left;
-        display: block;
-        svg {
-            margin-right: 10px;
-        }
+        @include warn;
     }
     &__upld {
         &__bttn {
@@ -95,8 +80,8 @@
     @media (min-width: 991px) {
         &__fldst {
             &--hlf {
-                width: 48%;
-                margin-right: 10px;
+                width: 50%;
+                //margin-right: 10px;
             }
         }
     }

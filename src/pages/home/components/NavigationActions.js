@@ -63,7 +63,7 @@ function NavigationActions ({
     ];
 
     return (
-        <section className="actns actns--bg-01">
+        <section className="actns">
             <MainTitle description="navegue pelo site" isCarousel={false} icon={<FaOptinMonster />} />
             <div className="actns__crds">
                 {

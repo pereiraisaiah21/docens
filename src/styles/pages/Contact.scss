@@ -20,9 +20,7 @@
     }
     &__slct {
         div {
-            border: none;
-            border-radius: $brdef;
-            font-size: 1em;
+            @include select;
         }
     }
     &__inpt {
@@ -43,14 +41,6 @@
         color: $white;
     }
     &__rtrn {
-        width: $wmax;
-        color: $black;
-        border-left: 4px solid $bc-black70;
-        padding: 10px;
-        text-align: left;
-        display: block;
-        svg {
-            margin-right: 10px;
-        }
+        @include warn;
     }
 }

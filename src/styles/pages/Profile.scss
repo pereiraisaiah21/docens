@@ -1,4 +1,5 @@
 .prfl {
+    padding-bottom: 200px;
     &__wrpp {
         max-width: 1200px;
         margin: 0 auto;
@@ -50,9 +51,7 @@
             }
             &--slct {
                 div {
-                    border: none;
-                    border-radius: $brdef;
-                    font-size: 1em;
+                    @include select;
                 }
             }
             &--nm {
@@ -165,10 +164,7 @@
         }
     }
     &__inpt {
-        padding: 10px;
-        border-radius: $brdef ;
-        border: none;
-        width: $wmax;
+        @include input;
         font-size: 1em;
         font-weight: 500;
     }

@@ -233,7 +233,10 @@
         }
     }
     &--bg-01 {
-        //background-color: #eef5f5;
+        background-color: $bg-box;
+    }
+    &--bg-02 {
+        background-color: #eef5f5;
     }
 
     // Xs

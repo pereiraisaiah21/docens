@@ -29,24 +29,11 @@
             flex-wrap: wrap;
         }
         &__rtrn {
-            border-radius: $brdef;
-            font-size: .8em;
-            margin: 5px 0;
-            background-color: $bgwhite95;
-            padding: 10px 20px;
-            text-align: left;
-            display: flex;
-            align-items: center;
-        }
-        svg {
-            margin-right: 10px;
+            @include warn;
         }
     }
     &__inpt {
-        padding: 10px;
-        border-radius: $brdef ;
-        border: none;
-        width: $wmax;
+        @include input;
         &--rcvr {
             margin: 0 0 10px;
         }
