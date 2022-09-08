@@ -7,6 +7,7 @@ import UserData from "../../UserData";
 import MainTitle from "../../components/title/MainTitle";
 import MatterEditButtons from "../matter/components/MatterEditButtons";
 import { FaNewspaper } from 'react-icons/fa';
+import ConnectionFailed from "../../components/alert/ConnectionFailed";
 
 /**
  * 
@@ -66,7 +67,6 @@ function AllCourses () {
     return (
         <>
             <section className="crs">
-
                 <MainTitle description="todos os cursos" descriptionUnder="Busque alguma CURSO" icon={<FaNewspaper />} />
                 <div className="crs__wrpprAll">
                     <div className="crs__allCrs">
@@ -111,6 +111,11 @@ function AllCourses () {
                             })
                             :
                             ""
+                        }
+                        {
+                            courses.error && (
+                                <ConnectionFailed />
+                            )
                         }
                     </div>
                 </div>

@@ -5,6 +5,7 @@ import axios from "axios";
 import UserData from "../../../UserData";
 
 import MainTitle from "../../../components/title/MainTitle";
+import AddAlternatives from "./AddAlternatives";
 import Select from 'react-select'
 
 import { FaOptinMonster, FaInfoCircle, FaFileImport, FaUnderline } from 'react-icons/fa';
@@ -30,6 +31,8 @@ function CreateUpdateQuestion () {
     const [description, setDescription] = useState( "" );
     const [alternativesAmount, setAlternativesAmount] = useState( "" );
     const [alternatives, setAlternatives] = useState( "" );
+
+    console.log("a", alternatives)
     const [formSendSuccess, setFormSendSuccess] = useState( "" );
 
     const categoryOptions = [
@@ -108,6 +111,7 @@ function CreateUpdateQuestion () {
                         <legend className="content__lgnd">Descrição da pergunta ( conteúdo ) *</legend>
                         <input className="content__inpt" type="text" onChange={(e) => setDescription(e.target.value)} placeholder={description} value={description || ""} />
                     </fieldset>
+                    <AddAlternatives setAlternatives={setAlternatives} />
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Alternativa correta [ A - D ] *</legend>
                         <input className="content__inpt" type="text" onChange={(e) => setAlternativesAmount(e.target.value)}placeholder={"A"} />

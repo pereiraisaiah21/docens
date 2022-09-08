@@ -22,3 +22,14 @@
         margin: 0 10px -4px 0;
     }
 }
+
+.connectionFailed {
+    @include flexcencenwrap;
+    width: 100%;
+    p {
+        width: 100%;
+        font-size: 1.2em;
+        font-weight: 700;
+        color: $fc-white;
+    }
+}

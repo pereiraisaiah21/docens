@@ -7,6 +7,7 @@ import UserData from "../../UserData";
 import MainTitle from "../../components/title/MainTitle";
 import MatterEditButtons from "./components/MatterEditButtons";
 import { FaNewspaper } from 'react-icons/fa';
+import ConnectionFailed from "../../components/alert/ConnectionFailed";
 
 /**
  * 
@@ -110,6 +111,11 @@ function AllMatters () {
                             })
                             :
                             ""
+                        }
+                        {
+                            matters.error && (
+                                <ConnectionFailed />
+                            )
                         }
                     </div>
                 </div>

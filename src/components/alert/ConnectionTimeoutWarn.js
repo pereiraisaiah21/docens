@@ -8,7 +8,9 @@ import { FaRegSadTear } from 'react-icons/fa';
  */
 
 function ConnectionTimeoutWarn () {
+
     return (
+        
         <div className="conectionTimeout">
             <p>
                 <br /><br />
