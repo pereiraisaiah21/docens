@@ -29,10 +29,8 @@ function CreateUpdateQuestion () {
     const [category, setCategory] = useState( null );
     const [name, setName] = useState( "" );
     const [description, setDescription] = useState( "" );
-    const [alternativesAmount, setAlternativesAmount] = useState( "" );
     const [alternatives, setAlternatives] = useState( "" );
 
-    console.log("a", alternatives)
     const [formSendSuccess, setFormSendSuccess] = useState( "" );
 
     const categoryOptions = [
@@ -50,9 +48,21 @@ function CreateUpdateQuestion () {
 
     const handleSubmit = function(event) {
         event.preventDefault();
+
+        if ( category !== null && name !== null && description !== null && alternatives.length > 1 ) {
+            axios.post( "/new/question", {
+                category : category,
+                name : name,
+                description : description,
+                alternatives : alternatives
+            })
+            .then( () => setFormSendSuccess( true ))
+            .catch( () => setFormSendSuccess( false ));
+        }
     }
 
     useEffect(() => {
+
         setTypeUser( userDataValues.typeUser )
 
         // if ( typeUser === "default" ) {
@@ -103,19 +113,15 @@ function CreateUpdateQuestion () {
                             onChange={handleSelectCategory}
                         />
                     </fieldset>
-                    <fieldset className="content__fldst content__fldst--hlf">
+                    <fieldset className="content__fldst">
                         <legend className="content__lgnd">Titulo da pergunta *</legend>
                         <input className="content__inpt" type="text" onChange={(e) => setName(e.target.value)} placeholder={name} value={name || ""} />
                     </fieldset>
-                    <fieldset className="content__fldst content__fldst--hlf">
+                    <fieldset className="content__fldst">
                         <legend className="content__lgnd">Descrição da pergunta ( conteúdo ) *</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setDescription(e.target.value)} placeholder={description} value={description || ""} />
+                        <textarea className="content__inpt" type="text" onChange={(e) => setDescription(e.target.value)} placeholder={description} value={description || ""} />
                     </fieldset>
                     <AddAlternatives setAlternatives={setAlternatives} />
-                    <fieldset className="content__fldst content__fldst--hlf">
-                        <legend className="content__lgnd">Alternativa correta [ A - D ] *</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setAlternativesAmount(e.target.value)}placeholder={"A"} />
-                    </fieldset>
                     <fieldset className="content__fldst">
                         <input className="content__sbmt" type="submit" onClick={handleSubmit} />
                     </fieldset>

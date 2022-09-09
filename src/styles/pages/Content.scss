@@ -19,6 +19,10 @@
         &--hlf {
             width: 100%;
         }
+        &--altrntvs {
+            display: flex;
+            margin-bottom: 0;
+        }
     }
     &__lgnd {
         padding: 0;
@@ -32,6 +36,29 @@
     }
     &__inpt {
         @include input-font;
+        &--altrntvs {
+            width: 90%;
+            border-radius: 10px 0 0 10px;
+        }
+    }
+    &__altrntvs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px 10px;
+        li {
+            display: inline-flex;
+            justify-content: space-between;
+            background-color: $bg-main;
+            padding: 10px;
+            border-radius: $brdef;
+        }
+    }
+    &__btn {
+        &--altrntvs {
+            border-radius: 0 10px 10px 0;
+            width: 10%;
+        }
     }
     &__sbmt {
         border: none;
