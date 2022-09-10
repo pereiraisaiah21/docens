@@ -97,26 +97,26 @@ function CreateUpdateTeacher () {
         
         <section className="content">
             <div className="content__wrp">
-                <MainTitle description="conteúdo" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
+                <MainTitle description="professor" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
                 <form className="content__frm" onSubmit={(e) => e.preventDefault()}>
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Nome *</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setName(e.target.value)} placeholder={name} value={name || ""} />
+                        <input className="content__inpt" type="text" onChange={(e) => setName(e.target.value)} placeholder={name || "Digite o nome do professor"} value={name || ""} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Email</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setEmail(e.target.value)} placeholder={email} value={email || ""} />
+                        <input className="content__inpt" type="text" onChange={(e) => setEmail(e.target.value)} placeholder={email || "Digite o e-mail do professor"} value={email || ""} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Senha</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setPassword(e.target.value)} placeholder={password} value={password || ""} />
+                        <input className="content__inpt" type="text" onChange={(e) => setPassword(e.target.value)} placeholder={password || "Crie uma senha para o professor"} value={password || ""} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Especialidade</legend>
                         <Select className="" options={matterSpecialty} onChange={(e) => setSpeciality(e.value)}/>
                     </fieldset>
                     <fieldset className="content__fldst">
-                        <input className="content__sbmt" type="submit" onClick={handleSubmit} />
+                        <input className="content__sbmt" value="Salvar professor" type="submit" onClick={handleSubmit} />
                     </fieldset>
                 </form>
                 <span className="content__rtrn">

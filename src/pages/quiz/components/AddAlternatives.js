@@ -8,7 +8,8 @@ import { FaPlus, FaTimes } from 'react-icons/fa';
  */
 
 function AddAlternatives ({
-    setAlternatives
+    setAlternatives,
+    setCorrectAlternative
 }) {
 
     const [inputValue, setInputValue] = useState( "" );
@@ -47,11 +48,18 @@ function AddAlternatives ({
     }
 
     useEffect( () => {
-        let listAux = Array.from( alter.data ).filter(e => e !== null)
+        let listAux = Array.from( alter.data ).filter( e => e !== null )
         
-        setAlternatives(listAux);
+        setAlternatives( listAux );
         
-    }, [alter])
+    }, [ alter ]);
+
+    useEffect( () => {
+        
+        setCorrectAlternative( selected );
+        
+    }, [ selected ]);
+
 
     return (
 
@@ -74,12 +82,12 @@ function AddAlternatives ({
                                         <li key={key}>
                                             <label forhtml={`a${key}`}>
                                                 <input 
-                                                type="radio" 
-                                                id={`a${key}`} 
-                                                name="choose" 
-                                                className="" 
-                                                value={item.value}
-                                                onChange={handleAlternativeChange}
+                                                    type="radio" 
+                                                    id={`a${key}`} 
+                                                    name="choose" 
+                                                    className="" 
+                                                    value={item.value}
+                                                    onChange={handleAlternativeChange}
                                                 />
                                                 <span style={{color: 'white'}}>
                                                     {item.value && (item.value)}

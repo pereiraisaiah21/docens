@@ -65,7 +65,7 @@ function Contact () {
                         <textarea className="cntct__inpt" onChange={(e) => setMessage(e.target.value)} placeholder="Digite aqui sua dúvida" rows="5" type="text" />
                     </fieldset>
                     <fieldset className="cntct__fldst">
-                        <input className="cntct__sbmt" type="submit" />
+                        <input className="cntct__sbmt" value="Enviar contato" type="submit" />
                     </fieldset>
                 </form>
                 <span className="cntct__rtrn">

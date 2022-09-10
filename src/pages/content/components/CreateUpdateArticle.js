@@ -151,19 +151,19 @@ function CreateUpdateArticle () {
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Nome da matéria *</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setName(e.target.value)} placeholder={name} value={name || ""} />
+                        <input className="content__inpt" type="text" onChange={(e) => setName(e.target.value)} placeholder={name || "Digite o nome da matéria"} value={name || ""} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Url da matéria *</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setUrl(e.target.value)} placeholder={url} value={url || ""} />
+                        <input className="content__inpt" type="text" onChange={(e) => setUrl(e.target.value)} placeholder={url || "Digite a URL da matéria"} value={url || ""} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Url da atividade *</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setQuizUrl(e.target.value)} placeholder={quizUrl} value={quizUrl || ""} />
+                        <input className="content__inpt" type="text" onChange={(e) => setQuizUrl(e.target.value)} placeholder={quizUrl || "Digite a URL do questionário da matéria" } value={quizUrl || ""} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Url do próximo conteúdo ( Opcional )</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setNextContentUrl(e.target.value)} placeholder={nextContentUrl} value={nextContentUrl || ""} />
+                        <input className="content__inpt" type="text" onChange={(e) => setNextContentUrl(e.target.value)} placeholder={nextContentUrl || "Digite a URL da próxima matéria"} value={nextContentUrl || ""} />
                     </fieldset>
                     <fieldset className="content__fldst">
                         <legend className="content__lgnd">Escopo do artigo *</legend>
@@ -232,7 +232,7 @@ function CreateUpdateArticle () {
                         </ImageUploading>
                     </fieldset>
                     <fieldset className="content__fldst">
-                        <input className="content__sbmt" type="submit" onClick={handleSubmit} />
+                        <input className="content__sbmt" value="Salvar curso" type="submit" onClick={handleSubmit} />
                     </fieldset>
                 </form>
                 <span className="content__rtrn">

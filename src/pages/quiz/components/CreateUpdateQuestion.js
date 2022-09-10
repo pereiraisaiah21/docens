@@ -30,6 +30,7 @@ function CreateUpdateQuestion () {
     const [name, setName] = useState( "" );
     const [description, setDescription] = useState( "" );
     const [alternatives, setAlternatives] = useState( "" );
+    const [correctAlternative, setCorrectAlternative] = useState( null );
 
     const [formSendSuccess, setFormSendSuccess] = useState( "" );
 
@@ -49,7 +50,9 @@ function CreateUpdateQuestion () {
     const handleSubmit = function(event) {
         event.preventDefault();
 
-        if ( category !== null && name !== null && description !== null && alternatives.length > 1 ) {
+        
+        if ( category !== null && name !== null && description !== null && alternatives.length > 1 && correctAlternative ) {
+            console.log("send")
             axios.post( "/new/question", {
                 category : category,
                 name : name,
@@ -121,9 +124,9 @@ function CreateUpdateQuestion () {
                         <legend className="content__lgnd">Descrição da pergunta ( conteúdo ) *</legend>
                         <textarea className="content__inpt" type="text" onChange={(e) => setDescription(e.target.value)} placeholder={description} value={description || ""} />
                     </fieldset>
-                    <AddAlternatives setAlternatives={setAlternatives} />
+                    <AddAlternatives setAlternatives={setAlternatives} setCorrectAlternative={setCorrectAlternative} />
                     <fieldset className="content__fldst">
-                        <input className="content__sbmt" type="submit" onClick={handleSubmit} />
+                        <input className="content__sbmt" value="Salvar pergunta" type="submit" onClick={handleSubmit} />
                     </fieldset>
                 </form>
                 <span className="content__rtrn">

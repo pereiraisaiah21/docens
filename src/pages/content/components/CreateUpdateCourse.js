@@ -92,23 +92,22 @@ function CreateUpdateCourse () {
         
         <section className="content">
             <div className="content__wrp">
-                <MainTitle description="conteúdo" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
+                <MainTitle description="curso" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
                 <form className="content__frm" onSubmit={(e) => e.preventDefault()}>
-                   
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Nome do curso *</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setName(e.target.value)} placeholder={name} value={name || ""} />
+                        <input className="content__inpt" type="text" onChange={(e) => setName(e.target.value)} placeholder={name || "Digite o nome do curso"} value={name || ""} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Url do curso *</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setUrl(e.target.value)} placeholder={url} value={url || ""} />
+                        <input className="content__inpt" type="text" onChange={(e) => setUrl(e.target.value)} placeholder={url || "Digite a URL do curso"} value={url || ""} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Descrição</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setDescription(e.target.value)} placeholder={description} value={description || ""} />
+                        <input className="content__inpt" type="text" onChange={(e) => setDescription(e.target.value)} placeholder={description || "Digite a descrição do curso"} value={description || ""} />
                     </fieldset>
                     <fieldset className="content__fldst">
-                        <input className="content__sbmt" type="submit" onClick={handleSubmit} />
+                        <input className="content__sbmt" value="Salvar curso" type="submit" onClick={handleSubmit} />
                     </fieldset>
                 </form>
                 <span className="content__rtrn">

@@ -24,12 +24,7 @@
         }
     }
     &__inpt {
-        padding: 10px;
-        border-radius: $brdef;
-        border: none;
-        width: $wmax;
-        font-size: 1.2em;
-        font-weight: 500;
+        @include input-font
     }
     &__sbmt {
         border: none;
