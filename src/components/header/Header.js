@@ -45,52 +45,52 @@ function Header () {
 			</div>
         </header>
 		<div className="hdr__wrppr view">
-			<a href="http://localhost:3000/cursos" title="" className="">
+			<a href="https://docens.herokuapp.com/cursos" title="" className="">
 				Cursos
 			</a>
-			<a href="http://localhost:3000/cursos/10" title="" className="">
+			<a href="https://docens.herokuapp.com/cursos/10" title="" className="">
 				Curso
 			</a>
-			<a href="http://localhost:3000/materias" title="" className="">
+			<a href="https://docens.herokuapp.com/materias" title="" className="">
 				Materias
 			</a>
-			<a href="http://localhost:3000/materias/10" title="" className="">
+			<a href="https://docens.herokuapp.com/materias/10" title="" className="">
 				Materia
 			</a>
-			<a href="http://localhost:3000/materias/posts/1" title="" className="">
+			<a href="https://docens.herokuapp.com/materias/posts/1" title="" className="">
 				Artigo
 			</a>
-			<a href="http://localhost:3000/quiz/posts/1" title="" className="">
+			<a href="https://docens.herokuapp.com/quiz/posts/1" title="" className="">
 				Quiz
 			</a>
-			<a href="http://localhost:3000/feed" title="" className="">
+			<a href="https://docens.herokuapp.com/feed" title="" className="">
 				Feed
 			</a>
-			<a href="http://localhost:3000/perfil/usuario" title="" className="">
+			<a href="https://docens.herokuapp.com/perfil/usuario" title="" className="">
 				Perfil
 			</a>
-			<a href="http://localhost:3000/entrar" title="" className="">
+			<a href="https://docens.herokuapp.com/entrar" title="" className="">
 				Login
 			</a>
-			<a href="http://localhost:3000/mensagens" title="" className="">
+			<a href="https://docens.herokuapp.com/mensagens" title="" className="">
 				Alerta
 			</a>
-			<a href="http://localhost:3000/ajuda" title="" className="">
+			<a href="https://docens.herokuapp.com/ajuda" title="" className="">
 				Ajuda
 			</a>
-			<a href="http://localhost:3000/contato" title="" className="">
+			<a href="https://docens.herokuapp.com/contato" title="" className="">
 				Contato
 			</a>
-			<a href="http://localhost:3000/cursos/alt/0" title="" className="">
+			<a href="https://docens.herokuapp.com/cursos/alt/0" title="" className="">
 				Cadastrar curso
 			</a>
-			<a href="http://localhost:3000/materias/alt" title="" className="">
+			<a href="https://docens.herokuapp.com/materias/alt" title="" className="">
 				Cadastrar matéria
 			</a>
-			<a href="http://localhost:3000/materias/alt" title="" className="">
+			<a href="https://docens.herokuapp.com/materias/alt" title="" className="">
 				Cadastrar artigo
 			</a>
-			<a href="http://localhost:3000/quiz/alt/posts/1" title="" className="">
+			<a href="https://docens.herokuapp.com/quiz/alt/posts/1" title="" className="">
 				Cadastrar pergunta
 			</a>
 		</div>

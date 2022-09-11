@@ -3,9 +3,9 @@ import React from "react";
 function PagesDesktop () {
 
     const pagesDesktop = [{
-		name : "Cursos",
-		url : "/cursos",
-		title : "Ir para Todas as matérias"
+		name : "Bem-vindo Lucas!",
+		url : "/",
+		title : "Bem-vindo!"
 	}];
 
     return (

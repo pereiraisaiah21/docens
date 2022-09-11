@@ -31,9 +31,9 @@ function NavigationActions ({
             imageAlt    : "Image alternative"
         },
         {
-            name        : "Materias",
-            description : "Acesse as matérias disponíveis",
-            link        : "/materias",
+            name        : "Cursos",
+            description : "Acesse as cursos disponíveis",
+            link        : "/cursos",
             imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
             imageAlt    : "Image alternative"
         },
