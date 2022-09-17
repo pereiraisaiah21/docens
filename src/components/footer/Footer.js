@@ -27,6 +27,11 @@ function Footer () {
                         </a>
                     </li>
                     <li className="fttr__lst__itm">
+                        <a className="" href="/b" title="Ir para página de uso de cookies">
+                            Agradecimentos
+                        </a>
+                    </li>
+                    <li className="fttr__lst__itm">
                         <a className="" href="mailto:cursoseducaionais@ce.edu.com" title="Enviar email para cursoseducaionais@ce.edu.com">
                             cursoseducaionais@ce.edu.com
                         </a>

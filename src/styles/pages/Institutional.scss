@@ -1,0 +1,11 @@
+.insttcnl {
+    padding: 0 10px;
+    &__txt {
+        max-width: 1200px;
+        color: $fc-white;
+        text-align: left;
+        p {
+            margin: 50px 0;
+        }
+    }
+}
