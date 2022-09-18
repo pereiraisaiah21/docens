@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { FaQuestionCircle, FaDoorOpen, FaBell, FaCaretDown, FaUser, FaBars } from 'react-icons/fa';
 
@@ -70,10 +70,11 @@ function HeaderButtons ({
     ];
 
     const openMenuMobile = function() {
-        setMenuMobileClose( true )
+        setMenuMobileClose( true );
     }
     
     return (
+
         <div className="hdr__optns">
             <ul className="hdr__bttns">
                 {

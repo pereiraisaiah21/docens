@@ -20,12 +20,10 @@ function CreateUpdateMatter () {
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
-
     const [ matterEditData, setMatterEditData ] = useState({
         data : [],
         error : ""
     });
-
     const [ name, setName ] = useState( "" );
     const [ url, setUrl ] = useState( "" );
     const [ description, setDescription ] = useState( "" );
@@ -50,12 +48,12 @@ function CreateUpdateMatter () {
                 .catch( err =>  {
                     setFormSendSuccess( false );
                 });
-        }
-    }
+        };
+    };
 
     useEffect(() => {
 
-        setTypeUser( userDataValues.typeUser )
+        setTypeUser( userDataValues.typeUser );
 
         // if ( typeUser === "default" ) {
         //     return navigate("/");
@@ -78,16 +76,16 @@ function CreateUpdateMatter () {
                         error: err
                     });
                 });
-        }
+        };
     }, []);
 
     useEffect(() => {
-        
+
         if ( matterEditData.data !== undefined ) {
             setName( matterEditData.data.title );
             setUrl( matterEditData.data.title );
             setDescription(  matterEditData.data.body );
-        }
+        };
     }, [ matterEditData ]);
 
     return (

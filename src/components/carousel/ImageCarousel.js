@@ -18,6 +18,7 @@ function ImageCarousel ({
 }) {
 
     return (
+
         <Swiper
             modules={[Navigation, Pagination, A11y]}
             spaceBetween={50}

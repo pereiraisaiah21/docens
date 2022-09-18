@@ -13,6 +13,7 @@ function studentEmblems ({
 }) {
 
     return (
+
         <>
             <span className="stdnt__inf__emblm__xp">
                 268 xp

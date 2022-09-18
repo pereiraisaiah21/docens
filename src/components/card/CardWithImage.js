@@ -24,6 +24,7 @@ function CardWithImage ({
 }) {
 
     return (
+
         <div className={classStyleGrand}>
             <img alt={altImage} className={classStyleImage} src={srcImage} />
             <span className={`${classStyleSpan} title`}>

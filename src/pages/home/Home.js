@@ -6,7 +6,6 @@ import StudentInfo from "../../components/User/StudentInfo";
 import SeparationDots from "./components/default/SeparationDots";
 import NavigationActions from "./components/NavigationActions";
 import NavigationMyProgress from "./components/default/NavigationMyProgress";
-// import Tutorial from "./components/Tutotial";
 import Topics from "./components/Topics";
 import NavigationTeachers from "./components/default/NavigationTeachers";
 
@@ -21,8 +20,9 @@ function Home () {
     const [ typeUser, setTypeUser ] = useState( null );
 
     useEffect(() => {
+
         setTypeUser( userDataValues.typeUser )
-    }, [userDataValues]);
+    }, [ userDataValues ]);
 
     return (
 

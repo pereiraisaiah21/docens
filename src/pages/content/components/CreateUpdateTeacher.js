@@ -23,12 +23,10 @@ function CreateUpdateTeacher () {
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
-
     const [ teacherEditData, setTeacherEditData ] = useState({
         data : [],
         error : ""
     });
-
     const [ name, setName ] = useState( "" );
     const [ email, setEmail ] = useState( "" );
     const [ password, setPassword ] = useState( "" );
@@ -58,12 +56,12 @@ function CreateUpdateTeacher () {
             .catch( err =>  {
                 setFormSendSuccess( false );
             });
-        }
-    }
+        };
+    };
 
     useEffect(() => {
 
-        setTypeUser( userDataValues.typeUser )
+        setTypeUser( userDataValues.typeUser );
 
         // if ( typeUser === "default" ) {
         //     return navigate("/");
@@ -87,7 +85,7 @@ function CreateUpdateTeacher () {
                         error: err
                     });
                 });
-        }
+        };
     }, []);
 
     useEffect(() => {
@@ -96,7 +94,7 @@ function CreateUpdateTeacher () {
             setName( teacherEditData.data.title );
             setEmail( teacherEditData.data.title );
             setPassword(  teacherEditData.data.body);
-        }
+        };
     }, [ teacherEditData ]);
  
     return (

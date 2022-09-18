@@ -24,12 +24,10 @@ function CreateUpdateCourse () {
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
-
     const [courseEditData, setCourseEditData] = useState({
         data : [],
         error : ""
     });
-
     const [ name, setName ] = useState( "" );
     const [ url, setUrl ] = useState( "" ); 
     const [ description, setDescription ] = useState( "" );
@@ -53,12 +51,12 @@ function CreateUpdateCourse () {
             .catch( err =>  {
                 setFormSendSuccess( false );
             });
-        }
-    }
+        };
+    };
 
     useEffect(() => {
 
-        setTypeUser( userDataValues.typeUser )
+        setTypeUser( userDataValues.typeUser );
 
         // if ( typeUser === "default" ) {
         //     return navigate("/");
@@ -82,7 +80,7 @@ function CreateUpdateCourse () {
                         error: err
                     });
                 });
-        }
+        };
     }, []);
 
     useEffect(() => {
@@ -91,7 +89,7 @@ function CreateUpdateCourse () {
             setName( courseEditData.data.title );
             setUrl( courseEditData.data.title );
             setDescription(  courseEditData.data.body);
-        }
+        };
     }, [ courseEditData ]);
  
     return (

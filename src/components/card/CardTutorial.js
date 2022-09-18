@@ -1,6 +1,5 @@
 import React from "react";
 
-
 /**
  * 
  * @param {*} param0 
@@ -18,6 +17,7 @@ function CardTutorial ({
 }) {
 
     return (
+
         <div className={classStyleGrand}>
             <img alt={altImage} className={classStyleImage} src={srcImage} />
             <span className={`${classStyleSpan} title`}>

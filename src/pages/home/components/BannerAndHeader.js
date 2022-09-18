@@ -3,6 +3,11 @@ import React from "react";
 // import ImageCarousel from "../../../components/carousel/ImageCarousel";
 import Header from "../../../components/header/Header";
 
+/**
+ * 
+ * @returns 
+ */
+
 function BannerAndHeader () {
     
     return (

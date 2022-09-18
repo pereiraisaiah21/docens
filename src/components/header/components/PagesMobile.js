@@ -17,6 +17,7 @@ function PagesMobile ({
 	}];
 
     return (
+
         <section className="hdr--mbl__pgs">
             <ul className="hdr--mbl__lst">
                 {
@@ -36,7 +37,3 @@ function PagesMobile ({
 }
 
 export default PagesMobile;
-
-
-
-

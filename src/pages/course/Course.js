@@ -2,8 +2,10 @@ import React, { useState } from "react";
 
 import CardCourse from "../../components/card/CardCourse";
 
-import MainTitle from "../../components/title/MainTitle";
-import NavigationMyProgress from "../home/components/NavigationActions"
+/**
+ * 
+ * @returns 
+ */
 
 function Course () {
 
@@ -68,6 +70,7 @@ function Course () {
     });
 
     return (
+
         <section className="crs">
             <div className="crs__wrppr">
                 <div className="crs__cntnt">
@@ -111,28 +114,25 @@ function Course () {
                             </li>
                         </ul>
                     </nav>
-
                     <div className="crs__artcls">
                         <h2 className="crs__artcls__ttl">
                             Últimos artigos
                         </h2>
                         {
-                            posts.data !== null
-                            ?
-                            posts.data.map( ( item, key ) => {
-                                return (
-                                    <CardCourse 
-                                        classStyleGrand="crs__crd" 
-                                        classStyleInfoBox="crs__crd__inf"
-                                        link={item.link}
-                                        title={item.title}
-                                        summary={item.summary}
-                                        key={key}
-                                    />
-                                )
-                            })
-                            :
-                            ""
+                            posts.data !== null && (
+                                posts.data.map( ( item, key ) => {
+                                    return (
+                                        <CardCourse 
+                                            classStyleGrand="crs__crd" 
+                                            classStyleInfoBox="crs__crd__inf"
+                                            link={item.link}
+                                            title={item.title}
+                                            summary={item.summary}
+                                            key={key}
+                                        />
+                                    )
+                                })
+                            )
                         }
                     </div>
                 </div>

@@ -12,6 +12,7 @@ function UserDataMobile ({
 
     console.log(userData)
     return (
+
         <section className="hdr--mbl__usr">
             <div className="hdr--mbl__prfl">
                 <div className="hdr--mbl__icon">

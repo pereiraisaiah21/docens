@@ -19,22 +19,22 @@ function AllMatters () {
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
-
-    
-    const [matters, setAllMatters] = useState({
+    const [ matters, setAllMatters ] = useState({
         data: [],
         error: ""
     });
-    const [inputSearch, setInputSearch] = useState("");
-    const [searchResult, setSearchResult] = useState({
+    const [ inputSearch, setInputSearch ] = useState( "" );
+    const [ searchResult, setSearchResult ] = useState({
         data : []
     });
     
     useEffect(() => {
+
         setTypeUser( userDataValues.typeUser )
     }, [ userDataValues ]);
     
     useEffect( () => {
+
         api
             .get( "/users" )
             .then( response => {
@@ -55,14 +55,14 @@ function AllMatters () {
         setInputSearch( digit );
 
         let results = matters.data.filter( item => {
-            return item.name.toLowerCase().includes( digit.toLowerCase() )
+            return item.name.toLowerCase().includes( digit.toLowerCase() );
         });
 
-        if( results !== "" && results !== undefined ) {
+        if ( results !== "" && results !== undefined ) {
             setSearchResult({
                 ...searchResult,
                 data : results
-            })
+            });
         };
     };
 

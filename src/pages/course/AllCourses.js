@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import api from "../../services/api"
 import UserData from "../../UserData";
 
@@ -18,7 +17,6 @@ function AllCourses () {
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
-
     const [ courses, setAllCourses ] = useState({
         data: [],
         error: ""
@@ -30,7 +28,7 @@ function AllCourses () {
     
     useEffect(() => {
 
-        setTypeUser( userDataValues.typeUser )
+        setTypeUser( userDataValues.typeUser );
     }, [ userDataValues ]);
     
     useEffect( () => {
@@ -55,7 +53,7 @@ function AllCourses () {
         setInputSearch( digit );
 
         let results = courses.data.filter( item => {
-            return item.name.toLowerCase().includes( digit.toLowerCase() )
+            return item.name.toLowerCase().includes( digit.toLowerCase() );
         });
 
         if ( results !== "" && results !== undefined ) {

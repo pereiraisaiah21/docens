@@ -14,10 +14,11 @@ function ActionsMobile ({
 }) {
 
     const closeMenuMobile = function() {
-        setMenuMobileClose( false )
+        setMenuMobileClose( false );
     }
 
     return (
+
         <section className="hdr--mbl__actns">
             <div className="hdr--mbl__cls">
                 <span className="hdr--mbl__clsnm" onClick={closeMenuMobile}>

@@ -8,6 +8,7 @@ import React from "react";
 function Error () {
 
     return (
+
         <section className="notFound">
             <figure>
                 <figcaption className="notFound__dsc">Página não encontrada, verifique a url digitada.</figcaption>

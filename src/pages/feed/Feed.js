@@ -73,35 +73,34 @@ function Feed () {
     });
 
     return (
+
         <section className="fd">
             <div className="fd__wrppr">
                 <MainTitle description="meu feed" descriptionUnder="Pubicações recentes" icon={<FaRegCalendarTimes />} />
                 <div className="fd__psts">
                     {
-                        posts.data !== null
-                        ?
-                        posts.data.map( ( item, key ) => {
-                            return (
-                                <CardFeed 
-                                    classStyleGrand="fd__crd" 
-                                    classStyleImageBox="fd__crd__img"
-                                    classStyleImage="fd__crd__img__cntnt"
-                                    classStyleInfoBox="fd__crd__inf"
-                                    classStyleViewBox="fd__crd__vw"
-                                    classStyleSubject="fd__crd__sbjct"
-                                    link={item.link}
-                                    subject={item.subject}
-                                    srcImage={item.imageSrc}
-                                    altImage={item.imageAlt}
-                                    title={item.title}
-                                    summary={item.summary}
-                                    views={item.views}
-                                    key={key}
-                                />
-                            )
-                        })
-                        :
-                        ""
+                        posts.data !== null && (
+                            posts.data.map( ( item, key ) => {
+                                return (
+                                    <CardFeed 
+                                        classStyleGrand="fd__crd" 
+                                        classStyleImageBox="fd__crd__img"
+                                        classStyleImage="fd__crd__img__cntnt"
+                                        classStyleInfoBox="fd__crd__inf"
+                                        classStyleViewBox="fd__crd__vw"
+                                        classStyleSubject="fd__crd__sbjct"
+                                        link={item.link}
+                                        subject={item.subject}
+                                        srcImage={item.imageSrc}
+                                        altImage={item.imageAlt}
+                                        title={item.title}
+                                        summary={item.summary}
+                                        views={item.views}
+                                        key={key}
+                                    />
+                                )
+                            })
+                        )
                     }
                 </div>
             </div>

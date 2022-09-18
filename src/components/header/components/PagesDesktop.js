@@ -1,5 +1,10 @@
 import React from "react";
 
+/**
+ * 
+ * @returns 
+ */
+
 function PagesDesktop () {
 
     const pagesDesktop = [{
@@ -9,6 +14,7 @@ function PagesDesktop () {
 	}];
 
     return (
+
         <div className="hdr__pgs">
             {
                 pagesDesktop.map( ( item, key ) => {
@@ -24,7 +30,3 @@ function PagesDesktop () {
 }
 
 export default PagesDesktop;
-
-
-
-

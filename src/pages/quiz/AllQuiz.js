@@ -56,11 +56,11 @@ function AllQuiz () {
             return item.name.toLowerCase().includes( digit.toLowerCase() );
         });
 
-        if( results !== "" && results !== undefined ) {
+        if ( results !== "" && results !== undefined ) {
             setSearchResult({
                 ...searchResult,
                 data : results
-            })
+            });
         };
     };
 

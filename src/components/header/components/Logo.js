@@ -10,6 +10,7 @@ import LogoImage from "../../../images/logo1.png";
 function Logo () {
 
     return (
+
         <a href="/" title="Logo" className="hdr__lg">
 			<img src={LogoImage} className="hdr__lg__img" alt="Logo" />
 		</a>

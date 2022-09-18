@@ -16,7 +16,7 @@ import HeaderButtons from "./components/HeaderButtons";
 function Header () {
 
     const {userDataValues} = useContext( UserData );
-	const [isMenuMobileOpen, setIsMenuMobileOpen] = useState( false );
+	const [ isMenuMobileOpen, setIsMenuMobileOpen ] = useState( false );
 
     return (
 
@@ -32,15 +32,13 @@ function Header () {
 			</div>
 			<div className={`hdr--mbl${isMenuMobileOpen ? " hdr--mbl--opn" : "" }`}>
 			{
-				isMenuMobileOpen
-				?
-				<div className="hdr__wrppr--m">
-					<ActionsMobile setMenuMobileClose={setIsMenuMobileOpen} />
-					<UserDataMobile userData={userDataValues.data} />
-					<PagesMobile />
-				</div>
-				:
-				""
+				isMenuMobileOpen && (
+					<div className="hdr__wrppr--m">
+						<ActionsMobile setMenuMobileClose={setIsMenuMobileOpen} />
+						<UserDataMobile userData={userDataValues.data} />
+						<PagesMobile />
+					</div>
+				)
 			}
 			</div>
         </header>

@@ -7,7 +7,6 @@ import UserData from "../../../UserData";
 import Select from 'react-select'
 import ImageUploading from 'react-images-uploading';
 
-
 import MainTitle from "../../../components/title/MainTitle";
 import MatterEditor from "../../matter/components/MatterEditor";
 
@@ -27,12 +26,10 @@ function CreateUpdateArticle () {
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
-
     const [matterEditData, setMatterEditData] = useState({
         data : [],
         error : ""
     });
-
     const [category, setCategory] = useState( null );
     const [name, setName] = useState( "" );
     const [url, setUrl] = useState( "" );
@@ -43,7 +40,6 @@ function CreateUpdateArticle () {
     const [hightlighImage, setHightlighImage] = useState( "" );
     const [images, setImages] = useState([]);
     const [formSendSuccess, setFormSendSuccess] = useState( "" );
-
     const categoryOptions = [
         { value: "tecnologia", label: "Tecnologia" },
         { value: "matematica", label: "Matemática" },
@@ -65,14 +61,12 @@ function CreateUpdateArticle () {
         console.log( imageList, addUpdateIndex );
         setHightlighImage( imageList );
     };
-
     function handleSelectCategory( data ) {
         setCategory( data );
-    }
+    };
     function handleSelectSubject( data ) {
         setTags( data );
-    }
-
+    };
     const handleSubmit = function( event ) {
         event.preventDefault();
 
@@ -95,8 +89,8 @@ function CreateUpdateArticle () {
                 .catch( err =>  {
                     setFormSendSuccess( false );
                 });
-        }
-    }
+        };
+    };
 
     useEffect(() => {
 
@@ -124,7 +118,7 @@ function CreateUpdateArticle () {
                         error: err
                     });
                 });
-        }
+        };
     }, []);
 
     useEffect(() => {
@@ -136,7 +130,7 @@ function CreateUpdateArticle () {
             setContent(matterEditData.data.body);
             setUrl(matterEditData.data.title);
             setNextContentUrl(matterEditData.data.title);
-        }
+        };
     }, [ matterEditData ]);
 
     return (

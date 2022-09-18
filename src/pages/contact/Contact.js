@@ -25,10 +25,10 @@ function Contact () {
 
     console.log(formSendSuccess)
 
-    const handleSubmit = function(event) {
+    const handleSubmit = function( event ) {
         event.preventDefault();
 
-        if (subject !== null && message !== null) {
+        if ( subject !== null && message !== null ) {
             console.log("send")
 
             axios.post( "/contato", {
@@ -37,12 +37,13 @@ function Contact () {
                 //email : email,
             })
             .then( response => {
+
                 setFormSendSuccess( true );
             })
             .catch( err =>  {
                 setFormSendSuccess( false );
             });
-        }
+        };
     }
 
     return (

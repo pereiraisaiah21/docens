@@ -1,7 +1,5 @@
 import React from "react";
 
-import { FaEye } from 'react-icons/fa';
-
 /**
  * 
  * @param {*} param0 
@@ -17,6 +15,7 @@ function CardCourse ({
 }) {
 
     return (
+
         <a href={link} title={title} className={classStyleGrand}>
             <div className={classStyleInfoBox}>
                 <h6>

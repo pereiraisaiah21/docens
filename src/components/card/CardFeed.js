@@ -25,6 +25,7 @@ function CardFeed ({
 }) {
 
     return (
+
         <a href={link} title={title} className={classStyleGrand}>
             <div className={classStyleImageBox}>
                 <img alt={altImage} className={classStyleImage} src={srcImage} />

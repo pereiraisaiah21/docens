@@ -2,7 +2,6 @@ import React from "react";
 
 import { FaHandPointRight } from 'react-icons/fa';
 
-
 /**
  * 
  * @returns 
@@ -13,6 +12,7 @@ function DragAlert ({
 }) {
     
     return (
+
         <div className={classSyle}>
             Arraste para o lado
             <FaHandPointRight /> 

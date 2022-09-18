@@ -98,8 +98,10 @@ function Emblem () {
                 icon : <FaRocket className="stdnt__mdl stdnt__mdl--rckt3" />
             }
         ]
-    }
+    };
+
     return (
+
         <section className="emblm">
             <MainTitle description="Emblemas" descriptionUnder="Aqui estão todos os emblemas" isCarousel={false} />
             <div className="emblm__wrp">
@@ -124,7 +126,6 @@ function Emblem () {
                         })
                     }
                     </tbody>
-
                 </table>
             </div>
         </section>
