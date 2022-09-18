@@ -11,8 +11,8 @@ import Topics from "./components/Topics";
 import NavigationTeachers from "./components/default/NavigationTeachers";
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function Home () {
@@ -25,8 +25,8 @@ function Home () {
     }, [userDataValues]);
 
     return (
-        <> 
 
+        <>
         {
             typeUser === "default"
             ?
@@ -42,10 +42,8 @@ function Home () {
                 <NavigationMyProgress slider={"true"} sliderTitle={true}  NavigationMyStats={true} />
                 <SeparationDots />
                 <NavigationTeachers />
-                <SeparationDots />
+                <SeparationDots additionalClass="Home__arrowDown--seemore" />
                 <Topics />
-                {/* <Tutorial /> */}
-
             </>
             :
             <NavigationActions typeUser={typeUser} />

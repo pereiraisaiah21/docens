@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import api from "../../services/api";
 
 import UserData from "../../UserData";
 
@@ -31,22 +32,23 @@ function AllMatters () {
     
     useEffect(() => {
         setTypeUser( userDataValues.typeUser )
-    }, [userDataValues]);
+    }, [ userDataValues ]);
     
     useEffect( () => {
-        axios.get( `https://jsonplaceholder.typicode.com/users/` )
-        .then( response => {
+        api
+            .get( "/users" )
+            .then( response => {
 
-            setAllMatters({ 
-                ...matters,
-                data: response.data
+                setAllMatters({ 
+                    ...matters,
+                    data: response.data
+                });
+            }).catch( err => {
+                setAllMatters({
+                    ...matters,
+                    error: err
+                });
             });
-        }).catch( err => {
-            setAllMatters({
-                ...matters,
-                error: err
-            });
-        });
     }, []);
 
     const handleSearch = function( digit ) {
@@ -65,6 +67,7 @@ function AllMatters () {
     };
 
     return (
+
         <>
             <section className="mttr">
                 <MainTitle description="todas as matérias" descriptionUnder="Busque alguma matéria" icon={<FaNewspaper />} />
@@ -74,43 +77,39 @@ function AllMatters () {
                             <input className="mttr__srch__inpt" placeholder="Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)} />
                         </div>
                         {
-                            searchResult.data !== null 
-                            ?
-                            searchResult.data.map((item, key) => {
-                                return (
-                                    <div className="mttr__itm" key={key}>
-                                        <img src="https://imagepng.org/wp-content/uploads/2019/05/dinheiro-icone.png" className="mttr__itm__img" alt="" />
-                                        <span className="mttr__itm__ttl">
-                                            {item.name}
-                                        </span>
-                                    </div>
-                                )
-                            })
-                            :
-                            ""
+                            searchResult.data !== null && (
+                                searchResult.data.map((item, key) => {
+                                    return (
+                                        <div className="mttr__itm" key={key}>
+                                            <img src="https://imagepng.org/wp-content/uploads/2019/05/dinheiro-icone.png" className="mttr__itm__img" alt="" />
+                                            <span className="mttr__itm__ttl">
+                                                {item.name}
+                                            </span>
+                                        </div>
+                                    )
+                                })
+                            )
                         }
                         {
-                            matters.data !== null && inputSearch === ""
-                            ?
-                            matters.data.map((item, key) => {
-                                return (
-                                    <div className="mttr__itm" key={key}>
-                                        <img src="https://imagepng.org/wp-content/uploads/2019/05/dinheiro-icone.png" className="mttr__itm__img" alt="" />
-                                        <span className="mttr__itm__ttl">
-                                            {item.name}
-                                        </span>
-                                        {
-                                            typeUser !== "default"
-                                            ?
-                                            <MatterEditButtons classParent="mttr__itm__edt" classAnchor="mttr__itm__edt__anchr" matter={"posts/1"} />
-                                            :
-                                            ""
-                                        }
-                                    </div>
-                                )
-                            })
-                            :
-                            ""
+                            matters.data !== null && inputSearch === "" && (
+                                matters.data.map((item, key) => {
+                                    return (
+                                        <div className="mttr__itm" key={key}>
+                                            <img src="https://imagepng.org/wp-content/uploads/2019/05/dinheiro-icone.png" className="mttr__itm__img" alt="" />
+                                            <span className="mttr__itm__ttl">
+                                                {item.name}
+                                            </span>
+                                            {
+                                                typeUser !== "default"
+                                                ?
+                                                <MatterEditButtons classParent="mttr__itm__edt" classAnchor="mttr__itm__edt__anchr" matter={"posts/1"} />
+                                                :
+                                                ""
+                                            }
+                                        </div>
+                                    )
+                                })
+                            )
                         }
                         {
                             matters.error && (

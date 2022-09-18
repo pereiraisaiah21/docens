@@ -8,8 +8,8 @@ import NavigationMyProgress from "../home/components/default/NavigationMyProgres
 import FormUpdataUserData from "./components/FormUpdateUserData";
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function Profile () {
@@ -24,14 +24,14 @@ function Profile () {
 
     const navTabsHandler = function( event ) {
         event.preventDefault();
-        
+
         let buttonActive = document.querySelector( ".prfl__nav__button--active" );
         let sectionActive = document.querySelector( `div[vop='${event.target.getAttribute("vop")}']` );
         let sectionWillActive = document.querySelector( "div.prfl__nav__section--active" );
 
         buttonActive.classList.remove( "prfl__nav__button--active" );
         sectionWillActive.classList.remove( "prfl__nav__section--active" );
- 
+
         event.target.classList.add( "prfl__nav__button--active" );
         sectionActive.classList.add( "prfl__nav__section--active" );
     }
@@ -63,7 +63,7 @@ function Profile () {
                             <ul className="prfl__nav__list">
                                 <li className="prfl__nav__item">
                                     <button onClick={navTabsHandler} vop="#stats" className="prfl__nav__button prfl__nav__button--active">
-                                        Minha estatística
+                                        Minhas estatísticas
                                     </button>
                                 </li>
                                 <li className="prfl__nav__item">

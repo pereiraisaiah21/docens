@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import api from "../../../services/api"
 import Select from 'react-select'
 
 import UserData from "../../../UserData";
@@ -29,12 +30,12 @@ function CreateUpdateCourse () {
         error : ""
     });
 
-    const [name, setName] = useState( "" );
-    const [url, setUrl] = useState( "" ); 
-    const [description, setDescription] = useState( "" );
-    const [formSendSuccess, setFormSendSuccess] = useState( "" );
+    const [ name, setName ] = useState( "" );
+    const [ url, setUrl ] = useState( "" ); 
+    const [ description, setDescription ] = useState( "" );
+    const [ formSendSuccess, setFormSendSuccess ] = useState( "" );
 
-    const handleSubmit = function(event) {
+    const handleSubmit = function( event ) {
         event.preventDefault();
 
         if ( name !== null && url !== null && description !== null ) {
@@ -46,6 +47,7 @@ function CreateUpdateCourse () {
                 description : description
             })
             .then( response => {
+
                 setFormSendSuccess( true );
             })
             .catch( err =>  {
@@ -60,27 +62,29 @@ function CreateUpdateCourse () {
         // if ( typeUser === "default" ) {
         //     return navigate("/");
         // }
-    }, [userDataValues]);
+    }, [ userDataValues ]);
 
     useEffect(() => {
 
         if ( id && contentid ) {
-            axios.get( `https://jsonplaceholder.typicode.com/${id}/${contentid}` )
-            .then( response => {
-                setCourseEditData({ 
-                    ...courseEditData,
-                    data: response.data
+            api
+                .get( `/${id}/${contentid}` )
+                .then( response => {
+                    setCourseEditData({ 
+                        ...courseEditData,
+                        data: response.data
+                    });
+                }).catch( err => {
+                    setCourseEditData({
+                        ...courseEditData,
+                        error: err
+                    });
                 });
-            }).catch( err => {
-                setCourseEditData({
-                    ...courseEditData,
-                    error: err
-                });
-            });
         }
     }, []);
 
     useEffect(() => {
+
         if ( courseEditData.data !== undefined ) {
             setName( courseEditData.data.title );
             setUrl( courseEditData.data.title );

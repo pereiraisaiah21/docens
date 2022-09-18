@@ -19,7 +19,7 @@ function NavigationActions ({
         {
             name        : "Feed",
             description : "Acesse o feed",
-            link        : "",
+            link        : "/feed",
             imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
             imageAlt    : "Image alternative"
         },

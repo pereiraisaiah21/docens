@@ -68,7 +68,8 @@
         flex-wrap: wrap;
     }
     &__itm {
-        @include flexcencenwrap;
+        @include flexcenuns;
+        width: $wmax;
         border-radius: $brdef;
         margin: 0 0 10px;
         padding: 10px;
@@ -77,9 +78,8 @@
             width: 90px;
         }
         &__ttl {
-            margin: 0 10px;
+            margin: 0 0 0 20px;
             color: $fc-white;
-            width: $wmax;
         }
         &__edt {
             @include flexwrap;
@@ -233,18 +233,12 @@
             width: fit-content;
             margin: 10px auto;
         }
-        &__itm {
-            width: $wmax;
-        }
     }
+
     // Sm
     @media (min-width: 576px) {
         &__wrappr {
             padding: 15px 10px 10px;
-        }
-        &__itm {
-            width: 30%;
-            margin-right: 10px;
         }
     }
     // Md
@@ -276,11 +270,6 @@
         &__rltd {
             width: 30%;
         }
-        &__itm {
-            width: 19%;
-            height: 150px;
-        }
-
     }
     // Xl
     @media (min-width: 1200px) {}

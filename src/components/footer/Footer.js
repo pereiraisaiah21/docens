@@ -10,6 +10,7 @@ import FooterLogo from "../../images/FooterLogo.png";
 function Footer () {
 
     return (
+        
         <footer className="fttr">
             <div className="fttr__wrp">
                 <ul className="fttr__lst">

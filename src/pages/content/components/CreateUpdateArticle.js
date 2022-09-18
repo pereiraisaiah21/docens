@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import api from "../../../services/api";
+import UserData from "../../../UserData";
+
 import Select from 'react-select'
 import ImageUploading from 'react-images-uploading';
 
-import UserData from "../../../UserData";
 
 import MainTitle from "../../../components/title/MainTitle";
 import MatterEditor from "../../matter/components/MatterEditor";
@@ -60,7 +62,6 @@ function CreateUpdateArticle () {
     ];
 
     const onChange = function( imageList, addUpdateIndex ) {
-        // data for submit
         console.log( imageList, addUpdateIndex );
         setHightlighImage( imageList );
     };
@@ -72,56 +73,62 @@ function CreateUpdateArticle () {
         setTags( data );
     }
 
-    const handleSubmit = function(event) {
+    const handleSubmit = function( event ) {
         event.preventDefault();
 
         if ( category !== null && name !== null && url !== null && content !== null && quizUrl !== null && tags !== null && hightlighImage !== null ) {
             console.log("send");
 
-            axios.post( "/new/content", {
-                category : category,
-                name : name,
-                content : content,
-                quizUrl : quizUrl,
-                tags : tags,
-                hightlighImage : hightlighImage
-            })
-            .then( response => {
-                setFormSendSuccess( true );
-            })
-            .catch( err =>  {
-                setFormSendSuccess( false );
-            });
+            api
+                .post( "/new/content", {
+                    category : category,
+                    name : name,
+                    content : content,
+                    quizUrl : quizUrl,
+                    tags : tags,
+                    hightlighImage : hightlighImage
+                })
+                .then( response => {
+
+                    setFormSendSuccess( true );
+                })
+                .catch( err =>  {
+                    setFormSendSuccess( false );
+                });
         }
     }
 
     useEffect(() => {
+
         setTypeUser( userDataValues.typeUser )
 
         // if ( typeUser === "default" ) {
         //     return navigate("/");
         // }
-    }, [userDataValues]);
+    }, [ userDataValues ]);
 
     useEffect(() => {
 
         if ( id && contentid ) {
-            axios.get( `https://jsonplaceholder.typicode.com/${id}/${contentid}` )
-            .then( response => {
-                setMatterEditData({
-                    ...matterEditData,
-                    data: response.data
+            api
+                .get( `/${id}/${contentid}` )
+                .then( response => {
+
+                    setMatterEditData({
+                        ...matterEditData,
+                        data: response.data
+                    });
+                }).catch( err => {
+                    setMatterEditData({
+                        ...matterEditData,
+                        error: err
+                    });
                 });
-            }).catch( err => {
-                setMatterEditData({
-                    ...matterEditData,
-                    error: err
-                });
-            });
         }
     }, []);
 
     useEffect(() => {
+
         if ( matterEditData.data !== undefined ) {
             setName(matterEditData.data.title);
             setQuizUrl(matterEditData.data.title);

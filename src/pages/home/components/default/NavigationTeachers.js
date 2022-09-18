@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../../../services/api";
 
 import MainTitle from "../../../../components/title/MainTitle";
 import { Navigation, Pagination, A11y } from 'swiper';
@@ -27,17 +27,20 @@ function NavigationTeachers () {
     });
 
     useEffect(() => {
-        axios.get( "https://jsonplaceholder.typicode.com/users/" )
+
+      api
+        .get( "/users" )
         .then( response => {
+
             setTeachers({
                 ...teachers,
                 data : response.data
             });
         })
         .catch( err => {
-            setTeachers({ 
+            setTeachers({
                 ...teachers,
-                error : err 
+                error : err
             })
         });
     }, []);
@@ -56,8 +59,7 @@ function NavigationTeachers () {
                         loop={true}
                     >
                         {
-                            teachers.data !== null && teachers.data !== undefined
-                            ?
+                            teachers.data !== null && teachers.data !== undefined && (
                             teachers.data.map( ( item, key ) => {
                                 return(
                                     <SwiperSlide key={key}>
@@ -74,9 +76,7 @@ function NavigationTeachers () {
                                         </div>
                                     </SwiperSlide>
                                 )
-                            })
-                            :
-                            ""
+                            }))
                         }
                     </Swiper>
                 </section>

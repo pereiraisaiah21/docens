@@ -65,16 +65,9 @@
                 background: $bgblue80;
                 border-radius: $brdef ;
                 position: relative;
-                margin-right: 10px;
                 span {
                     color: $white;
                 }
-                // &:before {
-                    //     content: "Emblemas";
-                    //     position: absolute;
-                    //     top: -15px;
-                    //     font-size: .7em;
-                    // }
                 &:hover {
                     cursor: pointer;
                 }
