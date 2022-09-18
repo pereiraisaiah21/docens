@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../services/api"
 import { useParams } from "react-router-dom";
 
 import ImageWithCredits from "./components/ImageWithCredits";
@@ -23,71 +23,77 @@ function Article () {
 
     const textTestP = "<p>Às vezes, problemas que parecem muito ?</p><p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><img class='img' src='https://img.freepik.com/vetores-premium/formulas-de-fisica-equacoes-matematicas-calculos-aritmeticos-blackboard-com-formulas-cientificas_461812-424.jpg' alt=''/>";
 
-    const [loader, setLoader] = useState( true );
-    const [articleContent, setArticleContent] = useState({
+    const [ loader, setLoader ] = useState( true );
+    const [ articleContent, setArticleContent ] = useState({
         data: [],
         error: ""
     });
-    const [articleRelated, setArticleRelated] = useState({
+    const [ articleRelated, setArticleRelated ] = useState({
         data: [],
         error: ""
     });
-    const [articleTag, setArticleTag] = useState({
+    const [ articleTag, setArticleTag ] = useState({
         data: [],
         error: ""
     });
-    const [failToLoad, setFailToLoad] = useState( false );
+    const [ failToLoad, setFailToLoad ] = useState( false );
 
     useEffect( () => {
-        axios.get( `https://jsonplaceholder.typicode.com/${id}/${contentid}` )
-        .then( response => {
 
-            setArticleContent({
-                ...articleContent,
-                data: [response.data]
-            });
-            setTimeout( () =>
-                setLoader( false ),
-                3000
-            );
-        }).catch( err => {
-            setArticleContent({
-                ...articleContent,
-                error: err
-            });
-            setFailToLoad( true );
-        });
+        api
+            .get( `/${id}/${contentid}` )
+            .then( response => {
 
-        axios.get( `https://jsonplaceholder.typicode.com/users/3` )
-        .then( response => {
-          console.log(response.data)
-            setArticleRelated({
-                ...articleRelated,
-                data: [response.data]
+                setArticleContent({
+                    ...articleContent,
+                    data: [response.data]
+                });
+                setTimeout( () =>
+                    setLoader( false ),
+                    3000
+                );
+            }).catch( err => {
+                setArticleContent({
+                    ...articleContent,
+                    error: err
+                });
+                setFailToLoad( true );
             });
-        }).catch( err => {
-            setArticleRelated({
-                ...articleRelated,
-                error: err
-            });
-        });
 
-        axios.get( `https://jsonplaceholder.typicode.com/users` )
-        .then( response => {
+        api
+            .get( `https://jsonplaceholder.typicode.com/users/3` )
+            .then( response => {
 
-            setArticleTag({
-                ...articleTag,
-                data: response.data
+                console.log(response.data)
+                setArticleRelated({
+                    ...articleRelated,
+                    data: [response.data]
+                });
+            }).catch( err => {
+                setArticleRelated({
+                    ...articleRelated,
+                    error: err
+                });
             });
-        }).catch( err => {
-            setArticleTag({
-                ...articleTag,
-                error: err
+
+        api
+            .get( "/users" )
+            .then( response => {
+
+                setArticleTag({
+                    ...articleTag,
+                    data: response.data
+                });
+            }).catch( err => {
+                setArticleTag({
+                    ...articleTag,
+                    error: err
+                });
             });
-        });
     }, []);
 
     return (
+
         <>
             {
                 loader
@@ -97,7 +103,7 @@ function Article () {
                     <ConnectionTimeoutWarn />
                     :
                     <div className="ldr">
-                        <TailSpin color = "rgba(255, 255, 255)" />
+                        <TailSpin color="rgba(255, 255, 255)" />
                     </div>
                 :
                 <section className="mttr">

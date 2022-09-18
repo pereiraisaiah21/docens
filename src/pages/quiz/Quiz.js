@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import { useParams } from "react-router-dom";
-import axios from "axios";
+import api from "../../services/api";
 import Modal from 'react-modal';
 
 import QuestionAlternative from "./components/QuestionAlternative";
@@ -18,22 +18,22 @@ function Quiz () {
     // let {matter} = useParams();
     // let {contentid} = useParams();
 
-    const [loader, setLoader] = useState( true );
-    const [answer, setAnswer] = useState( null );
-    const [isChoiceCorrect, setIsChoiceCorrect] = useState( "" );
-    const [disableOptions, setDisableOptions] = useState( false );
-    const [questionIndex, setQuestionIndex] = useState( -1 );
-    const [isAnswerEmpty, setIsAnswerEmpty] = useState( null );
-    const [progressColor, setProgressColor] = React.useState( "" );
-    const [modalIsOpen, setIsOpen] = React.useState( false );
-    const [question, setQuestion] = useState({data :  [{
+    const [ loader, setLoader ] = useState( true );
+    const [ answer, setAnswer ] = useState( null );
+    const [ isChoiceCorrect, setIsChoiceCorrect ] = useState( "" );
+    const [ disableOptions, setDisableOptions ] = useState( false );
+    const [ questionIndex, setQuestionIndex ] = useState( -1 );
+    const [ isAnswerEmpty, setIsAnswerEmpty ] = useState( null );
+    const [ progressColor, setProgressColor ] = React.useState( "" );
+    const [ modalIsOpen, setIsOpen ] = React.useState( false );
+    const [ question, setQuestion ] = useState({data :  [{
         categoriaId: "",
         id : 1,
         title : "",
         content: "",
         alternatives : []
-    }], id: 1, error: ""});
-    const [answerReturn, setAnswerReturn] = useState({
+    }], id: 1, error: "" });
+    const [ answerReturn, setAnswerReturn ] = useState({
         correctAnswer : null,
         explication : "",
         error : false
@@ -58,37 +58,38 @@ function Quiz () {
         setDisableOptions( false );
         setQuestionIndex( questionIndex + 1 );
 
-        axios.get( `https://opentdb.com/api.php?amount=1` )
-        .then( response => {
+        api
+            .get( `https://opentdb.com/api.php?amount=1` )
+            .then( response => {
 
-            let options = response.data.results[0].incorrect_answers;
-            options.push(response.data.results[0].correct_answer);
+                let options = response.data.results[0].incorrect_answers;
+                options.push(response.data.results[0].correct_answer);
 
-            setQuestion({
-                ...question, 
-                data: {
-                    categoriaId: 5,
-                    id : "",
-                    title : response.data.results[0].category,
-                    content : response.data.results[0].question,
-                    alternatives : options,
-                    progressBar: 65
-                }
+                setQuestion({
+                    ...question, 
+                    data: {
+                        categoriaId: 5,
+                        id : "",
+                        title : response.data.results[0].category,
+                        content : response.data.results[0].question,
+                        alternatives : options,
+                        progressBar: 65
+                    }
+                });
+                setAnswerReturn({
+                    ...answerReturn,
+                    correctAnswer : response.data.results[0].correct_answer
+                });
+                setTimeout( () => 
+                    setLoader( false ),
+                    1500
+                );
+            }).catch( err => {
+                setQuestion({
+                    ...question,
+                    error: err
+                });
             });
-            setAnswerReturn({
-                ...answerReturn,
-                correctAnswer : response.data.results[0].correct_answer
-            });
-            setTimeout( () => 
-                setLoader( false ),
-                1500
-            );
-        }).catch( err => {
-            setQuestion({
-                ...question,
-                error: err
-            });
-        });
     };
 
     const updateAnswers = function( e ) {
@@ -101,6 +102,7 @@ function Quiz () {
         if ( answer !== null ) {
             setDisableOptions( true );
             setIsAnswerEmpty( false );
+
             if ( answer === answerReturn.correctAnswer ) {
                 setIsChoiceCorrect( true );
                 setProgressColor( "rgb(51, 147, 48)" );
@@ -108,6 +110,7 @@ function Quiz () {
                 setIsChoiceCorrect( false );
                 setProgressColor( "rgb(147, 53, 48)" );
             };
+
             sendQuestionFeedback();
             setTimeout(
                 getQuestion, 
@@ -117,25 +120,28 @@ function Quiz () {
     };
 
     const sendQuestionFeedback = function() {
-        axios.post( '/user/questionfeedback/', {
-            result: isChoiceCorrect
-        })
-        .catch( err => {
-            console.error( err );
-        });
+        api
+            .post( '/user/questionfeedback/', {
+                result: isChoiceCorrect
+            })
+            .catch( err => {
+                console.error( err );
+            });
     };
 
     useEffect(() => {
+
         getQuestion();
     }, []);
 
     return (
+
         <>
         {
             loader
             ?
             <div className="ldr">
-                <TailSpin color = "rgba(255, 255, 255)" />
+                <TailSpin color="rgba(255, 255, 255)" />
             </div>
             :
             <div className="qz">
@@ -175,11 +181,9 @@ function Quiz () {
                         </>
                     }
                     {
-                        questionIndex > 9
-                        ?
-                        <QuizFinishedMessage />
-                        :
-                        ""
+                        questionIndex > 9 && (
+                            <QuizFinishedMessage />
+                        )
                     }
                 </section>
 

@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../../../services/api";
 
 import UserData from "../../../UserData";
 
@@ -10,6 +10,10 @@ import Select from 'react-select'
 
 import { FaOptinMonster, FaInfoCircle, FaFileImport, FaUnderline } from 'react-icons/fa';
 
+/**
+ * 
+ * @returns 
+ */
 
 function CreateUpdateQuestion () {
 
@@ -20,20 +24,16 @@ function CreateUpdateQuestion () {
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
-
-    const [quizEditData, setQuizEditData] = useState({
+    const [ quizEditData, setQuizEditData ] = useState({
         data : [],
         error : ""
     });
-
-    const [category, setCategory] = useState( null );
-    const [name, setName] = useState( "" );
-    const [description, setDescription] = useState( "" );
-    const [alternatives, setAlternatives] = useState( "" );
-    const [correctAlternative, setCorrectAlternative] = useState( null );
-
-    const [formSendSuccess, setFormSendSuccess] = useState( "" );
-
+    const [ category, setCategory ] = useState( null );
+    const [ name, setName ] = useState( "" );
+    const [ description, setDescription ] = useState( "" );
+    const [ alternatives, setAlternatives ] = useState( "" );
+    const [ correctAlternative, setCorrectAlternative ] = useState( null );
+    const [ formSendSuccess, setFormSendSuccess ] = useState( "" );
     const categoryOptions = [
         { value: "tecnologia", label: "Tecnologia" },
         { value: "matematica", label: "Matemática" },
@@ -45,62 +45,66 @@ function CreateUpdateQuestion () {
 
     function handleSelectCategory( data ) {
         setCategory( data );
-    }
+    };
 
-    const handleSubmit = function(event) {
+    const handleSubmit = function( event ) {
         event.preventDefault();
-
         
         if ( category !== null && name !== null && description !== null && alternatives.length > 1 && correctAlternative ) {
             console.log("send")
-            axios.post( "/new/question", {
-                category : category,
-                name : name,
-                description : description,
-                alternatives : alternatives
-            })
-            .then( () => setFormSendSuccess( true ))
-            .catch( () => setFormSendSuccess( false ));
-        }
-    }
+            api
+                .post( "/new/question", {
+                    category : category,
+                    name : name,
+                    description : description,
+                    alternatives : alternatives
+                })
+                .then( () => setFormSendSuccess( true ))
+                .catch( () => setFormSendSuccess( false ));
+        };
+    };
 
     useEffect(() => {
 
-        setTypeUser( userDataValues.typeUser )
+        setTypeUser( userDataValues.typeUser );
 
         // if ( typeUser === "default" ) {
         //     return navigate("/");
         // }
-    }, [userDataValues]);
+    }, [ userDataValues ]);
 
     useEffect(() => {
 
         if ( id && contentid ) {
-            axios.get( `https://jsonplaceholder.typicode.com/${id}/${contentid}` )
-            .then( response => {
-                setQuizEditData({
-                    ...quizEditData,
-                    data: response.data
+            api
+                .get( `/${id}/${contentid}` )
+                .then( response => {
+
+                    setQuizEditData({
+                        ...quizEditData,
+                        data: response.data
+                    });
+                }).catch( err => {
+                    setQuizEditData({
+                        ...quizEditData,
+                        error: err
+                    });
                 });
-            }).catch( err => {
-                setQuizEditData({
-                    ...quizEditData,
-                    error: err
-                });
-            });
-        }
+        };
     }, []);
 
     useEffect(() => {
+
         if ( quizEditData.data !== undefined ) {
-            setCategory(quizEditData.data.title);
-            setName(quizEditData.data.title);
-            setDescription(quizEditData.data.body);
-            setAlternatives(quizEditData.data.body);
-        }
+            setCategory( quizEditData.data.title );
+            setName( quizEditData.data.title );
+            setDescription( quizEditData.data.body );
+            setAlternatives( quizEditData.data.body );
+        };
     }, [ quizEditData ]);
 
     return (
+
         <section className="content">
             <div className="content__wrp">
                 <MainTitle description="pergunta" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />

@@ -57,6 +57,7 @@ function CreateUpdateCourse () {
     }
 
     useEffect(() => {
+
         setTypeUser( userDataValues.typeUser )
 
         // if ( typeUser === "default" ) {
@@ -70,6 +71,7 @@ function CreateUpdateCourse () {
             api
                 .get( `/${id}/${contentid}` )
                 .then( response => {
+
                     setCourseEditData({ 
                         ...courseEditData,
                         data: response.data

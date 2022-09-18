@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
-import Select from 'react-select'
-
+import api from "../../../services/api";
 import UserData from "../../../UserData";
 
 import MainTitle from "../../../components/title/MainTitle";
@@ -23,63 +21,68 @@ function CreateUpdateMatter () {
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
 
-    const [matterEditData, setMatterEditData] = useState({
+    const [ matterEditData, setMatterEditData ] = useState({
         data : [],
         error : ""
     });
 
-    const [name, setName] = useState( "" );
-    const [url, setUrl] = useState( "" );
-    const [description, setDescription] = useState( "" );
-    const [formSendSuccess, setFormSendSuccess] = useState( "" );
+    const [ name, setName ] = useState( "" );
+    const [ url, setUrl ] = useState( "" );
+    const [ description, setDescription ] = useState( "" );
+    const [ formSendSuccess, setFormSendSuccess ] = useState( "" );
 
-    const handleSubmit = function(event) {
+    const handleSubmit = function( event ) {
         event.preventDefault();
 
         if ( name !== null && url !== null && description !== null ) {
             console.log("send");
 
-            axios.post( "/new/content", {
-                name : name,
-                url : url,
-                description : description
-            })
-            .then( response => {
-                setFormSendSuccess( true );
-            })
-            .catch( err =>  {
-                setFormSendSuccess( false );
-            });
+            api
+                .post( "/new/content", {
+                    name : name,
+                    url : url,
+                    description : description
+                })
+                .then( response => {
+
+                    setFormSendSuccess( true );
+                })
+                .catch( err =>  {
+                    setFormSendSuccess( false );
+                });
         }
     }
 
     useEffect(() => {
+
         setTypeUser( userDataValues.typeUser )
 
         // if ( typeUser === "default" ) {
         //     return navigate("/");
         // }
-    }, [userDataValues]);
+    }, [ userDataValues ]);
 
     useEffect(() => {
 
         if ( id ) {
-            axios.get( `https://jsonplaceholder.typicode.com/posts/${id}` )
-            .then( response => {
-                setMatterEditData({
-                    ...matterEditData,
-                    data: response.data
+            api
+                .get( `/${id}` )
+                .then( response => {
+                    setMatterEditData({
+                        ...matterEditData,
+                        data: response.data
+                    });
+                }).catch( err => {
+                    setMatterEditData({
+                        ...matterEditData,
+                        error: err
+                    });
                 });
-            }).catch( err => {
-                setMatterEditData({
-                    ...matterEditData,
-                    error: err
-                });
-            });
         }
     }, []);
 
     useEffect(() => {
+        
         if ( matterEditData.data !== undefined ) {
             setName( matterEditData.data.title );
             setUrl( matterEditData.data.title );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../services/api";
 
 import MainTitle from "../../components/title/MainTitle";
 import { FaOptinMonster } from 'react-icons/fa';
@@ -13,8 +13,8 @@ import { TailSpin } from "react-loader-spinner";
 
 function Help () {
 
-    const [loader, setLoader] = useState( true );
-    const [faq, setFaq] = useState({
+    const [ loader, setLoader ] = useState( true );
+    const [ faq, setFaq ] = useState({
         data : [],
         error : ""
     });
@@ -28,31 +28,34 @@ function Help () {
     };
 
     useEffect(() => {
-        axios.get( `https://jsonplaceholder.typicode.com/users/` )
-        .then( response => {
 
-            setFaq({ 
-                ...faq,
-                data: response.data
+        api
+            .get( "/users" )
+            .then( response => {
+
+                setFaq({ 
+                    ...faq,
+                    data: response.data
+                });
+                setTimeout( () => 
+                    setLoader(false), 
+                2000);
+            }).catch( err => {
+                setFaq({ 
+                    ...faq,
+                    error: err 
+                });
             });
-            setTimeout( () => 
-                setLoader(false), 
-            2000);
-        }).catch( err => {
-            setFaq({ 
-                ...faq,
-                error: err 
-            });
-        });
     }, []);
 
     return (
+
         <>
             {
                 loader
                 ?
                 <div className="ldr">
-                    <TailSpin color = "rgba(255, 255, 255)" />
+                    <TailSpin color="rgba(255, 255, 255)" />
                 </div>
                 :
                 <section className="Help">

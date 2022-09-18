@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import api from "../../../services/api"
 import Select from 'react-select'
 
 import UserData from "../../../UserData";
@@ -23,26 +24,26 @@ function CreateUpdateTeacher () {
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
 
-    const [teacherEditData, setTeacherEditData] = useState({
+    const [ teacherEditData, setTeacherEditData ] = useState({
         data : [],
         error : ""
     });
 
-    const [name, setName] = useState( "" );
-    const [email, setEmail] = useState( "" );
-    const [password, setPassword] = useState( "" );
-    const [speciality, setSpeciality] = useState( "" );
+    const [ name, setName ] = useState( "" );
+    const [ email, setEmail ] = useState( "" );
+    const [ password, setPassword ] = useState( "" );
+    const [ speciality, setSpeciality ] = useState( "" );
     const matterSpecialty = [
         { value: "x", label: "Algebra" },
         { value: "y", label: "Química" },
         { value: "z", label: "Física" }
     ];
-    const [formSendSuccess, setFormSendSuccess] = useState( "" );
+    const [ formSendSuccess, setFormSendSuccess ] = useState( "" );
 
-    const handleSubmit = function(event) {
+    const handleSubmit = function( event ) {
         event.preventDefault();
 
-        if ( name !== null && email !== null && password !== null && speciality.length > 0) {
+        if ( name !== null && email !== null && password !== null && speciality.length > 0 ) {
             console.log("send");
 
             axios.post( "/new/content", {
@@ -51,6 +52,7 @@ function CreateUpdateTeacher () {
                 password : password
             })
             .then( response => {
+
                 setFormSendSuccess( true );
             })
             .catch( err =>  {
@@ -60,32 +62,36 @@ function CreateUpdateTeacher () {
     }
 
     useEffect(() => {
+
         setTypeUser( userDataValues.typeUser )
 
         // if ( typeUser === "default" ) {
         //     return navigate("/");
         // }
-    }, [userDataValues]);
+    }, [ userDataValues ]);
 
     useEffect(() => {
 
         if ( id ) {
-            axios.get( `https://jsonplaceholder.typicode.com/posts/${id}` )
-            .then( response => {
-                setTeacherEditData({ 
-                    ...teacherEditData,
-                    data: response.data
+            api
+                .get( `/${id}` )
+                .then( response => {
+
+                    setTeacherEditData({ 
+                        ...teacherEditData,
+                        data: response.data
+                    });
+                }).catch( err => {
+                    setTeacherEditData({
+                        ...teacherEditData,
+                        error: err
+                    });
                 });
-            }).catch( err => {
-                setTeacherEditData({
-                    ...teacherEditData,
-                    error: err
-                });
-            });
         }
     }, []);
 
     useEffect(() => {
+
         if ( teacherEditData.data !== undefined ) {
             setName( teacherEditData.data.title );
             setEmail( teacherEditData.data.title );
