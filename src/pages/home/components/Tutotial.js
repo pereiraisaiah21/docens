@@ -32,6 +32,7 @@ function Tutorial ({
     });
 
     return (
+
         <section className="actns">
             <MainTitle description="tutorial" isCarousel={true} icon={<FaOptinMonster />} />
             <div className="actns__crds actns__crds--myPrfl">

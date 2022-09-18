@@ -15,6 +15,7 @@ function ImageWithCredits ({
 }) {
 
     return (
+
         <>
             <img alt={imageAlt} src={imageSrc} className={classStyleImg} />
             <p className={classStyleCredit}>

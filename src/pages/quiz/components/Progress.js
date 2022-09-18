@@ -16,6 +16,7 @@ function Progress ({
 }) {
 
     return (
+
         <div className="Question__progress">
             <a href="/fasd" title="Sair das perguntas" className="Question__exit">
                 <FaTimes />
@@ -26,13 +27,11 @@ function Progress ({
                         {progress > 100 ? 100 : progress} %
                     </span>
                     {
-                        showImage
-                        ?
-                        <div className={`qzPls`}>
-                            <img alt="Gif + xp" src={XpGif} />
-                        </div>
-                        :
-                        ""
+                        showImage && (
+                            <div className={`qzPls`}>
+                                <img alt="Gif + xp" src={XpGif} />
+                            </div>
+                        )
                     }
                 </span>
             </div>

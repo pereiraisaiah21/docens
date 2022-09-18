@@ -18,6 +18,7 @@ function ProfileCard ({
     };
 
     return (
+
         <>
             <div className="prfl__img">
                 <img src={"https://imagepng.org/wp-content/uploads/2019/05/dinheiro-icone.png"} alt="Avatar do usuário" /> 

@@ -11,6 +11,7 @@ function Teacher () {
     let {id} = useParams();
 
     return (
+
         <section className="tchr">
 
         </section>

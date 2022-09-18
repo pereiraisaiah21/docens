@@ -1,11 +1,12 @@
 import React from "react";
 
 import MainTitle from "../../../components/title/MainTitle";
-
 import { FaOptinMonster } from 'react-icons/fa';
 
 function Topics () {
+
     return (
+
         <section className="actns actns--bg-01">
             <MainTitle description="Saba mais" icon={<FaOptinMonster />} />
             <div className="actns__tpcs">

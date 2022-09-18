@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import api from "../../services/api";
 
 import UserData from "../../UserData";
@@ -100,11 +99,9 @@ function AllMatters () {
                                                 {item.name}
                                             </span>
                                             {
-                                                typeUser !== "default"
-                                                ?
-                                                <MatterEditButtons classParent="mttr__itm__edt" classAnchor="mttr__itm__edt__anchr" matter={"posts/1"} />
-                                                :
-                                                ""
+                                                typeUser !== "default" && (
+                                                    <MatterEditButtons classParent="mttr__itm__edt" classAnchor="mttr__itm__edt__anchr" matter={"posts/1"} />
+                                                )
                                             }
                                         </div>
                                     )

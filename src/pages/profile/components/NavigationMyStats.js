@@ -62,6 +62,7 @@ function NavigationMyStats () {
       };
 
     return (
+
         <section className="chrt">
             <MainTitle description="estatistica" descriptionUnder="Meu aproveitamento" icon={<FaOptinMonster />} />
             <Chart type='line' data={chartData} />

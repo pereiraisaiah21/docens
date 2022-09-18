@@ -45,11 +45,9 @@ function Quiz () {
         event.preventDefault();
         setIsOpen( true );
     };
-
     const closeModal = function() {
         setIsOpen( false );
     };
-
     const getQuestion = function() {
 
         setAnswer( null );
@@ -91,7 +89,6 @@ function Quiz () {
                 });
             });
     };
-
     const updateAnswers = function( e ) {
         e.preventDefault();
 
@@ -118,7 +115,6 @@ function Quiz () {
             );
         };
     };
-
     const sendQuestionFeedback = function() {
         api
             .post( '/user/questionfeedback/', {

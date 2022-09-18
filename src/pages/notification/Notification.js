@@ -5,6 +5,11 @@ import { TailSpin } from "react-loader-spinner";
 import MainTitle from "../../components/title/MainTitle";
 import { FaRegBookmark, FaTag } from 'react-icons/fa';
 
+/**
+ * 
+ * @returns 
+ */
+
 function Notification () {
 
     const [ loader, setLoader ] = useState( true );

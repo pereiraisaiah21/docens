@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import api from "../../../../services/api";
 
 import CardSubjectProgress from "../../../../components/card/CardSubectProgress";
@@ -58,6 +57,7 @@ function NavigationMyProgress ({
     }, []);
 
     return (
+
         <section className="actns">
             <MainTitle description="meu progresso" descriptionUnder="minhas matérias" isCarousel={sliderTitle} icon={<FaOptinMonster />} />
             <div className="actns__crds actns__crds--myPrfl">
@@ -73,59 +73,55 @@ function NavigationMyProgress ({
                         loop={true}
                     >
                         {
-                            cardsContent.data !== null
-                            ?
-                            cardsContent.data.map((item, key) => {
-                                return (
-                                    <SwiperSlide key={key}>
-                                        <CardSubjectProgress
-                                            classStyleDivButton={"actns__itm__bttn actns__itm__bttn--myPrgrss"}
-                                            link={item.name}
-                                            classStyleGrand="actns__itm actns__itm--myPrgrss"
-                                            srcImage={"https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg"}
-                                            altImage={"item.imageAlt"}
-                                            classStyleImage="actns__itm__img actns__itm__img--myPrgrss"
-                                            classStyleSpan="actns__itm__nm actns__itm__nm--myPrgrss"
-                                            classStyleDiv="actns__itm__inf actns__itm__inf--myPrgrss"
-                                            classStyleDivProgress="actns__itm__prgrss"
-                                            classStyleDivProgressDiv="actns__itm__prcnt"
-                                            classStyleSpanHit="actns__itm__ht"
-                                            title={item.name}
-                                            progressValue={item.id}
-                                        />
-                                    </SwiperSlide>
-                                )
-                            })
-                            :
-                            ""
+                            cardsContent.data !== null && (
+                                cardsContent.data.map((item, key) => {
+                                    return (
+                                        <SwiperSlide key={key}>
+                                            <CardSubjectProgress
+                                                classStyleDivButton={"actns__itm__bttn actns__itm__bttn--myPrgrss"}
+                                                link={item.name}
+                                                classStyleGrand="actns__itm actns__itm--myPrgrss"
+                                                srcImage={"https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg"}
+                                                altImage={"item.imageAlt"}
+                                                classStyleImage="actns__itm__img actns__itm__img--myPrgrss"
+                                                classStyleSpan="actns__itm__nm actns__itm__nm--myPrgrss"
+                                                classStyleDiv="actns__itm__inf actns__itm__inf--myPrgrss"
+                                                classStyleDivProgress="actns__itm__prgrss"
+                                                classStyleDivProgressDiv="actns__itm__prcnt"
+                                                classStyleSpanHit="actns__itm__ht"
+                                                title={item.name}
+                                                progressValue={item.id}
+                                            />
+                                        </SwiperSlide>
+                                    )
+                                })
+                            )
                         }
                     </Swiper>
                     :
-                    cardsContent.data !== null
-                    ?
-                    cardsContent.data.map( ( item, key ) => {
-                        return (
-                            <CardSubjectProgress
-                                classStyleDivButton={"actns__itm__bttn actns__itm__bttn--myPrfl"}
-                                link={item.name}
-                                classStyleGrand="actns__itm actns__itm--myPrfl"
-                                srcImage={"https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg"}
-                                altImage={"item.imageAlt"}
-                                classStyleImage="actns__itm__img actns__itm__img--myPrfl"
-                                classStyleSpan="actns__itm__nm actns__itm__nm--myPrfl"
-                                classStyleDiv="actns__itm__inf actns__itm__inf--myPrfl"
-                                classStyleDivProgress="actns__itm__prgrss actns__itm__prgrss--myPrfl"
-                                classStyleDivProgressDiv="actns__itm__prcnt"
-                                classStyleSpanHit="actns__itm__ht"
-                                title={item.name}
-                                description={"Este conteúdo contém a cronologia do desenvolvimento sustentável com o passar dos anos. Além de pincelar conceitos da agronomia Ecológica."}
-                                progressValue={item.id}
-                                key={key}
-                            />
-                        )
-                    })
-                    :
-                    ""
+                    cardsContent.data !== null && (
+                        cardsContent.data.map( ( item, key ) => {
+                            return (
+                                <CardSubjectProgress
+                                    classStyleDivButton={"actns__itm__bttn actns__itm__bttn--myPrfl"}
+                                    link={item.name}
+                                    classStyleGrand="actns__itm actns__itm--myPrfl"
+                                    srcImage={"https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg"}
+                                    altImage={"item.imageAlt"}
+                                    classStyleImage="actns__itm__img actns__itm__img--myPrfl"
+                                    classStyleSpan="actns__itm__nm actns__itm__nm--myPrfl"
+                                    classStyleDiv="actns__itm__inf actns__itm__inf--myPrfl"
+                                    classStyleDivProgress="actns__itm__prgrss actns__itm__prgrss--myPrfl"
+                                    classStyleDivProgressDiv="actns__itm__prcnt"
+                                    classStyleSpanHit="actns__itm__ht"
+                                    title={item.name}
+                                    description={"Este conteúdo contém a cronologia do desenvolvimento sustentável com o passar dos anos. Além de pincelar conceitos da agronomia Ecológica."}
+                                    progressValue={item.id}
+                                    key={key}
+                                />
+                            )
+                        })
+                    )
                 }
             </div>
         </section>

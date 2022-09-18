@@ -2,6 +2,12 @@ import React from "react";
 
 import { FaRegArrowAltCircleDown } from 'react-icons/fa';
 
+/**
+ * 
+ * @param {*} param0 
+ * @returns 
+ */
+
 function SeparationDots ({
     additionalClass
 }) {

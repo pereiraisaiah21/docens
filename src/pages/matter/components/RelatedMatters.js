@@ -12,9 +12,10 @@ function RelatedMatters ({
     relatedMatter
 }) {
 
-  console.log("x", relatedMatter)
+    console.log("x", relatedMatter)
 
     return (
+
         <section className="mttr__rltd">
             <span className="mttr__rltd__ttl">
                 PRÓXIMA MATÉRIA <FaArrowRight />

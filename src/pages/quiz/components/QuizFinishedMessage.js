@@ -11,6 +11,7 @@ import { FaRegCheckCircle } from 'react-icons/fa';
 function QuizFinishedMessage () {
 
     return (
+
         <div className="Question__fineshed">
             <p>
                 <FaRegCheckCircle /> 

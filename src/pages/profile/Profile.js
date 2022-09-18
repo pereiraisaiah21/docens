@@ -37,6 +37,7 @@ function Profile () {
     }
 
     return (
+
         <section className="prfl">
             <div className="prfl__wrpp">
                 <div className="prfl__bg">
@@ -56,32 +57,30 @@ function Profile () {
                     }
                 </div>
                 {
-                    typeUser === "default"
-                    ?
-                    <div className="prfl__updts">
-                        <nav className="prfl__nav">
-                            <ul className="prfl__nav__list">
-                                <li className="prfl__nav__item">
-                                    <button onClick={navTabsHandler} vop="#stats" className="prfl__nav__button prfl__nav__button--active">
-                                        Minhas estatísticas
-                                    </button>
-                                </li>
-                                <li className="prfl__nav__item">
-                                    <button onClick={navTabsHandler} vop="#matter" className="prfl__nav__button">
-                                        Minhas matérias
-                                    </button>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div className="prfl__nav__section prfl__nav__section--active" vop="#stats">
-                            <NavigationMyStats className="chrt__myStts" slider={true} siderTitle={false} />
+                    typeUser === "default" && (
+                        <div className="prfl__updts">
+                            <nav className="prfl__nav">
+                                <ul className="prfl__nav__list">
+                                    <li className="prfl__nav__item">
+                                        <button onClick={navTabsHandler} vop="#stats" className="prfl__nav__button prfl__nav__button--active">
+                                            Minhas estatísticas
+                                        </button>
+                                    </li>
+                                    <li className="prfl__nav__item">
+                                        <button onClick={navTabsHandler} vop="#matter" className="prfl__nav__button">
+                                            Minhas matérias
+                                        </button>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div className="prfl__nav__section prfl__nav__section--active" vop="#stats">
+                                <NavigationMyStats className="chrt__myStts" slider={true} siderTitle={false} />
+                            </div>
+                            <div className="prfl__nav__section" vop="#matter">
+                                <NavigationMyProgress slider={false} />
+                            </div>
                         </div>
-                        <div className="prfl__nav__section" vop="#matter">
-                            <NavigationMyProgress slider={false} />
-                        </div>
-                    </div>
-                    :
-                    ""
+                    )
                 }
             </div>
         </section>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
+import api from "../../../services/api";
+
 import ImageUploading from 'react-images-uploading';
 import Select from 'react-select'
 import DatePicker from "react-datepicker";
@@ -44,27 +45,26 @@ function FormUpdateUserData ({
 
         if ( action !== "create" ) {
             url = "/user/update";
-        }
+        };
 
-        axios.post( url, {
-            avatar : avatar === "" ? "" : avatar,
-            fullname : fullname === "" ? "" : fullname,
-            username : username === "" ? "" : username,
-            email : email === "" ? "" : email,
-            city : city === "" ? "" : city,
-            gender : gender === "" ? "" : gender,
-            birthdayDate: birthdayDate === "" ? "" : birthdayDate,
-        })
-        .then( response => {
-            setUpdateOpen( true );
-        })
-        .catch( err =>  {
-            console.log( err );
-        });
+        api
+            .post( url, {
+                avatar : avatar === "" ? "" : avatar,
+                fullname : fullname === "" ? "" : fullname,
+                username : username === "" ? "" : username,
+                email : email === "" ? "" : email,
+                city : city === "" ? "" : city,
+                gender : gender === "" ? "" : gender,
+                birthdayDate: birthdayDate === "" ? "" : birthdayDate,
+            })
+            .then( response => {
+                setUpdateOpen( true );
+            })
+            .catch( err =>  {
+                console.log( err );
+            });
     };
-
     const onChange = function( imageList, addUpdateIndex ) {
-        // data for submit
         console.log( imageList, addUpdateIndex );
         setImages( imageList );
       };

@@ -10,7 +10,6 @@ import { TailSpin } from "react-loader-spinner";
 import { FaCalendarWeek } from 'react-icons/fa';
 import ConnectionTimeoutWarn from "../../components/alert/ConnectionTimeoutWarn";
 
-
 /**
  *
  * @returns
@@ -22,7 +21,6 @@ function Article () {
     const {contentid} = useParams();
 
     const textTestP = "<p>Às vezes, problemas que parecem muito ?</p><p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><p class='wrnPrgrph'>Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas</p><img class='img' src='https://img.freepik.com/vetores-premium/formulas-de-fisica-equacoes-matematicas-calculos-aritmeticos-blackboard-com-formulas-cientificas_461812-424.jpg' alt=''/>";
-
     const [ loader, setLoader ] = useState( true );
     const [ articleContent, setArticleContent ] = useState({
         data: [],

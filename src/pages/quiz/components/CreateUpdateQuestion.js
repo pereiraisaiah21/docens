@@ -8,7 +8,7 @@ import MainTitle from "../../../components/title/MainTitle";
 import AddAlternatives from "./AddAlternatives";
 import Select from 'react-select'
 
-import { FaOptinMonster, FaInfoCircle, FaFileImport, FaUnderline } from 'react-icons/fa';
+import { FaOptinMonster, FaInfoCircle } from 'react-icons/fa';
 
 /**
  * 
@@ -46,7 +46,6 @@ function CreateUpdateQuestion () {
     function handleSelectCategory( data ) {
         setCategory( data );
     };
-
     const handleSubmit = function( event ) {
         event.preventDefault();
         

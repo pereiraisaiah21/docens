@@ -31,11 +31,11 @@ function AddAlternatives ({
             setAlter({
                 ...alter,
                 data : listAux
-            })
+            });
         }
     }
 
-    const removeAlternative = function (e, item) {
+    const removeAlternative = function ( e, item ) {
         e.preventDefault();
 
         let listAux = Array.from( alter.data );
@@ -74,7 +74,7 @@ function AddAlternatives ({
             <ul className="content__altrntvs">
                 {
                     alter.data !== null && (
-                        alter.data.map((item, key) => {
+                        alter.data.map(( item, key ) => {
                             return (
                                 <React.Fragment key={key}>
                                  { 

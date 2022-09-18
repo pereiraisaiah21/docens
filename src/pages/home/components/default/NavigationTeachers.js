@@ -46,6 +46,7 @@ function NavigationTeachers () {
     }, []);
 
     return (
+
         <section className="actns">
             <MainTitle description="professores" descriptionUnder="Professores contribuintes" isCarousel={true} icon={<FaOptinMonster />} />
             <div className="actns__crds">

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import CardCourse from "../../components/card/CardCourse";
-
-import MainTitle from "../../components/title/MainTitle";
-import NavigationMyProgress from "../home/components/NavigationActions"
+/**
+ * 
+ * @returns 
+ */
 
 function Matter () {
 
@@ -68,11 +68,12 @@ function Matter () {
     });
 
     return (
+
         <section className="crs">
             <div className="crs__wrppr">
                 <div className="crs__cntnt">
                     <h1 className="crs__ttl">
-                            Algebra binária
+                        Algebra binária
                     </h1>
                     <p className="crs__dscrptn">
                         Esta matéria diz sobre um sistema de equações é constituído por um conjunto de equações que apresentam mais de uma incógnita. Para resolver um sistema é necessário encontrar os valores que satisfaçam simultaneamente todas as equações.

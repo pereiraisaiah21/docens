@@ -1,6 +1,5 @@
 import React from "react";
 
-import CardWithImage from "../../../components/card/CardWithImage";
 import Card from "../../../components/card/Card";
 import { FaOptinMonster } from 'react-icons/fa';
 
