@@ -32,9 +32,9 @@
     padding: 20px 10px;
     &__dscrptn {
         position: relative;
-        text-align: left;
+        text-align: center;
         max-width: 1200px;
-        margin: 0 auto 20px;
+        margin: 0 auto 50px;
         &__icn {
             display: inline-block;
             height: 100%;
@@ -116,6 +116,7 @@
             align-items: center;
             padding: 8px 2px;
             justify-content: center;
+            border-radius: $brdef;
             margin: 10px 0 0;
             font-size: .9em;
             &--fd {
@@ -215,7 +216,6 @@
     &__tpcs {
         display: flex;
         flex-wrap: wrap;
-        padding: 20px 0 0;
         max-width: 1200px;
         margin: auto;
         &__srvc {
@@ -227,13 +227,12 @@
             }
         }
         &__dscrptn {
-            margin: 10px;
             display: flex;
             align-items: center;
-            padding: 10px 20px;
-            font-size: 1.2em;
+            font-size: 1em;
             color: $white;
             border-radius: $brdef;
+            flex-wrap: wrap;
         }
     }
     &--bg-01 {
@@ -247,20 +246,22 @@
     @media (max-width: 575px) {
         &__dscrptn {
             padding: 10px;
+            margin: 0 0 20px;
         }
         &__crds {
             justify-content: space-between;
         }
         &__itm {
             width: 49%;
-            height: 220px;
             &__inf {
                 padding: 0;
             }
             &__dscrptn {
                 display: none;
             }
-            &__bttn {}
+            &__bttn {
+                background-color: rgb(14, 18, 28);
+            }
             &--myPrgrss {
                 margin: 0 auto;
                 width: $wmax;
@@ -300,7 +301,7 @@
             &__nm {
                 &--myPrgrss {
                     //width: 70%;
-                    height: 40px;
+                    // height: 40px;
                 }
                 &--tutorial {
                     margin: 15px 0;
@@ -349,10 +350,26 @@
     @media (min-width: 991px) {
         &__itm {
             width: 24%;
+            &__nm {
+                &--myPrgrss {
+                    position: absolute;
+                    top: 30px;
+                    left: 0;
+                }
+            }
             &--fd {
             }
             &--myPrgrss {
                 width: auto;
+            }
+        }
+        &__tpcs {
+            padding: 20px 0 0;
+            &__dscrptn {
+                margin: 10px;
+                padding: 10px 20px;
+                font-size: 1.2em;
+                flex-wrap: nowrap;
             }
         }
     }

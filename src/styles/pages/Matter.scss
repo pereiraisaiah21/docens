@@ -211,11 +211,14 @@
         }
         &__ttl {
             margin: 0 0 0 20px;
+            color: $fc-white;
+            font-size: .9em
         }
         &__edt {
             @include flexwrap;
             justify-content: flex-end;
             padding: 10px 0;
+            width: $wmax;
             &__anchr {
                 padding: 3px;
                 border: 1px solid $bc-gray;

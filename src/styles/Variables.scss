@@ -85,20 +85,26 @@ $wmax : 100%;
     border-radius: 5px;
     border: none;
     width: 100%;
+    font-size: .97em;
 }
 @mixin input-font {
+    position: relative;
+    background-color: unset;
+    color: $fc-white;
     padding: 10px;
-    border-radius: 5px;
     border: none;
     width: $wmax;
-    font-size: 1em;
     font-weight: 500;
     font-family: inherit;
+    font-size: .97em;
 }
+
 @mixin select {
     border: none;
     border-radius: 5px;
     font-size: 1em;
+    background-color: unset;
+    font-size: .97em;
 }
 
 @mixin warn {

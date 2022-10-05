@@ -35,6 +35,10 @@ import CreateUpdateQuestion from "./pages/quiz/components/CreateUpdateQuestion";
 
 import CreateUpdateTeacher from "./pages/content/components/CreateUpdateTeacher";
 
+/**
+ * 
+ * @returns 0
+ */
 
 function SiteRoutes () {
     return (

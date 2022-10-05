@@ -9,7 +9,7 @@
         width: $wmax;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 5px;
+        padding: 10px 18px;
         &--m {
             justify-content: flex-end;
             background-color: rgb(203, 203, 203);
@@ -46,7 +46,7 @@
         margin: 0;
         &--mbl {
             display: none;
-            color: $cblue80;
+            color: $white;
         }
     }
     &__lst {
@@ -185,7 +185,7 @@
                 text-align: right;
                 display: block;
                 svg {
-                    font-size: 30px;
+                    font-size: 1.5em;
                 }
             }
         }
@@ -195,7 +195,11 @@
     // Md
     @media (min-width: 768px) {}
     // Lg
-    @media (min-width: 991px) {}
+    @media (min-width: 991px) {
+        &__wrppr {
+            padding: 5px;
+        }
+    }
     // Xl
     @media (min-width: 1200px) {}
     // Xxl
