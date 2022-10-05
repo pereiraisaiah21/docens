@@ -18,12 +18,12 @@ function Footer () {
                         Cursos educacionais
                     </li>
                     <li className="fttr__lst__itm">
-                        <a className="" href="/a" title="Ir para página de termos de uso">
+                        <a className="" href="/termos-de-uso" title="Ir para página de termos de uso">
                             Termos de uso
                         </a>
                     </li>
                     <li className="fttr__lst__itm">
-                        <a className="" href="/b" title="Ir para página de uso de cookies">
+                        <a className="" href="/cookies" title="Ir para página de uso de cookies">
                             Uso de cookies 
                         </a>
                     </li>

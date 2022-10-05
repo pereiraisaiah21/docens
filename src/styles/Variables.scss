@@ -86,6 +86,9 @@ $wmax : 100%;
     border: none;
     width: 100%;
     font-size: .97em;
+    position: relative;
+    background-color: unset;
+    color: $fc-white;
 }
 @mixin input-font {
     position: relative;

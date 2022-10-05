@@ -184,11 +184,7 @@
         padding: 10px 0 30px;
         text-align: left;
         &__inpt {
-            height: 50px;
-            border-radius: $brdef ;
-            border: none;
-            width: $wmax;
-            padding: 10px;
+            @include input;
         }
     }
     &__allMttrs {

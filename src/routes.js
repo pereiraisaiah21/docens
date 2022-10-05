@@ -17,6 +17,7 @@ import Emblem from "./pages/emblem/Emblem";
 import Contact from "./pages/contact/Contact";
 import Aboutus from "./pages/institucional/aboutus";
 import Cookies from "./pages/institucional/cookies";
+import Greetings from "./pages/institucional/greetings";
 import Terms from "./pages/institucional/terms";
 
 import AllCourses from "./pages/course/AllCourses";
@@ -58,6 +59,7 @@ function SiteRoutes () {
                 <Route path="/contato" element={<Contact />} />
                 <Route path="/sobre-nos" element={<Aboutus />} />
                 <Route path="/cookies" element={<Cookies />} />
+                <Route path="/agradecimentos" element={<Greetings />} />
                 <Route path="/termos-de-uso" element={<Terms />} />
 
                 <Route path="/cursos" element={<AllCourses />} />

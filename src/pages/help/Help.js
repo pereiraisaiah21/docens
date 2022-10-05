@@ -89,7 +89,7 @@ function Help () {
                                 Continua com dúvida ?
                             </p>
                             <p className="Help__rdrct__txt">
-                                Envie uma mensagem, <a className="Help__rdrct__anchr" href="/contato" title="Ir para página de contato">Clique aqui.</a>
+                                Envie uma mensagem <a className="Help__rdrct__anchr" href="/contato" title="Ir para página de contato">Clique aqui.</a>
                             </p>
                         </section>
                     </div>

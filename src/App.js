@@ -20,23 +20,29 @@ function App() {
     error : ""
   });
 
+  const changeBodyIdentifier = function ( userType ) {
+    userType !== "default" ? document.querySelector("body").classList.add("df-t") : document.querySelector("body").classList.add("df-u");
+    return;
+  }
+
   useEffect(() => {
 
     api
-        .get( "https://jsonplaceholder.typicode.com/users/1" )
-        .then( response => {
+      .get( "https://jsonplaceholder.typicode.com/users/1" )
+      .then( response => {
 
-            setUserDataValues({
-                ...userDataValues,
-                data : response.data
-            });
-        })
-        .catch( err =>
-            setUserDataValues({
-                ...userDataValues,
-                error : err
-            })
-        );
+          setUserDataValues({
+              ...userDataValues,
+              data : response.data
+          });
+          changeBodyIdentifier(response.data.name);
+      })
+      .catch( err =>
+          setUserDataValues({
+              ...userDataValues,
+              error : err
+          })
+      );
     }, []);
 
   return (

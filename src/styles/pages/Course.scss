@@ -76,6 +76,8 @@
         cursor: pointer;
         &__img {
             width: 90px;
+            border-bottom: 3px solid $bc-white;
+            padding: 0 0 20px;
         }
         &__ttl {
             margin: 0 0 0 20px;
