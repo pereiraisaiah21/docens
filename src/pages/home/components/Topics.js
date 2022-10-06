@@ -15,13 +15,11 @@ function Topics () {
                 </div>
                 <div className="actns__tpcs__dscrptn">
                     <p>
-                        Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem 
+                        Somos a Docens. Sua plataforma de ensino. Com muita disposição, estamos aqui para lhe ajudar a absorver a maior quantidade de matérias, de maneira ligeira.
                     </p>
-                    <p>
-                        Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor Lorem 
-                    </p>
+                    <p></p>
                 </div>
-            </div>    
+            </div>
         </section>
     );
 }

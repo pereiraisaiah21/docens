@@ -164,7 +164,7 @@
             padding: 10px 20px;
             background-color: #1000ff;
             border-radius: $brdef;
-            color: white;
+            color: $white;
             display: block;
             text-align: center;
             svg {
@@ -206,7 +206,7 @@
         cursor: pointer;
         &__img {
             width: 90px;
-            border-bottom: 3px solid $bc-white;
+            border-bottom: 3px solid #1000ff;
             padding: 0 0 20px;
         }
         &__ttl {

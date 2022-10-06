@@ -35,7 +35,7 @@ function CardFeed ({
                     {title}
                 </h6>
                 <span className={classStyleSubject}>
-                    {subject} 
+                    {subject}
                 </span>
                 <p>
                     {summary}

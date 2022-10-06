@@ -35,6 +35,7 @@ import AllQuiz from "./pages/quiz/AllQuiz";
 import CreateUpdateQuestion from "./pages/quiz/components/CreateUpdateQuestion";
 
 import CreateUpdateTeacher from "./pages/content/components/CreateUpdateTeacher";
+import Registration from "./pages/registration/Registration";
 
 /**
  * 
@@ -54,6 +55,8 @@ function SiteRoutes () {
                 <Route path="/perfil/:username" element={<Profile />} />
 
                 <Route path="/entrar" element={<Login />} />
+                <Route path="/cadastrar-se" element={<Registration />} />
+
                 <Route path="/mensagens" element={<Notification />} />
                 <Route path="/emblemas" element={<Emblem />} />
                 <Route path="/contato" element={<Contact />} />

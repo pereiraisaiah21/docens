@@ -66,13 +66,21 @@
             height: 100%;
         }
         &__fineshed {
-            line-height: 40px;
+            line-height: 30px;
+            color: $white;
+            p {
+                margin: 40px auto;
+            }
+            svg {
+                margin: 0 5px -2px;
+            }
             &__anchor {
                 padding: 5px;
                 background-color: $green;
                 border-radius: $brdef;
                 white-space: nowrap;
                 color: $fc-white;
+                margin: 0 5px;
             }
         }
         &__exit {

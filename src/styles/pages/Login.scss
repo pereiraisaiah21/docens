@@ -22,6 +22,7 @@
         position: relative;
         font-size: .9em;
         legend {
+            text-align: center;
             color: $fc-white;
         }
         &--optns {
@@ -34,6 +35,7 @@
     }
     &__inpt {
         @include input;
+        text-align: center;
         &--rcvr {
             margin: 0 0 10px;
         }
