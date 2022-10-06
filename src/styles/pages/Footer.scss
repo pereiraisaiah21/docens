@@ -27,22 +27,25 @@
         }
     }
     &__dvl {
-      @include flexcencen;
-      color: $fc-white;
-      width: 100%;
-      border-top: 2px solid $bc-gray;
-      padding: 30px;
-      margin: 30px 0 0;
-      &__img {
-          max-width: 50px;
-          margin-left: 10px;
-      }
+        @include flexcencen;
+        color: $fc-white;
+        width: 100%;
+        border-top: 2px solid $bc-gray;
+        padding: 30px;
+        margin: 30px 0 0;
+        &__img {
+            max-width: 50px;
+            margin-left: 10px;
+        }
     }
 
     // Xs
     @media (max-width: 575px) {
         &__lst {
           flex-direction: column;
+          &__itm {
+            padding: 10px 0;
+          }
         }
     }
     // Sm

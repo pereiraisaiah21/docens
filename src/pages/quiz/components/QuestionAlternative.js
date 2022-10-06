@@ -33,6 +33,8 @@ function QuestionAlternative ({
         }
     };
 
+    console.log("fjisdfj", number)
+
     Modal.setAppElement( '#root' );
 
     const handleAlternativeChange = function( e ) {
@@ -56,7 +58,7 @@ function QuestionAlternative ({
                 </span>
             </section>
             {
-                !number > 9 && (
+                !(number > 9) && (
                     <section className="Question__content">
                         <p className="Question__paragraph">
                             {content}

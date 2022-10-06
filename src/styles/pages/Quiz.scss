@@ -19,7 +19,7 @@
     }
     .Progress {
         height: 15px;
-        width: 92%;
+        width: 85%;
         border: 2px solid $bc-white;
         background-color: $bgwhite;
         border-radius: 20px;
@@ -86,6 +86,7 @@
         }
         &__progress {
             display: flex;
+            justify-content: space-between;
             align-items: center;
             width: $wmax;
             margin-bottom: 20px
@@ -93,7 +94,6 @@
         &__info {
             @include flexcencen;
             width: $wmax;
-            //background-color: $bgwhitealt;
             margin: 10px 0;
             position: relative;
             padding: 0 10px 0 0;

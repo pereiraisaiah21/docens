@@ -84,7 +84,7 @@ function Course () {
                         <ul className="crs__br__optns">
                             <li className="crs__br__itm">
                                 <a className="crs__br__anchr crs__br__anchr--ttl" href="" title="">
-                                    Todos as matérias
+                                    Todas as matérias
                                 </a>
                             </li>
                             <li className="crs__br__itm">
