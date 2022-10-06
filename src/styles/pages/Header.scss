@@ -12,7 +12,7 @@
         padding: 10px 18px;
         &--m {
             justify-content: flex-end;
-            background-color: rgb(203, 203, 203);
+            background-color: rgb(74 73 73);
             width: $wmax;
             height: 90%;
             padding: 20px 10px;
@@ -157,10 +157,12 @@
             padding: 0;
             text-align: center;
             background-color: $bgwhite95;
+            border-radius: 0 0 20px 20px;
             li {
                 padding: 20px;
-                border-bottom: 2px solid $bgblue80;
-                color: $white;
+                a {
+                    color: $white;
+                }
             }
         }
         &--opn {

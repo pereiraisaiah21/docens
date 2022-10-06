@@ -72,7 +72,7 @@ function AllCourses () {
                 <div className="crs__wrpprAll">
                     <div className="crs__allCrs">
                         <div className="crs__srch">
-                            <input className="crs__srch__inpt" placeholder=">> Busque algum curso" onChange={(e) => handleSearch(e.target.value)} />
+                            <input className="crs__srch__inpt" placeholder="> Busque algum curso" onChange={(e) => handleSearch(e.target.value)} />
                         </div>
                         {
                             searchResult.data !== null && (

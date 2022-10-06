@@ -72,7 +72,7 @@ function AllQuiz () {
                 <div className="mttr__wrpprAll">
                     <div className="mttr__allMttrs">
                         <div className="mttr__srch">
-                            <input className="mttr__srch__inpt" placeholder=">> Busque algum quiz" onChange={(e) => handleSearch(e.target.value)} />
+                            <input className="mttr__srch__inpt" placeholder="> Busque algum quiz" onChange={(e) => handleSearch(e.target.value)} />
                         </div>
                         {
                             searchResult.data !== null && (
