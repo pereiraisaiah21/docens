@@ -10,7 +10,7 @@
         padding-bottom: 10px;
     }
     &__crt {
-        
+
     }
     &__bg {
         position: relative;
@@ -19,6 +19,12 @@
             width: $wmax;
             max-width: $wmax;
         }
+    }
+    &__strp {
+      width: 100%;
+      height: 30px;
+      background: red;
+      border-radius: 10px;
     }
     &__dt {
         position: relative;

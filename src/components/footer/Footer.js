@@ -15,7 +15,7 @@ function Footer () {
             <div className="fttr__wrp">
                 <ul className="fttr__lst">
                     <li className="fttr__lst__itm">
-                        Cursos educacionais
+                        Docens Educacional
                     </li>
                     <li className="fttr__lst__itm">
                         <a className="" href="/termos-de-uso" title="Ir para página de termos de uso">
@@ -28,13 +28,13 @@ function Footer () {
                         </a>
                     </li>
                     <li className="fttr__lst__itm">
-                        <a className="" href="/b" title="Ir para página de uso de cookies">
+                        <a className="" href="/agradecimentos" title="Ir para página de uso de cookies">
                             Agradecimentos
                         </a>
                     </li>
                     <li className="fttr__lst__itm">
                         <a className="" href="mailto:cursoseducaionais@ce.edu.com" title="Enviar email para cursoseducaionais@ce.edu.com">
-                            cursoseducaionais@ce.edu.com
+                            docens@suporte.com.br
                         </a>
                     </li>
                 </ul>

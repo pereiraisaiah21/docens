@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import axios from "axios";
 
 import MainTitle from "../../components/title/MainTitle";
 import { FaUserGraduate, FaLock, FaUserCircle, FaInfoCircle } from 'react-icons/fa';
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function Login () {
 
+    const [ user, setUser ] = useState({});
     const [ username, setUsername ] = useState(null);
     const [ password, setPassword ] = useState(null);
     const [ showFormRecover, setShowFormRecover ] = useState(false);
@@ -19,27 +22,52 @@ function Login () {
     const [ emailRecoverValid, setEmailRecoverValid ] = useState(true);
     const [ isEmailRecoverSent, setIsEmailRecoverSent ] = useState(false);
 
-    const loginSubmit = function( event ) {
+    useEffect(() => {
+        const loggedInUser = localStorage.getItem( "user" );
+        console.log(loggedInUser)
+        if ( loggedInUser ) {
+          // const foundUser = JSON.parse( loggedInUser );
+          setUser( loggedInUser );
+        }
+      }, []);
+
+    const loginSubmit = async  (event) => {
         event.preventDefault();
 
         if ( username !== null && username !== undefined && username !== "" ) {
-            usernameValid( true );
+            setUsernameValid( true );
         } else {
             setUsernameValid( false );
         };
 
         if ( password !== null && password !== undefined && password !== "" ) {
-            passwordValid( true );
+            setPasswordValid( true );
         } else {
             setPasswordValid( false );
         };
 
-        if ( usernameValid && passwordValid ) {
-            submitUserCredentials( username, password );
-        };
+        if (!usernameValid && !passwordValid) {
+          return;
+        }
+
+        const user = {username, password};
+
+        try {
+           const resp = await axios.post(  "http://blogservice.herokuapp.com/api/login", user );
+           console.log(resp.data);
+           setUser( resp.data );
+           localStorage.setItem( "user", resp.data )
+           console.log(resp.data)
+       } catch ( err ) {
+           // Handle Error Here
+           console.error(err);
+       }
     };
-    const submitUserCredentials = function( username, password ) {
-        console.log( username, password );
+    const handleLogout = function()  {
+        setUser({});
+        setUsername("");
+        setPassword("");
+        localStorage.clear();
     };
     const recoverClick = function( event ) {
         event.preventDefault();
