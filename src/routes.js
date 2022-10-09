@@ -38,7 +38,7 @@ import CreateUpdateTeacher from "./pages/content/components/CreateUpdateTeacher"
 import Registration from "./pages/registration/Registration";
 
 /**
- * 
+ *
  * @returns 0
  */
 
@@ -47,7 +47,8 @@ function SiteRoutes () {
         <Router>
             <BannerAndHeader />
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Login />} />
+                <Route path="/home" element={<Home />} />
 
                 <Route path="/feed" element={<Feed />} />
                 <Route path="/ajuda" element={<Help />} />

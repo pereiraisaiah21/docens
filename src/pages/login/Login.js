@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import axios from "axios";
+import { useParams, useNavigate } from "react-router-dom";
 
 import MainTitle from "../../components/title/MainTitle";
 import { FaUserGraduate, FaLock, FaUserCircle, FaInfoCircle } from 'react-icons/fa';
@@ -21,6 +22,8 @@ function Login () {
     const [ passwordValid, setPasswordValid ] = useState(true);
     const [ emailRecoverValid, setEmailRecoverValid ] = useState(true);
     const [ isEmailRecoverSent, setIsEmailRecoverSent ] = useState(false);
+
+      let navigate = useNavigate();
 
     useEffect(() => {
         const loggedInUser = localStorage.getItem( "user" );
@@ -46,7 +49,7 @@ function Login () {
             setPasswordValid( false );
         };
 
-        if (!usernameValid && !passwordValid) {
+        if (!usernameValid || !passwordValid) {
           return;
         }
 
@@ -58,6 +61,8 @@ function Login () {
            setUser( resp.data );
            localStorage.setItem( "user", resp.data )
            console.log(resp.data)
+
+           return navigate("/home");
        } catch ( err ) {
            // Handle Error Here
            console.error(err);
