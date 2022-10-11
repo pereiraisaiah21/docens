@@ -26,12 +26,12 @@ function NavigationMyProgress ({
     const [cardsContent, setCardsContent] = useState({
         data  : [
             {
-                name            : "",
-                description     : "",
-                link            : "",
-                imageSrc        : "",
-                imageAlt        : "",
-                progressValue   : ""
+                name : "",
+                description : "",
+                link : "",
+                imageSrc : "",
+                imageAlt : "",
+                progressValue : ""
             }
         ],
         error : ""
@@ -80,8 +80,6 @@ function NavigationMyProgress ({
                                             <CardSubjectProgress
                                                 classStyleDivButton={"actns__itm__bttn actns__itm__bttn--myPrgrss"}
                                                 link={item.name}
-                                                classStyleGrand="actns__itm actns__itm--myPrgrss"
-                                                srcImage={"https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg"}
                                                 altImage={"item.imageAlt"}
                                                 classStyleImage="actns__itm__img actns__itm__img--myPrgrss"
                                                 classStyleSpan="actns__itm__nm actns__itm__nm--myPrgrss"
@@ -89,6 +87,8 @@ function NavigationMyProgress ({
                                                 classStyleDivProgress="actns__itm__prgrss"
                                                 classStyleDivProgressDiv="actns__itm__prcnt"
                                                 classStyleSpanHit="actns__itm__ht"
+                                                classStyleGrand="actns__itm actns__itm--myPrgrss"
+                                                srcImage={"https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg"}
                                                 title={item.name}
                                                 progressValue={item.id}
                                             />

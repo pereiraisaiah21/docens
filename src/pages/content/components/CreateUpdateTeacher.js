@@ -11,8 +11,8 @@ import MainTitle from "../../../components/title/MainTitle";
 import { FaOptinMonster, FaInfoCircle } from 'react-icons/fa';
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function CreateUpdateTeacher () {
@@ -63,9 +63,9 @@ function CreateUpdateTeacher () {
 
         setTypeUser( userDataValues.typeUser );
 
-        // if ( typeUser === "default" ) {
-        //     return navigate("/");
-        // }
+        if ( typeUser === "default" ) {
+            return navigate("/");
+        }
     }, [ userDataValues ]);
 
     useEffect(() => {
@@ -75,7 +75,7 @@ function CreateUpdateTeacher () {
                 .get( `/${id}` )
                 .then( response => {
 
-                    setTeacherEditData({ 
+                    setTeacherEditData({
                         ...teacherEditData,
                         data: response.data
                     });
@@ -96,9 +96,9 @@ function CreateUpdateTeacher () {
             setPassword(  teacherEditData.data.body);
         };
     }, [ teacherEditData ]);
- 
+
     return (
-        
+
         <section className="content">
             <div className="content__wrp">
                 <MainTitle description="professor" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />

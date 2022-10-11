@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { FaTimes } from 'react-icons/fa';
-
 import XpGif from "../../../components/images/xp.gif";
 
 /**

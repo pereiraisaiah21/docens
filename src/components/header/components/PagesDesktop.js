@@ -1,14 +1,14 @@
 import React from "react";
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function PagesDesktop () {
 
     const pagesDesktop = [{
-		name : "Bem-vindo Lucas!",
+		name : "Bem-vindo !",
 		url : "/",
 		title : "Bem-vindo!"
 	}];

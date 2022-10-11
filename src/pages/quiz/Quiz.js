@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
 import api from "../../services/api";
 import Modal from 'react-modal';
 
@@ -14,9 +13,6 @@ import { TailSpin } from "react-loader-spinner";
  */
 
 function Quiz () {
-
-    // let {matter} = useParams();
-    // let {contentid} = useParams();
 
     const [ loader, setLoader ] = useState( true );
     const [ answer, setAnswer ] = useState( null );
@@ -64,7 +60,7 @@ function Quiz () {
                 options.push(response.data.results[0].correct_answer);
 
                 setQuestion({
-                    ...question, 
+                    ...question,
                     data: {
                         categoriaId: 5,
                         id : "",
@@ -78,7 +74,7 @@ function Quiz () {
                     ...answerReturn,
                     correctAnswer : response.data.results[0].correct_answer
                 });
-                setTimeout( () => 
+                setTimeout( () =>
                     setLoader( false ),
                     1500
                 );
@@ -110,7 +106,7 @@ function Quiz () {
 
             sendQuestionFeedback();
             setTimeout(
-                getQuestion, 
+                getQuestion,
                 1000
             );
         };
@@ -154,7 +150,7 @@ function Quiz () {
                     {
                         questionIndex > 9
                         ?
-                        "" 
+                        ""
                         :
                         <>
                             <section className="Question__send">

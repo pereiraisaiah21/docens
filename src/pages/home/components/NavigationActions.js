@@ -75,13 +75,13 @@ function NavigationActions ({
                                   classStyleDivButton={"actns__itm__bttn"}
                                   link={item.link}
                                   classStyleGrand="actns__itm"
-                                  srcImage={item.imageSrc}
-                                  altImage={item.imageAlt}
                                   classStyleImage="actns__itm__img"
                                   classStyleSpan="actns__itm__nm"
                                   classStyleDiv="actns__itm__inf"
                                   classStyleDivSpan="actns__itm__icn"
                                   classStyleDivLabel="actns__itm__dscrptn"
+                                  srcImage={item.imageSrc}
+                                  altImage={item.imageAlt}
                                   title={item.name}
                                   description={item.description}
                                   key={key}

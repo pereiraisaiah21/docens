@@ -11,8 +11,8 @@ import Select from 'react-select'
 import { FaOptinMonster, FaInfoCircle } from 'react-icons/fa';
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function CreateUpdateQuestion () {
@@ -48,7 +48,7 @@ function CreateUpdateQuestion () {
     };
     const handleSubmit = function( event ) {
         event.preventDefault();
-        
+
         if ( category !== null && name !== null && description !== null && alternatives.length > 1 && correctAlternative ) {
             console.log("send")
             api
@@ -67,9 +67,9 @@ function CreateUpdateQuestion () {
 
         setTypeUser( userDataValues.typeUser );
 
-        // if ( typeUser === "default" ) {
-        //     return navigate("/");
-        // }
+        if ( typeUser === "default" ) {
+            return navigate("/");
+        }
     }, [ userDataValues ]);
 
     useEffect(() => {

@@ -11,8 +11,8 @@ import MainTitle from "../../../components/title/MainTitle";
 import { FaOptinMonster, FaInfoCircle } from 'react-icons/fa';
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function CreateUpdateCourse () {
@@ -29,7 +29,7 @@ function CreateUpdateCourse () {
         error : ""
     });
     const [ name, setName ] = useState( "" );
-    const [ url, setUrl ] = useState( "" ); 
+    const [ url, setUrl ] = useState( "" );
     const [ description, setDescription ] = useState( "" );
     const [ formSendSuccess, setFormSendSuccess ] = useState( "" );
 
@@ -58,9 +58,9 @@ function CreateUpdateCourse () {
 
         setTypeUser( userDataValues.typeUser );
 
-        // if ( typeUser === "default" ) {
-        //     return navigate("/");
-        // }
+        if ( typeUser === "default" ) {
+            return navigate("/");
+        }
     }, [ userDataValues ]);
 
     useEffect(() => {
@@ -70,7 +70,7 @@ function CreateUpdateCourse () {
                 .get( `/${id}/${contentid}` )
                 .then( response => {
 
-                    setCourseEditData({ 
+                    setCourseEditData({
                         ...courseEditData,
                         data: response.data
                     });
@@ -91,9 +91,9 @@ function CreateUpdateCourse () {
             setDescription(  courseEditData.data.body);
         };
     }, [ courseEditData ]);
- 
+
     return (
-        
+
         <section className="content">
             <div className="content__wrp">
                 <MainTitle description="curso" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />

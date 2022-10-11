@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import api from "../../services/api";
-
 import ImageUploading from 'react-images-uploading';
 import Select from 'react-select'
 import DatePicker from "react-datepicker";
 
 import { FaInfoCircle, FaFileImport, FaCaretSquareUp } from 'react-icons/fa';
 import MainTitle from "../../components/title/MainTitle";
-
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -32,10 +30,6 @@ function Registration () {
     const handleUpdateData = function( event ) {
         event.preventDefault();
         let url = "/user/create";
-
-        console.log( "Atualizar dados do usuário" );
-
-        
 
         api
             .post( url, {
@@ -66,54 +60,7 @@ function Registration () {
                 <div className="prfl__inf">
                     <ul className="prfl__inf__lst">
                         <li className="prfl__inf__itm prfl__inf__itm--upld">
-                            {/* <ImageUploading
-                                multiple
-                                value={images}
-                                onChange={onChange}
-                                maxNumber={maxNumber}
-                                dataURLKey="data_url"
-                                acceptType={["jpg"]}
-                            >
-                                {
-                                    ({
-                                        imageList,
-                                        onImageUpload,
-                                        onImageUpdate,
-                                        onImageRemove,
-                                        isDragging,
-                                        dragProps
-                                    }) => (
-                                        <div className="prfl__inf--upld__wrppr">
-                                            <button
-                                                style={isDragging ? { color: "red" } : null}
-                                                onClick={onImageUpload}
-                                                {...dragProps}
-                                                className="prfl__inf--upld__bttnProfile"
-                                            >
-                                                <img alt="" className="" src={"https://imagepng.org/wp-content/uploads/2019/05/dinheiro-icone.png"} />
-                                                <FaFileImport />
-                                                Clique, ou arraste a imagem
-                                            </button>
-                                            {
-                                                imageList.map( ( image, index ) => (
-                                                    <div key={index} className="prfl__inf--upld__img">
-                                                        <img src={"https://static.vecteezy.com/ti/vetor-gratis/p1/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg"} alt="" width="100" />
-                                                        <div className="image-item__btn-wrapper">
-                                                            <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageUpdate( index )}>
-                                                                <FaCaretSquareUp />
-                                                                Atualizar
-                                                            </button>
-                                                            <button className="prfl__inf--upld__bttnDwn" onClick={() => onImageRemove( index )}>
-                                                                Remover imagem
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                ))
-                                            }
-                                        </div>
-                                    )
-                                }
-                            </ImageUploading> */}
+                
                         </li>
                         <li className="prfl__inf__itm">
                             <input className="prfl__inpt" value={fullname} placeholder={"data.name"} onChange={(e) => setFullname(e.target.value)} />
@@ -134,7 +81,7 @@ function Registration () {
                             <Select className="" options={genderOptions} onChange={(e) => setGender(e.value)}/>
                         </li>
                         <li className="prfl__inf__itm">
-                            <DatePicker className="prfl__inpt" selected={birthdayDate} onChange={(birthdayDate) => setBirthdayDate(birthdayDate)} />           
+                            <DatePicker className="prfl__inpt" selected={birthdayDate} onChange={(birthdayDate) => setBirthdayDate(birthdayDate)} />
                         </li>
                         <li className="prfl__inf__edtr">
                             <a href="/ds" title="Editar perfil" onClick={handleUpdateData}>

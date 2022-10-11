@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import api from "../../services/api";
-
 import UserData from "../../UserData";
 
 import MainTitle from "../../components/title/MainTitle";
@@ -9,8 +8,8 @@ import MatterEditButtons from "./components/QuestionEditButtons";
 import { FaNewspaper } from 'react-icons/fa';
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function AllQuiz () {
@@ -25,19 +24,19 @@ function AllQuiz () {
     const [ searchResult, setSearchResult ] = useState({
         data : []
     });
-    
+
     useEffect(() => {
 
         setTypeUser( userDataValues.typeUser );
     }, [ userDataValues ]);
-    
+
     useEffect( () => {
 
         api
             .get( "/users" )
             .then( response => {
 
-                setAllMatters({ 
+                setAllMatters({
                     ...matters,
                     data: response.data
                 });

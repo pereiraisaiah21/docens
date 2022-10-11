@@ -66,7 +66,7 @@ function NavigationTeachers () {
                                     <SwiperSlide key={key}>
                                         <div className="actns__tchrs__itm">
                                             <a className="actns__tchrs__anchr" alt="´Ícone professor" href="/professor">
-                                                <img className="actns__tchrs__img" alt="" src="https://cdn.icon-icons.com/icons2/2859/PNG/512/avatar_face_man_boy_male_profile_smiley_happy_people_icon_181657.png" />
+                                                <img className="actns__tchrs__img" alt="" src="https://static.vecteezy.com/ti/vetor-gratis/p3/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg" />
                                                 <span className="actns__tchrs__nm">
                                                     {item.name}
                                                 </span>
