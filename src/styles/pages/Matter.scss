@@ -20,18 +20,19 @@
     }
     &__rltd {
         display: flex;
-        flex-direction: column;
+        justify-content: flex-start;
         text-align: center;
-        background-color: $bg-box;
-        padding: 20px;
-        border-radius: $brdef ;
+        border: 2px solid rgb(255 153 0);
         width: 100%;
+        padding: 20px;
+        border-radius: $brdef;
         height: fit-content;
         color: $white;
         &__ttl {
             font-size: 1.2em;
             padding: 10px 0;
             margin: 0 0 10px;
+            color: #716b72;
             svg {
                 font-size: 1.2em;
                 margin: 0 0 -4px 0;
@@ -39,27 +40,27 @@
         }
         &__anchr {
             padding: 10px;
-            border: 1px solid $bc-box;
             border-radius: $brdef ;
             margin: 3px 0;
             color: $white;
             width: $wmax;
         }
         &__img {
-            max-width: $wmax;
             border-radius: $brdef;
+            max-width: 300px;
+            margin: auto;
+            display: block;
         }
         &__bttn {
-            border: 1px solid $bc-box;
-            border-radius: $brdef ;
+            border-radius: $brdef;
             padding: 5px 10px;
             white-space: nowrap;
             color: $white;
             display: block;
             margin: 5px 0;
-            background-color: #1000ff;
+            background-color: rgb(255 153 0);
             svg {
-                margin-right: 10px;
+                margin: 0 10px -2px 0;
             }
         }
     }
@@ -67,16 +68,16 @@
         width: 100%;
     }
     &__tgs {
-        max-width: 1200px;
+        max-width: 800px;
+        padding: 30px 0;
         margin: auto;
-        padding: 10px;
         display: flex;
         text-align: left;
         flex-wrap: wrap;
         &__ttl {
             width: $wmax;
             padding: 10px 0;
-            color: $white;
+            color: #716b72;
             svg {
                 margin-right: 10px;
             }
@@ -84,8 +85,8 @@
         &__anchr {
             margin: 0 10px 10px 0;
             padding: 5px 10px;
-            color: white;
-            border: 1px solid #ccc;
+            color: rgb(255 153 0);
+            border: 1px solid rgb(255 153 0);
             border-radius: $brdef ;
         }
     }
@@ -94,20 +95,26 @@
         &__crdts {
             font-size: .7em;
             text-align: center;
+            color: #716b72;
+            margin: 0;
         }
     }
     &__dtls {
         line-height: 3px;
         font-size: .9em;
         margin: 0 0 25px;
-        &__writer {}
-        &__date {}
-        &__lastUpdate {}
+        color: #716b72;
+        max-width: 800px;
+        margin: auto;
+        &__wrtr,
+        &__date,
+        &__lstpdt {
+            color: #716b72;
+        }
     }
     &__prmryWrp {
         max-width: 1200px;
         margin: 0 auto;
-        background-color: $bg-box;
         color: $white;
         border-radius: $brdef ;
         text-align: left;
@@ -117,8 +124,13 @@
         &--cntnt {
             line-height: 25px;
             text-align: left;
+            color: #716b72;
+            max-width: 800px;
+            margin: auto;
             .img {
                 max-width: $wmax;
+                margin: auto;
+                display: block;
             }
             .wrnPrgrph {
                 border: 1px solid #e7e5d8;
@@ -131,24 +143,31 @@
                 }
             }
         }
+        &.txt-cntr {
+            max-width: 800px;
+            margin: auto;
+        }
     }
     &__prmryTtl {
-        color: $white;
+        color: #716b72;
         font-size: 1.3em;
         text-transform: uppercase;
-        margin: 30px 0;
+        max-width: 800px;
+        margin: 30px auto;
     }
     &__scndtyTtl {
-        color: $white;
+        color: #716b72;
         margin: 30px 0;
         font-size: 1.1rem;
+        max-width: 800px;
+        margin: auto;
     }
     &__trcryTtl {
-        background-color: #1000ff;
+        border: 1px solid rgb(255 153 0);
         padding: 10px;
         border-radius: $brdef;
         white-space: nowrap;
-        color: $fc-white;
+        color: rgb(255 153 0);
         margin: 0 0 10px;
         text-align: center;
     }
@@ -160,6 +179,7 @@
         margin-bottom: 20px;
         padding: 10px;
         text-align: left;
+        color: #716b72;
         &__bttn {
             padding: 10px 20px;
             background-color: #1000ff;
@@ -179,8 +199,12 @@
         font-size: 1.1em;
         text-align: left;
         border-left: 3px solid;
+        color: #716b72;
         &__lst {
             list-style-type: armenian;
+            p {
+                color: #716b72;
+            }
         }
     }
     &__srch {
@@ -287,10 +311,12 @@
     // Lg
     @media (min-width: 991px) {
         &__cntnt {
-            width: 68%;
+            // width: 68%;
         }
         &__rltd {
-            width: 30%;
+            // width: 30%;
+            max-width: 800px;
+            margin: auto;
         }
     }
     // Xl
