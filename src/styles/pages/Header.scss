@@ -2,8 +2,9 @@
     left: 0;
     top: 0;
     width: $wmax;
-    background-color: $bgblack70;
+    background-color: #9100ff;
     z-index: 2;
+    border-bottom: 2px solid rgb(255 153 0);
     &__wrppr {
         @include flexcencen;
         width: $wmax;
@@ -54,9 +55,13 @@
         white-space: nowrap;
         &--brdr {
             border-radius: $brdef ;
-            background-color: rgb(92 161 171 / 80%);
+            background-color: rgb(255 153 0);
             padding: 5px 10px;
             margin-left: 10px;
+
+            svg {
+                margin: 0 0px -2px 0 !important;
+            }
         }
     }
     &__itm {
@@ -66,6 +71,7 @@
             color: $white;
             svg {
                 margin: 0 5px -2px 0;
+                color:rgb(255 255 255);
             }
             &--ntfctn {
                 &:after {

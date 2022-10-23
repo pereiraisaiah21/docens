@@ -1,8 +1,8 @@
 .Home {
     &__arrowDown {
         display: block;
-        margin: -10px auto 0;
-        font-size: 25px;
+        margin: 0 auto;
+        font-size: 80px;
         color: #f4ebeb;
         &--seemore {
             margin: 0 auto -10px;
@@ -12,7 +12,6 @@
 .hmBnnrs {
     position: relative;
     overflow-y: hidden;
-    min-height: 58px;
     .swiper {
         padding: 0 0 35px;
         img {
@@ -30,6 +29,8 @@
 
 .actns {
     padding: 20px 10px;
+    margin: 0 10px;
+    border-radius: 10px;
     &__dscrptn {
         position: relative;
         text-align: center;
@@ -39,10 +40,11 @@
             display: inline-block;
             height: 100%;
             border-bottom: 3px solid $bc-white;
-            padding: 5px 10px;
+            padding: 1px 10px;
             font-size: 30px;
+            background-color: #716b72;
             svg {
-                color: $fc-white;
+                color: #716b72;
                 margin: 0 0px -7px 0;
             }
         }
@@ -50,11 +52,11 @@
             padding: 0 10px;
             font-size: 1em;
             font-weight: 600;
-            color: $fc-white;
+            color: #716b72;
             p {
                 margin: 0;
                 font-size: .7em;
-                color: $fc-white;
+                color: #716b72;
             }
             &--dscrptn {
                 display: inline-block;
@@ -77,10 +79,11 @@
         min-height: 150px;
         height: 100%;
         width: 49%;
-        background-color: $bg-box;
+        background-color: rgb(58 13 239 / 30%);
         border-radius: $brdef;
         padding: 10px;
-        margin: 0 0px 10px 0;
+        margin: 0 10px 0 0;
+        box-shadow: 3px 4px 11px #ccc;
         cursor: pointer;
         &__img {
             max-width: 100%;
@@ -104,13 +107,17 @@
             padding: 10px 0 0;
             width: $wmax;
             @include flexcencenwrap;
+            &--myPrgrss {
+                position: relative;
+                padding: 10px 0 0;
+            }
         }
         &__icn {
             display: none;
         }
         &__bttn {
             width: $wmax;
-            background-color: $bg-box;
+            background-color: rgb(255 153 0);
             color: $fc-white;
             display: inline-flex;
             align-items: center;
@@ -128,7 +135,7 @@
             }
 
             &:hover {
-                background-color: $bc-box;
+                background-color: rgb(173 104 0 / 80%);
             }
         }
         &__dscrptn {
@@ -156,14 +163,16 @@
             border-radius: $brdef ;
         }
         &__ht {
-            font-size: .8em;
+            font-size: .7em;
             color: $fc-white;
-            padding: 10px 0;
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 12px;
+            transform: translateX(-50%);
         }
         &--fd {
             background-color: $white;
-        }
-        &--myPrgrss {
         }
         &--tutorial {
             width: 100% !important;
@@ -220,7 +229,6 @@
         margin: auto;
         &__srvc {
             border-right: none;
-            padding: 10px;
             &__img {
                 max-width: 100%;
                 border-radius: $brdef;
@@ -237,7 +245,13 @@
         }
     }
     &--bg-01 {
-        background-color: $bg-box;
+        border-top: 2px solid rgb(255 153 0);
+        border-radius: 0 !important;
+        background-color: #9100ff;
+        margin: 20px 0 0;
+        .actns__dscrptn__ttl {
+            color: #FFF !important;
+        }
     }
     &--bg-02 {
         background-color: #eef5f5;
@@ -273,7 +287,7 @@
     // Sm
     @media (min-width: 576px) {
         &__itm {
-            margin: 0 5px 5px 0;
+            // margin: 0 5px 5px 0;
             &--myPrgrss {
                 width: 300px;
             }
@@ -295,15 +309,13 @@
         &__itm {
             &__img {
                 &--myPrgrss {
-                    //width: 30%;
-                    border-radius: $brdef;
+                    max-width: unset;
+                    width: calc(100% + 20px);
+                    margin: -10px -10px 0;
+                    border-radius: $brdef $brdef 0 0;
                 }
             }
             &__nm {
-                &--myPrgrss {
-                    //width: 70%;
-                    // height: 40px;
-                }
                 &--tutorial {
                     margin: 15px 0;
                 }
@@ -314,7 +326,6 @@
                     width: $wmax;
                     height: unset;
                     justify-content: flex-end;
-                    padding: 0;
                 }
             }
             &__dscrptn {

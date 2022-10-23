@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import CardCourse from "../../components/card/CardCourse";
 
 /**
- * 
- * @returns 
+ *
+ * @returns
  */
 
 function Course () {
@@ -16,7 +16,7 @@ function Course () {
                 imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
                 subject     : "Direitos humanos",
                 title       : "Fundamentos de Realidade aumentada",
-                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
                 link        : "/hfs",
                 views       : 200
             },
@@ -25,7 +25,7 @@ function Course () {
                 imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
                 subject     : "Direitos humanos",
                 title       : "Fundamentos de Realidade aumentada",
-                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
                 link        : "/hfs",
                 views       : 200
             },
@@ -34,7 +34,7 @@ function Course () {
                 imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
                 subject     : "Direitos humanos",
                 title       : "Fundamentos de Realidade aumentada",
-                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
                 link        : "/hfs",
                 views       : 200
             },
@@ -43,7 +43,7 @@ function Course () {
                 imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
                 subject     : "Direitos humanos",
                 title       : "Fundamentos de Realidade aumentada",
-                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
                 link        : "/hfs",
                 views       : 200
             },
@@ -52,7 +52,7 @@ function Course () {
                 imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
                 subject     : "Direitos humanos",
                 title       : "Fundamentos de Realidade aumentada",
-                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
                 link        : "/hfs",
                 views       : 200
             },
@@ -61,7 +61,7 @@ function Course () {
                 imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
                 subject     : "Direitos humanos",
                 title       : "Fundamentos de Realidade aumentada",
-                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
                 link        : "/hfs",
                 views       : 200
             }
@@ -122,8 +122,8 @@ function Course () {
                             posts.data !== null && (
                                 posts.data.map( ( item, key ) => {
                                     return (
-                                        <CardCourse 
-                                            classStyleGrand="crs__crd" 
+                                        <CardCourse
+                                            classStyleGrand="crs__crd"
                                             classStyleInfoBox="crs__crd__inf"
                                             link={item.link}
                                             title={item.title}

@@ -1,14 +1,26 @@
 .stdnt {
-    padding: 10px;
+    position: relative;
+    &__grtns {
+        width: 100%;
+        position: absolute;
+        box-sizing: border-box;
+        top: 10px;
+        left: 0;
+        text-align: left;
+        padding: 10px 20px;
+        color: $white;
+        font-size: 2rem;
+    }
     &__inf {
-        @include flexcenuns;
-        max-width: 1200px;
-        margin: 10px auto;
-        justify-content: space-between;
-        background-color: $bg-box;
-        position: relative;
-        padding: 10px;
-        border-radius: $brdef ;
+        background-color: rgb(58 13 239 / 30%);
+        &__bx {
+            @include flexcenuns;
+            margin: 0px auto 0;
+            justify-content: space-between;
+            position: relative;
+            padding: 100px 10px 40px;
+            max-width: 1200px;
+        }
         &__grtng {
             display: none;
             font-size: .8em;
@@ -25,7 +37,6 @@
         &__nm {
             color: $fc-white;
         }
-
         &__b {
             color: $fc-white;
         }
@@ -52,7 +63,7 @@
             flex-direction: row;
             &__xp {
                 border-radius: $brdef ;
-                background-color: $bgblue80;
+                background-color: rgb(255 153 0);
                 padding: 10px;
                 color: $white;
                 margin-right: 10px;
@@ -63,8 +74,8 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 padding: 10px;
-                background: $bgblue80;
-                border-radius: $brdef ;
+                background-color: rgb(255 153 0);
+                border-radius: $brdef;
                 position: relative;
                 span {
                     color: $white;
@@ -75,12 +86,13 @@
             }
             &__edt {
                 text-decoration: underline;
-                border-radius: $brdef ;
-                padding: 2px 5px;
-                color: $cblue80;
+                border-radius: $brdef;
+                padding: 5px 10px;
+                color: rgb(177, 117, 27);
+                border: 2px solid rgb(255 153 0);
                 position: absolute;
-                top: 10px;
-                right: 20px;
+                top: 25px;
+                right: 10px;
                 cursor: pointer;
             }
         }
@@ -141,9 +153,7 @@
                     justify-content: center;
                 }
             }
-
         }
-
     }
     // Sm
     @media (min-width: 576px) {}

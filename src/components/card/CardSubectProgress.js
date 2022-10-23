@@ -38,14 +38,14 @@ function CardSubjectProgress ({
             <div className={classStyleDiv}>
                 {
                     progressValue && (
-                        <span className={classStyleSpanHit}>
-                            {progressValue}% completados
-                        </span>
+                        <div className={classStyleDivProgress}>
+                            <span className={classStyleSpanHit}>
+                                {progressValue}% completados
+                            </span>
+                            <div className={classStyleDivProgressDiv} style={{width: `${progressValue}%`}} />
+                        </div>
                     )
                 }
-                <div className={classStyleDivProgress}>
-                    <div className={classStyleDivProgressDiv} style={{width: `${progressValue}%`}} />
-                </div>
                 <a href={`${link}`} className={classStyleDivButton} title={title}>
                     <FaEye />
                     Acessar

@@ -58,7 +58,7 @@ function HeaderButtons ({
             icon : <FaBell />
         },
         {
-            name : <FaCaretDown />,
+            name : "",
             link : `/perfil/a`,
             alt : "Ir para perfil",
             classParent : "hdr__lst hdr__lst--brdr",

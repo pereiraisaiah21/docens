@@ -1,6 +1,6 @@
 import React from "react";
 
-import { FaRegArrowAltCircleDown } from 'react-icons/fa';
+import { FaArrowDown } from 'react-icons/fa';
 
 /**
  * 
@@ -14,7 +14,7 @@ function SeparationDots ({
 
     return (
 
-        <FaRegArrowAltCircleDown className={`Home__arrowDown ${additionalClass}`} />
+        <FaArrowDown className={`Home__arrowDown ${additionalClass}`} />
     );
 }
 

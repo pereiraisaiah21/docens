@@ -60,22 +60,22 @@ function Registration () {
                 <div className="prfl__inf">
                     <ul className="prfl__inf__lst">
                         <li className="prfl__inf__itm prfl__inf__itm--upld">
-                
+
                         </li>
                         <li className="prfl__inf__itm">
-                            <input className="prfl__inpt" value={fullname} placeholder={"data.name"} onChange={(e) => setFullname(e.target.value)} />
+                            <input className="prfl__inpt" value={fullname} placeholder={"Digite seu nome"} onChange={(e) => setFullname(e.target.value)} />
                         </li>
                         <li className="prfl__inf__itm">
-                            <input className="prfl__inpt" value={bio} placeholder={"data.username"} onChange={(e) => setBio(e.target.value)} />
+                            <input className="prfl__inpt" value={bio} placeholder={"Digite sua biografia"} onChange={(e) => setBio(e.target.value)} />
                         </li>
                         <li className="prfl__inf__itm">
-                            <input className="prfl__inpt" value={username} placeholder={"data.username"} onChange={(e) => setUsername(e.target.value)} />
+                            <input className="prfl__inpt" value={username} placeholder={"Digite seu nome de usuário"} onChange={(e) => setUsername(e.target.value)} />
                         </li>
                         <li className="prfl__inf__itm">
-                            <input className="prfl__inpt" value={email} placeholder={"data.email"} onChange={(e) => setEmail(e.target.value)} />
+                            <input className="prfl__inpt" value={email} placeholder={"Digite seu e-mail"} onChange={(e) => setEmail(e.target.value)} />
                         </li>
                         <li className="prfl__inf__itm">
-                            <input className="prfl__inpt" value={city} placeholder={"data.address.city"} onChange={(e) => setCity(e.target.value)} />
+                            <input className="prfl__inpt" value={city} placeholder={"Digite sua cidade"} onChange={(e) => setCity(e.target.value)} />
                         </li>
                         <li className="prfl__inf__itm prfl__inf__itm--slct">
                             <Select className="" options={genderOptions} onChange={(e) => setGender(e.value)}/>
