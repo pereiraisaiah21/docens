@@ -4,13 +4,12 @@
     display: flex;
     justify-content: center;
     padding: 10px;
-    border-radius: $brdef ;
+    border-radius: $brdef;
     background-size: cover;
     &__frm {
         text-align: left;
         width: 400px;
         padding: 10px;
-        background-color: $bg-box;
         border-radius: $brdef;
         svg {
             margin: 7px 10px 0 0;
@@ -22,8 +21,8 @@
         position: relative;
         font-size: .9em;
         legend {
-            text-align: center;
-            color: $fc-white;
+            text-align: left;
+            color: #716b72;
         }
         &--optns {
             @include flexunscen;
@@ -35,7 +34,6 @@
     }
     &__inpt {
         @include input;
-        text-align: center;
         &--rcvr {
             margin: 0 0 10px;
         }
@@ -45,12 +43,15 @@
             top: 12px;
             color: $bgdarred;
         }
+        &:active,
+        &:hover {
+            border-bottom: 1px solid rgb(255 153 0)
+        }
     }
     &__rcvr {
         text-align: center;
         width: $wmax;
         padding: 10px 0;
-        margin: 10px 0 0;
         font-size: .8em;
         text-decoration: underline;
         color: $cblue80;
@@ -59,7 +60,7 @@
         width: $wmax;
         text-align: center;
         border: none;
-        background-color: $bgblue80;
+        background-color: rgb(255 153 0);
         padding: 10px 0;
         color: $white;
         border-radius: $brdef ;

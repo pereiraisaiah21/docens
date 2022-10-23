@@ -195,6 +195,7 @@
             background: $bg-box;
             border-radius: 20px;
             padding: 20px;
+            height: 203px;
 
             &:nth-child(even) {
                 height: 200px;
@@ -268,6 +269,7 @@
         }
         &__itm {
             width: 49%;
+            margin: 0 1px 7px 0;
             &__inf {
                 padding: 0;
             }
@@ -277,17 +279,19 @@
             &__bttn {
                 background-color: rgb(14, 18, 28);
             }
+            &__ht {
+                display: none;
+            }
             &--myPrgrss {
                 margin: 0 auto;
                 width: $wmax;
-                height: 330px;
+                height: 280px;
             }
         }
     }
     // Sm
     @media (min-width: 576px) {
         &__itm {
-            // margin: 0 5px 5px 0;
             &--myPrgrss {
                 width: 300px;
             }

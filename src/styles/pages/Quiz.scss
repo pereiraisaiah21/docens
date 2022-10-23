@@ -20,8 +20,8 @@
     .Progress {
         height: 15px;
         width: 85%;
-        border: 2px solid $bc-white;
-        background-color: $bgwhite;
+        border: 2px solid #a3a1a3;
+        background-color: #d6d5d6;
         border-radius: 20px;
         position: relative;
         max-width: 1200px;
@@ -32,7 +32,7 @@
             padding: 3px;
             height: 100%;
             font-size: .0em;
-            background-color: $bgblack70;
+            background-color: rgb(86 213 84 / 20%);
             border-radius: $brdef;
             text-align: center;
             transition: width 2s;
@@ -47,16 +47,15 @@
                 right: 0;
                 width: 20px;
                 height: 20px;
-                background-color: $bgblue;
+                background-color: rgb(86 213 84);
                 border-radius: 50%;
             }
         }
     }
     .Question {
-        background: $bg-box;
         position: relative;
         width: $wmax;
-        max-width: 1200px;
+        max-width: 800px;
         border-radius: $brdef;
         margin: 0 auto;
         padding: 15px 10px;
@@ -79,17 +78,17 @@
                 background-color: $green;
                 border-radius: $brdef;
                 white-space: nowrap;
-                color: $fc-white;
+                color: #716b72;
                 margin: 0 5px;
             }
         }
         &__exit {
             width: 8%;
-            color: $fc-white;
+            color: #716b72;
             svg {
                 margin-bottom: -4px;
                 font-size: 1.5em;
-                color: $fc-white;
+                color: #716b72;
             }
         }
         &__progress {
@@ -113,7 +112,7 @@
             &__title {
                 font-size: 1.6rem;
                 padding: 20px;
-                color: $fc-white;
+                color: #716b72;
             }
         }
         &__content {
@@ -122,22 +121,29 @@
         &__paragraph {
             font-size: 1.2rem;
             line-height: 22px;
-            color: $fc-white;
+            color: #716b72;
+            padding: 0 50px;
             text-align: center;
         }
         &__alternatives {
             width: $wmax;
-            color: $fc-white;
+            color: #716b72;
             text-align: center;
-            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            padding: 30px 0;
+            gap: 10px;
             &__option {
                 font-size: 1.1rem;
                 font-weight: 600;
                 display: inline-flex;
-                margin: 0 10px 10px 0;
+                background-color: rgb(240, 240, 240);
                 padding: 4px 10px;
-                border: 1px solid $bc-gray;
+                color: #716b72;
                 border-radius: $brdef;
+                cursor: pointer;
+                width: 100%;
+                border: 1px solid #ccc;
                 label {
                     &:hover {
                         cursor: pointer;
@@ -161,16 +167,17 @@
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
-                width: 75%;
-                border: none;
-                background-color: $bgblue80;
+                width: 85%;
                 color: $fc-white;
+                border: 1px solid rgb(86 213 84 / 80%);
+                background-color: rgb(86 213 84 / 30%);
                 text-decoration: none;
+                margin: 0 10px 0 0;
                 font-size: 1.1rem;
                 text-transform: uppercase;
-                font-weight: 700;
+                font-weight: 900;
                 cursor: pointer;
-                border-radius: 10px 0 0 10px;
+                border-radius: 10px;
                 &.next {
                     background-color: $bggreen80;
                     color: $fc-white;
@@ -180,16 +187,21 @@
                 display: inline-flex;
                 justify-content: center;
                 align-items: center;
-                width: 25%;
-                border-radius: 0 10px 10px 0;
-                border: none;
-                background-color: $bgwhite;
+                border: 1px solid rgba(84, 163, 213, 0.8);
+                background-color: rgba(84, 138, 213, 0.3);
+                width: 15%;
+                border-radius: 10px;
+                color: #716b72;;
                 height: 40px;
                 text-decoration: none;
                 font-size: 1,1rem;
                 text-transform: uppercase;
                 font-weight: 700;
                 cursor: pointer;
+
+                svg {
+                    margin: 0 10px 0 0;
+                }
             }
         }
         &__warn {

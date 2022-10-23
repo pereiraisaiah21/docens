@@ -6,6 +6,8 @@ import QuestionAlternative from "./components/QuestionAlternative";
 import Progress from "./components/Progress";
 import QuizFinishedMessage from "./components/QuizFinishedMessage";
 import { TailSpin } from "react-loader-spinner";
+import { FaFire } from 'react-icons/fa';
+
 
 /**
  *
@@ -158,7 +160,7 @@ function Quiz () {
                                     Próxima
                                 </a>
                                 <a href="/" className="Question__send__tip" title="itemTitle" onClick={openModal}>
-                                    Dica
+                                    <FaFire /> Dica
                                 </a>
                             </section>
                             {
