@@ -15,7 +15,6 @@
         margin: auto;
         padding: 10px;
         display: flex;
-        background-color: $bg-box;
         border-radius: $brdef;
     }
     &__rltd {
@@ -230,13 +229,14 @@
         cursor: pointer;
         &__img {
             width: 90px;
-            border-bottom: 3px solid #1000ff;
+            border-bottom: 3px solid rgb(255 153 0);
             padding: 0 0 20px;
         }
         &__ttl {
             margin: 0 0 0 20px;
-            color: $fc-white;
-            font-size: .9em
+            color: #716b72;
+            font-size: .9em;
+            font-weight: 700
         }
         &__edt {
             @include flexwrap;
@@ -297,6 +297,17 @@
         }
         &__itm {
             width: $wmax;
+        }
+        &__dtls__wrtr,
+        &__dtls__date {
+            line-height: 25px;
+        }
+        &__rltd {
+            flex-wrap: wrap;
+            &__ttl {
+                width: 100%;
+                display: block;
+            }
         }
     }
     // Sm

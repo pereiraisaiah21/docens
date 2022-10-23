@@ -125,6 +125,9 @@
 
     // Xs
     @media (max-width: 575px) {
+        &__grtns {
+            font-size: 1.5rem;
+        }
         &__inf {
             flex-wrap: wrap;
             &__grtng {

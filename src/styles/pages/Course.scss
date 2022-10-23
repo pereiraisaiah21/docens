@@ -11,7 +11,6 @@
     &__wrpprAll {
         max-width: 1200px;
         position: relative;
-        background-color: $bg-box;
         border-radius: $brdef;
         padding: 10px;
         margin: auto;
@@ -21,13 +20,13 @@
         width: 100%;
         margin: 0 auto 10px;
         padding: 10px;
-        background-color: $bg-box;;
+        background-color: $bg-box;
         border-radius: $brdef;
         &__ttl {
             font-size: 1.2em;
             text-align: left;
             padding: 0 10px;
-            color: $fc-white;
+            color: #716b72;
         }
     }
     &__cntnt {
@@ -76,13 +75,14 @@
         cursor: pointer;
         &__img {
             width: 90px;
-            border-bottom: 3px solid #1000ff;
+            border-bottom: 3px solid rgb(255 153 0);
             padding: 0 0 20px;
         }
         &__ttl {
             margin: 0 0 0 20px;
-            color: $fc-white;
-            font-size: .9em
+            color: #716b72;
+            font-size: .9em;
+            font-weight: 700;
         }
         &__edt {
             @include flexwrap;
@@ -92,7 +92,7 @@
             &__anchr {
                 padding: 3px;
                 border: 1px solid $bc-gray;
-                color: $bgwhite;
+                color: #716b72;
                 border-radius: $brdef;
                 white-space: nowrap;
                 width: 40px;
@@ -145,7 +145,7 @@
             padding: 0 10px;
             display: flex;
             flex-wrap: wrap;
-            color: $fc-white;
+            color: #716b72;
             h6 {
                 margin: 0 0 10px;
                 font-size: 1.3em;
@@ -171,7 +171,7 @@
             background-color: $bgwhite95;
             border-radius: $brdef;
             padding: 0 10px;
-            color: $white;
+            color: #716b72;
         }
     }
     &__cntnt {
@@ -181,7 +181,7 @@
     }
     &__ttl {
         text-align: left;
-        color: $fc-white;
+        color: #716b72;
         padding: 10px;
         width: 100%;
         margin: 10px 0;
@@ -189,7 +189,7 @@
     &__dscrptn {
         text-align: left;
         padding: 0 10px 20px;
-        color: $fc-white;
+        color: #716b72;
     }
     &__br {
         width: 100%;
@@ -210,10 +210,10 @@
         &__anchr {
             display: block;
             padding: 10px 10px 20px;
-            color: $fc-white;
+            color: #716b72;
             margin-bottom: 10px;
             &--ttl {
-                border-bottom: 3px solid $bc-white;
+                border-bottom: 3px solid #716b72;
                 font-size: 1.1em;
                 font-weight: 700;
             }

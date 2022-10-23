@@ -73,7 +73,7 @@ function AllMatters () {
                 <div className="mttr__wrpprAll">
                     <div className="mttr__allMttrs">
                         <div className="mttr__srch">
-                            <input className="mttr__srch__inpt" placeholder="> Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)} />
+                            <input className="mttr__srch__inpt" placeholder="... Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)} />
                         </div>
                         {
                             searchResult.data !== null && (
