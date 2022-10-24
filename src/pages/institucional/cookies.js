@@ -11,7 +11,7 @@ function Cookies () {
 
     return (
 
-        <section>
+        <section className="insttcnl">
             <MainTitle description="política de cookies" descriptionUnder="" />
             <main className="insttcnl__txt">
                 <p>

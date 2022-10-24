@@ -11,7 +11,7 @@ function Terms () {
 
     return (
 
-        <section>
+        <section className="insttcnl">
             <MainTitle description="termos de uso" descriptionUnder="Leia com atenção" />
             <main className="insttcnl__txt">
                 <p>

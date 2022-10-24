@@ -1,5 +1,5 @@
 .crs {
-    padding: 10px;
+    padding: 40px 10px;
     &__wrppr {
         max-width: 800px;
         position: relative;
@@ -107,7 +107,7 @@
         }
 
         &:hover {
-            background-color: $bg-main;
+            background-color: #ccc;
         }
     }
     &__workout {

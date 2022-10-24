@@ -11,7 +11,7 @@ function Greetings () {
 
     return (
 
-        <section>
+        <section className="insttcnl">
             <MainTitle description="agradecimentos" descriptionUnder="" />
             <main className="insttcnl__txt">
                 <p>

@@ -1,12 +1,13 @@
 .insttcnl {
-    padding: 0 10px;
+    padding: 40px 10px;
     &__txt {
-        max-width: 1200px;
-        color: $fc-white;
+        max-width: 800px;
+        color: #716b72;
         text-align: left;
         margin: auto;
         p {
             margin: 50px 0;
+            text-indent: 2rem;
         }
     }
 }
