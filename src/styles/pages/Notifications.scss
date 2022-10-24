@@ -1,12 +1,11 @@
 .ntfct {
     padding: 10px;
     &__wrppr {
-        max-width: 1200px;
+        max-width: 800px;
         margin: 10px auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
-        background-color: $bg-box;
         padding: 10px;
         border-radius: $brdef ;
     }
@@ -16,17 +15,17 @@
         li {
             padding: 20px 10px 15px;
             margin: 0 0 10px;
-            border-bottom: 2px solid $bc-gray;
+            border-bottom: 2px solid #716b72;
             span {
                 font-size: 1.2em;
-                color: $fc-white;
+                color: #716b72;
             }
             svg {
                 margin-right: 10px;
-                color: $cblue80;
+                color: #716b72;
             }
             p {
-                color: $fc-white;
+                color: #716b72;
             }
         }
     }

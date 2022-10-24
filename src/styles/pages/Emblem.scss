@@ -20,9 +20,12 @@
         }
     }
     tr:nth-child(even) {
-        background-color: $bg-main;
+        background-color: rgb(176, 102, 173);
     }
     tr:nth-child(odd) {
-        background-color: $bg-box;
+        background-color: rgb(255 153 0);
+    }
+    svg {
+        margin: 0 0 -4px 0;
     }
 }

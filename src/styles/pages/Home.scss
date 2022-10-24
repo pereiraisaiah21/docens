@@ -79,11 +79,10 @@
         min-height: 150px;
         height: 100%;
         width: 49%;
-        background-color: rgb(58 13 239 / 30%);
         border-radius: $brdef;
         padding: 10px;
         margin: 0 10px 0 0;
-        box-shadow: 3px 4px 11px #ccc;
+        box-shadow: 0 0 10px #ccc;
         cursor: pointer;
         &__img {
             max-width: 100%;
@@ -94,7 +93,7 @@
         }
         &__nm {
             font-size: 1.1rem;
-            color: $fc-white;
+            color: #716b72;
             text-transform: uppercase;
             font-weight: 700;
             margin: 10px 0;
@@ -140,7 +139,7 @@
         }
         &__dscrptn {
             font-size: 1rem;
-            color: $fc-white;
+            color: #716b72;
             width: $wmax;
             height: 30px;
             svg {

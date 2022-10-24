@@ -1,17 +1,16 @@
 .Help {
     width: $wmax;
-    padding: 10px;
+    padding: 40px 0;
     &__wrp {
         @include flexwrap;
         align-items: stretch;
         justify-content: space-between;
-        max-width: 1200px;
+        max-width: 800px;
         padding: 20px auto;
         margin: auto;
     }
     &__content {
         width: $wmax;
-        background-color: $bg-box;
         border-radius: 20px;
         h4 {
             color: $white;
@@ -27,25 +26,26 @@
             border-radius: $brdef;
             position: relative;
             cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
         }
         &__doubt {
             padding: 15px 10px;
             display: flex;
-            color: $white;
+            color: #716b72;
             justify-content: space-between;
         }
         &__icon {
-            color: $white;
+            color: #716b72;
             position: absolute;
             right: 20px;
         }
         &__answer {
             padding: 10px 20px;
             margin-left: 30px;
-            color: $white;
+            color: #716b72;
             display: none;
             line-height: 22px;
-            border-left: 2px solid $bc-white;
             position: relative;
             &.open {
                 display: block;
@@ -60,19 +60,17 @@
     &__rdrct {
         width: $wmax;
         margin: 10px 0 0;
-        background-color: $bg-box;
         border-radius: $brdef;
         font-size: 1em;
         &__txt {
-            color: $fc-white;
+            color: #716b72;
             &--highlight {
                 font-size: 1.2em;
             }
         }
         &__anchr {
             padding: 0 10px;
-            background-color: $bgblue80;
-            color: $fc-white;
+            color: #716b72;
             border-radius: $brdef;
             font-size: 1.2em;
         }

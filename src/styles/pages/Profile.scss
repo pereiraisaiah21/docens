@@ -22,9 +22,8 @@
     }
     &__strp {
       width: 100%;
-      height: 30px;
-      background: red;
-      border-radius: 10px;
+      height: 200px;
+      background: #00ff95;
     }
     &__dt {
         position: relative;
@@ -32,8 +31,9 @@
         width: 91%;
         margin: 0 auto;
         padding: 10px;
+        background-color: #FFF;
         border-radius: $brdef;
-        background-color: $bg-box;
+        box-shadow: 0px 0px 10px #ccc;
     }
     &__img {
         img {
@@ -50,10 +50,10 @@
         }
         &__itm {
             padding: 10px 0;
-            color: $fc-white;
+            color:#716b72;
             svg {
                 margin-right: 10px;
-                color: $fc-white;
+                color: #716b72;
             }
             &--slct {
                 div {
@@ -66,14 +66,15 @@
                 padding: 15px 0 5px;
             }
             &--usrnm {
-                padding: 0px 0 10px;
+                padding: 0px 0 20px;
+                border-bottom: 1px dashed rgb(255 153 0);
             }
             &--occptn {
                 padding: 20px 0;
             }
         }
         &__edtr {
-            background-color: $bgblue80;
+            background-color: rgb(255 153 0);
             padding: 10px 10px;
             margin: 20px 0;
             border-radius: $brdef;
@@ -136,7 +137,6 @@
         padding: 10px;
         width: 91%;
         margin: 0 auto;
-        background-color: $bg-box;
         border-radius: $brdef ;
     }
     &__nav {
@@ -152,11 +152,11 @@
             border: none;
             font-size: 1.1em;
             padding: 10px;
-            color: $fc-white;
+            color: #716b72;
             background-color: $bgunset;
             cursor: pointer;
             &--active {
-                border-bottom: 3px solid $bc-white;
+                border-bottom: 3px solid #716b72;
             }
         }
         &__section {
@@ -202,7 +202,7 @@
             width: $wmax;
         }
         &__dt {
-            padding: 10px 20px;
+            padding: 30px 20px 0;
             width: 300px;
             top: 70%;
             left: 10px;
@@ -237,10 +237,14 @@
                 grid-area: img;
             }
         }
+        &--myPrfl {
+            background-color: unset;
+        }
         &__nm {
             &--myPrfl {
                 width: 80%;
                 grid-area: nm;
+                color: #716b72;
             }
         }
         .description {
@@ -253,11 +257,20 @@
                 grid-area: inf;
                 height: unset;
                 justify-content: flex-end;
+                position: relative;
+                .actns__itm__ht {
+                    color: #716b72;
+                }
+                .actns__itm__bttn--myPrfl {
+                    height: 30px;
+                }
             }
         }
         &__ht {}
         &__prgss {
-            &--myPrfl {}
+            &--myPrfl {
+                position: relative;
+            }
         }
         &__bttn {
             &--myPrfl {

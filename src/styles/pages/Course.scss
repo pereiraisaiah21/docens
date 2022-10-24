@@ -1,7 +1,7 @@
 .crs {
     padding: 10px;
     &__wrppr {
-        max-width: 1200px;
+        max-width: 800px;
         position: relative;
         margin: auto;
         display: flex;
@@ -9,7 +9,7 @@
         justify-content: space-between;
     }
     &__wrpprAll {
-        max-width: 1200px;
+        max-width: 800px;
         position: relative;
         border-radius: $brdef;
         padding: 10px;
@@ -20,7 +20,7 @@
         width: 100%;
         margin: 0 auto 10px;
         padding: 10px;
-        background-color: $bg-box;
+        box-shadow: 0 0 10px #ccc;
         border-radius: $brdef;
         &__ttl {
             font-size: 1.2em;
@@ -150,7 +150,8 @@
                 margin: 0 0 10px;
                 font-size: 1.3em;
                 width: $wmax;
-                background: #1000ff;
+                border: 1px solid rgb(255 153 0);
+                color: rgb(255 153 0);
                 padding: 10px;
                 border-radius: 10px;
             }
@@ -194,7 +195,7 @@
     &__br {
         width: 100%;
         margin: 0 auto;
-        background-color: $bg-box;
+        box-shadow: 0 0 10px #ccc;
         border-radius: $brdef;
         margin-bottom: 10px;
         height: fit-content;
@@ -213,7 +214,7 @@
             color: #716b72;
             margin-bottom: 10px;
             &--ttl {
-                border-bottom: 3px solid #716b72;
+                border-bottom: 3px solid rgb(255 153 0);
                 font-size: 1.1em;
                 font-weight: 700;
             }
