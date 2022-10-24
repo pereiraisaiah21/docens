@@ -1,7 +1,7 @@
 .crs {
     padding: 40px 10px;
     &__wrppr {
-        max-width: 800px;
+        max-width: 1200px;
         position: relative;
         margin: auto;
         display: flex;
@@ -254,9 +254,7 @@
     }
     // Lg
     @media (min-width: 991px) {
-        &__cntnt {
-           //width: 68%;
-        }
+        &__cntnt {}
         &__br {
             width: 30%;
             padding: 10px;

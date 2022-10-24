@@ -16,15 +16,3 @@ const api = axios.create({
 // });
 
 export default api;
-
-/*
-  Model
-
-  import api from "./services/api";
-
-  api
-     .get("/url") || .post("/url", function() {})
-     .then((response) => ... )
-     .catch((err) => ... );
-
-*/
