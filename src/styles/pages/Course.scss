@@ -73,6 +73,7 @@
         margin: 0 0 10px;
         padding: 10px;
         cursor: pointer;
+        box-shadow: 0 0 10px #ccc;
         &__img {
             width: 90px;
             border-bottom: 3px solid rgb(255 153 0);
@@ -107,7 +108,9 @@
         }
 
         &:hover {
-            background-color: #ccc;
+            box-shadow: 0 0 20px #ccc;
+            width: calc(100% - 50px);
+            margin: 0 auto 10px;
         }
     }
     &__workout {

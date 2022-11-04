@@ -33,3 +33,10 @@
         color: $fc-white;
     }
 }
+
+.pageAlert {
+    font-size: .9rem;
+    box-shadow: 0 0 5px #ccc;
+    background-color: white;
+    border-radius: $brdef;
+}

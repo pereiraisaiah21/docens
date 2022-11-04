@@ -118,7 +118,7 @@
         border-radius: $brdef ;
         text-align: left;
         margin: 0px auto 20px;
-        padding: 20px;
+        padding: 20px 0;
         box-sizing: border-box;
         &--cntnt {
             line-height: 25px;
@@ -128,7 +128,7 @@
             margin: auto;
             .img {
                 max-width: $wmax;
-                margin: auto;
+                margin: 40px auto;
                 display: block;
             }
             .wrnPrgrph {
@@ -152,7 +152,7 @@
         font-size: 1.3em;
         text-transform: uppercase;
         max-width: 800px;
-        margin: 30px auto;
+        margin: 80px auto 30px;
     }
     &__scndtyTtl {
         color: #716b72;
@@ -227,6 +227,7 @@
         padding: 10px;
         border-radius: $brdef;
         cursor: pointer;
+        box-shadow: 0 0 10px #ccc;
         &__img {
             width: 90px;
             border-bottom: 3px solid rgb(255 153 0);
@@ -261,7 +262,9 @@
         }
 
         &:hover {
-            background-color: #ccc;
+            box-shadow: 0 0 20px #ccc;
+            width: calc(100% - 50px);
+            margin: 0 auto 10px;
         }
     }
     &__workout {

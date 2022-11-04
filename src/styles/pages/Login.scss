@@ -34,6 +34,9 @@
     }
     &__inpt {
         @include input;
+        border-bottom: 1px solid transparent;
+        border-radius: 0;
+        animation: 0.2s;
         &--rcvr {
             margin: 0 0 10px;
         }
@@ -45,7 +48,7 @@
         }
         &:active,
         &:hover {
-            border-bottom: 1px solid rgb(255 153 0)
+            border-color: rgb(255 153 0);
         }
     }
     &__rcvr {

@@ -7,6 +7,7 @@ import MainTitle from "../../components/title/MainTitle";
 import MatterEditButtons from "../matter/components/MatterEditButtons";
 import { FaNewspaper } from 'react-icons/fa';
 import ConnectionFailed from "../../components/alert/ConnectionFailed";
+import PageDescription from "../../components/alert/PageDescription";
 
 /**
  * 
@@ -74,6 +75,7 @@ function AllCourses () {
                         <div className="crs__srch">
                             <input className="crs__srch__inpt" placeholder="... Busque algum curso" onChange={(e) => handleSearch(e.target.value)} />
                         </div>
+                        <PageDescription classText="pageAlert" text="" />
                         {
                             searchResult.data !== null && (
                                 searchResult.data.map((item, key) => {
