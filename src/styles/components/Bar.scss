@@ -12,14 +12,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    z-index: 1000;
     &[data-bar="true"] {
+        .bar__left {
+            display: none;
+        }
         .bar__right {
             display: flex;
+            justify-content: center;
+            width: 100%;
         }
-    }
-    &__left {
-        
     }
     &__right {
         display: none;
@@ -27,19 +29,23 @@
     }
     &__menu {
         margin: 0 10px;
+        transition: 2s;
         cursor: pointer;
+        svg {
+            margin: 0 0 -2 10px;
+        }
     }
     &__menu,
     &__item {
         border-radius: 30px;
         box-shadow: 0 0 10px #ccc;
         padding: 5px 10px;
-        margin-right: 10px;
+        margin: 0 10px;
         background-color: orange;
         color: $white;
-
+        cursor: pointer;
         svg {
-            margin: 0 0 -2px;
+            margin: 0 0 -3px;
         }
 
         &:hover {
@@ -55,13 +61,11 @@
     }
 
     // Sm
-    @media (min-width: 576px) {
-        
-    }
+    @media (min-width: 576px) {}
     // Md
     @media (min-width: 768px) {
         &[data-bar="true"] {
-            width: 350px;
+            padding-left: 10px;
             .bar__right {
                 display: flex;
             }

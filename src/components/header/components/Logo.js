@@ -11,7 +11,7 @@ function Logo () {
 
     return (
 
-        <a href="/" title="Logo" className="hdr__lg">
+        <a href="/home" title="Logo" className="hdr__lg">
 			<img src={LogoImage} className="hdr__lg__img" alt="Logo" />
 		</a>
     );

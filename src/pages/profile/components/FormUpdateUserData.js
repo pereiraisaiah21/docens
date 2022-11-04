@@ -140,7 +140,7 @@ function FormUpdateUserData ({
                         <input className="prfl__inpt" value={city} placeholder={data.address.city} onChange={(e) => setCity(e.target.value)} />
                     </li>
                     <li className="prfl__inf__itm prfl__inf__itm--slct">
-                        <Select className="" options={genderOptions} onChange={(e) => setGender(e.value)}/>
+                        <Select className="" options={genderOptions} onChange={(e) => setGender(e.value)} defaultValue={{ label: "Sexo", value: 0 }} />
                     </li>
                     <li className="prfl__inf__itm">
                         <DatePicker className="prfl__inpt" selected={birthdayDate} onChange={(birthdayDate) => setBirthdayDate(birthdayDate)} />           

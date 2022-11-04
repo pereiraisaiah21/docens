@@ -23,7 +23,7 @@ function Bar () {
         <div className="bar" id="bar" data-bar="false">
             <div className="bar__left">
                 <a className="bar__menu" href="/openMenu" title="" onClick={openBar}>
-                    <FaBars />
+                     Docens  |  Menu  <FaBars />
                 </a>
             </div>
             <div className="bar__right">
