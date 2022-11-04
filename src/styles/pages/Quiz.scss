@@ -20,8 +20,8 @@
     .Progress {
         height: 15px;
         width: 85%;
-        border: 2px solid #a3a1a3;
-        background-color: #d6d5d6;
+        border: 2px solid #9100ff;
+        // background-color: #d6d5d6;
         border-radius: 20px;
         position: relative;
         max-width: 1200px;
@@ -32,7 +32,7 @@
             padding: 3px;
             height: 100%;
             font-size: .0em;
-            background-color: rgb(86 213 84 / 20%);
+            background-color: #9100ff;
             border-radius: $brdef;
             text-align: center;
             transition: width 2s;
@@ -47,7 +47,7 @@
                 right: 0;
                 width: 20px;
                 height: 20px;
-                background-color: rgb(86 213 84);
+                background-color: orange;
                 border-radius: 50%;
             }
         }
@@ -56,9 +56,10 @@
         position: relative;
         width: $wmax;
         max-width: 800px;
-        border-radius: $brdef;
+        border-radius: 20px;
+        box-shadow: 0 0 10px #ccc;
         margin: 0 auto;
-        padding: 15px 10px;
+        padding: 20px 30px;
         &__congrats {
             background-image: url("../../components/images/gliter.gif");
             width: $wmax;
@@ -137,15 +138,21 @@
                 font-size: 1.1rem;
                 font-weight: 600;
                 display: inline-flex;
-                background-color: rgb(240, 240, 240);
+                // background-color: rgb(240, 240, 240);
                 padding: 4px 10px;
                 color: #716b72;
                 border-radius: $brdef;
                 cursor: pointer;
                 width: 100%;
-                border: 1px solid #ccc;
+                box-shadow: 0 0 10px #ccc;
                 label {
-                    &:hover {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+                    
+                    &:hover, &:active {
                         cursor: pointer;
                     }
                 }
@@ -155,6 +162,9 @@
                 [type="radio"] {
                     margin: 0 10px 0 0;
                     display: none;
+                }
+                &:hover {
+                    box-shadow: 0 0 20px #ccc;
                 }
             }
         }
@@ -169,8 +179,8 @@
                 align-items: center;
                 width: 85%;
                 color: $fc-white;
-                border: 1px solid rgb(86 213 84 / 80%);
-                background-color: rgb(86 213 84 / 30%);
+                border: 1px solid rgba(220, 147, 13, 0.64);
+                background-color: orange;
                 text-decoration: none;
                 margin: 0 10px 0 0;
                 font-size: 1.1rem;
@@ -237,10 +247,19 @@
                 font-size: 1rem;
             }
             &__alternatives {
+                flex-wrap: wrap;
                 &__option {
                     font-size: 1rem;
                     justify-content: center;
                     width: 100%;
+                }
+            }
+            &__send {
+                &__button {
+                    width: 75%;
+                }
+                &__tip {
+                    width: 31%;
                 }
             }
         }

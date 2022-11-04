@@ -8,17 +8,22 @@
     width: auto;
     background-color: $white;
     border-radius: 30px;
-    
+    transition: all 2s;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    &[data-bar="true"] {
+        .bar__right {
+            display: flex;
+        }
+    }
     &__left {
         
     }
     &__right {
         display: none;
-        transition: .2s;
+        transition: 2s;
     }
     &__menu {
         margin: 0 10px;
@@ -40,6 +45,7 @@
         &:hover {
             span {
                 display: inline-flex;
+                transition: 2s;
             }
         }
     }
@@ -47,4 +53,30 @@
         display: none;
         padding-left: 10px;
     }
+
+    // Sm
+    @media (min-width: 576px) {
+        
+    }
+    // Md
+    @media (min-width: 768px) {
+        &[data-bar="true"] {
+            width: 350px;
+            .bar__right {
+                display: flex;
+            }
+        }
+    }
+    // Lg
+    @media (min-width: 991px) {
+        &__fldst {
+            &--hlf {
+                width: 50%;
+            }
+        }
+    }
+    // Xl
+    @media (min-width: 1200px) {}
+    // Xxl
+    @media (min-width: 1400px) {}
 }

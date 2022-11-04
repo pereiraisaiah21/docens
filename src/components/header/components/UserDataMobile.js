@@ -10,7 +10,6 @@ function UserDataMobile ({
     userData
 }) {
 
-    console.log(userData)
     return (
 
         <section className="hdr--mbl__usr">

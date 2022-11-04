@@ -278,6 +278,7 @@
         background-color: rgba(255, 255, 255, 0.76);
         @include flexcencen;
         border-radius: $brdef ;
+        display: none;
         svg {
             font-size: 3.5em;
             padding: 10px;

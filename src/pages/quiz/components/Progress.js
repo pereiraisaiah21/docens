@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 import { FaTimes } from 'react-icons/fa';
 import XpGif from "../../../components/images/xp.gif";
@@ -14,10 +15,17 @@ function Progress ({
     showImage
 }) {
 
+    let navigate = useNavigate();
+
+    const exitQuiz = function (e) {
+        e.preventDefault();
+        return navigate("/");
+    }
+
     return (
 
         <div className="Question__progress">
-            <a href="/fasd" title="Sair das perguntas" className="Question__exit">
+            <a href="/exitQuiz" title="Sair das perguntas" className="Question__exit" onClick={exitQuiz}>
                 <FaTimes />
             </a>
             <div className="Progress">

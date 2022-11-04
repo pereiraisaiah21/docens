@@ -1,6 +1,6 @@
 import React from "react";
 
-import { FaBars, FaRegSadTear, FaHome, FaQuestionCircle, FaStepBackward } from 'react-icons/fa';
+import { FaBars, FaTimes, FaHome, FaQuestionCircle, FaStepBackward } from 'react-icons/fa';
 
 /**
  * 
@@ -12,6 +12,10 @@ function Bar () {
     const openBar = function (e) {
         e.preventDefault();
         bar.dataset.bar = true;
+    };
+    const closeBar = function (e) {
+        e.preventDefault();
+        bar.dataset.bar = false;
     };
 
     return (
@@ -36,16 +40,13 @@ function Bar () {
                     </span>
                 </a>
                 <a className="bar__item"  title="">
-                    <FaRegSadTear />
-                    <span className="bar__text">
-                        Inicio
-                    </span>
-                </a>
-                <a className="bar__item"  title="">
                     <FaStepBackward />
                     <span className="bar__text">
                         Voltar
                     </span>
+                </a>
+                <a className="bar__item" href="/closeBar" title="" onClick={closeBar}>
+                    <FaTimes />
                 </a>
             </div>
         </div>
