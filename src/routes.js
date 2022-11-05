@@ -90,7 +90,7 @@ function SiteRoutes () {
 
 
                 <Route path="/moderar" element={<ArticlesList />} />
-                <Route path="/moderard" element={<ArticleModerate />} />
+                <Route path="/moderar/:id" element={<ArticleModerate />} />
 
                 <Route path="*" element={<Error />} />
             </Routes>

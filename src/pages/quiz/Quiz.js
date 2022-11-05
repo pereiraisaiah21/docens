@@ -8,7 +8,6 @@ import QuizFinishedMessage from "./components/QuizFinishedMessage";
 import { TailSpin } from "react-loader-spinner";
 import { FaFire } from 'react-icons/fa';
 
-
 /**
  *
  * @returns

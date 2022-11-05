@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Oswald:wght@300&display=swap');
 
 // Color
-
 $cblack70 : rgb(0, 0, 0, 1);
 $black : #000000;
 $white : #ffffff;
@@ -10,7 +9,6 @@ $gray : #cccccc;
 $green : #00b500;
 
 // Background
-
 $bgligblue : #b3d2d5;
 $bgligblue80 : #b3d2d580;
 $bgblue : rgb(92 161 171 / 1);
@@ -34,7 +32,6 @@ $fc-black: #000;
 // FontWeight
 
 // Border
-
 $brdef : 10px;
 
 // BorderColor
@@ -42,7 +39,6 @@ $bc-gray : #cccccc;
 $bc-black70 : rgb(0, 0, 0, 70%);
 $bc-white : #ffffff;
 $bg-white80 : rgb(255 255 249 / 74%);
-
 $bg-box: rgb(6, 6, 6);
 $bg-box: rgb(16 16 16);
 $bc-box: rgb(92 161 171 / 80%);
@@ -56,7 +52,6 @@ $bg-main: rgb(14 18 28);
 $wmax : 100%;
 
 // Mixin
-
 @mixin flexcencen {
     display: flex;
     align-items: center;
@@ -80,7 +75,6 @@ $wmax : 100%;
     display: flex;
     flex-wrap: wrap;
 }
-
 @mixin input {
     padding: 10px;
     border-radius: 5px;
@@ -103,7 +97,6 @@ $wmax : 100%;
     font-family: inherit;
     font-size: .97em;
 }
-
 @mixin select {
     border: none;
     border-radius: 5px;
@@ -111,7 +104,6 @@ $wmax : 100%;
     background-color: unset;
     font-size: .97em;
 }
-
 @mixin warn {
     width: 100%;
     color: $fc-white;
