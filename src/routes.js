@@ -36,6 +36,8 @@ import CreateUpdateQuestion from "./pages/quiz/components/CreateUpdateQuestion";
 
 import CreateUpdateTeacher from "./pages/content/components/CreateUpdateTeacher";
 import Registration from "./pages/registration/Registration";
+import ArticlesList from "./pages/moderation/ArticlesList";
+import ArticleModerate from "./pages/moderation/ArticleModerate";
 
 /**
  *
@@ -85,6 +87,10 @@ function SiteRoutes () {
 
                 <Route path="/professor/alt" element={<CreateUpdateTeacher />} />
                 <Route path="/professor/alt/:id" element={<CreateUpdateTeacher />} />
+
+
+                <Route path="/moderar" element={<ArticlesList />} />
+                <Route path="/moderard" element={<ArticleModerate />} />
 
                 <Route path="*" element={<Error />} />
             </Routes>
