@@ -34,6 +34,7 @@
     &__author {
         @include flexcencen;
         padding: 10px 0 30px;
+        font-size: .9rem;
     }
     &__text {}
     &__image {
@@ -46,7 +47,7 @@
         border-radius: 50%;
         border: 1px solid black;
         width: 20px;
-        top: 10px;
+        top: 20px;
         left: 10px;
     }
     &__anchor {

@@ -103,12 +103,20 @@ function ArticlesList () {
                     ?
                     articles.data.map( ( item, key ) => {
                         return (
+
                             <div className="articlesList__item">
-                                <a className="articlesList__anchor">
-                                    <span className="articlesList__name"> { item.name } </span>
+                            <a className="articlesList__anchor">
+                                <span className="articlesList__name"> { item.name } </span>
+
+                                <div className="articlesList__author">
+                                    <img alt="" className="articlesList__image" src="https://via.placeholder.com/30" />
+                                    <span className="articlesList__text">
+                                        {item.author}
+                                    </span>
                                     <img className="articlesList__approved" src={`/${item.approved}.svg`} title="" />
-                                </a>
-                            </div>
+                                </div>
+                            </a>
+                        </div>
                         )
                     })
                     :
