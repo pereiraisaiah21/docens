@@ -24,6 +24,8 @@ function Home () {
         setTypeUser( userDataValues.typeUser )
     }, [ userDataValues ]);
 
+    console.log(userDataValues)
+
     return (
 
         <>

@@ -30,7 +30,7 @@ function Help () {
     useEffect(() => {
 
         api
-            .get( "/users" )
+            .get( "/standard-help" )
             .then( response => {
 
                 setFaq({ 

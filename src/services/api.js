@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com",
+  baseURL: "https://tccunipcci.herokuapp.com/api",
 });
 
 // api.interceptors.request.use(async config => {
