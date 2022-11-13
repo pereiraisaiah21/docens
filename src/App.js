@@ -15,8 +15,9 @@ function App() {
 
   const [userDataValues, setUserDataValues] = useState({
     data  : [],
-    isLogged : true,
+    isLogged : false,
     typeUser : "default",
+    token: "",
     error : ""
   });
 
@@ -48,9 +49,9 @@ function App() {
   return (
 
     <div className="App">
-        <UserData.Provider value={{userDataValues}}>
+        {/* <UserData.Provider value={{userDataValues, setUserDataValues}}> */}
             <SiteRoutes />
-        </UserData.Provider>
+        {/* </UserData.Provider> */}
     </div>
   );
 }
