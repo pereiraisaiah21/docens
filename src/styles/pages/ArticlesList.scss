@@ -63,3 +63,133 @@
         padding: 20px;
     }
 }
+.articlesList {
+    padding: 40px 10px;
+    &__wrapper {
+        max-width: 800px;
+        margin: auto;
+        @include flexwrap;
+    }
+    &__item {
+        height: 150px;
+        width: 180px;
+        border-radius: $brdef;
+        box-shadow: 0 0 10px #ccc;
+        margin: 10px;
+        @include flexunscen;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+
+        
+        &::after {
+            content: "";
+            background-color: orange;
+            width: 60%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+            height: 2px;
+        }
+        &:hover {
+            box-shadow: 0 0 20px #ccc;
+        }
+    }
+    &__author {
+        @include flexcencen;
+        padding: 10px 0 30px;
+        font-size: .9rem;
+    }
+    &__text {}
+    &__image {
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    &__approved {
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid black;
+        width: 20px;
+        top: 20px;
+        left: 10px;
+    }
+    &__anchor {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    &__name {
+        font-size: .9rem;
+        display: block;
+        padding: 20px;
+    }
+}
+.articlesList {
+    padding: 40px 10px;
+    &__wrapper {
+        max-width: 800px;
+        margin: auto;
+        @include flexwrap;
+    }
+    &__item {
+        height: 150px;
+        width: 180px;
+        border-radius: $brdef;
+        box-shadow: 0 0 10px #ccc;
+        margin: 10px;
+        @include flexunscen;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+
+        
+        &::after {
+            content: "";
+            background-color: orange;
+            width: 60%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+            height: 2px;
+        }
+        &:hover {
+            box-shadow: 0 0 20px #ccc;
+        }
+    }
+    &__author {
+        @include flexcencen;
+        padding: 10px 0 30px;
+        font-size: .9rem;
+    }
+    &__text {}
+    &__image {
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    &__approved {
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid black;
+        width: 20px;
+        top: 20px;
+        left: 10px;
+    }
+    &__anchor {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    &__name {
+        font-size: .9rem;
+        display: block;
+        padding: 20px;
+    }
+}
