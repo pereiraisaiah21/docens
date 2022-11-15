@@ -16,12 +16,14 @@ import NavigationTeachers from "./components/default/NavigationTeachers";
 
 function Home () {
 
-    const { userDataValues } = useContext( UserData );
-    const [ typeUser, setTypeUser ] = useState( null );
+    const { userDataValues, setUserDataValues } = useContext( UserData );
+    // const [ typeUser, setTypeUser ] = useState( null );
 
     useEffect(() => {
+console.log(userDataValues)
+        // setTypeUser( userDataValues.typeUser )
 
-        setTypeUser( userDataValues.typeUser )
+        console.log("p", userDataValues)
     }, [ userDataValues ]);
 
     console.log(userDataValues)
@@ -30,25 +32,23 @@ function Home () {
 
         <>
         {
-            typeUser === "default"
+            // userDataValues.data.occupation === "student"
+            true
             ?
             <>
-                <StudentInfo userInfo={{
-                    name : userDataValues.data.name,
-                    occupation : userDataValues.data.email,
-                    level : userDataValues.data.id,
-                    avatar : "https://i.pinimg.com/736x/59/74/d0/5974d04323d9efbaf170c72cfdb07b44.jpg"
-                }} />
-                <NavigationActions typeUser={typeUser} />
+                <StudentInfo />
+
+
+                {/*<NavigationActions typeUser={typeUser} /> */}
                 <SeparationDots />
                 <NavigationMyProgress slider={"true"} sliderTitle={true}  NavigationMyStats={true} />
                 <SeparationDots />
                 <NavigationTeachers />
                 <SeparationDots additionalClass="Home__arrowDown--seemore" />
-                <Topics />
+                {/* <Topics /> */}
             </>
             :
-            <NavigationActions typeUser={typeUser} />
+            <NavigationActions />
         }
         </>
     );

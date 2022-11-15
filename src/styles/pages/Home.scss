@@ -8,6 +8,13 @@
             margin: 0 auto -10px;
         }
     }
+
+    @media (max-width: 575px) {
+        &__arrowDown {
+            font-size: 50px;
+            margin: 30px auto;
+        }
+    }
 }
 .hmBnnrs {
     position: relative;
@@ -19,14 +26,12 @@
         }
     }
 }
-
 .swiper {
     padding: 0 0 35px;
 }
 .swiper-scrollbar {
     height: 0 !important;
 }
-
 .actns {
     padding: 20px 10px;
     margin: 0 10px;
@@ -259,9 +264,15 @@
 
     // Xs
     @media (max-width: 575px) {
+        padding: 0 10px 20px;
         &__dscrptn {
             padding: 10px;
             margin: 0 0 20px;
+            &__ttl {
+                &--dscrptn {
+                    font-size: 1.2rem;
+                }
+            }
         }
         &__crds {
             justify-content: space-between !important;

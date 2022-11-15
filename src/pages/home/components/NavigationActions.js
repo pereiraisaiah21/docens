@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserData from "../../../UserData";
 
 import Card from "../../../components/card/Card";
 import { FaOptinMonster } from 'react-icons/fa';
 
 import MainTitle from "../../../components/title/MainTitle";
 
+
 /**
  *
  * @returns
  */
+function NavigationActions () {
 
-function NavigationActions ({
-    typeUser
-}) {
+    const { userDataValues, setUserDataValues } = useContext( UserData );
 
     const cardsContentDefault = [
         {
@@ -67,7 +68,7 @@ function NavigationActions ({
             <MainTitle description="navegue pelo site" descriptionUnder="selecione uma opção" isCarousel={false} icon={<FaOptinMonster />} />
             <div className="actns__crds">
                 {
-                    typeUser === "default"
+                    userDataValues.data.occcupation === "default"
                     ?
                       cardsContentDefault.map( ( item, key ) => {
                           return (

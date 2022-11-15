@@ -12,7 +12,7 @@
         font-size: 2rem;
     }
     &__inf {
-        background-color: rgb(58 13 239 / 30%);
+        background-color: #ece6ff;
         &__bx {
             @include flexcenuns;
             margin: 0px auto 0;
@@ -36,6 +36,9 @@
         }
         &__nm {
             color: $fc-white;
+            &--mobile {
+                display: none;
+            }
         }
         &__b {
             color: $fc-white;
@@ -51,7 +54,7 @@
         &__idntfctn {
             p {
                 margin: 5px 0;
-                color: $fc-white;
+                color: #504f4f;
             }
         }
         &__emblm {
@@ -126,12 +129,23 @@
     // Xs
     @media (max-width: 575px) {
         &__grtns {
-            font-size: 1.5rem;
+            display: none;
         }
         &__inf {
             flex-wrap: wrap;
+            &__bx {
+                padding: 20px 10px;
+            }
             &__grtng {
-                display: block;
+                display: none;
+            }
+            &__nm {
+                display: none;
+                &--mobile {
+                    display: block;
+                    text-align: center;
+                    font-family: inherit;
+                }
             }
             &__img {
                 width: 30%;
@@ -141,12 +155,15 @@
             }
             &__abt {
                 flex-wrap: wrap;
-                text-align: center;
                 width: 70%;
-                padding: 10px;
+                height: 100%;
+                padding: 0 10px 0;
             }
             &__idntfctn {
                 width: $wmax;
+                p {
+                    font-size: 1.4rem;
+                }
             }
             &__emblm {
                 display: none;

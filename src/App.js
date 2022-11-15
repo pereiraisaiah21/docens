@@ -49,9 +49,9 @@ function App() {
   return (
 
     <div className="App">
-        {/* <UserData.Provider value={{userDataValues, setUserDataValues}}> */}
+        <UserData.Provider value={{userDataValues, setUserDataValues}}>
             <SiteRoutes />
-        {/* </UserData.Provider> */}
+        </UserData.Provider>
     </div>
   );
 }

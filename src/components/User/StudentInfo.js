@@ -9,9 +9,9 @@ import { FaPencilAlt } from 'react-icons/fa';
  * @returns 
  */
 
-function StudentInfo ({
-    userInfo
-}) {
+function StudentInfo () {
+
+    let userStorage = JSON.parse(localStorage.getItem("user"));
 
     return (
 
@@ -22,11 +22,12 @@ function StudentInfo ({
                         Olá, seja bem vindo.
                     </div>
                     <div className="stdnt__inf__img">
-                        {
-                            userInfo.avatar !== null && (
-                                <img src={userInfo.avatar} alt="Ícone do usuário" className="" />
+                        <img src="https://static.vecteezy.com/ti/vetor-gratis/p3/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg" alt="Ícone do usuário" className="" />
+                        {/* {
+                            userInfo.imageAvatar !== null && (
+                                <img src={userInfo.imageAvatar} alt="Ícone do usuário" className="" />
                             )
-                        }
+                        } */}
                     </div>
                     <div className="stdnt__inf__abt">
                         <div className="stdnt__inf__idntfctn">
@@ -34,15 +35,18 @@ function StudentInfo ({
                                 Olá! seja bem-vindo,
                             </p>
                             <p className="stdnt__inf__nm">
-                                {userInfo.name}
+                                {userStorage.username}
+                            </p>
+                            <p className="stdnt__inf__nm stdnt__inf__nm--mobile">
+                                Olá, {userStorage.username}
                             </p>
                             <p className="stdnt__inf__b">
-                                "Nunca existiu uma grande inteligência sem uma veia de loucura."
+                                "{userStorage.bio}"
                             </p>
                         </div>
                     </div>
                     <div className="stdnt__inf__emblm">
-                        <StudentEmblems emblemId={userInfo.level} />
+                        <StudentEmblems emblemId={userStorage.level} />
                         <div className="stdnt__inf__emblm__edt">
                             <FaPencilAlt /> Editar
                         </div>

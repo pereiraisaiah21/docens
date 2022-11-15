@@ -23,19 +23,22 @@ function Login () {
     const [ emailRecoverValid, setEmailRecoverValid ] = useState( true );
     const [ isEmailRecoverSent, setIsEmailRecoverSent ] = useState( false );
 
-    const [userDataValues, setUserDataValues] = useState({
-        data  : [],
-        isLogged : false,
-        typeUser : "default",
-        token: "",
-        error : ""
-      });
+
+    // const [userDataValues, setUserDataValues] = useState({
+    //     data  : [],
+    //     isLogged : false,
+    //     typeUser : "default",
+    //     token: "",
+    //     error : ""
+    //   });
 
     // const { userDataValues, setUserDataValues } = useContext( UserData );
+    const { userDataValues, setUserDataValues } = useContext(UserData)
+
+    console.log("X", userDataValues)
 
     let navigate = useNavigate();
 
-    console.log("state", userDataValues)
     const loginSubmit = async  (event) => {
         event.preventDefault();
 
@@ -45,7 +48,7 @@ function Login () {
             setUsernameValid( false );
         };
 
-        if ( password !== null && password !== undefined && password !== "" && password < 7 ) {
+        if ( password !== null && password !== undefined && password !== "" && password.length > 5 ) {
             setPasswordValid( true );
         } else {
             setPasswordValid( false );
@@ -55,6 +58,9 @@ function Login () {
           return;
         };
 
+        console.log("Email", username, " Password", password);
+        // return;
+
         try {
             const resp = await axios.post(  "https://tccunipcci.herokuapp.com/api/login", {email : username, password : password}, {
             headers : {
@@ -62,25 +68,37 @@ function Login () {
             }
            });
 
-           setUser( resp.data );
-           localStorage.setItem( "user", resp.data )
+        //    setUser( resp.data );
+        //    localStorage.setItem( "user", resp.data )
 
-           console.log("p", resp)
+           console.log("Final resp ", resp)
+           console.log("Final resp ", resp.data[1].id !== null)
+
            if (resp.data) {
-               console.log("pass")
+               console.log("pass");
+
                setUserDataValues({
-                   ...userDataValues,
-                   data : resp.data
+                    data  : resp.data[1],
+                    isLogged : true,
+                    typeUser : resp.data[1].occupation,
+                    token: resp.data[0],
+                    error : ""
                 });
-                // return navigate("/home");
+
+                let userStorage = {
+                    username: resp.data[1].name,
+                    bio: resp.data[1].bio,
+                    avatar: resp.data[1].imageAvatar,
+                    level: 10
+                };
+
+                localStorage.setItem("user", JSON.stringify(userStorage))
+                return navigate("/home");
             }
         } catch ( err ) {
             console.error(err);
         };
-        setTimeout( () => {
-            console.log(userDataValues)
 
-        }, 2000)
     };
     const handleLogout = function()  {
         setUser({});
@@ -113,104 +131,104 @@ function Login () {
 
     return (
 
-    <UserData.Provider value={{userDataValues}}>
-        <section className="lgn">
-            <div className="lgn__image">
-                <div className="lgn__imageBox">
-                    <FaLock className="lgn__image__lock" />
-                    <h1 className="lgn__image__title">
-                        Bem-vindo
-                    </h1>
+        // <UserData.Provider value={{userDataValues}}>
+            <section className="lgn">
+                <div className="lgn__image">
+                    <div className="lgn__imageBox">
+                        <FaLock className="lgn__image__lock" />
+                        <h1 className="lgn__image__title">
+                            Bem-vindo
+                        </h1>
+                    </div>
                 </div>
-            </div>
-            <form className="lgn__frm">
-                <div className="lgn__frmBox">
-                    <MainTitle description="informe os dados" isCarousel={false} icon={<FaUserCircle />} />
-                    {
-                        showFormRecover
-                        ?
-                        <fieldset className="lgn__flst lgn__flst--optns">
-                            <input type="text" className="lgn__inpt lgn__inpt--rcvr" placeholder="Digite seu email" onChange={e => setEmailRecover(e.target.value)} />
-                            {
-                                emailRecoverValid
-                                ?
-                                ""
-                                :
-                                <FaInfoCircle className="lgn__inpt--warn" />
-                            }
-                            <button className="lgn__snd lgn__snd--rcvr" onClick={sendRecoverEmail}>
-                                Enviar senha
-                            </button>
-                            {
-                                isEmailRecoverSent
-                                ?
-                                <>
-                                    <span className="lgn__flst__rtrn">
-                                        Caso tenha algum cadastro neste e-mail, basta acessar seu e-mail.
-                                    </span>
-                                    <span className="lgn__flst__rtrn">
-                                        Clique abaixo para inserir suas credenciais.
-                                    </span>
-                                </>
-                                :
-                                ""
-                            }
-                            <a href="/fasd" title="" className="lgn__rcvr" onClick={recoverClickReturn}>
-                                Voltar para entrar
-                            </a>
-                        </fieldset>
-                        :
-                        <>
-                            <fieldset className="lgn__flst">
-                                <legend>
-                                    <FaUserGraduate />
-                                    nome de usuário
-                                </legend>
-                                <input type="text" className="lgn__inpt" placeholder="Digite seu nome" onChange={e => setUsername(e.target.value)} />
-                                {
-                                    !usernameValid && (
-                                        <FaInfoCircle className="lgn__inpt--warn" />
-                                    )
-                                }
-                            </fieldset>
-                            <fieldset className="lgn__flst">
-                                <legend>
-                                    <FaLock />
-                                    senha
-                                </legend>
-                                <input type="password" className="lgn__inpt" placeholder="Digite sua senha" onChange={e => setPassword(e.target.value)} />
-                                {
-                                    !passwordValid && (
-                                        <FaInfoCircle className="lgn__inpt--warn" />
-                                    )
-                                }
-                            </fieldset>
+                <form className="lgn__frm">
+                    <div className="lgn__frmBox">
+                        <MainTitle description="informe os dados" isCarousel={false} icon={<FaUserCircle />} />
+                        {
+                            showFormRecover
+                            ?
                             <fieldset className="lgn__flst lgn__flst--optns">
-                                <a href="/fasd" title="" className="lgn__rcvr" onClick={recoverClick}>
-                                    Esqueceu a senha?
-                                </a>
-                                <button className="lgn__snd" onClick={loginSubmit}>
-                                    Entrar
+                                <input type="text" className="lgn__inpt lgn__inpt--rcvr" placeholder="Digite seu email" onChange={e => setEmailRecover(e.target.value)} />
+                                {
+                                    emailRecoverValid
+                                    ?
+                                    ""
+                                    :
+                                    <FaInfoCircle className="lgn__inpt--warn" />
+                                }
+                                <button className="lgn__snd lgn__snd--rcvr" onClick={sendRecoverEmail}>
+                                    Enviar senha
                                 </button>
+                                {
+                                    isEmailRecoverSent
+                                    ?
+                                    <>
+                                        <span className="lgn__flst__rtrn">
+                                            Caso tenha algum cadastro neste e-mail, basta acessar seu e-mail.
+                                        </span>
+                                        <span className="lgn__flst__rtrn">
+                                            Clique abaixo para inserir suas credenciais.
+                                        </span>
+                                    </>
+                                    :
+                                    ""
+                                }
+                                <a href="/fasd" title="" className="lgn__rcvr" onClick={recoverClickReturn}>
+                                    Voltar para entrar
+                                </a>
                             </fieldset>
-                            {
-                                passwordValid
-                                ?
-                                <fieldset className="lgn__invalid">
-                                    <button>
-                                        <FaTimes />
-                                        A senha deve conter pelo menos 6 caracteres
+                            :
+                            <>
+                                <fieldset className="lgn__flst">
+                                    <legend>
+                                        <FaUserGraduate />
+                                        nome de usuário
+                                    </legend>
+                                    <input type="text" className="lgn__inpt" placeholder="Digite seu nome" onChange={e => setUsername(e.target.value)} />
+                                    {
+                                        !usernameValid && (
+                                            <FaInfoCircle className="lgn__inpt--warn" />
+                                        )
+                                    }
+                                </fieldset>
+                                <fieldset className="lgn__flst">
+                                    <legend>
+                                        <FaLock />
+                                        senha
+                                    </legend>
+                                    <input type="password" className="lgn__inpt" placeholder="Digite sua senha" onChange={e => setPassword(e.target.value)} />
+                                    {
+                                        !passwordValid && (
+                                            <FaInfoCircle className="lgn__inpt--warn" />
+                                        )
+                                    }
+                                </fieldset>
+                                <fieldset className="lgn__flst lgn__flst--optns">
+                                    <a href="/fasd" title="" className="lgn__rcvr" onClick={recoverClick}>
+                                        Esqueceu a senha?
+                                    </a>
+                                    <button className="lgn__snd" onClick={loginSubmit}>
+                                        Entrar
                                     </button>
                                 </fieldset>
-                                :
-                                null
-                            }
-                        </>
-                    }
-                </div>
-            </form>
-        </section>    
-    </UserData.Provider>
+                                {
+                                    passwordValid
+                                    ?
+                                    <fieldset className="lgn__invalid">
+                                        <button>
+                                            <FaTimes />
+                                            A senha deve conter pelo menos 6 caracteres
+                                        </button>
+                                    </fieldset>
+                                    :
+                                    null
+                                }
+                            </>
+                        }
+                    </div>
+                </form>
+            </section>    
+        // </UserData.Provider>
     );
 }
 
