@@ -55,7 +55,7 @@ function SiteRoutes () {
                 <Route path="/feed" element={<Feed />} />
                 <Route path="/ajuda" element={<Help />} />
 
-                <Route path="/perfil/:username" element={<Profile />} />
+                <Route path="/perfil" element={<Profile />} />
 
                 <Route path="/entrar" element={<Login />} />
                 <Route path="/cadastrar-se" element={<Registration />} />

@@ -14,14 +14,9 @@ import FormUpdataUserData from "./components/FormUpdateUserData";
 
 function Profile () {
 
-    const { userDataValues } = useContext( UserData );
-    const [ typeUser, setTypeUser ] = useState( null );
-    const [updateUserData, setUpdateUserData] = useState( false );
-
-    useEffect(() => {
-        setTypeUser( userDataValues.typeUser )
-    }, [userDataValues]);
-
+    const [ updateUserData, setUpdateUserData ] = useState( false );
+    const userStorage = JSON.parse(localStorage.getItem( "user" ));
+    
     const navTabsHandler = function( event ) {
         event.preventDefault();
 
@@ -34,7 +29,7 @@ function Profile () {
 
         event.target.classList.add( "prfl__nav__button--active" );
         sectionActive.classList.add( "prfl__nav__section--active" );
-    }
+    };
 
     return (
 
@@ -46,18 +41,19 @@ function Profile () {
                         updateUserData
                         ?
                         <div className="prfl__dt prfl__dt--updt">
-                            <FormUpdataUserData data={userDataValues.data} setUpdateOpen={setUpdateUserData} action="update" />
+                            <FormUpdataUserData data={userStorage} setUpdateOpen={setUpdateUserData} action="update" />
                         </div>
                         :
                         <>
                             <div className="prfl__dt">
-                                <ProfileCard userData={userDataValues.data} setUpdateUserData={setUpdateUserData} />
+                                <ProfileCard userData={userStorage} setUpdateUserData={setUpdateUserData} />
                             </div>
                         </>
                     }
                 </div>
                 {
-                    typeUser === "default" && (
+                    // typeUser === "default" && (
+                    true && (
                         <div className="prfl__updts">
                             <nav className="prfl__nav">
                                 <ul className="prfl__nav__list">

@@ -28,8 +28,8 @@ function FormUpdateUserData ({
     const [fullname, setFullname] = useState( "" );
     const [username, setUsername] = useState( "" );
     const [email, setEmail] = useState( "" );
-    const [city, setCity] = useState( "" );
-    const [gender, setGender] = useState( "" );
+    // const [city, setCity] = useState( "" );
+    // const [gender, setGender] = useState( "" );
     const [birthdayDate, setBirthdayDate] = useState( new Date() );
     const genderOptions = [
         { value: "feminino", label: "Feminino" },
@@ -39,7 +39,7 @@ function FormUpdateUserData ({
 
     const handleUpdateData = function( event ) {
         event.preventDefault();
-        let url = "/user/create";
+        let url = "/creat/";
 
         console.log( "Atualizar dados do usuário" );
 
@@ -53,8 +53,8 @@ function FormUpdateUserData ({
                 fullname : fullname === "" ? "" : fullname,
                 username : username === "" ? "" : username,
                 email : email === "" ? "" : email,
-                city : city === "" ? "" : city,
-                gender : gender === "" ? "" : gender,
+                // city : city === "" ? "" : city,
+                // gender : gender === "" ? "" : gender,
                 birthdayDate: birthdayDate === "" ? "" : birthdayDate,
             })
             .then( response => {
@@ -136,12 +136,12 @@ function FormUpdateUserData ({
                     <li className="prfl__inf__itm">
                         <input className="prfl__inpt" value={email} placeholder={data.email} onChange={(e) => setEmail(e.target.value)} />
                     </li>
-                    <li className="prfl__inf__itm">
+                    {/* <li className="prfl__inf__itm">
                         <input className="prfl__inpt" value={city} placeholder={data.address.city} onChange={(e) => setCity(e.target.value)} />
-                    </li>
-                    <li className="prfl__inf__itm prfl__inf__itm--slct">
+                    </li> */}
+                    {/* <li className="prfl__inf__itm prfl__inf__itm--slct">
                         <Select className="" options={genderOptions} onChange={(e) => setGender(e.value)} defaultValue={{ label: "Sexo", value: 0 }} />
-                    </li>
+                    </li> */}
                     <li className="prfl__inf__itm">
                         <DatePicker className="prfl__inpt" selected={birthdayDate} onChange={(birthdayDate) => setBirthdayDate(birthdayDate)} />           
                     </li>

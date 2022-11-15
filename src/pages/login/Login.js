@@ -85,14 +85,7 @@ function Login () {
                     error : ""
                 });
 
-                let userStorage = {
-                    username: resp.data[1].name,
-                    bio: resp.data[1].bio,
-                    avatar: resp.data[1].imageAvatar,
-                    level: 10
-                };
-
-                localStorage.setItem("user", JSON.stringify(userStorage))
+                localStorage.setItem("user", JSON.stringify(resp.data[1]));
                 return navigate("/home");
             }
         } catch ( err ) {

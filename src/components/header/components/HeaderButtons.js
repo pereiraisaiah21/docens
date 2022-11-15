@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserData from "../../../UserData";
 
 import { FaQuestionCircle, FaDoorOpen, FaBell, FaCaretDown, FaUser, FaBars } from 'react-icons/fa';
 
@@ -9,9 +10,10 @@ import { FaQuestionCircle, FaDoorOpen, FaBell, FaCaretDown, FaUser, FaBars } fro
  */
 
 function HeaderButtons ({
-    userIsLogged,
     setMenuMobileClose
 }) {
+
+    const { userDataValues, setUserDataValues } = useContext( UserData );
 
     const actionOptionsUnlogged = [
         {
@@ -59,7 +61,7 @@ function HeaderButtons ({
         },
         {
             name : "",
-            link : `/perfil/a`,
+            link : `/perfil/`,
             alt : "Ir para perfil",
             classParent : "hdr__lst hdr__lst--brdr",
             classBoxSon : "hdr__itm",
@@ -71,14 +73,16 @@ function HeaderButtons ({
 
     const openMenuMobile = function() {
         setMenuMobileClose( true );
+    };
+    {
+        console.log(userDataValues)
     }
-    
     return (
 
         <div className="hdr__optns">
             <ul className="hdr__bttns">
                 {
-                    userIsLogged
+                    userDataValues.data.name
                     ?
                     actionOptionsLogged.map( ( item, key ) => {
                         return (
