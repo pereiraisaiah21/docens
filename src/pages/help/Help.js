@@ -39,7 +39,7 @@ function Help () {
                 });
                 setTimeout( () => 
                     setLoader(false), 
-                2000);
+                500);
             }).catch( err => {
                 setFaq({ 
                     ...faq,

@@ -22,7 +22,8 @@ function App() {
   });
 
   const changeBodyIdentifier = function ( userType ) {
-    userType !== "default" ? document.querySelector("body").classList.add("df-t") : document.querySelector("body").classList.add("df-u");
+    console.log(userType)
+    userType !== "teacher" ? document.querySelector("body").classList.add("df-t") : document.querySelector("body").classList.add("df-u");
     return;
   }
 
@@ -51,6 +52,7 @@ function App() {
     <div className="App">
         <UserData.Provider value={{userDataValues, setUserDataValues}}>
             <SiteRoutes />
+            {changeBodyIdentifier(userDataValues.data)}
         </UserData.Provider>
     </div>
   );

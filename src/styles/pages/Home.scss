@@ -1,9 +1,10 @@
 .Home {
     &__arrowDown {
         display: block;
-        margin: 0 auto;
-        font-size: 80px;
+        margin: 20px auto;
+        font-size: 60px;
         color: #f4ebeb;
+        filter: grayscale(.6);
         &--seemore {
             margin: 0 auto -10px;
         }
@@ -35,6 +36,8 @@
 .actns {
     padding: 20px 10px;
     margin: 0 10px;
+    max-width: 1000px;
+    margin: auto;
     border-radius: 10px;
     &__dscrptn {
         position: relative;
@@ -86,8 +89,8 @@
         width: 49%;
         border-radius: $brdef;
         padding: 10px;
-        margin: 0 10px 0 0;
-        box-shadow: 0 0 10px #ccc;
+        margin: 0 16px 0 0;
+        box-shadow: 0 0 10px 1px #ccc;
         cursor: pointer;
         &__img {
             max-width: 100%;
@@ -186,7 +189,7 @@
         }
 
         &:hover {
-            box-shadow: inset 0px 0px 3px $bgblue80;
+            box-shadow: inset 0px 0px 3px #ccc;
         }
     }
     &__tchrs {
@@ -230,8 +233,11 @@
     &__tpcs {
         display: flex;
         flex-wrap: wrap;
-        max-width: 1200px;
         margin: auto;
+        
+        &--bg-01 {
+            max-width: 1000px;
+        }
         &__srvc {
             border-right: none;
             &__img {
@@ -254,6 +260,7 @@
         border-radius: 0 !important;
         background-color: #9100ff;
         margin: 20px 0 0;
+        max-width: unset;
         .actns__dscrptn__ttl {
             color: #FFF !important;
         }

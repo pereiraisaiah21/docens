@@ -9,15 +9,14 @@ function Topics () {
 
         <section className="actns actns--bg-01">
             <MainTitle description="Saba mais" icon={<FaOptinMonster />} />
-            <div className="actns__tpcs">
+            <div className="actns__tpcs actns__tpcs--bg-01">
                 <div className="actns__tpcs__srvc">
                     <img alt="" className="actns__tpcs__srvc__img" src="https://newtrade.com.br/wp-content/uploads/2017/01/tecnologia-12-01.jpg" />
                 </div>
                 <div className="actns__tpcs__dscrptn">
                     <p>
-                        Somos a Docens. Sua plataforma de ensino. Com muita disposição, estamos aqui para lhe ajudar a absorver a maior quantidade de matérias, de maneira ligeira.
+                        Somos a Docens. Sua plataforma de ensino. Com muita disposição, estamos aqui para lhe ajudar a absorver a maior quantidade de matérias, de forma ligeira.
                     </p>
-                    <p></p>
                 </div>
             </div>
         </section>

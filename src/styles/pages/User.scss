@@ -9,17 +9,20 @@
         text-align: left;
         padding: 10px 20px;
         color: $white;
+        display: none;
         font-size: 2rem;
     }
     &__inf {
-        background-color: #ece6ff;
+        padding: 10px 0;
         &__bx {
             @include flexcenuns;
             margin: 0px auto 0;
             justify-content: space-between;
             position: relative;
-            padding: 100px 10px 40px;
-            max-width: 1200px;
+            background-color: #ece6ff;
+            padding: 8px;
+            border-radius: $brdef;
+            max-width: 1000px;
         }
         &__grtng {
             display: none;
@@ -45,7 +48,9 @@
         }
         &__abt {
             text-align: left;
-            padding: 0 10px;
+            padding: 0 0 0 30px;
+            flex-grow: 1;
+            text-align: left;
             color: rgba(0, 0, 0, 0.7);
             display: flex;
             justify-content: space-between;
@@ -60,16 +65,17 @@
         &__emblm {
             @include flexcenuns;
             justify-content: flex-end;
+            align-items: center;
             flex-wrap: wrap;
             width: 30%;
-            padding: 10px 0 0;
+            padding: 10px 0;
             flex-direction: row;
             &__xp {
                 border-radius: $brdef ;
                 background-color: rgb(255 153 0);
+                margin-left: 8px;
                 padding: 10px;
                 color: $white;
-                margin-right: 10px;
                 cursor: grab;
             }
             &__bx {
@@ -77,6 +83,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 padding: 10px;
+                margin-left: 8px;
                 background-color: rgb(255 153 0);
                 border-radius: $brdef;
                 position: relative;
@@ -90,12 +97,8 @@
             &__edt {
                 text-decoration: underline;
                 border-radius: $brdef;
-                padding: 5px 10px;
+                padding: 10px;
                 color: rgb(177, 117, 27);
-                border: 2px solid rgb(255 153 0);
-                position: absolute;
-                top: 25px;
-                right: 10px;
                 cursor: pointer;
             }
         }

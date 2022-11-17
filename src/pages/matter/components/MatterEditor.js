@@ -130,9 +130,11 @@ class EditorConvertToHTML extends Component {
     console.log(this.state.editorState)
     return (
       <div className="Edtr__wrpp">
-        {
-          draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()))
-        }
+        <p style={{"display": "none"}}>
+          {
+            draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()))
+          }
+        </p>
         {/* {
           console.log( draftToHtml(convertToRaw(this.state.editorState.getCurrentContent())) )
         } */}
@@ -191,7 +193,7 @@ class EditorConvertToHTML extends Component {
             </Option>
           ))}
         </Select> */}
-        <p id="para">test</p>
+        <p id="para" style={{"display": "none"}}>test</p>
         <Editor
           editorState={editorState}
           wrapperClassName="demo-wrapper"

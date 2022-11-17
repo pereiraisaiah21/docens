@@ -32,8 +32,7 @@ console.log(userDataValues)
 
         <>
         {
-            // userDataValues.data.occupation === "student"
-            true
+            userDataValues.data.occupation === "student"
             ?
             <>
                 <StudentInfo />
@@ -45,7 +44,7 @@ console.log(userDataValues)
                 <SeparationDots />
                 <NavigationTeachers />
                 <SeparationDots additionalClass="Home__arrowDown--seemore" />
-                {/* <Topics /> */}
+                <Topics />
             </>
             :
             <NavigationActions />

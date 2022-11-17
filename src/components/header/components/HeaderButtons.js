@@ -28,7 +28,7 @@ function HeaderButtons ({
         },
         {
             name : "Entrar",
-            link : "/login",
+            link : "/entrar",
             alt : "Ir para página de login",
             classParent : "hdr__lst hdr__lst--brdr",
             classBoxSon : "hdr__itm",
