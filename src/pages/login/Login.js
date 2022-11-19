@@ -17,6 +17,9 @@ function Login () {
     const [ username, setUsername ] = useState( null );
     const [ password, setPassword ] = useState( null );
     const [ showFormRecover, setShowFormRecover ] = useState( false );
+    const [ showFormRegister, setShowFormRegister ] = useState( false );
+
+
     const [ emailRecover, setEmailRecover ] = useState( null );
     const [ usernameValid, setUsernameValid ] = useState( true );
     const [ passwordValid, setPasswordValid ] = useState( true );
@@ -39,7 +42,7 @@ function Login () {
 
     let navigate = useNavigate();
 
-    const loginSubmit = async  (event) => {
+    const loginSubmit = async ( event ) => {
         event.preventDefault();
 
         if ( username !== null && username !== undefined && username !== "" ) {
@@ -93,6 +96,10 @@ function Login () {
         };
 
     };
+    const registerForm = function ( event ) {
+        event.preventDefault();
+        setShowFormRegister( !showFormRegister );
+    }
     const handleLogout = function()  {
         setUser({});
         setUsername("");
@@ -120,6 +127,10 @@ function Login () {
     const submitUserPasswordRecover = function( emailRecover ) {
         console.log("Método de recuperação de senha. Retornar confirmação.", emailRecover);
         setIsEmailRecoverSent( true );
+    };
+    const directToRegister = function( event ) {
+        event.preventDefault();
+        return navigate("/cadastro");
     };
 
     return (
@@ -202,6 +213,9 @@ function Login () {
                                     </a>
                                     <button className="lgn__snd" onClick={loginSubmit}>
                                         Entrar
+                                    </button>
+                                    <button className="lgn__rgs" onClick={directToRegister}>
+                                        Registre-se
                                     </button>
                                 </fieldset>
                                 {

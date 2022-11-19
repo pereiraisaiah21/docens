@@ -40,8 +40,8 @@ import ArticlesList from "./pages/moderation/ArticlesList";
 import ArticleModerate from "./pages/moderation/ArticleModerate";
 
 /**
- *
- * @returns 0
+ * 
+ * @returns 
  */
 
 function SiteRoutes () {
@@ -58,7 +58,7 @@ function SiteRoutes () {
                 <Route path="/perfil" element={<Profile />} />
 
                 <Route path="/entrar" element={<Login />} />
-                <Route path="/cadastrar-se" element={<Registration />} />
+                <Route path="/cadastro" element={<Registration />} />
 
                 <Route path="/mensagens" element={<Notification />} />
                 <Route path="/emblemas" element={<Emblem />} />
@@ -87,7 +87,6 @@ function SiteRoutes () {
 
                 <Route path="/professor/alt" element={<CreateUpdateTeacher />} />
                 <Route path="/professor/alt/:id" element={<CreateUpdateTeacher />} />
-
 
                 <Route path="/moderar" element={<ArticlesList />} />
                 <Route path="/moderar/:id" element={<ArticleModerate />} />
