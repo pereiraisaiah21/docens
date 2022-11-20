@@ -57,6 +57,19 @@ function CreateUpdateQuestion () {
                     name : name,
                     description : description,
                     alternatives : alternatives
+
+                    /*
+                        id_matter: 2,
+                        id_courses: 1,
+                        id_teacher: 1,
+                        alternative_1: "",
+                        alternative_2: "",
+                        alternative_3: "",
+                        alternative_4: "",
+                        answer: 2,
+                        token: "",
+                        id_user: 1
+                    */
                 })
                 .then( () => setFormSendSuccess( true ))
                 .catch( () => setFormSendSuccess( false ));

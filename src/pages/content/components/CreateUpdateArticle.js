@@ -32,8 +32,9 @@ function CreateUpdateArticle () {
     });
     const [category, setCategory] = useState( null );
     const [name, setName] = useState( "" );
+    const [subName, setSubName] = useState( "" );
     const [url, setUrl] = useState( "" );
-    const [quizUrl, setQuizUrl] = useState( "" );
+    // const [quizUrl, setQuizUrl] = useState( "" );
     const [content, setContent] = useState( "" );
     const [nextContentUrl, setNextContentUrl] = useState( "" );
     const [tags, setTags] = useState( "" );
@@ -70,15 +71,16 @@ function CreateUpdateArticle () {
     const handleSubmit = function( event ) {
         event.preventDefault();
 
-        if ( category !== null && name !== null && url !== null && content !== null && quizUrl !== null && tags !== null && hightlighImage !== null ) {
+        if ( category !== null && name !== null && subName !== null && url !== null && content !== null && tags !== null && hightlighImage !== null ) {
             console.log("send");
 
             api
-                .post( "/new/content", {
+                .post( "/cadArticle", {
                     category : category,
-                    name : name,
+                    title : name,
+                    subtitle : subName,
                     content : content,
-                    quizUrl : quizUrl,
+                    // quizUrl : quizUrl,
                     tags : tags,
                     hightlighImage : hightlighImage
                 })
@@ -125,7 +127,8 @@ function CreateUpdateArticle () {
 
         if ( matterEditData.data !== undefined ) {
             setName(matterEditData.data.title);
-            setQuizUrl(matterEditData.data.title);
+            setSubName(matterEditData.data.title);
+            // setQuizUrl(matterEditData.data.title);
             setTags(matterEditData.data.body);
             setContent(matterEditData.data.body);
             setUrl(matterEditData.data.title);
@@ -151,17 +154,21 @@ function CreateUpdateArticle () {
                         />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
-                        <legend className="content__lgnd">Nome da matéria *</legend>
+                        <legend className="content__lgnd">Título do artigo *</legend>
                         <input className="content__inpt" type="text" onChange={(e) => setName(e.target.value)} placeholder={name || "Digite o nome da matéria"} value={name || ""} />
+                    </fieldset>
+                    <fieldset className="content__fldst content__fldst--hlf">
+                        <legend className="content__lgnd">Subtitulo do artigo *</legend>
+                        <input className="content__inpt" type="text" onChange={(e) => setSubName(e.target.value)} placeholder={subName || "Digite o nome da matéria"} value={subName || ""} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Url da matéria *</legend>
                         <input className="content__inpt" type="text" onChange={(e) => setUrl(e.target.value)} placeholder={url || "Digite a URL da matéria"} value={url || ""} />
                     </fieldset>
-                    <fieldset className="content__fldst content__fldst--hlf">
+                    {/* <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Url da atividade *</legend>
                         <input className="content__inpt" type="text" onChange={(e) => setQuizUrl(e.target.value)} placeholder={quizUrl || "Digite a URL do questionário da matéria" } value={quizUrl || ""} />
-                    </fieldset>
+                    </fieldset> */}
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Url do próximo conteúdo ( Opcional )</legend>
                         <input className="content__inpt" type="text" onChange={(e) => setNextContentUrl(e.target.value)} placeholder={nextContentUrl || "Digite a URL da próxima matéria"} value={nextContentUrl || ""} />

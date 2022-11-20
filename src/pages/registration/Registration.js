@@ -5,7 +5,7 @@ import Select from 'react-select'
 import DatePicker from "react-datepicker";
 import { useParams, useNavigate } from "react-router-dom";
 
-import { FaInfoCircle, FaFileImport, FaCaretSquareUp, FaUser, FaEnvelope, FaMapPin, FaBirthdayCake, FaRegNewspaper } from 'react-icons/fa';
+import { FaInfoCircle, FaFileImport, FaCaretSquareUp, FaUser, FaEnvelope, FaMap, FaCalendarWeek, FaRegNewspaper } from 'react-icons/fa';
 import MainTitle from "../../components/title/MainTitle";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -48,9 +48,7 @@ function Registration () {
         event.preventDefault();
         let url = "/creat";
 
-
         if ( fullname || username || email || city || birthdayDate || bio ) {
-            
             api
                 .post( url, {
                     // avatar : avatar === "" ? "" : avatar,
@@ -62,7 +60,7 @@ function Registration () {
                     password : password === "" ? "" : password,
                     occupation : "student",
                     // gender : gender === "" ? "" : gender,
-                    birthdayDate: birthdayDate === "" ? "" : birthdayDate,
+                    birth: birthdayDate === "" ? "" : birthdayDate.toLocaleDateString('pt-BR'),
                     cor: "#090"
                 })
                 .then( response => {
@@ -101,7 +99,7 @@ function Registration () {
     return (
         <section className="rgsttn">
             {
-                setUpdateOpen && (
+                updateOpen && (
                     <div className="success">
                         Cadastro realizado com sucesso!
                     </div>
@@ -156,14 +154,14 @@ function Registration () {
                                 </fieldset>
                                 <fieldset className="rgsttn__flst">
                                     <legend className="prfl__inf__itm">
-                                        <FaMapPin />
+                                        <FaMap />
                                         Cidade
                                     </legend>
                                     <input className="prfl__inpt" value={city} placeholder={"Digite sua cidade"} onChange={(e) => setCity(e.target.value)} />
                                 </fieldset>
                                 <fieldset className="rgsttn__flst">
                                     <legend className="prfl__inf__itm">
-                                        <FaBirthdayCake />
+                                        <FaCalendarWeek />
                                         Data de nascimento
                                     </legend>
                                     <DatePicker className="prfl__inpt" selected={birthdayDate} onChange={(birthdayDate) => setBirthdayDate(birthdayDate)} />
