@@ -4,6 +4,7 @@ import ImageUploading from 'react-images-uploading';
 import Select from 'react-select'
 import DatePicker from "react-datepicker";
 import { useParams, useNavigate } from "react-router-dom";
+import Emoji from 'a11y-react-emoji'
 
 import { FaInfoCircle, FaFileImport, FaCaretSquareUp, FaUser, FaEnvelope, FaMap, FaCalendarWeek, FaRegNewspaper } from 'react-icons/fa';
 import MainTitle from "../../components/title/MainTitle";
@@ -133,7 +134,7 @@ function Registration () {
                                         <FaUser />
                                         Senha
                                     </legend>
-                                    <input className="prfl__inpt" value={password} placeholder={"Digite sua senha"} onChange={(e) => setPassword(e.target.value)} />
+                                    <input className="prfl__inpt" value={password} type="password" placeholder={"Digite sua senha"} onChange={(e) => setPassword(e.target.value)} />
                                 </fieldset>
                             </>
                             :

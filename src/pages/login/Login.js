@@ -19,27 +19,13 @@ function Login () {
     const [ showFormRecover, setShowFormRecover ] = useState( false );
     const [ showFormRegister, setShowFormRegister ] = useState( false );
 
-
     const [ emailRecover, setEmailRecover ] = useState( null );
     const [ usernameValid, setUsernameValid ] = useState( true );
     const [ passwordValid, setPasswordValid ] = useState( true );
     const [ emailRecoverValid, setEmailRecoverValid ] = useState( true );
     const [ isEmailRecoverSent, setIsEmailRecoverSent ] = useState( false );
 
-
-    // const [userDataValues, setUserDataValues] = useState({
-    //     data  : [],
-    //     isLogged : false,
-    //     typeUser : "default",
-    //     token: "",
-    //     error : ""
-    //   });
-
-    // const { userDataValues, setUserDataValues } = useContext( UserData );
     const { userDataValues, setUserDataValues } = useContext(UserData)
-
-    console.log("X", userDataValues)
-
     let navigate = useNavigate();
 
     const loginSubmit = async ( event ) => {
@@ -61,18 +47,12 @@ function Login () {
           return;
         };
 
-        console.log("Email", username, " Password", password);
-        // return;
-
         try {
             const resp = await axios.post(  "https://tccunipcci.herokuapp.com/api/login", {email : username, password : password}, {
             headers : {
                 'content-type': 'application/json'
             }
            });
-
-        //    setUser( resp.data );
-        //    localStorage.setItem( "user", resp.data )
 
            console.log("Final resp ", resp)
            console.log("Final resp ", resp.data[1].id !== null)

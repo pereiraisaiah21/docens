@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import UserData from "../../../UserData";
 
 import Card from "../../../components/card/Card";
@@ -13,7 +13,9 @@ import MainTitle from "../../../components/title/MainTitle";
  */
 function NavigationActions () {
 
-    const { userDataValues, setUserDataValues } = useContext( UserData );
+    let userStorage = JSON.parse(localStorage.getItem("user"));
+
+    console.log( " PP ", userStorage.occupation)
 
     const cardsContentDefault = [
         {
@@ -68,7 +70,7 @@ function NavigationActions () {
             <MainTitle description="navegue pelo site" descriptionUnder="selecione uma opção" isCarousel={false} icon={<FaOptinMonster />} />
             <div className="actns__crds">
                 {
-                    userDataValues.data.occcupation === "default"
+                    userStorage.occupation === "student"
                     ?
                       cardsContentDefault.map( ( item, key ) => {
                           return (

@@ -19,11 +19,14 @@ function Home () {
     const { userDataValues, setUserDataValues } = useContext( UserData );
     // const [ typeUser, setTypeUser ] = useState( null );
 
+    let userStorage = JSON.parse(localStorage.getItem("user"));
+
+    console.log( " User Storage " , userStorage );
     useEffect(() => {
-console.log(userDataValues)
+        console.log(userDataValues)
         // setTypeUser( userDataValues.typeUser )
 
-        console.log("p", userDataValues)
+        console.log("p", userDataValues.data.occupation)
     }, [ userDataValues ]);
 
     console.log(userDataValues)
@@ -32,13 +35,13 @@ console.log(userDataValues)
 
         <>
         {
-            userDataValues.data.occupation === "student"
+            userStorage.occupation === "student"
             ?
             <>
                 <StudentInfo />
 
 
-                {/*<NavigationActions typeUser={typeUser} /> */}
+                <NavigationActions />
                 <SeparationDots />
                 <NavigationMyProgress slider={"true"} sliderTitle={true}  NavigationMyStats={true} />
                 <SeparationDots />
