@@ -63,7 +63,7 @@ function HeaderButtons ({
             name : "",
             link : `/perfil/`,
             alt : "Ir para perfil",
-            classParent : "hdr__lst hdr__lst--brdr",
+            classParent : "hdr__lst",
             classBoxSon : "hdr__itm",
             classIconBox : "hdr__itm__icn hdr__itm__icn--lgn",
             classNameBox : "hdr__itm__nm",
@@ -74,6 +74,9 @@ function HeaderButtons ({
     const openMenuMobile = function() {
         setMenuMobileClose( true );
     };
+    const logoutUser = function( event ) {
+        event.preventDefault();
+    };
     {
         console.log(userDataValues)
     }
@@ -82,7 +85,7 @@ function HeaderButtons ({
         <div className="hdr__optns">
             <ul className="hdr__bttns">
                 {
-                    userStorage.occupation
+                    !!userStorage.occupation
                     ?
                     actionOptionsLogged.map( ( item, key ) => {
                         return (
@@ -114,6 +117,14 @@ function HeaderButtons ({
                         )
                     })
                 }
+
+                <li className="hdr__lst hdr__lst--brdr"> 
+                    <a href="/perfil/" title="" className="hdr__itm" onClick={logoutUser}>
+                        <span className="hdr__itm__nm">
+                            <FaDoorOpen />
+                        </span>
+                    </a>
+                </li>
             </ul>
             <div className="hdr__bttns--mbl" onClick={openMenuMobile}>
 				<FaBars />

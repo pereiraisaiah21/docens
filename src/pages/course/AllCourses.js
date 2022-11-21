@@ -80,7 +80,7 @@ function AllCourses () {
                         <fieldset className="crs__srch">
                             <legend className="prfl__inf__itm">
                                 <FaBookOpen />
-                                Curso
+                                Cursos
                             </legend>
                             <input className="crs__srch__inpt" placeholder="Digite algum curso" onChange={(e) => handleSearch(e.target.value)} />
                         </fieldset>

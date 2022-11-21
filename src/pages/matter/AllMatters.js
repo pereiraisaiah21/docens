@@ -79,7 +79,7 @@ function AllMatters () {
                         <fieldset className="crs__srch">
                             <legend className="prfl__inf__itm">
                                 <FaBookOpen />
-                                Matéria
+                                Matérias
                                 <input className="mttr__srch__inpt" placeholder="... Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)} />
                             </legend>
                         </fieldset>
