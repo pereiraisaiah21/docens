@@ -90,6 +90,7 @@
     }
     &__img {
         max-width: $wmax;
+        border-radius: 10px;
         &__crdts {
             font-size: .7em;
             text-align: center;
@@ -101,9 +102,9 @@
         line-height: 3px;
         font-size: .9em;
         margin: 0 0 25px;
+        padding-left: 10px;
         color: #716b72;
-        max-width: 800px;
-        margin: auto;
+        margin: 20px auto;
         &__wrtr,
         &__date,
         &__lstpdt {
@@ -123,6 +124,7 @@
             line-height: 25px;
             text-align: left;
             color: #716b72;
+            padding: 0 0 20px;
             max-width: 1000px;
             margin: auto;
             .img {
@@ -140,10 +142,15 @@
                     display: block;
                 }
             }
+            p {
+                text-indent: 2rem;
+                padding: 0 10px;
+            }
         }
         &.txt-cntr {
             max-width: 1000px;
             margin: auto;
+            background-color: #ece6ff;
         }
     }
     &__prmryTtl {
@@ -156,7 +163,8 @@
     &__scndtyTtl {
         color: #716b72;
         margin: 30px 0;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        padding-left: 10px;
         max-width: 1000px;
         margin: auto;
     }
@@ -194,9 +202,10 @@
         display: block;
         margin-bottom: 10px;
         padding: 10px;
-        font-size: 1.1em;
+        font-size: 1em;
         text-align: left;
-        border-left: 3px solid;
+        padding-top: 20px;
+        border-top: 3px solid orange;
         color: #716b72;
         &__lst {
             list-style-type: armenian;
