@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { TailSpin } from "react-loader-spinner";
 
 import MainTitle from "../../components/title/MainTitle";
 import CardFeed from "../../components/card/CardFeed";
-import { FaRegCalendarTimes } from 'react-icons/fa';
+import Emoji from 'a11y-react-emoji';
 
 /**
  *
@@ -76,7 +75,11 @@ function Feed () {
 
         <section className="fd">
             <div className="fd__wrppr">
-                <MainTitle description="meu feed" descriptionUnder="Pubicações recentes" icon={<FaRegCalendarTimes />} />
+            <div className="emoji--title">
+                <Emoji className="emoji--navigation" symbol={"📃"} label="love" />
+                {/* <MainTitle description="Emblemas" descriptionUnder="Aqui estão todos os emblemas" isCarousel={false} /> */}
+                <MainTitle description="meu feed" descriptionUnder="Pubicações recentes" isCarousel={false} />
+            </div>
                 <div className="fd__psts">
                     {
                         posts.data !== null && (

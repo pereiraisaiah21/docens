@@ -10,10 +10,10 @@
         justify-content: space-between;
     }
     &__wrpprAll {
-        max-width: 800px;
+        max-width: 1000px;
         position: relative;
         margin: auto;
-        padding: 10px;
+        padding: 50px 10px 10px;
         display: flex;
         border-radius: $brdef;
     }
@@ -210,6 +210,9 @@
         width: $wmax;
         padding: 10px 0 30px;
         text-align: left;
+        .prfl__inf__itm {
+            width: $wmax;
+        }
         &__inpt {
             @include input;
         }

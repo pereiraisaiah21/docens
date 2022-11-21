@@ -1,6 +1,7 @@
 import React from "react";
 
-import DragAlert from "../carousel/DragAlert"
+import DragAlert from "../carousel/DragAlert";
+// import Emoji from 'a11y-react-emoji';
 
 /**
  * 
@@ -11,8 +12,8 @@ import DragAlert from "../carousel/DragAlert"
 function MainTitle ({
     description,
     isCarousel,
-    descriptionUnder,
-    icon
+    descriptionUnder
+    // emoji
 }) {
 
     return (
@@ -20,6 +21,7 @@ function MainTitle ({
         <div className="actns__dscrptn">
             <span className="actns__dscrptn__icn">
                 {/* {icon} */}
+                {/* <Emoji className="emoji--navigation" symbol={emoji} label="love" /> */}
             </span>
             <span className={`actns__dscrptn__ttl${descriptionUnder ? " actns__dscrptn__ttl--dscrptn" : ""}`}>
                 {description}

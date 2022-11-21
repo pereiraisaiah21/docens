@@ -74,7 +74,6 @@ function Login () {
         } catch ( err ) {
             console.error(err);
         };
-
     };
     const registerForm = function ( event ) {
         event.preventDefault();
@@ -112,6 +111,12 @@ function Login () {
         event.preventDefault();
         return navigate("/cadastro");
     };
+
+    useEffect( () => {
+        if (JSON.parse(localStorage.getItem("user"))) {
+            return navigate("/home");
+        }
+    }, []);
 
     return (
 

@@ -1,7 +1,7 @@
 .crs {
     padding: 40px 10px;
     &__wrppr {
-        max-width: 1200px;
+        max-width: 1000px;
         position: relative;
         margin: auto;
         display: flex;
@@ -9,10 +9,10 @@
         justify-content: space-between;
     }
     &__wrpprAll {
-        max-width: 800px;
+        max-width: 1000px;
         position: relative;
         border-radius: $brdef;
-        padding: 10px;
+        padding: 50px 10px 10px;
         margin: auto;
         display: flex;
     }
@@ -57,6 +57,13 @@
         width: $wmax;
         padding: 10px 0 30px;
         text-align: left;
+        border: none;
+        padding: 10px 0;
+        position: relative;
+        font-size: 0.9em;
+        .prfl__inf__itm {
+            width: $wmax;
+        }
         &__inpt {
             @include input-font;
         }
@@ -158,6 +165,9 @@
                 padding: 10px;
                 border-radius: 10px;
             }
+            p {
+                padding: 0 10px 0 20px;
+            }
         }
         &__vw {
             position: absolute;
@@ -184,15 +194,19 @@
         justify-content: left;
     }
     &__ttl {
-        text-align: left;
-        color: #716b72;
-        padding: 10px;
-        width: 100%;
-        margin: 10px 0;
+        width: $wmax;
+        display: flex;
+        align-items: center;
+        margin: 0px auto 0;
+        position: relative;
+        background-color: #ece6ff;
+        padding: 8px;
+        border-radius: 10px;
+        max-width: 1000px;
     }
     &__dscrptn {
         text-align: left;
-        padding: 0 10px 20px;
+        padding: 50px 10px;
         color: #716b72;
     }
     &__br {
@@ -217,7 +231,6 @@
             color: #716b72;
             margin-bottom: 10px;
             &--ttl {
-                border-bottom: 3px solid rgb(255 153 0);
                 font-size: 1.1em;
                 font-weight: 700;
             }
@@ -274,7 +287,7 @@
             padding: 10px;
         }
         &__crd {
-            padding: 10px 10px 20px;
+            padding: 10px 0 20px;
         }
         &__rltd {
             width: 30%;

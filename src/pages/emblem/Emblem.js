@@ -1,7 +1,8 @@
 import React from "react";
 
 import MainTitle from "../../components/title/MainTitle";
-import { FaMedal, FaTrophy, FaRegGem, FaRedhat, FaRocket } from 'react-icons/fa';
+import { FaMedal, FaRegGem, FaRedhat, FaRocket } from 'react-icons/fa';
+import Emoji from 'a11y-react-emoji';
 
 /**
  *
@@ -108,7 +109,10 @@ function Emblem () {
     return (
 
         <section className="emblm">
-            <MainTitle description="Emblemas" descriptionUnder="Aqui estão todos os emblemas" isCarousel={false} />
+            <div className="emoji--title">
+                <Emoji className="emoji--navigation" symbol={"🏅"} label="love" />
+                <MainTitle description="Emblemas" descriptionUnder="Aqui estão todos os emblemas" isCarousel={false} />
+            </div>
             <div className="emblm__wrp">
                 <table className="emblm__tbl">
                     <thead>

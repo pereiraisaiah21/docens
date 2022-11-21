@@ -42,8 +42,7 @@
     &__dscrptn {
         position: relative;
         text-align: center;
-        max-width: 1200px;
-        margin: 0 auto 50px;
+        max-width: 1000px;
         &__icn {
             display: inline-block;
             height: 100%;
@@ -61,10 +60,12 @@
             font-size: 1em;
             font-weight: 600;
             color: #716b72;
+            text-align: left;
             p {
                 margin: 0;
                 font-size: .7em;
                 color: #716b72;
+                text-align: left;
             }
             &--dscrptn {
                 display: inline-block;
@@ -131,7 +132,7 @@
             padding: 8px 2px;
             justify-content: center;
             border-radius: $brdef;
-            margin: 10px 0 0;
+            margin: 25px 0 0;
             font-size: .9em;
             &--fd {
                 background-color: $bgblue80;

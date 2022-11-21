@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Emoji from 'a11y-react-emoji';
+
 /**
  * 
  * @returns 
@@ -7,6 +9,7 @@ import React, { useState } from "react";
 
 function Matter () {
 
+    const icon = ["🛄", "🛄", "🗿", "⚱", "🪣", "🧹", "🧷", "🧴", "🪑", "🛋", "🪟", - "🩺", "🩹", "🔬", "🧬", "🧰", "🪜", "⛓", "📉", "⚙", "📦", "🖊", "🪙"];
     const [posts, setPosts] = useState({
         data : [
             {
@@ -73,6 +76,7 @@ function Matter () {
             <div className="crs__wrppr">
                 <div className="crs__cntnt">
                     <h1 className="crs__ttl">
+                        <Emoji className="emoji--navigation" symbol={icon[Math.floor(Math.random() * icon.length)]} label="love" />
                         Algebra binária
                     </h1>
                     <p className="crs__dscrptn">

@@ -1,6 +1,7 @@
 import React from "react";
 
 import { FaEye } from 'react-icons/fa';
+import Emoji from 'a11y-react-emoji';
 
 /**
  *
@@ -9,6 +10,7 @@ import { FaEye } from 'react-icons/fa';
  */
 
 function Card ({
+    emoji,
     link,
     classStyleGrand,
     srcImage,
@@ -25,6 +27,7 @@ function Card ({
 
     return (
         <div className={classStyleGrand}>
+            <Emoji className="emoji--navigation" symbol={emoji} label="love" />
             <span className={`${classStyleSpan}`}>
                 {title}
             </span>

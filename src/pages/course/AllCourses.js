@@ -1,13 +1,13 @@
 import React, { useContext, useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import api from "../../services/api"
 import UserData from "../../UserData";
 
 import MainTitle from "../../components/title/MainTitle";
 import MatterEditButtons from "../matter/components/MatterEditButtons";
-import { FaNewspaper } from 'react-icons/fa';
 import ConnectionFailed from "../../components/alert/ConnectionFailed";
 import PageDescription from "../../components/alert/PageDescription";
+import Emoji from 'a11y-react-emoji';
+import { FaBookOpen } from 'react-icons/fa';
 
 /**
  * 
@@ -15,6 +15,8 @@ import PageDescription from "../../components/alert/PageDescription";
  */
 
 function AllCourses () {
+
+    let userStorage = JSON.parse(localStorage.getItem("user"));
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
@@ -35,7 +37,7 @@ function AllCourses () {
     useEffect( () => {
 
         api
-            .get( "/users" )
+            .post( "/allCourses" )
             .then( response => {
 
                 setAllCourses({ 
@@ -69,12 +71,19 @@ function AllCourses () {
 
         <>
             <section className="crs">
-                <MainTitle description="todos os cursos" descriptionUnder="Busque algum CURSO" icon={<FaNewspaper />} />
+                <div className="emoji--title">
+                    <Emoji className="emoji--navigation" symbol={"📚"} label="love" />
+                    <MainTitle description="todos os cursos" descriptionUnder="Busque algum CURSO" isCarousel={false} />
+                </div>
                 <div className="crs__wrpprAll">
                     <div className="crs__allCrs">
-                        <div className="crs__srch">
-                            <input className="crs__srch__inpt" placeholder="... Busque algum curso" onChange={(e) => handleSearch(e.target.value)} />
-                        </div>
+                        <fieldset className="crs__srch">
+                            <legend className="prfl__inf__itm">
+                                <FaBookOpen />
+                                Curso
+                            </legend>
+                            <input className="crs__srch__inpt" placeholder="Digite algum curso" onChange={(e) => handleSearch(e.target.value)} />
+                        </fieldset>
                         <PageDescription classText="pageAlert" text="" />
                         {
                             searchResult.data !== null && (
@@ -100,7 +109,7 @@ function AllCourses () {
                                                 {item.name}
                                             </span>
                                             {
-                                                typeUser !== "default"
+                                                userStorage.occupation !== "student"
                                                 ?
                                                 <MatterEditButtons classParent="crs__itm__edt" classAnchor="crs__itm__edt__anchr" matter={"posts/1"} />
                                                 :

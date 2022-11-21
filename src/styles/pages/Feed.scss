@@ -1,11 +1,13 @@
 .fd {
+    padding: 40px 10px;
     &__wrppr {
-        max-width: 800px;
+        max-width: 1000px;
         margin: auto;
         padding: 10px 10px 50px;
     }
     &__psts {
       border-radius: $brdef;
+      padding: 50px 10px 10px;
     }
     &__crd {
         @include flexcencen;
@@ -24,12 +26,14 @@
             z-index: 0;
         }
         &__img {
+            width: 40%;
             &__cntnt {
                 max-width: $wmax;
             }
         }
         &__inf {
             text-align: left;
+            width: 60%;
             padding: 20px 30px;
             display: flex;
             flex-wrap: wrap;
@@ -40,7 +44,9 @@
                 color: #716b72;
             }
             p {
-              color: #716b72;
+                color: #716b72;
+                height: 100px;
+                overflow: hidden;
             }
         }
         &__vw {

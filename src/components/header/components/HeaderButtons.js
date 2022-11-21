@@ -14,6 +14,7 @@ function HeaderButtons ({
 }) {
 
     const { userDataValues, setUserDataValues } = useContext( UserData );
+    let userStorage = JSON.parse(localStorage.getItem("user"));
 
     const actionOptionsUnlogged = [
         {
@@ -37,7 +38,6 @@ function HeaderButtons ({
             icon : <FaDoorOpen />
         }
     ];
-
     const actionOptionsLogged = [
         {
             name : "",
@@ -82,7 +82,7 @@ function HeaderButtons ({
         <div className="hdr__optns">
             <ul className="hdr__bttns">
                 {
-                    userDataValues.data.name
+                    userStorage.occupation
                     ?
                     actionOptionsLogged.map( ( item, key ) => {
                         return (

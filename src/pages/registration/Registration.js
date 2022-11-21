@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import api from "../../services/api";
-import ImageUploading from 'react-images-uploading';
-import Select from 'react-select'
 import DatePicker from "react-datepicker";
-import { useParams, useNavigate } from "react-router-dom";
-import Emoji from 'a11y-react-emoji'
+import { useNavigate } from "react-router-dom";
 
-import { FaInfoCircle, FaFileImport, FaCaretSquareUp, FaUser, FaEnvelope, FaMap, FaCalendarWeek, FaRegNewspaper } from 'react-icons/fa';
+import { FaUser, FaEnvelope, FaMap, FaCalendarWeek, FaRegNewspaper } from 'react-icons/fa';
 import MainTitle from "../../components/title/MainTitle";
 
 import "react-datepicker/dist/react-datepicker.css";

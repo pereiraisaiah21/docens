@@ -1,13 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import api from "../../services/api";
-
 import UserData from "../../UserData";
 
 import MainTitle from "../../components/title/MainTitle";
 import MatterEditButtons from "./components/MatterEditButtons";
-import { FaNewspaper } from 'react-icons/fa';
 import ConnectionFailed from "../../components/alert/ConnectionFailed";
+import Emoji from 'a11y-react-emoji';
+import { FaBookOpen } from 'react-icons/fa';
 
 /**
  * 
@@ -69,12 +68,22 @@ function AllMatters () {
 
         <>
             <section className="mttr">
-                <MainTitle description="todas as matérias" descriptionUnder="Busque alguma matéria" icon={<FaNewspaper />} />
+                <div className="emoji--title">
+                    <Emoji className="emoji--navigation" symbol={"📕"} label="love" />
+                    <MainTitle description="todas as matérias" descriptionUnder="Busque alguma matéria" isCarousel={false} />
+                </div>
                 <div className="mttr__wrpprAll">
                     <div className="mttr__allMttrs">
                         <div className="mttr__srch">
-                            <input className="mttr__srch__inpt" placeholder="... Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)} />
                         </div>
+                        <fieldset className="crs__srch">
+                            <legend className="prfl__inf__itm">
+                                <FaBookOpen />
+                                Matéria
+                                <input className="mttr__srch__inpt" placeholder="... Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)} />
+                            </legend>
+                        </fieldset>
+
                         {
                             searchResult.data !== null && (
                                 searchResult.data.map((item, key) => {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import CardCourse from "../../components/card/CardCourse";
+import Emoji from 'a11y-react-emoji';
 
 /**
  *
@@ -9,6 +10,7 @@ import CardCourse from "../../components/card/CardCourse";
 
 function Course () {
 
+    const icon = ["🛄", "🛄", "🗿", "⚱", "🪣", "🧹", "🧷", "🧴", "🪑", "🛋", "🪟", - "🩺", "🩹", "🔬", "🧬", "🧰", "🪜", "⛓", "📉", "⚙", "📦", "🖊", "🪙"];
     const [posts, setPosts] = useState({
         data : [
             {
@@ -75,7 +77,8 @@ function Course () {
             <div className="crs__wrppr">
                 <div className="crs__cntnt">
                     <h1 className="crs__ttl">
-                            Algebra binária
+                        <Emoji className="emoji--navigation" symbol={icon[Math.floor(Math.random() * icon.length)]} label="love" />
+                        Algebra binária
                     </h1>
                     <p className="crs__dscrptn">
                         Um sistema de equações é constituído por um conjunto de equações que apresentam mais de uma incógnita. Para resolver um sistema é necessário encontrar os valores que satisfaçam simultaneamente todas as equações.
