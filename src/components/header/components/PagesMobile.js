@@ -1,5 +1,7 @@
 import React from "react";
 
+import Emoji from 'a11y-react-emoji';
+
 /**
  * 
  * @param {*} param0 
@@ -10,11 +12,32 @@ function PagesMobile ({
     userData
 }) {
 
-    const pagesMobile = [{
-		name : "Matérias",
-		url : "/materias",
-		title : "Ir para Todas as matérias"
-	}];
+    const pagesMobile = [
+        {
+            name        : "Feed",
+            description : "Acesse o feed",
+            link        : "/feed",
+            emoji: "📃"
+        },
+        {
+            name        : "Tutorial",
+            description : "Acesse o tutorial de navegação",
+            link        : "",
+            emoji: "🔍"
+        },
+        {
+            name        : "Cursos",
+            description : "Acesse as cursos disponíveis",
+            link        : "/cursos",
+            emoji: "📚"
+        },
+        {
+            name        : "Emblemas",
+            description : "Confira os emblemas disponíveis",
+            link        : "/emblemas",
+            emoji: "🏅"
+        }
+    ];
 
     return (
 
@@ -25,6 +48,7 @@ function PagesMobile ({
                         return(
                             <li key={key}>
                                 <a href={item.url} alt={item.title}>
+                                    <Emoji className="emoji--navigation" symbol={item.emoji} label="love" />
                                     {item.name}
                                 </a>
                             </li>

@@ -238,6 +238,9 @@
         padding: 0 10px;
         .Question {
             margin: 150px auto 50px;
+            &__exit {
+                width: 20%;
+            }
             &__info {
                 flex-wrap: wrap;
                 align-items: center;

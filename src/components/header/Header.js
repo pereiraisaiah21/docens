@@ -34,7 +34,7 @@ function Header () {
 				isMenuMobileOpen && (
 					<div className="hdr__wrppr--m">
 						<ActionsMobile setMenuMobileClose={setIsMenuMobileOpen} />
-						{/* <UserDataMobile userData={userDataValues.data} /> */}
+						<UserDataMobile />
 						<PagesMobile />
 					</div>
 				)

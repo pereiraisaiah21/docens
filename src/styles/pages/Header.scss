@@ -17,6 +17,7 @@
             width: $wmax;
             height: 100%;
             padding: 20px 10px;
+            overflow: scroll;
         }
     }
     &__lg {
@@ -128,6 +129,12 @@
             border-radius: 10px;
             padding: 10px 15px;
             color: $white;
+            &--logout {
+                margin-right: 10px;
+                svg {
+                    margin-right: 3px;
+                }
+            }
             svg {
                 margin-bottom: -5px;
                 font-size: 1.4em;
