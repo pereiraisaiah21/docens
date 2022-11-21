@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from "react";
-
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import UserData from "../../UserData";
 
 import StudentInfo from "../../components/User/StudentInfo";
@@ -16,31 +16,23 @@ import NavigationTeachers from "./components/default/NavigationTeachers";
 
 function Home () {
 
-    const { userDataValues, setUserDataValues } = useContext( UserData );
-    // const [ typeUser, setTypeUser ] = useState( null );
-
     let userStorage = JSON.parse(localStorage.getItem("user"));
+    let navigate = useNavigate();
 
-    console.log( " User Storage " , userStorage );
-    useEffect(() => {
-        console.log(userDataValues)
-        // setTypeUser( userDataValues.typeUser )
-
-        console.log("p", userDataValues.data.occupation)
-    }, [ userDataValues ]);
-
-    console.log(userDataValues)
+    useEffect( () => {
+        if ( JSON.parse(localStorage.getItem("user")) === null ) {
+            return navigate("/entrar");
+        }
+    }, []);
 
     return (
 
         <>
         {
-            userStorage.occupation === "student"
+            !!userStorage && userStorage.occupation === "student"
             ?
             <>
                 <StudentInfo />
-
-
                 <NavigationActions />
                 <SeparationDots />
                 <NavigationMyProgress slider={"true"} sliderTitle={true}  NavigationMyStats={true} />

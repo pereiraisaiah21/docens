@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import UserData from "../../../UserData";
+import { useNavigate } from "react-router-dom";
 
 import { FaQuestionCircle, FaDoorOpen, FaBell, FaCaretDown, FaUser, FaBars } from 'react-icons/fa';
 
@@ -15,6 +16,7 @@ function HeaderButtons ({
 
     const { userDataValues, setUserDataValues } = useContext( UserData );
     let userStorage = JSON.parse(localStorage.getItem("user"));
+    let navigate = useNavigate();
 
     const actionOptionsUnlogged = [
         {
@@ -77,6 +79,7 @@ function HeaderButtons ({
     const logoutUser = function( event ) {
         event.preventDefault();
         localStorage.removeItem( "user" );
+        return navigate( "/entrar" );
     };
 
     return (
@@ -84,7 +87,7 @@ function HeaderButtons ({
         <div className="hdr__optns">
             <ul className="hdr__bttns">
                 {
-                    !!userStorage.occupation
+                    !!userStorage && userStorage.occupation === "student"
                     ?
                     <>
                         {

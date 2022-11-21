@@ -73,7 +73,7 @@ function NavigationActions () {
             <MainTitle description="navegue pelo site" descriptionUnder="selecione uma opção" isCarousel={false} icon={<FaOptinMonster />} />
             <div className="actns__crds">
                 {
-                    userStorage.occupation === "student"
+                    !!userStorage && userStorage.occupation === "student"
                     ?
                       cardsContentDefault.map( ( item, key ) => {
                           return (
