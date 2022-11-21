@@ -74,19 +74,19 @@ function AllCourses () {
     const dataPlaceholder = [
         {
             name: "Curso 01",
-            url: "/curso-01"
+            url: "/cursos/curso-01"
         },
         {
             name: "Curso 02",
-            url: "/curso-02"
+            url: "/cursos/curso-02"
         },
         {
             name: "Curso 03",
-            url: "/curso-03"
+            url: "/cursos/curso-03"
         },
         {
             name: "Curso 04",
-            url: "/curso-04"
+            url: "/cursos/curso-04"
         },
     ];
 
