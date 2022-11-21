@@ -79,15 +79,15 @@ function Course () {
             allMatters : [
                 {
                     name: "Matéria 01",
-                    url: "/materia-01",
+                    url: "/materias/materia-01",
                 },
                 {
                     name: "Matéria 02",
-                    url: "/materia-02",
+                    url: "/materias/materia-02",
                 },
                 {
                     name: "Matéria 03",
-                    url: "/materia-03",
+                    url: "/materias/materia-03",
                 }
             ],
             lastArticles : [
