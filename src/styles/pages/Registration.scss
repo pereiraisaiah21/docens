@@ -83,4 +83,27 @@
         border-left: 3px solid orange;
         background-color: $white;
     }
+
+     // Xs
+     @media (max-width: 575px) {
+        &__image {
+            display: none;
+        }
+        &__frm {
+            width: $wmax;
+            &Box {
+                margin-left: 0;
+            }
+        }
+    }
+    // Sm
+    @media (min-width: 576px) {}
+    // Md
+    @media (min-width: 768px) {}
+    // Lg
+    @media (min-width: 991px) {}
+    // Xl
+    @media (min-width: 1200px) {}
+    // Xxl
+    @media (min-width: 1400px) {}
 }
