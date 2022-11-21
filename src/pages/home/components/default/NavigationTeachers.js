@@ -5,12 +5,12 @@ import MainTitle from "../../../../components/title/MainTitle";
 import { Navigation, Pagination, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaOptinMonster } from 'react-icons/fa';
+import Emoji from 'a11y-react-emoji';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-
 
 function NavigationTeachers () {
 
@@ -66,7 +66,9 @@ function NavigationTeachers () {
                                     <SwiperSlide key={key}>
                                         <div className="actns__tchrs__itm">
                                             <a className="actns__tchrs__anchr" alt="´Ícone professor" href="/professor">
-                                                <img className="actns__tchrs__img" alt="" src="https://static.vecteezy.com/ti/vetor-gratis/p3/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg" />
+                                                <Emoji className="actns__tchrs__img" symbol={"👩‍🏫"} label="love" />
+
+                                                {/* <img className="actns__tchrs__img" alt="" src="https://static.vecteezy.com/ti/vetor-gratis/p3/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg" /> */}
                                                 <span className="actns__tchrs__nm">
                                                     {item.name}
                                                 </span>

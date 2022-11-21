@@ -201,7 +201,7 @@
             @include flexunscen;
         }
         &__itm {
-            background: $bg-box;
+            background: #ece6ff;
             border-radius: 20px;
             padding: 20px;
             height: 203px;
@@ -215,10 +215,7 @@
             flex-wrap: wrap;
         }
         &__img {
-            width: 90px;
-            height: 90px;
-            border: 2px solid #ccc;
-            border-radius: 50%;
+            font-size: 90px;
             margin: 0 0 10px;
         }
         &__nm {
@@ -265,6 +262,9 @@
         padding: 30px 10px 20px !important;
         .actns__dscrptn__ttl {
             color: #FFF !important;
+        }
+        .actns__dscrptn {
+            margin: auto;
         }
     }
     &--bg-02 {
@@ -395,6 +395,10 @@
             &--myPrgrss {
                 width: auto;
             }
+
+            &:last-child {
+                margin: 0;
+            }
         }
         &__tpcs {
             padding: 20px 0 0;
@@ -415,7 +419,7 @@
 .df-t {
     .actns {
         &__crds {
-            justify-content: center;
+            justify-content: space-between;
         }
     }
 }
