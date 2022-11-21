@@ -190,8 +190,9 @@
         }
         &__bttns {
             &--mbl {
-                text-align: right;
-                display: block;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
                 svg {
                     font-size: 1.5em;
                 }

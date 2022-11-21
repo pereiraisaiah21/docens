@@ -78,7 +78,6 @@
         }
         &__fineshed {
             line-height: 30px;
-            color: $white;
             p {
                 margin: 40px auto;
             }
@@ -87,10 +86,10 @@
             }
             &__anchor {
                 padding: 5px;
-                background-color: $green;
+                background-color: orange;
                 border-radius: $brdef;
                 white-space: nowrap;
-                color: #716b72;
+                color: $white;
                 margin: 0 5px;
             }
         }
@@ -276,12 +275,11 @@
             }
         }
     }
+
     // Sm
     @media (min-width: 576px) {}
     // Md
-    @media (min-width: 768px) {
-        // padding: 40px 10px;
-    }
+    @media (min-width: 768px) {}
     // Lg
     @media (min-width: 991px) {}
     // Xl
