@@ -21,7 +21,7 @@ function RelatedMatters ({
                 PRÓXIMA MATÉRIA <FaArrowRight />
             </span>
             {
-                relatedMatter.map( ( item, key ) => {
+                [relatedMatter].map( ( item, key ) => {
                     return (
                         <a className="mttr__rltd__anchr" href="" title="" key={key}>
                             <img className="mttr__rltd__img" alt={item.name} src="https://st.depositphotos.com/1777684/2617/v/600/depositphotos_26172045-stock-illustration-hand-draw-chemistry-background.jpg" />

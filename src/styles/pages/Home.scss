@@ -82,6 +82,9 @@
         &--myPrgrss {
             justify-content: flex-start;
         }
+        &--list {
+            margin: 20px auto;
+        }
     }
     &__itm {
         @include flexcencenwrap;
@@ -276,7 +279,6 @@
         padding: 0 10px 20px;
         &__dscrptn {
             padding: 10px;
-            margin: 0 0 20px;
             &__ttl {
                 &--dscrptn {
                     font-size: 1.2rem;

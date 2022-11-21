@@ -17,6 +17,7 @@ import { FaBookOpen } from 'react-icons/fa';
 function AllCourses () {
 
     let userStorage = JSON.parse(localStorage.getItem("user"));
+    let isADM = JSON.parse(localStorage.getItem("adm"));
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
@@ -47,6 +48,7 @@ function AllCourses () {
             }).catch( err => {
                 setAllCourses({
                     ...courses,
+                    data: dataPlaceholder,
                     error: err
                 });
             });
@@ -68,6 +70,25 @@ function AllCourses () {
             });
         };
     };
+
+    const dataPlaceholder = [
+        {
+            name: "Curso 01",
+            url: "/curso-01"
+        },
+        {
+            name: "Curso 02",
+            url: "/curso-02"
+        },
+        {
+            name: "Curso 03",
+            url: "/curso-03"
+        },
+        {
+            name: "Curso 04",
+            url: "/curso-04"
+        },
+    ];
 
     return (
 
@@ -102,22 +123,22 @@ function AllCourses () {
                             )
                         }
                         {
-                            courses.data !== null && inputSearch === "" && (
-                                courses.data.map((item, key) => {
+                            true && (
+                                dataPlaceholder.map((item, key) => {
                                     return (
-                                        <div className="crs__itm" key={key}>
-                                            <img src="https://imagepng.org/wp-content/uploads/2019/05/dinheiro-icone.png" className="crs__itm__img" alt="" />
+                                        <a className="crs__itm" key={key} href={item.url} title={item.name}>
+                                            <Emoji className="crs__itm__img" symbol={"📘"} label="love" />
                                             <span className="crs__itm__ttl">
                                                 {item.name}
                                             </span>
                                             {
-                                                userStorage.occupation !== "student"
+                                                isADM
                                                 ?
                                                 <MatterEditButtons classParent="crs__itm__edt" classAnchor="crs__itm__edt__anchr" matter={"posts/1"} />
                                                 :
                                                 ""
                                             }
-                                        </div>
+                                        </a>
                                     )
                                 })
                             )

@@ -66,6 +66,7 @@
         }
         &__inpt {
             @include input-font;
+            color: #000 !important;
         }
     }
     &__allCrs {
@@ -83,6 +84,7 @@
         box-shadow: 0 0 10px #ccc;
         &__img {
             width: 90px;
+            font-size: 3rem;
             border-bottom: 3px solid rgb(255 153 0);
             padding: 0 0 20px;
         }
@@ -109,7 +111,8 @@
                 cursor: pointer;
 
                 &:hover {
-                  background-color: $bg-box;
+                  background-color: orange;
+                  color: $white;
                 }
             }
         }

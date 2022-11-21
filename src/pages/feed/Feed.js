@@ -77,7 +77,6 @@ function Feed () {
             <div className="fd__wrppr">
                 <div className="emoji--title">
                     <Emoji className="emoji--navigation" symbol={"📃"} label="love" />
-                    {/* <MainTitle description="Emblemas" descriptionUnder="Aqui estão todos os emblemas" isCarousel={false} /> */}
                     <MainTitle description="meu feed" descriptionUnder="Pubicações recentes" isCarousel={false} />
                 </div>
                 <div className="fd__psts">

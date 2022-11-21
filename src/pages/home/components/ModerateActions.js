@@ -11,73 +11,58 @@ import Emoji from 'a11y-react-emoji';
  * @returns
  */
 
-function NavigationActions () {
+function ModerateActions () {
 
     let userStorage = JSON.parse(localStorage.getItem("user"));
+    let isADM = JSON.parse(localStorage.getItem("adm"));
+
 
     const cardsContentDefault = [
         {
-            name        : "Feed",
-            description : "Acesse o feed",
-            link        : "/feed",
+            name        : "Artigo",
+            description : "Modere os artigos",
+            link        : "/moderar/21",
             imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
             imageAlt    : "Image alternative",
             emoji: "📃"
         },
         {
-            name        : "Tutorial",
-            description : "Acesse o tutorial de navegação",
-            link        : "",
+            name        : "Pergunta",
+            description : "Modere as perguntas",
+            link        : "/feed",
             imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
             imageAlt    : "Image alternative",
-            emoji: "🔍"
+            emoji: "🧾"
         },
         {
-            name        : "Cursos",
-            description : "Acesse as cursos disponíveis",
-            link        : "/cursos",
+            name        : "Curso",
+            description : "Modere os cursos",
+            link        : "/feed",
             imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
             imageAlt    : "Image alternative",
-            emoji: "📚"
+            emoji: "🔖"
         },
         {
-            name        : "Emblemas",
-            description : "Confira os emblemas disponíveis",
-            link        : "/emblemas",
+            name        : "Matéria",
+            description : "Modere as matérias",
+            link        : "/feed",
             imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
             imageAlt    : "Image alternative",
-            emoji: "🏅"
+            emoji: "🏷"
         }
     ];
-    const cardsContentTeacher = [
-        {
-            name        : "Tutorial",
-            description : "Acesse o tutorial de navegação",
-            link        : "",
-            imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
-            imageAlt    : "Image alternative",
-            emoji: "🔍"
-        },
-        {
-            name        : "Materias",
-            description : "Acesse as matérias disponíveis",
-            link        : "/materias",
-            imageSrc    : "https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg",
-            imageAlt    : "Image alternative",
-            emoji: "📕"
-        }
-    ];
+    
 
     return (
 
         <section className="actns">
              <div className="emoji--title emoji--title--noback">
                 <Emoji className="emoji--navigation" symbol={"📃"} label="love" />
-                <MainTitle description="navegue pelo site" descriptionUnder="selecione uma opção" isCarousel={false} icon={<FaOptinMonster />} />
+                <MainTitle description="Moderar" descriptionUnder="selecione uma opção abaixo" isCarousel={false} icon={<FaOptinMonster />} />
             </div>
             <div className="actns__crds actns__crds--list">
                 {
-                    !!userStorage && userStorage.occupation === "student"
+                    isADM
                     ?
                       cardsContentDefault.map( ( item, key ) => {
                           return (
@@ -100,27 +85,11 @@ function NavigationActions () {
                           )
                       })
                     :
-                    cardsContentTeacher.map( ( item, key ) => {
-                        return (
-                            <Card
-                                emoji={item.emoji}
-                                classStyleDivButton={"actns__itm__bttn"}
-                                link={item.link}
-                                classStyleGrand="actns__itm"
-                                classStyleSpan="actns__itm__nm"
-                                classStyleDiv="actns__itm__inf"
-                                classStyleDivSpan="actns__itm__icn"
-                                classStyleDivLabel="actns__itm__dscrptn"
-                                title={item.name}
-                                description={item.description}
-                                key={key}
-                            />
-                        )
-                    })
+                    null
                 }
             </div>
         </section>
     );
 }
 
-export default NavigationActions;
+export default ModerateActions;

@@ -15,7 +15,9 @@ import { FaBookOpen } from 'react-icons/fa';
 
 function AllMatters () {
 
+    let isADM = JSON.parse(localStorage.getItem("adm"));
     const { userDataValues } = useContext( UserData );
+
     const [ typeUser, setTypeUser ] = useState( null );
     const [ matters, setAllMatters ] = useState({
         data: [],
@@ -64,6 +66,25 @@ function AllMatters () {
         };
     };
 
+    const dataPlaceholder = [
+        {
+            name: "Matéria 01",
+            url: "materias/materia-01"
+        },
+        {
+            name: "Matéria 02",
+            url: "materias/materia-02"
+        },
+        {
+            name: "Matéria 03",
+            url: "materias/materia-03"
+        },
+        {
+            name: "Matéria 04",
+            url: "materias/materia-04"
+        },
+    ];
+
     return (
 
         <>
@@ -80,7 +101,7 @@ function AllMatters () {
                             <legend className="prfl__inf__itm">
                                 <FaBookOpen />
                                 Matérias
-                                <input className="mttr__srch__inpt" placeholder="... Busque alguma matéria" onChange={(e) => handleSearch(e.target.value)} />
+                                <input className="mttr__srch__inpt" placeholder="Digite alguma matéria" onChange={(e) => handleSearch(e.target.value)} />
                             </legend>
                         </fieldset>
 
@@ -99,20 +120,20 @@ function AllMatters () {
                             )
                         }
                         {
-                            matters.data !== null && inputSearch === "" && (
-                                matters.data.map((item, key) => {
+                            dataPlaceholder && (
+                                dataPlaceholder.map((item, key) => {
                                     return (
-                                        <div className="mttr__itm" key={key}>
-                                            <img src="https://imagepng.org/wp-content/uploads/2019/05/dinheiro-icone.png" className="mttr__itm__img" alt="" />
+                                        <a className="mttr__itm" key={key} href={item.url} title={item.name}>
+                                            <Emoji className="crs__itm__img" symbol={"📓"} label="love" />
                                             <span className="mttr__itm__ttl">
                                                 {item.name}
                                             </span>
                                             {
-                                                typeUser !== "default" && (
+                                                isADM && (
                                                     <MatterEditButtons classParent="mttr__itm__edt" classAnchor="mttr__itm__edt__anchr" matter={"posts/1"} />
                                                 )
                                             }
-                                        </div>
+                                        </a>
                                     )
                                 })
                             )

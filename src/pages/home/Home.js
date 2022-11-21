@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import UserData from "../../UserData";
 
 import StudentInfo from "../../components/User/StudentInfo";
 import SeparationDots from "./components/default/SeparationDots";
@@ -8,6 +7,8 @@ import NavigationActions from "./components/NavigationActions";
 import NavigationMyProgress from "./components/default/NavigationMyProgress";
 import Topics from "./components/Topics";
 import NavigationTeachers from "./components/default/NavigationTeachers";
+import ModerateActions from "./components/ModerateActions";
+import CreateActions from "./components/CreateActions";
 
 /**
  *
@@ -17,6 +18,7 @@ import NavigationTeachers from "./components/default/NavigationTeachers";
 function Home () {
 
     let userStorage = JSON.parse(localStorage.getItem("user"));
+    let isADM = JSON.parse(localStorage.getItem("adm"));
     let navigate = useNavigate();
 
     useEffect( () => {
@@ -29,7 +31,7 @@ function Home () {
 
         <>
         {
-            !!userStorage && userStorage.occupation === "student"
+            !isADM 
             ?
             <>
                 <StudentInfo />
@@ -42,7 +44,11 @@ function Home () {
                 <Topics />
             </>
             :
-            <NavigationActions />
+            <>
+                <NavigationActions />
+                <ModerateActions />
+                <CreateActions />
+            </>
         }
         </>
     );

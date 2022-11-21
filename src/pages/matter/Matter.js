@@ -73,27 +73,37 @@ function Matter () {
 
     const dataPlaceholder = [
     {
-        name : "Algebra",
-        description : "Desc",
+        name : "Lógica de programação",
+        description : "Álgebra é o ramo da Matemática que generaliza a aritmética. Isso significa que os conceitos e operações provenientes da aritmética (adição, subtração, multiplicação, divisão etc.) serão testados e sua eficácia será comprovada para todos os números pertencentes a determinados conjuntos numéricos.",
         articles : [
             {
                 name : "Introdução",
-                url : "/materias/posts/10",
+                url : "/materias/logica/introducao",
                 title: "Ir para artigo Introducão"
             },
             {
-                name : "Introdução",
-                url : "/materias/posts/10",
+                name : "Fundamentos da lógica",
+                url : "/materias/logica/introducao",
                 title: "Ir para artigo Introducão"
             },
             {
-                name : "Introdução",
-                url : "/materias/posts/10",
+                name : "Lógica no cotidiano",
+                url : "/materias/logica/introducao",
                 title: "Ir para artigo Introducão"
             },
             {
-                name : "Introdução",
-                url : "/materias/posts/10",
+                name : "Lógica na programação",
+                url : "/materias/logica/introducao",
+                title: "Ir para artigo Introducão"
+            },
+            {
+                name : "Lógica matemática",
+                url : "/materias/logica/introducao",
+                title: "Ir para artigo Introducão"
+            },
+            {
+                name : "Lógica avançada",
+                url : "/materias/logica/introducao",
                 title: "Ir para artigo Introducão"
             }
         ]

@@ -27,7 +27,9 @@ function AddAlternatives ({
 
         if ( inputValue ) {
             let listAux = Array.from( alter.data )
-            listAux.push({ id : 2, value : inputValue })
+            listAux.push({ id : 2, value : inputValue });
+            setInputValue( "" );
+
             setAlter({
                 ...alter,
                 data : listAux

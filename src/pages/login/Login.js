@@ -69,6 +69,10 @@ function Login () {
                 });
 
                 localStorage.setItem("user", JSON.stringify(resp.data[1]));
+                
+                if (username === "Adm@docens.com") {
+                    localStorage.setItem("adm", "true");
+                }
                 return navigate("/home");
             }
         } catch ( err ) {

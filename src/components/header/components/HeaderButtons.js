@@ -79,6 +79,8 @@ function HeaderButtons ({
     const logoutUser = function( event ) {
         event.preventDefault();
         localStorage.removeItem( "user" );
+        localStorage.removeItem( "adm" );
+
         return navigate( "/entrar" );
     };
 

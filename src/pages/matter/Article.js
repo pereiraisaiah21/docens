@@ -85,10 +85,10 @@ function Article () {
 
     const dataPlaceholder = [
     {
-        name : "Algebra",
+        name : "Lógica",
         subTitle: "Você sabe oque é lógica? Leia o artigo a seguir e confira mais sobre, e confira também exemplos a seguir",
         quickDescription: "Lorem Ipsum",
-        matter: "Matéria X",
+        matter: "Lógica",
         scope : "<p><b>A palavra lógica é originária do grego logos, que significa linguagem racional. É por meio do raciocínio lógico que o homem constrói algoritmos que podem ser transformados em programas capazes de solucionar problemas cada vez mais complexos.</b></p><p>A lógica de programação é necessária para pessoas que desejam trabalhar com desenvolvimento de sistemas e programas, pois ela permite definir a sequência lógica para o desenvolvimento. </p><p>A sequência lógica são passos executados até atingir um objetivo ou solução de um problema.Um algoritmo é formalmente uma sequência finita de passos que levam a execução de uma tarefa. Podemos pensar em algoritmo como uma receita, uma sequência de instruções que dão cabo de uma meta específica. Estas tarefas não podem ser redundantes nem subjetivas na sua definição, devem ser claras e precisas.</p><p>Como exemplos de algoritmos podemos citar os algoritmos das operações básicas (adição, multiplicação, divisão e subtração) de números reais decimais.</p><p>Outros exemplos seriam os manuais de aparelhos eletrônicos, como um videocassete, que explicam passo-a-passo como, por exemplo, gravar um evento.</p><p>Até mesmo as coisas mais simples, podem ser descritas por sequências lógicas. <p>Por exemplo:</p> <p>• Chupar uma bala </p><p>• Pegar a bala </p><p>• Retirar o papel </p><p>• Chupar a bala </p><p>• Jogar o papel no lixo</p>",
         image: "/",
         altImage: "",
@@ -146,16 +146,16 @@ function Article () {
                                 return (
                                     <React.Fragment key={key}>
                                         <div className="mttr__prmryWrp">
-                                            <p className="mttr__trcryTtl">
-                                                {item.matter}
-                                            </p>
-                                            <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://council.science/wp-content/uploads/2017/04/IUPAC-feature-image-1400x600.jpg" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/" />
                                             <h4 className="mttr__prmryTtl">
                                                 <div className="emoji--title">
                                                     <Emoji className="emoji--navigation" symbol={icon[Math.floor(Math.random() * icon.length)]} label="love" />
                                                     <MainTitle description={item.name}descriptionUnder="" isCarousel={false} />
                                                 </div>
                                             </h4>
+                                            <p className="mttr__trcryTtl">
+                                                {item.matter}
+                                            </p>
+                                            <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://council.science/wp-content/uploads/2017/04/IUPAC-feature-image-1400x600.jpg" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/" />
                                             <p className="mttr__scndtyTtl">
                                                 {item.subTitle}
                                             </p>
@@ -192,7 +192,7 @@ function Article () {
                                                 {
                                                     dataPlaceholder[0].support.map( ( item, key ) => {
                                                         return (
-                                                            <li>
+                                                            <li key={key}>
                                                                 <p>
                                                                     {item.name}
                                                                 </p>
@@ -215,7 +215,7 @@ function Article () {
                             ""
                         }
                         </div>
-                        {/* <RelatedMatters relatedMatter={dataPlaceholder[0].nextMatter}/> */}
+                        <RelatedMatters relatedMatter={dataPlaceholder[0].nextMatter}/>
                         <MatterTags tagMatter={dataPlaceholder[0].tags} />
                         <ButtonWorkout classStyle={"mttr__workout"} url={"/quiz/posts/1"} />
                     </div>
