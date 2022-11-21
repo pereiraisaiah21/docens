@@ -75,18 +75,29 @@
 
     // Xs
     @media (max-width: 575px) {
+        &__psts {
+            padding: 50px 0 10px;
+        }
         &__crd {
             flex-wrap: wrap;
             flex-direction: column-reverse;
             margin: 0 0 20px;
+            padding: 0;
+            &__img {
+                width: $wmax;
+            }
             &__inf {
-                padding: 0 10px;
+                padding: 0;
+                width: $wmax;
                 h6 {   
                     border-radius: 10px;
                     padding: 10px;
                     background-color: $white;
                     color: $black;
                 }
+            }
+            &__vw {
+                bottom: -12px;
             }
         }
     }

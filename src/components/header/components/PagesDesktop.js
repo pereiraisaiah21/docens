@@ -9,7 +9,7 @@ function PagesDesktop () {
 
     const pagesDesktop = [{
 		name : "Bem-vindo !",
-		url : "/",
+		url : "/home",
 		title : "Bem-vindo!"
 	}];
 

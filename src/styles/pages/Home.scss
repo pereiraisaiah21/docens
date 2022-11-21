@@ -236,7 +236,6 @@
         display: flex;
         flex-wrap: wrap;
         margin: auto;
-        
         &--bg-01 {
             max-width: 1000px;
         }
@@ -263,6 +262,7 @@
         background-color: #9100ff;
         margin: 20px 0 0;
         max-width: unset;
+        padding: 30px 10px 20px !important;
         .actns__dscrptn__ttl {
             color: #FFF !important;
         }
