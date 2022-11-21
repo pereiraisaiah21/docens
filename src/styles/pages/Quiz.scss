@@ -1,7 +1,18 @@
 .qz {
     position: relative;
     min-height: 80vh;
-    padding: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    &__backdrop {
+        width: 50%;
+        background-color: #ece6ff;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        z-index: -1;
+    }
     .qzPls {
         position: absolute;
         right: -40px;
@@ -19,9 +30,8 @@
     }
     .Progress {
         height: 15px;
-        width: 85%;
+        width: 90%;
         border: 2px solid #9100ff;
-        // background-color: #d6d5d6;
         border-radius: 20px;
         position: relative;
         max-width: 1200px;
@@ -54,11 +64,12 @@
     }
     .Question {
         position: relative;
+        max-width: 1000px;
         width: $wmax;
-        max-width: 800px;
         border-radius: 20px;
         box-shadow: 0 0 10px #ccc;
-        margin: 0 auto;
+        background-color: $white;
+        margin: 200px auto 50px;
         padding: 20px 30px;
         &__congrats {
             background-image: url("../../components/images/gliter.gif");
@@ -85,6 +96,7 @@
         }
         &__exit {
             width: 8%;
+            text-align: left;
             color: #716b72;
             svg {
                 margin-bottom: -4px;
@@ -138,7 +150,6 @@
                 font-size: 1.1rem;
                 font-weight: 600;
                 display: inline-flex;
-                // background-color: rgb(240, 240, 240);
                 padding: 4px 10px;
                 color: #716b72;
                 border-radius: $brdef;
@@ -157,7 +168,7 @@
                     }
                 }
                 &.selected {
-                    background-color: $bg-white80;
+                    background-color: #ece6ff;
                 }
                 [type="radio"] {
                     margin: 0 10px 0 0;
@@ -172,7 +183,7 @@
             width: $wmax;
             display: flex;
             justify-content: space-around;
-            padding: 20px 0;
+            padding: 0 0 20px;
             &__button {
                 display: inline-flex;
                 justify-content: center;
@@ -208,7 +219,6 @@
                 text-transform: uppercase;
                 font-weight: 700;
                 cursor: pointer;
-
                 svg {
                     margin: 0 10px 0 0;
                 }
@@ -226,7 +236,9 @@
 
     // Xs
     @media (max-width: 575px) {
+        padding: 0 10px;
         .Question {
+            margin: 150px auto 50px;
             &__info {
                 flex-wrap: wrap;
                 align-items: center;
@@ -268,7 +280,7 @@
     @media (min-width: 576px) {}
     // Md
     @media (min-width: 768px) {
-        padding: 40px 10px;
+        // padding: 40px 10px;
     }
     // Lg
     @media (min-width: 991px) {}

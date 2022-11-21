@@ -4,9 +4,11 @@ import Modal from 'react-modal';
 
 import QuestionAlternative from "./components/QuestionAlternative";
 import Progress from "./components/Progress";
+import MainTitle from "../../components/title/MainTitle";
 import QuizFinishedMessage from "./components/QuizFinishedMessage";
 import { TailSpin } from "react-loader-spinner";
 import { FaFire } from 'react-icons/fa';
+import Emoji from 'a11y-react-emoji';
 
 /**
  *
@@ -137,59 +139,65 @@ function Quiz () {
                 <TailSpin color="rgba(255, 255, 255)" />
             </div>
             :
-            <div className="qz">
-                <section className={`Question${disableOptions && isChoiceCorrect ? " " : ""}`}>
-                    <Progress progress={`${questionIndex}0`} progressColor={progressColor} showImage={disableOptions} />
-                    <QuestionAlternative
-                        number={questionIndex}
-                        title={question.data.title}
-                        content={question.data.content}
-                        alternatives={question.data.alternatives}
-                        setOption={setAnswer}
-                        optionsDisable={disableOptions}
-                    />
-                    {
-                        questionIndex > 9
-                        ?
-                        ""
-                        :
-                        <>
-                            <section className="Question__send">
-                                <a href="/" className={`Question__send__button`} title="itemTitle" onClick={updateAnswers}>
-                                    Próxima
-                                </a>
-                                <a href="/" className="Question__send__tip" title="itemTitle" onClick={openModal}>
-                                    <FaFire /> Dica
-                                </a>
-                            </section>
-                            {
-                                isAnswerEmpty === true
-                                ?
-                                <span className="Question__warn">
-                                    Selecione alguma alternativa antes de avançar esta pergunta
-                                </span>
-                                :
-                                ""
-                            }
-                        </>
-                    }
-                    {
-                        questionIndex > 9 && (
-                            <QuizFinishedMessage />
-                        )
-                    }
-                </section>
-
-                <Modal
-                    isOpen={modalIsOpen}
-                    onRequestClose={closeModal}
-                    contentLabel={"Example Modal"}
-                >
-                    <div className="Question__tip">
-                        <p>Esta aqui é a dica</p>
-                    </div>
-                </Modal>
-            </div>
+            <>
+                <div className="emoji--title emoji--title--quiz">
+                    <Emoji className="emoji--navigation" symbol={"❓"} label="love" />
+                    <MainTitle description="quiz" descriptionUnder="responda as perguntas" isCarousel={false} />
+                </div>
+                <div className="qz">
+                    <section className={`Question${disableOptions && isChoiceCorrect ? " " : ""}`}>
+                        <Progress progress={`${questionIndex}0`} progressColor={progressColor} showImage={disableOptions} />
+                        <QuestionAlternative
+                            number={questionIndex}
+                            title={question.data.title}
+                            content={question.data.content}
+                            alternatives={question.data.alternatives}
+                            setOption={setAnswer}
+                            optionsDisable={disableOptions}
+                        />
+                        {
+                            questionIndex > 9
+                            ?
+                            ""
+                            :
+                            <>
+                                <section className="Question__send">
+                                    <a href="/" className={`Question__send__button`} title="Enviar resposta" onClick={updateAnswers}>
+                                        Próxima
+                                    </a>
+                                    <a href="/" className="Question__send__tip" title="Pedir ajuda" onClick={openModal}>
+                                        <FaFire /> Dica
+                                    </a>
+                                </section>
+                                {
+                                    isAnswerEmpty === true
+                                    ?
+                                    <span className="Question__warn">
+                                        Selecione alguma alternativa antes de avançar esta pergunta
+                                    </span>
+                                    :
+                                    ""
+                                }
+                            </>
+                        }
+                        {
+                            questionIndex > 9 && (
+                                <QuizFinishedMessage />
+                            )
+                        }
+                    </section>
+                    <div className="qz__backdrop"/>
+                    <Modal
+                        isOpen={modalIsOpen}
+                        onRequestClose={closeModal}
+                        contentLabel={"Example Modal"}
+                    >
+                        <div className="Question__tip">
+                            <p>Esta aqui é a dica</p>
+                        </div>
+                    </Modal>
+                </div>
+            </>
         }
         </>
     );

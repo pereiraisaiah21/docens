@@ -1,11 +1,13 @@
 import React, { useContext, useState, useEffect } from "react";
 
 import UserData from "../../UserData";
+import { useNavigate } from "react-router-dom";
 
 import ProfileCard from "./components/ProfileCard";
 import NavigationMyStats from "./components/NavigationMyStats";
 import NavigationMyProgress from "../home/components/default/NavigationMyProgress";
 import FormUpdataUserData from "./components/FormUpdateUserData";
+import { Navigate } from "react-router-dom";
 
 /**
  *
@@ -16,7 +18,8 @@ function Profile () {
 
     const [ updateUserData, setUpdateUserData ] = useState( false );
     const userStorage = JSON.parse(localStorage.getItem( "user" ));
-    
+    let navigate = useNavigate();
+
     const navTabsHandler = function( event ) {
         event.preventDefault();
 
@@ -30,6 +33,12 @@ function Profile () {
         event.target.classList.add( "prfl__nav__button--active" );
         sectionActive.classList.add( "prfl__nav__section--active" );
     };
+
+    useEffect( () => {
+        if ( !localStorage.getItem("user") ) {
+            navigate( "/home" );
+        }
+    }, []);
 
     return (
 
@@ -53,7 +62,7 @@ function Profile () {
                 </div>
                 {
                     // typeUser === "default" && (
-                    true && (
+                        userStorage.occupation === "student" && (
                         <div className="prfl__updts">
                             <nav className="prfl__nav">
                                 <ul className="prfl__nav__list">

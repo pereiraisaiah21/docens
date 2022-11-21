@@ -76,10 +76,9 @@ function HeaderButtons ({
     };
     const logoutUser = function( event ) {
         event.preventDefault();
+        localStorage.removeItem( "user" );
     };
-    {
-        console.log(userDataValues)
-    }
+
     return (
 
         <div className="hdr__optns">
@@ -87,20 +86,32 @@ function HeaderButtons ({
                 {
                     !!userStorage.occupation
                     ?
-                    actionOptionsLogged.map( ( item, key ) => {
-                        return (
-                            <li className={item.classParent} key={key}> 
-                                <a href={item.link} title="" className={item.classBoxSon}>
-                                    <span className={item.classIconBox}>
-                                        {item.icon}
-                                    </span>
-                                    <span className={item.classNameBox}>
-                                        {item.name}
-                                    </span>
-                                </a>
-                            </li>
-                        )
-                    })
+                    <>
+                        {
+                            actionOptionsLogged.map( ( item, key ) => {
+                                return (
+                                    <li className={item.classParent} key={key}> 
+                                        <a href={item.link} title="" className={item.classBoxSon}>
+                                            <span className={item.classIconBox}>
+                                                {item.icon}
+                                            </span>
+                                            <span className={item.classNameBox}>
+                                                {item.name}
+                                            </span>
+                                        </a>
+                                    </li>
+                                )
+                            })
+
+                        }
+                        <li className="hdr__lst hdr__lst--brdr"> 
+                            <a href="/logout/" title="" className="hdr__itm" onClick={logoutUser}>
+                                <span className="hdr__itm__nm">
+                                    <FaDoorOpen />
+                                </span>
+                            </a>
+                        </li>
+                    </>
                     :
                     actionOptionsUnlogged.map( ( item, key ) => {
                         return (
@@ -117,14 +128,6 @@ function HeaderButtons ({
                         )
                     })
                 }
-
-                <li className="hdr__lst hdr__lst--brdr"> 
-                    <a href="/perfil/" title="" className="hdr__itm" onClick={logoutUser}>
-                        <span className="hdr__itm__nm">
-                            <FaDoorOpen />
-                        </span>
-                    </a>
-                </li>
             </ul>
             <div className="hdr__bttns--mbl" onClick={openMenuMobile}>
 				<FaBars />
