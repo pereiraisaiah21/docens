@@ -1,7 +1,7 @@
 .mttr {
     padding: 40px 10px;
     &__wrppr {
-        max-width: 1200px;
+        max-width: 1000px;
         position: relative;
         margin: auto;
         padding: 10px;
@@ -67,9 +67,8 @@
         width: 100%;
     }
     &__tgs {
-        max-width: 800px;
+        max-width: 1000px;
         padding: 30px 0;
-        margin: auto;
         display: flex;
         text-align: left;
         flex-wrap: wrap;
@@ -124,7 +123,7 @@
             line-height: 25px;
             text-align: left;
             color: #716b72;
-            max-width: 800px;
+            max-width: 1000px;
             margin: auto;
             .img {
                 max-width: $wmax;
@@ -143,7 +142,7 @@
             }
         }
         &.txt-cntr {
-            max-width: 800px;
+            max-width: 1000px;
             margin: auto;
         }
     }
@@ -151,14 +150,14 @@
         color: #716b72;
         font-size: 1.3em;
         text-transform: uppercase;
-        max-width: 800px;
+        max-width: 1000px;
         margin: 80px auto 30px;
     }
     &__scndtyTtl {
         color: #716b72;
         margin: 30px 0;
         font-size: 1.1rem;
-        max-width: 800px;
+        max-width: 1000px;
         margin: auto;
     }
     &__trcryTtl {
@@ -329,7 +328,7 @@
     // Lg
     @media (min-width: 991px) {
         &__rltd {
-            max-width: 800px;
+            max-width: 1000px;
             margin: auto;
         }
     }

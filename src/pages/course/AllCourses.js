@@ -50,6 +50,8 @@ function AllCourses () {
                     error: err
                 });
             });
+
+            console.log( AllCourses.data )
     }, []);
 
     const handleSearch = function( digit ) {

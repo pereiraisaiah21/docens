@@ -22,8 +22,8 @@ function MatterTags ({
             {
                 tagMatter.map( ( item, key ) => {
                     return (
-                        <a className="mttr__tgs__anchr" href={item.email} title={item.name} key={key}>
-                            {item.name}
+                        <a className="mttr__tgs__anchr" href={item} title={item} key={key}>
+                            {item}
                         </a>
                     )
                 })

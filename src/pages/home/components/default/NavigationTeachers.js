@@ -67,7 +67,6 @@ function NavigationTeachers () {
                                         <div className="actns__tchrs__itm">
                                             <a className="actns__tchrs__anchr" alt="´Ícone professor" href="/professor">
                                                 <Emoji className="actns__tchrs__img" symbol={"👩‍🏫"} label="love" />
-
                                                 {/* <img className="actns__tchrs__img" alt="" src="https://static.vecteezy.com/ti/vetor-gratis/p3/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg" /> */}
                                                 <span className="actns__tchrs__nm">
                                                     {item.name}

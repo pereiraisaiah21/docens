@@ -30,10 +30,10 @@ function Article () {
         data: [],
         error: ""
     });
-    const [ articleTag, setArticleTag ] = useState({
-        data: [],
-        error: ""
-    });
+    // const [ articleTag, setArticleTag ] = useState({
+    //     data: [],
+    //     error: ""
+    // });
     const [ failToLoad, setFailToLoad ] = useState( false );
 
     useEffect( () => {
@@ -48,14 +48,16 @@ function Article () {
                 });
                 setTimeout( () =>
                     setLoader( false ),
-                    3000
+                3000
                 );
             }).catch( err => {
+                setLoader( false );
                 setArticleContent({
                     ...articleContent,
+                    data: dataPlaceholder,
                     error: err
                 });
-                setFailToLoad( true );
+                // setFailToLoad( true );
             });
 
         api
@@ -73,22 +75,42 @@ function Article () {
                     error: err
                 });
             });
-
-        api
-            .get( "/users" )
-            .then( response => {
-
-                setArticleTag({
-                    ...articleTag,
-                    data: response.data
-                });
-            }).catch( err => {
-                setArticleTag({
-                    ...articleTag,
-                    error: err
-                });
-            });
     }, []);
+
+    const dataPlaceholder = [
+    {
+        name : "Algebra",
+        subTitle: "Alg 2",
+        quickDescription: "Lorem Ipsum",
+        matter: "Matéria X",
+        scope : "Desc",
+        image: "/",
+        altImage: "",
+        info: 
+        {
+            date: "23/11/2022",
+            author: "Docens Educacional",
+            last: "2 dias"
+        },
+        support: [
+            {
+                name: "A mecânica clássica",
+                author: "Isaac Newton"
+            }
+        ],
+        observer: ["Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas"],
+        tags: [
+            "A", "B", "C", "D"
+        ],
+        nextMatter:
+        {
+            name : "Materia 03",
+            url : "",
+            image: "/",
+            imageAlt: ""
+        }
+    }
+    ];
 
     return (
 
@@ -115,22 +137,22 @@ function Article () {
                                     <React.Fragment key={key}>
                                         <div className="mttr__prmryWrp">
                                             <p className="mttr__trcryTtl">
-                                                Algebra Quântica
+                                                {item.matter}
                                             </p>
                                             <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://council.science/wp-content/uploads/2017/04/IUPAC-feature-image-1400x600.jpg" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/" />
                                             <h4 className="mttr__prmryTtl">
-                                                {item.title}
+                                                {item.name}
                                             </h4>
                                             <p className="mttr__scndtyTtl">
-                                                {item.title}
+                                                {item.subTitle}
                                             </p>
                                             <div className="mttr__dtls">
-                                                <p className="mttr__dtls__wrtr">Por Editorial Cursos Educacionais 19/07/2022 - Atualizado a 2 dias</p>
+                                                <p className="mttr__dtls__wrtr">Por {item.info.author} {item.info.date} - Atualizado a {item.info.last} dias</p>
                                                 {/* <p className="mttr__dtls__dt">19/07/2022 <span className="mttr__dtls__lstpdt">- Atualizado a 2 dias</span></p> */}
                                             </div>
                                         </div>
                                         <div className="mttr__prmryWrp mttr__prmryWrp--cntnt">
-                                            {item.body}
+                                            {item.scope}
                                             <div dangerouslySetInnerHTML={{__html:textTestP}} />
                                         </div>
                                         {
@@ -155,17 +177,23 @@ function Article () {
                                                 Precisa de ajuda? <br /><br /> Confira a seguir alguns conteúdos de apoio para te ajudar.
                                             </p>
                                             <ol className="mttr__spprt__lst">
-                                                <li>
-                                                    <p>
-                                                        A física clássica de cabeça para baixo: como Einstein descobriu a teoria da relatividade especial
-                                                    </p>
-                                                    <p>
-                                                        Autor:
-                                                        <span>
-                                                            Michael Douglas
-                                                        </span>
-                                                    </p>
-                                                </li>
+                                                {
+                                                    dataPlaceholder[0].support.map( ( item, key ) => {
+                                                        return (
+                                                            <li>
+                                                                <p>
+                                                                    {item.name}
+                                                                </p>
+                                                                <p>
+                                                                    Autor: 
+                                                                    <span>
+                                                                        {item.author}
+                                                                    </span>
+                                                                </p>
+                                                            </li>
+                                                        )
+                                                    })
+                                                }
                                             </ol>
                                         </div>
                                     </React.Fragment>
@@ -179,7 +207,7 @@ function Article () {
                           console.log('p',articleRelated.data)
                         }
                         <RelatedMatters relatedMatter={articleRelated.data}/>
-                        <MatterTags tagMatter={articleTag.data} />
+                        <MatterTags tagMatter={dataPlaceholder[0].tags} />
                         <ButtonWorkout classStyle={"mttr__workout"} url={"/quiz/posts/1"} />
                     </div>
                 </section>

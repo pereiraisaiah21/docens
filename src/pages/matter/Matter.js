@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import MainTitle from "../../components/title/MainTitle";
 import Emoji from 'a11y-react-emoji';
 
 /**
@@ -70,6 +71,35 @@ function Matter () {
         error: ""
     });
 
+    const dataPlaceholder = [
+    {
+        name : "Algebra",
+        description : "Desc",
+        articles : [
+            {
+                name : "Introdução",
+                url : "/materias/posts/10",
+                title: "Ir para artigo Introducão"
+            },
+            {
+                name : "Introdução",
+                url : "/materias/posts/10",
+                title: "Ir para artigo Introducão"
+            },
+            {
+                name : "Introdução",
+                url : "/materias/posts/10",
+                title: "Ir para artigo Introducão"
+            },
+            {
+                name : "Introdução",
+                url : "/materias/posts/10",
+                title: "Ir para artigo Introducão"
+            }
+        ]
+    }
+    ];
+
     return (
 
         <section className="crs">
@@ -77,28 +107,29 @@ function Matter () {
                 <div className="crs__cntnt">
                     <h1 className="crs__ttl">
                         <Emoji className="emoji--navigation" symbol={icon[Math.floor(Math.random() * icon.length)]} label="love" />
-                        Algebra binária
+                        <MainTitle description={dataPlaceholder[0].name} descriptionUnder="" isCarousel={false} />
                     </h1>
                     <p className="crs__dscrptn">
-                        Esta matéria diz sobre um sistema de equações é constituído por um conjunto de equações que apresentam mais de uma incógnita. Para resolver um sistema é necessário encontrar os valores que satisfaçam simultaneamente todas as equações.
+                        {dataPlaceholder[0].description}
                     </p>
                     <nav className="crs__br crs__br--mttr">
                         <ul className="crs__br__optns">
                             <li className="crs__br__itm">
-                                <a className="crs__br__anchr crs__br__anchr--ttl" href="" title="">
+                                <a className="crs__br__anchr crs__br__anchr--ttl" href="#" title="Todos os artigos.">
                                     Todos os artigos
                                 </a>
                             </li>
-                            <li className="crs__br__itm">
-                                <a className="crs__br__anchr" href="" title="">
-                                    Introdução
-                                </a>
-                            </li>
-                            <li className="crs__br__itm">
-                                <a className="crs__br__anchr" href="" title="">
-                                    Equação do primeiro grau
-                                </a>
-                            </li>
+                            {
+                                dataPlaceholder[0].articles.map( ( item, key ) => {
+                                    return (
+                                        <li className="crs__br__itm" key={key}>
+                                            <a className="crs__br__anchr" href={item.url} title={item.title}>
+                                                {item.name}
+                                            </a>
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </nav>
                 </div>

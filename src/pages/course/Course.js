@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import CardCourse from "../../components/card/CardCourse";
 import Emoji from 'a11y-react-emoji';
+import MainTitle from "../../components/title/MainTitle";
 
 /**
  *
@@ -71,17 +72,67 @@ function Course () {
         error: ""
     });
 
+    const dataPlaceholder = [
+        {
+            name : "Algebra",
+            description : "Algebra",
+            allMatters : [
+                {
+                    name: "Matéria 01",
+                    url: "/materia-01",
+                },
+                {
+                    name: "Matéria 02",
+                    url: "/materia-02",
+                },
+                {
+                    name: "Matéria 03",
+                    url: "/materia-03",
+                }
+            ],
+            lastArticles : [
+                {
+                    imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                    imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                    subject     : "Direitos humanos",
+                    title       : "Fundamentos de Realidade aumentada",
+                    summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
+                    link        : "/hfs",
+                    views       : 200
+                },
+                {
+                    imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                    imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                    subject     : "Direitos humanos",
+                    title       : "Fundamentos de Realidade aumentada",
+                    summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
+                    link        : "/hfs",
+                    views       : 200
+                },
+                {
+                    imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                    imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                    subject     : "Direitos humanos",
+                    title       : "Fundamentos de Realidade aumentada",
+                    summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
+                    link        : "/hfs",
+                    views       : 200
+                }
+            ]
+        }
+    ];
+
     return (
 
         <section className="crs">
             <div className="crs__wrppr">
-                <div className="crs__cntnt">
+                <div className="crs__cntnt">                                 
                     <h1 className="crs__ttl">
                         <Emoji className="emoji--navigation" symbol={icon[Math.floor(Math.random() * icon.length)]} label="love" />
-                        Algebra binária
+                        <MainTitle description={dataPlaceholder[0].name} descriptionUnder="" isCarousel={false} />
                     </h1>
                     <p className="crs__dscrptn">
-                        Um sistema de equações é constituído por um conjunto de equações que apresentam mais de uma incógnita. Para resolver um sistema é necessário encontrar os valores que satisfaçam simultaneamente todas as equações.
+                        {dataPlaceholder[0].description}
                     </p>
                     <nav className="crs__br">
                         <ul className="crs__br__optns">
@@ -90,31 +141,17 @@ function Course () {
                                     Todas as matérias
                                 </a>
                             </li>
-                            <li className="crs__br__itm">
-                                <a className="crs__br__anchr" href="" title="">
-                                    Equação do primeiro grau
-                                </a>
-                            </li>
-                            <li className="crs__br__itm">
-                                <a className="crs__br__anchr" href="" title="">
-                                    Equação do segundo grau
-                                </a>
-                            </li>
-                            <li className="crs__br__itm">
-                                <a className="crs__br__anchr" href="" title="">
-                                    Expressões algébricas
-                                </a>
-                            </li>
-                            <li className="crs__br__itm">
-                                <a className="crs__br__anchr" href="" title="">
-                                    Sistemas de equações
-                                </a>
-                            </li>
-                            <li className="crs__br__itm">
-                                <a className="crs__br__anchr" href="" title="">
-                                    Polinômios
-                                </a>
-                            </li>
+                            {
+                                dataPlaceholder[0].allMatters.map( ( item, key ) => {
+                                    return (
+                                        <li className="crs__br__itm" key={key}>
+                                            <a className="crs__br__anchr" href={item.url} title="">
+                                                {item.name}
+                                            </a>
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </nav>
                     <div className="crs__artcls">
@@ -122,22 +159,20 @@ function Course () {
                             Últimos artigos
                         </h2>
                         {
-                            posts.data !== null && (
-                                posts.data.map( ( item, key ) => {
-                                    return (
-                                        <CardCourse
-                                            classStyleGrand="crs__crd"
-                                            classStyleInfoBox="crs__crd__inf"
-                                            link={item.link}
-                                            title={item.title}
-                                            summary={item.summary}
-                                            key={key}
-                                        />
-                                    )
-                                })
-                            )
+                            dataPlaceholder[0].lastArticles.map( ( item, key ) => {
+                                return (
+                                    <CardCourse
+                                        classStyleGrand="crs__crd"
+                                        classStyleInfoBox="crs__crd__inf"
+                                        link={item.link}
+                                        title={item.title}
+                                        summary={item.summary}
+                                        key={key}
+                                    />
+                                )
+                            })
                         }
-                    </div>
+                    </div>        
                 </div>
             </div>
         </section>
