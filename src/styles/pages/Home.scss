@@ -425,3 +425,20 @@
         }
     }
 }
+
+// DarkMode
+body.dark-mode {
+    .actns {
+        &__dscrptn {
+            &__ttl, p {
+                color: $white;
+            }
+        }
+        &__itm {
+            box-shadow: 0 0 0 1px $gray;
+            &__nm, &__inf, &__dscrptn {
+                color: $white;
+            }
+        }
+    }
+}

@@ -31,3 +31,12 @@
         font-size: 3rem;
     }
 }
+
+// DarkMode
+body.dark-mode {
+    .emoji {
+        &--title {
+            background-color: unset;
+        }
+    }
+}

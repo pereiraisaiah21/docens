@@ -2,7 +2,7 @@
     padding: 40px 10px;
     &__wrp {
         @include flexunscen;
-        max-width: 800px;
+        max-width: 1000px;
         margin: auto;
     }
     &__tbl {
@@ -27,5 +27,17 @@
     }
     svg {
         margin: 0 0 -4px 0;
+    }
+}
+
+// DarkMode
+body.dark-mode {
+    .emblm {
+        tr:nth-child(even) {
+            background-color: $black;
+        }
+        tr:nth-child(odd) {
+            background-color: rgb(255 153 0 / 14%);
+        }
     }
 }

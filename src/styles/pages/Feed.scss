@@ -119,3 +119,17 @@
     // Xxl
     @media (min-width: 1400px) {}
 }
+
+
+// DarkMode
+body.dark-mode {
+    .fd {
+        &__crd {
+            &__inf {
+                h6, p {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
