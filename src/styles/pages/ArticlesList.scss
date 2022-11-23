@@ -9,7 +9,7 @@
         height: 150px;
         width: 180px;
         border-radius: $brdef;
-        box-shadow: 0 0 10px #ccc;
+        box-shadow: 0 0 10px $gray;
         margin: 10px;
         @include flexunscen;
         align-items: center;
@@ -19,7 +19,7 @@
         
         &::after {
             content: "";
-            background-color: orange;
+            background-color: $orange;
             width: 60%;
             position: absolute;
             left: 50%;
@@ -28,7 +28,7 @@
             height: 2px;
         }
         &:hover {
-            box-shadow: 0 0 20px #ccc;
+            box-shadow: 0 0 20px $gray;
         }
     }
     &__author {

@@ -44,7 +44,7 @@
             justify-content: flex-start;
             max-width: 400px;
             background-color: $white;
-            box-shadow: 0 0 10px #ccc;
+            box-shadow: 0 0 10px $gray;
         }
         svg {
             margin: 7px 10px 0 0;
@@ -84,7 +84,7 @@
         }
         &:active,
         &:hover {
-            border-color: rgb(255 153 0);
+            border-color: $orange;
         }
     }
     &__rcvr {
@@ -99,7 +99,7 @@
         width: $wmax;
         text-align: center;
         border: none;
-        background-color: rgb(255 153 0);
+        background-color: $orange;
         padding: 10px 0;
         color: $white;
         border-radius: $brdef;
@@ -118,10 +118,10 @@
         width: $wmax;
         text-align: center;
         border: none;
-        border: 1px solid rgb(255 153 0);
+        border: 1px solid $orange;
         background-color: $white;
         padding: 10px 0;
-        color: rgb(255 153 0);
+        color: $orange;
         margin: 10px 0;
         border-radius: $brdef;
         cursor: pointer;

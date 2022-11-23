@@ -38,6 +38,7 @@ import CreateUpdateTeacher from "./pages/content/components/CreateUpdateTeacher"
 import Registration from "./pages/registration/Registration";
 import ArticlesList from "./pages/moderation/ArticlesList";
 import ArticleModerate from "./pages/moderation/ArticleModerate";
+import DarkModeToggle from "./components/button/DarkModeToggle";
 
 /**
  * 
@@ -48,6 +49,7 @@ function SiteRoutes () {
     return (
         <Router>
             <BannerAndHeader />
+            <DarkModeToggle />
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/home" element={<Home />} />

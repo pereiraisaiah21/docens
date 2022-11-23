@@ -21,7 +21,7 @@
         display: flex;
         justify-content: flex-start;
         text-align: center;
-        border: 2px solid rgb(255 153 0);
+        border: 2px solid $orange;
         width: 100%;
         padding: 20px;
         border-radius: $brdef;
@@ -57,7 +57,7 @@
             color: $white;
             display: block;
             margin: 5px 0;
-            background-color: rgb(255 153 0);
+            background-color: $orange;
             svg {
                 margin: 0 10px -2px 0;
             }
@@ -83,8 +83,8 @@
         &__anchr {
             margin: 0 10px 10px 0;
             padding: 5px 10px;
-            color: rgb(255 153 0);
-            border: 1px solid rgb(255 153 0);
+            color: $orange;
+            border: 1px solid $orange;
             border-radius: $brdef ;
         }
     }
@@ -170,11 +170,11 @@
         margin: auto;
     }
     &__trcryTtl {
-        border: 1px solid rgb(255 153 0);
+        border: 1px solid $orange;
         padding: 10px;
         border-radius: $brdef;
         white-space: nowrap;
-        color: rgb(255 153 0);
+        color: $orange;
         margin: 0 0 10px;
         text-align: center;
     }
@@ -206,7 +206,7 @@
         font-size: 1em;
         text-align: left;
         padding-top: 20px;
-        border-top: 3px solid orange;
+        border-top: 3px solid $orange;
         color: #716b72;
         &__lst {
             list-style-type: armenian;
@@ -239,10 +239,10 @@
         padding: 10px;
         border-radius: $brdef;
         cursor: pointer;
-        box-shadow: 0 0 10px #ccc;
+        box-shadow: 0 0 10px $gray;
         &__img {
             width: 90px;
-            border-bottom: 3px solid rgb(255 153 0);
+            border-bottom: 3px solid $orange;
             padding: 0 0 20px;
         }
         &__ttl {
@@ -268,14 +268,14 @@
                 cursor: pointer;
 
                 &:hover {
-                    background-color: orange;
+                    background-color: $orange;
                     color: $white;
                 }
             }
         }
 
         &:hover {
-            box-shadow: 0 0 20px #ccc;
+            box-shadow: 0 0 20px $gray;
             width: calc(100% - 50px);
             margin: 0 auto 10px;
         }
@@ -287,7 +287,7 @@
         width: 70px;
         height: 70px;
         padding: 10px;
-        box-shadow: inset 0px 0px 3px #ccc;
+        box-shadow: inset 0px 0px 3px $gray;
         background-color: rgba(255, 255, 255, 0.76);
         @include flexcencen;
         border-radius: $brdef ;
@@ -295,7 +295,7 @@
         svg {
             font-size: 3.5em;
             padding: 10px;
-            box-shadow: inset 0px 0px 3px #ccc;
+            box-shadow: inset 0px 0px 3px $gray;
             border-radius: $brdef ;
         }
     }

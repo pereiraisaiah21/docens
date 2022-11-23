@@ -23,7 +23,7 @@
         background-color: rgb(186, 186, 171);
     }
     tr:nth-child(odd) {
-        background-color: rgb(255 153 0);
+        background-color: $orange;
     }
     svg {
         margin: 0 0 -4px 0;

@@ -31,7 +31,7 @@
     .Progress {
         height: 15px;
         width: 90%;
-        border: 2px solid #9100ff;
+        border: 2px solid $purple;
         border-radius: 20px;
         position: relative;
         max-width: 1200px;
@@ -42,7 +42,7 @@
             padding: 3px;
             height: 100%;
             font-size: .0em;
-            background-color: #9100ff;
+            background-color: $purple;
             border-radius: $brdef;
             text-align: center;
             transition: width 2s;
@@ -57,7 +57,7 @@
                 right: 0;
                 width: 20px;
                 height: 20px;
-                background-color: orange;
+                background-color: $orange;
                 border-radius: 50%;
             }
         }
@@ -67,7 +67,7 @@
         max-width: 1000px;
         width: $wmax;
         border-radius: 20px;
-        box-shadow: 0 0 10px #ccc;
+        box-shadow: 0 0 10px $gray;
         background-color: $white;
         margin: 200px auto 50px;
         padding: 20px 30px;
@@ -86,7 +86,7 @@
             }
             &__anchor {
                 padding: 5px;
-                background-color: orange;
+                background-color: $orange;
                 border-radius: $brdef;
                 white-space: nowrap;
                 color: $white;
@@ -154,7 +154,7 @@
                 border-radius: $brdef;
                 cursor: pointer;
                 width: 100%;
-                box-shadow: 0 0 10px #ccc;
+                box-shadow: 0 0 10px $gray;
                 label {
                     display: flex;
                     align-items: center;
@@ -174,7 +174,7 @@
                     display: none;
                 }
                 &:hover {
-                    box-shadow: 0 0 20px #ccc;
+                    box-shadow: 0 0 20px $gray;
                 }
             }
         }
@@ -190,7 +190,7 @@
                 width: 85%;
                 color: $fc-white;
                 border: 1px solid rgba(220, 147, 13, 0.64);
-                background-color: orange;
+                background-color: $orange;
                 text-decoration: none;
                 margin: 0 10px 0 0;
                 font-size: 1.1rem;

@@ -3,7 +3,7 @@
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 0 10px #ccc;
+    box-shadow: 0 0 10px $gray;
     height: 50px;
     width: auto;
     background-color: $white;
@@ -39,10 +39,10 @@
     &__menu,
     &__item {
         border-radius: 30px;
-        box-shadow: 0 0 10px #ccc;
+        box-shadow: 0 0 10px $gray;
         padding: 5px 10px;
         margin: 0 10px;
-        background-color: orange;
+        background-color: $orange;
         color: $white;
         cursor: pointer;
         svg {

@@ -49,7 +49,7 @@
     &__true {
         border: none;
         border-radius: $brdef;
-        background-color: orange;
+        background-color: $orange;
         height: 40px;
         display: flex;
         align-items: center;
@@ -65,7 +65,7 @@
     &__false {
         border: none;
         border-radius: $brdef;
-        background-color: #9100ff;
+        background-color: $purple;
         height: 40px;
         display: flex;
         align-items: center;
@@ -88,7 +88,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        box-shadow: 0 0 10px #ccc;
+        box-shadow: 0 0 10px $gray;
     }
     &__feedback {
         @include flexwrap;
@@ -103,7 +103,7 @@
     &__submit {
         border: none;
         border-radius: $brdef;
-        background-color: orange;
+        background-color: $orange;
         height: 40px;
         display: flex;
         align-items: center;

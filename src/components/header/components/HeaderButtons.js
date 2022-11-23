@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import UserData from "../../../UserData";
 import { useNavigate } from "react-router-dom";
 
-import { FaQuestionCircle, FaDoorOpen, FaBell, FaCaretDown, FaUser, FaBars } from 'react-icons/fa';
+import { FaQuestionCircle, FaDoorOpen, FaBell, FaUser, FaBars } from 'react-icons/fa';
 
 /**
  * 

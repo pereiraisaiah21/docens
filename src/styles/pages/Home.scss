@@ -95,7 +95,7 @@
         border-radius: $brdef;
         padding: 10px;
         margin: 0 16px 0 0;
-        box-shadow: 0 0 10px 1px #ccc;
+        box-shadow: 0 0 10px 1px $gray;
         cursor: pointer;
         &__img {
             max-width: 100%;
@@ -129,7 +129,7 @@
         }
         &__bttn {
             width: $wmax;
-            background-color: rgb(255 153 0);
+            background-color: $orange;
             color: $fc-white;
             display: inline-flex;
             align-items: center;
@@ -194,7 +194,7 @@
         }
 
         &:hover {
-            box-shadow: inset 0px 0px 3px #ccc;
+            box-shadow: inset 0px 0px 3px $gray;
         }
     }
     &__tchrs {
@@ -257,9 +257,9 @@
         }
     }
     &--bg-01 {
-        border-top: 2px solid rgb(255 153 0);
+        border-top: 2px solid $orange;
         border-radius: 0 !important;
-        background-color: #9100ff;
+        background-color: $purple;
         margin: 20px 0 0;
         max-width: unset;
         padding: 30px 10px 20px !important;

@@ -20,7 +20,7 @@
         width: 100%;
         margin: 0 auto 10px;
         padding: 10px;
-        box-shadow: 0 0 10px #ccc;
+        box-shadow: 0 0 10px $gray;
         border-radius: $brdef;
         &__ttl {
             font-size: 1.2em;
@@ -81,11 +81,11 @@
         margin: 0 0 10px;
         padding: 10px;
         cursor: pointer;
-        box-shadow: 0 0 10px #ccc;
+        box-shadow: 0 0 10px $gray;
         &__img {
             width: 90px;
             font-size: 3rem;
-            border-bottom: 3px solid rgb(255 153 0);
+            border-bottom: 3px solid $orange;
             padding: 0 0 20px;
         }
         &__ttl {
@@ -111,14 +111,14 @@
                 cursor: pointer;
 
                 &:hover {
-                  background-color: orange;
+                  background-color: $orange;
                   color: $white;
                 }
             }
         }
 
         &:hover {
-            box-shadow: 0 0 20px #ccc;
+            box-shadow: 0 0 20px $gray;
             width: calc(100% - 50px);
             margin: 0 auto 10px;
         }
@@ -163,8 +163,8 @@
                 margin: 0 0 10px;
                 font-size: 1.3em;
                 width: $wmax;
-                border: 1px solid rgb(255 153 0);
-                color: rgb(255 153 0);
+                border: 1px solid $orange;
+                color: $orange;
                 padding: 10px;
                 border-radius: 10px;
             }
@@ -216,7 +216,7 @@
     &__br {
         width: 100%;
         margin: 0 auto;
-        box-shadow: 0 0 10px #ccc;
+        box-shadow: 0 0 10px $gray;
         border-radius: $brdef;
         margin-bottom: 10px;
         height: fit-content;

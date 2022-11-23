@@ -45,7 +45,7 @@
             justify-content: flex-start;
             max-width: 400px;
             background-color: $white;
-            box-shadow: 0 0 10px #ccc;
+            box-shadow: 0 0 10px $gray;
             flex-direction: column;
 
             .prfl__inf {
@@ -80,7 +80,7 @@
         top: 20px;
         left: 30px;
         padding: 20px;
-        border-left: 3px solid orange;
+        border-left: 3px solid $orange;
         background-color: $white;
     }
 
