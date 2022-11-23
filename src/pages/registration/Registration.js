@@ -7,6 +7,7 @@ import { FaUser, FaEnvelope, FaMap, FaCalendarWeek, FaRegNewspaper } from 'react
 import MainTitle from "../../components/title/MainTitle";
 
 import "react-datepicker/dist/react-datepicker.css";
+import Avatar from "./Avatar";
 
 function Registration () {
 
@@ -119,6 +120,7 @@ function Registration () {
                             showSecondStep 
                             ?
                             <>
+                                <Avatar />
                                 <fieldset className="rgsttn__flst">
                                     <legend className="prfl__inf__itm">
                                         <FaUser />

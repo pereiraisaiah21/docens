@@ -6,6 +6,7 @@ import Modal from 'react-modal';
 
 import MainTitle from "../../components/title/MainTitle";
 import Emoji from 'a11y-react-emoji';
+import { FaRegCheckCircle, FaMinusCircle } from 'react-icons/fa';
 
 /**
  *
@@ -117,10 +118,10 @@ function ArticleModerate () {
             </div>
             <div className="moderate__actions">
                 <button className="moderate__button moderate__true" onClick={approvedClick}>
-                    <img className="moderate__icon" alt="" src="/true.svg" /> Aprovar
+                    <FaRegCheckCircle className="moderate__icon" /> Aprovar
                 </button>
                 <button className="moderate__button moderate__false" onClick={openModal}>
-                    <img className="moderate__icon" alt="" src="/false.svg" /> Negar
+                    <FaMinusCircle className="moderate__icon" /> Bloquear
                 </button>
             </div>
             {

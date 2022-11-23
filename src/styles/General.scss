@@ -102,7 +102,7 @@ body.dark-mode {
   // Login
   .lgn {
     &__image {
-      background-color: #3a3a3a;
+      background-color: unset;
     }
     &__frmBox {
       background-color: $black;
@@ -115,6 +115,9 @@ body.dark-mode {
 
   // Registration
   .rgsttn {
+    &__image {
+      background-color: unset;
+    }
     &__frmBox {
       box-shadow: 0 0 1px $gray;
       background-color: $black;

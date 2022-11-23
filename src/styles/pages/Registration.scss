@@ -67,12 +67,35 @@
             text-align: left;
             color: #716b72;
         }
+        &__rtrn {
+            @include warn;
+        }
+        &__label {
+            display: block;
+            width: 100%;
+            height: 100%
+        }
         &--optns {
             @include flexunscen;
             flex-wrap: wrap;
         }
-        &__rtrn {
-            @include warn;
+        &--avatar {
+            display: flex;
+            flex-wrap: wrap;
+            height: 250px;
+            overflow-y: scroll;
+            &__item {
+                width: 20%;
+            }
+            &__input {
+                width: 0;
+                height: 0;
+                visibility: hidden;
+            }
+            &__image {
+                height: 50px;
+                cursor: pointer;
+            }
         }
     }
     .success {
