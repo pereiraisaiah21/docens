@@ -39,7 +39,7 @@ class DarkModeToggle extends Component {
                 </span>
                 <FaMoon className="btn__darkmode__icon" />
                 <input id="toggle_switch" name="toggle_switch" type="checkbox" onClick={this.handleModeChange}/>
-                <label id="toggle_switch-label" for="toggle_switch"></label>
+                <label id="toggle_switch-label" htmlFor="toggle_switch"></label>
             </div>
         </section>
     );

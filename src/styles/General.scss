@@ -101,12 +101,23 @@ body.dark-mode {
   
   // Login
   .lgn {
+    &__image {
+      background-color: #3a3a3a;
+    }
     &__frmBox {
       background-color: $black;
       box-shadow: 0 0 1px $gray;
     }
-    &__flst legend, &__inpt, &__inpt::placeholder {
+    &__flst legend, &__inpt, &__inpt::placeholder, &__invalid button {
       color: $white;
+    }
+  }
+
+  // Registration
+  .rgsttn {
+    &__frmBox {
+      box-shadow: 0 0 1px $gray;
+      background-color: $black;
     }
   }
 }
