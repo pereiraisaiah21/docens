@@ -1,6 +1,5 @@
 import React from "react";
 
-import FooterLogo from "../../images/FooterLogo.png";
 import Bar from "../bar/Bar";
 import Emoji from 'a11y-react-emoji'
 
@@ -44,7 +43,7 @@ function Footer () {
                     </ul>
                     <div className="fttr__dvl">
                         Made with <Emoji className="fttr__dvl__emoji" symbol="🤍" label="love" /> by
-                        <img className="fttr__dvl__img" src={FooterLogo} title="Logo" />
+                        <img className="fttr__dvl__img" src="/smalLogo.png" title="Logo" />
                     </div>
                 </div>
             </footer>

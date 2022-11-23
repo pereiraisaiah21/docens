@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import api from "./services/api";
-
 import UserData from "./UserData";
 import SiteRoutes from "./routes";
 
@@ -51,8 +49,8 @@ function App() {
 
     <div className="App">
         <UserData.Provider value={{userDataValues, setUserDataValues}}>
-            <SiteRoutes />
-            {changeBodyIdentifier(userDataValues.data)}
+          <SiteRoutes />
+          {changeBodyIdentifier(userDataValues.data)}
         </UserData.Provider>
     </div>
   );
