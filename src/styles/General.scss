@@ -25,6 +25,17 @@ body.dark-mode {
             color: $white;
         }
     }
+
+    // Course Page
+    &__ttl {
+      background-color: unset;
+    }
+    &__dscrptn, &__br__anchr, &__artcls__ttl, p {
+      color: $white;
+    }
+    &__br, &__artcls {
+      box-shadow: 0 0 0 1px $gray;
+    }
   }
 
   // Matter
@@ -36,18 +47,66 @@ body.dark-mode {
         }
     }
     &__srch {
-        &__inpt, &__inpt::placeholder {
-            color: $white;
+      &__inpt, &__inpt::placeholder {
+          color: $white;
         }
     }
+        
+    // Article Page
+    &__prmryTtl, &__prmryWrp--cntnt, &__scndtyTtl, &__dtls, &__dtls__wrtr, &__spprt, &__spprt__lst p, &__rltd__ttl, &__tgs__ttl {    
+      color: $white;
+    }
+    &__prmryWrp.txt-cntr {
+      background-color: unset;
+    }
+  }
+
+  // Quiz
+  .qz {
+    &__backdrop {
+      background-color: #3a3a3a;
+    }
+  }
+  .Question {
+    box-shadow: 0 0 1px #cccccc;
+    background-color: $black;
   }
 
   // Profile
   .prfl {
     &__inf {
-        &__itm, &__itm svg {
-            color: $white;
-        }
+      &__itm, &__itm svg {
+          color: $white;
+      }
+    }
+    &__dt {
+      background-color: $black;
+    }
+    &__nav__button {
+      color: $white;
+    }
+  }
+  
+  // Header
+  .hdr {
+    &__wrppr--m {
+      background-color: $black;
+    }
+    &--mbl {
+      &__lst li a, &__nm, &__ocptn {
+        color: $white;
+      }
+    }
+  }
+  
+  // Login
+  .lgn {
+    &__frmBox {
+      background-color: $black;
+      box-shadow: 0 0 1px $gray;
+    }
+    &__flst legend, &__inpt, &__inpt::placeholder {
+      color: $white;
     }
   }
 }
