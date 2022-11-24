@@ -129,10 +129,10 @@ function Login () {
             <section className="lgn">
                 <div className="lgn__image">
                     <div className="lgn__imageBox">
-                        <Emoji className="lgn__image__lock" symbol={"🧓🕵️‍♀️"} label="love" />
                         <h1 className="lgn__image__title">
                             Bem-vindo
                         </h1>
+                        <Emoji className="lgn__image__lock" symbol={"🧓🕵️‍♀️"} label="love" />
                     </div>
                 </div>
                 <form className="lgn__frm">
