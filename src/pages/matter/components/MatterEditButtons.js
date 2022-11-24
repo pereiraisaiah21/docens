@@ -11,19 +11,20 @@ import { FaPlus, FaPencilAlt, FaEye } from 'react-icons/fa';
 function MatterEditButtons ({
     classParent,
     classAnchor,
-    matter
+    matter,
+    editLink
 }) {
 
     return (
 
         <div className={classParent}>
-            <a className={classAnchor} href="materias/alt/posts/1" title="">
+            <a className={classAnchor} href={editLink} title="">
                 <FaPencilAlt />
                 <span>
 
                 </span>
             </a>
-            <a className={classAnchor} href="materias/alt" title="">
+            <a className={classAnchor} href={editLink} title="">
                 <FaPlus />
                 <span>
 

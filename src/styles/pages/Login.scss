@@ -32,7 +32,6 @@
         width: 50%;
         display: flex;
         padding: 40px 10px;
-
         &Box {
             flex-wrap: wrap;
             text-align: left;
@@ -69,8 +68,6 @@
     }
     &__inpt {
         @include input;
-        border-bottom: 1px solid transparent;
-        border-radius: 0;
         animation: 0.2s;
         &--rcvr {
             margin: 0 0 10px;

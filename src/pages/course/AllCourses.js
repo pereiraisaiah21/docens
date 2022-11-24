@@ -134,7 +134,7 @@ function AllCourses () {
                                             {
                                                 isADM
                                                 ?
-                                                <MatterEditButtons classParent="crs__itm__edt" classAnchor="crs__itm__edt__anchr" matter={"posts/1"} />
+                                                <MatterEditButtons classParent="crs__itm__edt" classAnchor="crs__itm__edt__anchr" editLink="cursos/alt/posts/1" matter={"posts/1"} />
                                                 :
                                                 ""
                                             }

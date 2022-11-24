@@ -83,6 +83,8 @@ $wmax : 100%;
     background-color: unset;
     text-align: left;
     color: #716b72;
+    border: 1px solid #ccc;
+    border-radius: 10px;
 }
 @mixin input-font {
     position: relative;
@@ -94,6 +96,8 @@ $wmax : 100%;
     font-weight: 500;
     font-family: inherit;
     font-size: .97em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
 }
 @mixin select {
     border: none;

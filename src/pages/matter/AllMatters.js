@@ -130,7 +130,7 @@ function AllMatters () {
                                             </span>
                                             {
                                                 isADM && (
-                                                    <MatterEditButtons classParent="mttr__itm__edt" classAnchor="mttr__itm__edt__anchr" matter={"posts/1"} />
+                                                    <MatterEditButtons classParent="mttr__itm__edt" classAnchor="mttr__itm__edt__anchr" editLink="materias/alt/posts/1" matter={"posts/1"} />
                                                 )
                                             }
                                         </a>
