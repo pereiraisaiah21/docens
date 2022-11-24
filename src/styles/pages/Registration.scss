@@ -34,7 +34,6 @@
         width: 50%;
         display: flex;
         padding: 40px 10px;
-
         &Box {
             flex-wrap: wrap;
             text-align: left;
@@ -46,8 +45,6 @@
             max-width: 400px;
             background-color: $white;
             box-shadow: 0 0 10px $gray;
-            flex-direction: column;
-
             .prfl__inf {
                 display: flex;
                 flex-wrap: wrap;

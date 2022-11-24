@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import UserData from "../../UserData";
+
 import MainTitle from "../../components/title/MainTitle";
 import { FaUserGraduate, FaLock, FaUserCircle, FaInfoCircle, FaTimes } from 'react-icons/fa';
-
-import UserData from "../../UserData";
+import Emoji from 'a11y-react-emoji';
 
 /**
  *
@@ -128,7 +129,7 @@ function Login () {
             <section className="lgn">
                 <div className="lgn__image">
                     <div className="lgn__imageBox">
-                        <FaLock className="lgn__image__lock" />
+                        <Emoji className="lgn__image__lock" symbol={"🧓🕵️‍♀️"} label="love" />
                         <h1 className="lgn__image__title">
                             Bem-vindo
                         </h1>

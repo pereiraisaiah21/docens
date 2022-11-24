@@ -2,12 +2,17 @@ import React, { useState, useEffect } from "react";
 import api from "../../services/api";
 import DatePicker from "react-datepicker";
 import { useNavigate } from "react-router-dom";
+import "react-datepicker/dist/react-datepicker.css";
 
 import { FaUser, FaEnvelope, FaMap, FaCalendarWeek, FaRegNewspaper } from 'react-icons/fa';
 import MainTitle from "../../components/title/MainTitle";
-
-import "react-datepicker/dist/react-datepicker.css";
 import Avatar from "./Avatar";
+import Emoji from 'a11y-react-emoji';
+
+/**
+ * 
+ * @returns 
+ */
 
 function Registration () {
 
@@ -106,7 +111,7 @@ function Registration () {
             }
             <div className="rgsttn__image">
                 <div className="lgn__imageBox">
-                    <FaUser className="lgn__image__lock" />
+                    <Emoji className="lgn__image__lock" symbol={"🧕🙋"} label="love" />
                     <h1 className="lgn__image__title">
                         Bem-vindo
                     </h1>
