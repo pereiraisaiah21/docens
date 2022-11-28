@@ -3,8 +3,8 @@ import axios from "axios";
 import Select from 'react-select'
 
 import MainTitle from "../../components/title/MainTitle";
-
-import { FaOptinMonster, FaInfoCircle } from 'react-icons/fa';
+import { FaInfoCircle } from 'react-icons/fa';
+import Emoji from 'a11y-react-emoji';
 
 /**
  *
@@ -50,7 +50,10 @@ function Contact () {
 
         <section className="cntct">
             <div className="cntct__wrp">
-                <MainTitle description="contato" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
+            <div className="emoji--title">
+                    <Emoji className="emoji--navigation" symbol={"📃"} label="love" />
+                    <MainTitle description="contato" descriptionUnder="Preencha o formulário abaixo" isCarousel={false} />
+                </div>
                 <form className="cntct__frm" onSubmit={handleSubmit}>
                     <fieldset className="cntct__fldst">
                         <legend className="cntct__lgnd">Selecione o assunto</legend>

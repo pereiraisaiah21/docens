@@ -1,11 +1,13 @@
 .cntct {
     padding: 40px 10px;
     &__wrp {
-        max-width: 800px;
+        max-width: 1000px;
         margin: auto;
         padding: 10px;
     }
-    &__frm {}
+    &__frm {
+        padding: 50px 0 10px;
+    }
     &__fldst {
         margin: 0;
         border: none;
@@ -39,5 +41,14 @@
     }
     &__rtrn {
         @include warn;
+    }
+}
+
+// DarkMode
+body.dark-mode {
+    .cntct {
+       &__lgnd {
+        color: $white;
+       }
     }
 }

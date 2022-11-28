@@ -74,11 +74,11 @@ function Feed () {
     return (
 
         <section className="fd">
+            <div className="emoji--title">
+                <Emoji className="emoji--navigation" symbol={"📃"} label="love" />
+                <MainTitle description="meu feed" descriptionUnder="Pubicações recentes" isCarousel={false} />
+            </div>
             <div className="fd__wrppr">
-                <div className="emoji--title">
-                    <Emoji className="emoji--navigation" symbol={"📃"} label="love" />
-                    <MainTitle description="meu feed" descriptionUnder="Pubicações recentes" isCarousel={false} />
-                </div>
                 <div className="fd__psts">
                     {
                         posts.data !== null && (
