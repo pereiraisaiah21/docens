@@ -18,7 +18,6 @@ function Header () {
     const { userDataValues, setUserDataValues } = useContext( UserData );
 	const [ isMenuMobileOpen, setIsMenuMobileOpen ] = useState( false );
 
-
     return (
 
      	<header className="hdr">

@@ -164,18 +164,67 @@
         &__ocptn {
             color: #716b72;
         }
-        &__lst {
+        &__openMenu {
+            background-color: unset;
+            width: 100%;
+            padding: 20px 10px;
+            border: none;
+            color: $orange;
+            text-transform: uppercase;
+            font-family: inherit;
+            margin: 10px 0;
+            border: 1px solid $orange;
+            border-radius: 10px;
+        }
+        &__pgs {}
+        &__gnrl {
             list-style-type: none;
             margin: 0;
             padding: 0;
             text-align: center;
             background-color: $bgwhite95;
             border-radius: 0 0 20px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            transition: all 2s;
             li {
-                padding: 10px;
+                width: $wmax;
+                a {
+                    width: $wmax;
+                    height: $wmax;
+                    align-items: center;
+                    display: flex;
+                }
+            }
+        }
+        &__lst {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: unset;
+            border-radius: 20px;
+            display: none;
+            flex-wrap: wrap;
+            transition: all 2s;
+            opacity: 0;
+            li {
+                padding: 0 0 10px;
+                width: 100%;
                 a {
                     color: #716b72;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    background-color: $bgwhite95;
+                    border-radius: 10px;
+                    padding: 10px;
                 }
+            }
+            &--open {
+                opacity: 1;
+                display: flex;
             }
         }
         &--opn {
@@ -227,5 +276,10 @@
 body.dark-mode {
     .hdr {
         background-color: unset;
+        &--mbl {
+            &__gnrl li a {
+                color: $white;
+            }
+        }
     }
 }

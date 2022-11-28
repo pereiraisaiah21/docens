@@ -261,6 +261,12 @@
             width: fit-content;
             margin: 10px auto;
         }
+        &__itm {
+
+            &:hover {
+                width: 100%;
+            }
+        }
     }
 
     // Sm

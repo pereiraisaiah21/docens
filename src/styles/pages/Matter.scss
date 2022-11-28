@@ -317,6 +317,10 @@
         }
         &__itm {
             width: $wmax;
+
+            &:hover {
+                width: 100%;
+            }
         }
         &__dtls__wrtr,
         &__dtls__date {
