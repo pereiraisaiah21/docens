@@ -12,8 +12,6 @@ function RelatedMatters ({
     relatedMatter
 }) {
 
-    console.log("x", relatedMatter)
-
     return (
 
         <section className="mttr__rltd">

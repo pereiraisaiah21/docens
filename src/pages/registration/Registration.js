@@ -25,20 +25,12 @@ function Registration () {
     const [fullname, setFullname] = useState( "" );
     const [email, setEmail] = useState( "" );
     const [city, setCity] = useState( "" );
-    
     const [ blockForwardButton, setBlockForwardButton ] = useState( false );
     const [ showSecondStep, setShowSecondStep ] = useState( false );
     const [ updateOpen, setUpdateOpen ] = useState( false );
-
     const [password, setPassword] = useState( "" );
     const [username, setUsername] = useState( "" );
-    // const [gender, setGender] = useState( "" );
     const [birthdayDate, setBirthdayDate] = useState( new Date() );
-    // const genderOptions = [
-    //     { value: "feminino", label: "Feminino" },
-    //     { value: "masculino", label: "Masculino" },
-    //     { value: "naoinformar", label: "Prefiro não dizer" }
-    // ];
 
     useEffect(() => {
         if ( !fullname || !email || !city || !birthdayDate || !bio ) {
@@ -69,7 +61,6 @@ function Registration () {
                 })
                 .then( response => {
                     setUpdateOpen( true );
-                    // console.log("response", response)
                     setTimeout( () => {
                         return navigate("/entrar");
                     }, 2000);
@@ -86,13 +77,10 @@ function Registration () {
     };
     const showNextStepPass = function( event ) {
         event.preventDefault();
-
-        console.log("afasd", showSecondStep)
         setShowSecondStep( !showSecondStep );
     };
     const showNextStep = function( event ) {
         event.preventDefault();
-        console.log("afasd", showSecondStep)
         setShowSecondStep( !showSecondStep );
     };
     const directToLogin = function( event ) {
@@ -101,6 +89,7 @@ function Registration () {
     };
 
     return (
+
         <section className="rgsttn">
             {
                 updateOpen && (

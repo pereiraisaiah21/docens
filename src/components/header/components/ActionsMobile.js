@@ -24,6 +24,7 @@ function ActionsMobile ({
         event.preventDefault();
         localStorage.removeItem( "user" );
         localStorage.removeItem( "adm" );
+        setMenuMobileClose( false );
 
         return navigate( "/entrar" );
     };

@@ -184,7 +184,7 @@ function Article () {
                                                     </a>
                                                 </div>
                                             :
-                                            ""
+                                            null
                                         }
                                         <div className="mttr__prmryWrp txt-cntr">
                                             <p className="mttr__spprt">
@@ -214,7 +214,7 @@ function Article () {
                                 )
                             })
                             :
-                            ""
+                            null
                         }
                         </div>
                         <RelatedMatters relatedMatter={dataPlaceholder[0].nextMatter}/>

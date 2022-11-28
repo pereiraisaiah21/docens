@@ -23,13 +23,10 @@ function Contact () {
         { value: "outro", label: "Outro" }
     ];
 
-    console.log(formSendSuccess)
-
     const handleSubmit = function( event ) {
         event.preventDefault();
 
         if ( subject !== null && message !== null ) {
-            console.log("send")
 
             axios.post( "/contato", {
                 subject : subject,

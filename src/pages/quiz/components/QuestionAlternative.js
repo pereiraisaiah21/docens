@@ -18,7 +18,8 @@ function QuestionAlternative ({
     tip, 
     quantityAttempts, 
     setOption, 
-    optionsDisable}) {
+    optionsDisable
+}) {
 
     const [selected, setSelected] = useState( null );
     const [modalIsOpen, setIsOpen] = React.useState( false );
@@ -32,8 +33,6 @@ function QuestionAlternative ({
             transform: 'translate(-50%, -50%)',
         }
     };
-
-    console.log("fjisdfj", number)
 
     Modal.setAppElement( '#root' );
 
