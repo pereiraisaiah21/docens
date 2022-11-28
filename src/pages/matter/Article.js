@@ -146,16 +146,18 @@ function Article () {
                                 return (
                                     <React.Fragment key={key}>
                                         <div className="mttr__prmryWrp">
-                                            <h4 className="mttr__prmryTtl">
-                                                <div className="emoji--title">
-                                                    <Emoji className="emoji--navigation" symbol={icon[Math.floor(Math.random() * icon.length)]} label="love" />
-                                                    <MainTitle description={item.name}descriptionUnder="" isCarousel={false} />
-                                                </div>
-                                            </h4>
+                                            <div className="mttr__hightlight">
+                                                <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://council.science/wp-content/uploads/2017/04/IUPAC-feature-image-1400x600.jpg" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/" />
+                                                <h4 className="mttr__prmryTtl">
+                                                    <div className="emoji--title">
+                                                        <Emoji className="emoji--navigation" symbol={icon[Math.floor(Math.random() * icon.length)]} label="love" />
+                                                        <MainTitle description={item.name}descriptionUnder="" isCarousel={false} />
+                                                    </div>
+                                                </h4>
+                                            </div>
                                             <p className="mttr__trcryTtl">
                                                 {item.matter}
                                             </p>
-                                            <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://council.science/wp-content/uploads/2017/04/IUPAC-feature-image-1400x600.jpg" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/" />
                                             <p className="mttr__scndtyTtl">
                                                 {item.subTitle}
                                             </p>

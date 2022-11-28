@@ -89,8 +89,11 @@
         }
     }
     &__img {
-        max-width: $wmax;
+        max-width: calc($wmax  + 40px);
         border-radius: 10px;
+        margin: 0 -20px;
+        width: calc($wmax  + 40px);
+        border-radius: unset;
         &__crdts {
             font-size: .7em;
             text-align: center;
@@ -102,7 +105,6 @@
         line-height: 3px;
         font-size: .9em;
         margin: 0 0 25px;
-        padding-left: 10px;
         color: #716b72;
         margin: 20px auto;
         &__wrtr,
@@ -110,6 +112,9 @@
         &__lstpdt {
             color: #716b72;
         }
+    }
+    &__hightlight {
+        position: relative;
     }
     &__prmryWrp {
         max-width: 1200px;
@@ -143,8 +148,7 @@
                 }
             }
             p {
-                text-indent: 2rem;
-                padding: 0 10px;
+                margin: 32px 0;
             }
         }
         &.txt-cntr {
@@ -158,19 +162,21 @@
         font-size: 1.3em;
         text-transform: uppercase;
         max-width: 1000px;
-        // margin: 80px auto 30px;
         margin: 0 0 20px;
+        position: absolute;
+        bottom: 16px;
+        width: calc($wmax - 32px);
+        left: 16px;
     }
     &__scndtyTtl {
         color: #716b72;
         margin: 30px 0;
-        font-size: 1.2rem;
-        padding-left: 10px;
+        font-size: 1.4rem;
         max-width: 1000px;
-        margin: auto;
     }
     &__trcryTtl {
         border: 1px solid $orange;
+        display: none;
         padding: 10px;
         border-radius: $brdef;
         white-space: nowrap;
@@ -306,6 +312,10 @@
         &__scndtyTtl {
             margin: 20px auto;
         }
+        &__prmryTtl {
+            left: 0;
+            width: $wmax;
+        }
         &__wrn {
             display: block;
             padding: 10px;
@@ -354,4 +364,13 @@
     @media (min-width: 1200px) {}
     // Xxl
     @media (min-width: 1400px) {}
+}
+
+// DarkMode
+body.dark-mode {
+    .mttr {
+        &__img__crdts {
+            color: $white;
+        }
+    }
 }
