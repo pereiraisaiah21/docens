@@ -40,6 +40,7 @@ function Header () {
 				)
 			}
 			</div>
+			<span className="separator"/>
         </header>
     );
 }

@@ -20,7 +20,6 @@ function App() {
   });
 
   const changeBodyIdentifier = function ( userType ) {
-    console.log(userType)
     userType !== "teacher" ? document.querySelector("body").classList.add("df-t") : document.querySelector("body").classList.add("df-u");
     return;
   }

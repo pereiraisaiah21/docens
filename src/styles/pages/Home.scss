@@ -206,7 +206,6 @@
         &__itm {
             background: #ece6ff;
             border-radius: 20px;
-            padding: 20px;
             height: 203px;
 
             &:nth-child(even) {
@@ -439,6 +438,9 @@ body.dark-mode {
             &__nm, &__inf, &__dscrptn {
                 color: $white;
             }
+        }
+        &--bg-01 {
+            background-color: unset;
         }
     }
 }

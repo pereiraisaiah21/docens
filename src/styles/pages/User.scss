@@ -190,3 +190,19 @@
     // Xxl
     @media (min-width: 1400px) {}
 }
+
+// DarkMode
+body.dark-mode {
+    .stdnt {
+        &__inf {
+            &__bx {
+                box-shadow: 0 0 0 1px $gray;
+                background-color: unset;
+            }
+            &__nm, &__b {
+                color: $white;
+            }
+        }
+    }
+}
+

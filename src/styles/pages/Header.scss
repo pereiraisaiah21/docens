@@ -4,7 +4,7 @@
     width: $wmax;
     background-color: $purple;
     z-index: 2;
-    border-bottom: 2px solid $orange;
+    // border-bottom: 2px solid $orange;
     &__wrppr {
         @include flexcencen;
         width: $wmax;
@@ -221,4 +221,11 @@
     @media (min-width: 1200px) {}
     // Xxl
     @media (min-width: 1400px) {}
+}
+
+// DarkMode
+body.dark-mode {
+    .hdr {
+        background-color: unset;
+    }
 }

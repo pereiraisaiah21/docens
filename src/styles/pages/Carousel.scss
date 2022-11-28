@@ -32,3 +32,10 @@
     // Xxl
     @media (min-width: 1400px) {}
 }
+
+// DarkMode
+body.dark-mode {
+    .dragAlert {
+        color: $white;
+    }
+}

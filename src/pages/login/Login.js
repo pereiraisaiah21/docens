@@ -55,12 +55,7 @@ function Login () {
             }
            });
 
-           console.log("Final resp ", resp)
-           console.log("Final resp ", resp.data[1].id !== null)
-
            if (resp.data) {
-               console.log("pass");
-
                setUserDataValues({
                     data  : resp.data[1],
                     isLogged : true,
@@ -209,12 +204,11 @@ function Login () {
                                     </button>
                                 </fieldset>
                                 {
-                                    passwordValid
+                                    !passwordValid || !usernameValid
                                     ?
-                                    <fieldset className="lgn__invalid">
+                                    <fieldset className="lgn__invalid" data-wr="bool">
                                         <button>
-                                            <FaTimes />
-                                            A senha deve conter pelo menos 6 caracteres
+                                            Verifique os campos inseridos
                                         </button>
                                     </fieldset>
                                     :

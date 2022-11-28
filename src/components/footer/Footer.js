@@ -41,6 +41,7 @@ function Footer () {
                             </a>
                         </li>
                     </ul>
+                    <span className="separator"/>
                     <div className="fttr__dvl">
                         Made with <Emoji className="fttr__dvl__emoji" symbol="🤍" label="love" /> by
                         <img className="fttr__dvl__img" src="/smalLogo.png" title="Logo" />

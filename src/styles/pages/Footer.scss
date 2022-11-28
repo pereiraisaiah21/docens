@@ -16,6 +16,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 100%;
+        margin-bottom: 30px;
         &__itm {
             color: $white;
             font-size: 1em;
@@ -29,9 +30,9 @@
         @include flexcencen;
         color: $fc-white;
         width: 100%;
-        border-top: 2px solid $orange;
+        // border-top: 2px solid $orange;
         padding: 16px 0 9px;
-        margin: 30px 0 0;
+        margin: 20px 0 0;
         &__img {
             max-width: 50px;
             margin: 0 10px 0 10px;
@@ -61,4 +62,11 @@
     @media (min-width: 1200px) {}
     // Xxl
     @media (min-width: 1400px) {}
+}
+
+// DarkMode
+body.dark-mode {
+    .fttr {
+        background-color: unset;
+    }
 }
