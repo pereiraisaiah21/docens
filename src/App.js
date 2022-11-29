@@ -22,7 +22,7 @@ function App() {
   const changeBodyIdentifier = function ( userType ) {
     userType !== "teacher" ? document.querySelector("body").classList.add("df-t") : document.querySelector("body").classList.add("df-u");
     return;
-  }
+  };
 
   useEffect(() => {
 

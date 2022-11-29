@@ -1,16 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
 import api from "../../../services/api";
 import UserData from "../../../UserData";
-
 import Select from 'react-select'
 import ImageUploading from 'react-images-uploading';
 
 import MainTitle from "../../../components/title/MainTitle";
 import MatterEditor from "../../matter/components/MatterEditor";
+import { FaOptinMonster, FaInfoCircle, FaFileImport } from 'react-icons/fa';
 
-import { FaOptinMonster, FaInfoCircle, FaFileImport, FaUnderline } from 'react-icons/fa';
+import { articleSave } from "../../../emulation";
 
 /**
  *
@@ -70,6 +69,11 @@ function CreateUpdateArticle () {
     };
     const handleSubmit = function( event ) {
         event.preventDefault();
+
+        // Video
+        articleSave([
+            category, name, subName, url, content, tags, hightlighImage 
+        ]);
 
         if ( category !== null && name !== null && subName !== null && url !== null && content !== null && tags !== null && hightlighImage !== null ) {
             console.log("send");

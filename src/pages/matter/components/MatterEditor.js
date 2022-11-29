@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+
+import { saveArticleOnStorage } from "../../../emulation";
 import {
   EditorState,
   convertToRaw,
@@ -48,15 +50,15 @@ class EditorConvertToHTML extends Component {
   onsubmit = () => {
     console.log(
       draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()))
-    );
-  };
-
-  onEditorChange = evt => {
-    this.setState({
-      emailBody: evt.editor.getData()
-    });
-  };
-
+      );
+    };
+    
+    onEditorChange = evt => {
+      this.setState({
+        emailBody: evt.editor.getData()
+      });
+    };
+    
   componentDidMount() {
     document.getElementById("para").style.color = "red !important";
   }
@@ -130,9 +132,12 @@ class EditorConvertToHTML extends Component {
     console.log(this.state.editorState)
     return (
       <div className="Edtr__wrpp">
-        <p style={{"display": "none"}}>
+        <p>
           {
             draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()))
+          }
+          {
+            saveArticleOnStorage( convertToRaw(this.state.editorState.getCurrentContent()) )
           }
         </p>
         {/* {
