@@ -4,17 +4,15 @@
         align-items: center;
         justify-content: flex-end;
         max-width: 1000px;
-        padding: 10px 0;
         width: 100%;
         z-index: 3;
-        left: 50%;
-        position: absolute;
-        transform: translateX(-50%);
+        margin: auto;
+        padding: 10px 0 0;
+        // left: 50%;
+        // position: absolute;
+        // transform: translateX(-50%);
         &__button {
-            color: #FBFAF8;
-            padding: 10px;
-            border-radius: $brdef;
-            background-color: unset;
+            color: $white;
             border: none;
             display: flex;
             align-items: center;
@@ -22,7 +20,6 @@
             padding: 10px;
             position: relative;
             height: 40px;
-            width: 125px;
             span {
                 position: absolute;
                 bottom: -25px;

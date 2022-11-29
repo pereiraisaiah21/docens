@@ -22,10 +22,11 @@ function Home () {
     let navigate = useNavigate();
 
     useEffect( () => {
-        if ( JSON.parse(localStorage.getItem("user")) === null ) {
+
+        if ( !userStorage ) {
             return navigate("/entrar");
         }
-    }, []);
+    }, [] );
 
     return (
 

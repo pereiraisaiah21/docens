@@ -11,3 +11,14 @@
         }
     }
 }
+
+// DarkMode
+body.dark-mode {
+    .insttcnl {
+        &__txt {
+            p {
+                color: $white;
+            }
+        }
+    }
+}
