@@ -9,14 +9,15 @@ import { FaMedal, FaTrophy, FaRegGem, FaRedhat, FaRocket } from 'react-icons/fa'
  */
 
 function studentEmblems ({
-    emblemId
+    emblemId,
+    userInfo
 }) {
 
     return (
 
         <>
             <span className="stdnt__inf__emblm__xp">
-                268 xp
+                {userInfo.level} xp
             </span>
             <div className="stdnt__inf__emblm__bx">
                 <span>Level </span>

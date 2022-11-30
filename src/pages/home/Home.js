@@ -9,6 +9,7 @@ import Topics from "./components/Topics";
 import NavigationTeachers from "./components/default/NavigationTeachers";
 import ModerateActions from "./components/ModerateActions";
 import CreateActions from "./components/CreateActions";
+import NavigationQuiz from "./components/default/NavigationQuiz";
 
 /**
  *
@@ -37,6 +38,7 @@ function Home () {
             <>
                 <StudentInfo />
                 <NavigationActions />
+                <NavigationQuiz />
                 <SeparationDots />
                 <NavigationMyProgress slider={"true"} sliderTitle={true}  NavigationMyStats={true} />
                 <SeparationDots />

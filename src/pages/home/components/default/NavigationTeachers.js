@@ -12,6 +12,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
+/**
+ * 
+ * @returns 
+ */
+
 function NavigationTeachers () {
 
     const [teachers, setTeachers] = useState({

@@ -15,92 +15,92 @@ function Emblem () {
         data : [
             {
                 name : "Inciante",
-                xp : 150,
+                xp : 20000,
                 icon : <FaRedhat className="stdnt__mdl stdnt__mdl--smth1" />
             },
             {
                 name : "Prodigio",
-                xp : 250,
+                xp : 40000,
                 icon : <FaRedhat className="stdnt__mdl stdnt__mdl--smth2" />
             },
             {
                 name : "Bronze",
-                xp : 350,
+                xp : 60000,
                 icon : <FaMedal className="stdnt__mdl stdnt__mdl--mdl3" />
             },
             {
                 name : "Prata",
-                xp : 45000,
+                xp : 80000,
                 icon : <FaMedal className="stdnt__mdl stdnt__mdl--mdl2" />
             },
             {
                 name : "Ouro",
-                xp : 60000,
+                xp : 100000,
                 icon : <FaMedal className="stdnt__mdl stdnt__mdl--mdl1" />
             },
             {
                 name : "Diamante Rosa",
-                xp : 75000,
+                xp : 160000,
                 icon : <FaRegGem className="stdnt__mdl stdnt__mdl--dmnd4" />
             },
             {
                 name : "Diamante Azul",
-                xp : 76000,
+                xp : 180000,
                 icon : <FaRegGem className="stdnt__mdl stdnt__mdl--dmnd6" />
             },
             {
                 name : "Diamante Laranja",
-                xp : 67000,
+                xp : 220000,
                 icon : <FaRegGem className="stdnt__mdl stdnt__mdl--dmnd7" />
             },
             {
                 name : "Rubi",
-                xp : 69000,
+                xp : 280000,
                 icon : <FaRegGem className="stdnt__mdl stdnt__mdl--dmnd8" />
             },
             {
                 name : "Safira",
-                xp : 90000,
+                xp : 320000,
                 icon : <FaRegGem className="stdnt__mdl stdnt__mdl--dmnd9" />
             },
             {
                 name : "Diamante Amarelo",
-                xp : 150000,
+                xp : 360000,
                 icon : <FaRegGem className="stdnt__mdl stdnt__mdl--dmnd11" />
             },
             {
                 name : "Diamante Vermelho",
-                xp : 212100,
+                xp : 500000,
                 icon : <FaRegGem className="stdnt__mdl stdnt__mdl--dmnd12" />
             },
             {
                 name : "Esmeralda",
-                xp : 300000,
+                xp : 600000,
                 icon : <FaRegGem className="stdnt__mdl stdnt__mdl--dmnd13" />
             },
             {
                 name : "Espinela",
-                xp : 390000,
+                xp : 900000,
                 icon : <FaRegGem className="stdnt__mdl stdnt__mdl--dmnd14" />
             },
             {
                 name : "Opala",
-                xp : 600000,
+                xp : 1000000,
                 icon : <FaRegGem className="stdnt__mdl stdnt__mdl--dmnd15" />
             },
             {
                 name : "Falcon",
-                xp : 780000,
+                xp : 1020000,
                 icon : <FaRocket className="stdnt__mdl stdnt__mdl--rckt1" />
             },
             {
                 name : "Saturn V",
-                xp : 790000,
+                xp : 1500000,
                 icon : <FaRocket className="stdnt__mdl stdnt__mdl--rckt2" />
             },
             {
                 name : "Starship",
-                xp : 980100,
+                xp : 2000000,
                 icon : <FaRocket className="stdnt__mdl stdnt__mdl--rckt3" />
             }
         ]

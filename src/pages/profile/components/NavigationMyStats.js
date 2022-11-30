@@ -18,7 +18,7 @@ function NavigationMyStats () {
         datasets: [
           {
             label: 'Perguntas',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [0, 0, 0, 0, 0, 0],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -39,7 +39,7 @@ function NavigationMyStats () {
           },
           {
             label: 'Acertos',
-            data: [12, 10, 4, 5, 12, 23],
+            data: [0, 0, 0, 0, 0, 0],
             backgroundColor: [
                 'rgba(75, 192, 192, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

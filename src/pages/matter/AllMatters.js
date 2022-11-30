@@ -104,7 +104,6 @@ function AllMatters () {
                                 <input className="mttr__srch__inpt" placeholder="Digite alguma matéria" onChange={(e) => handleSearch(e.target.value)} />
                             </legend>
                         </fieldset>
-
                         {
                             searchResult.data !== null && (
                                 searchResult.data.map((item, key) => {

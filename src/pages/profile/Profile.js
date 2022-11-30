@@ -81,7 +81,7 @@ function Profile () {
                                 <NavigationMyStats className="chrt__myStts" slider={true} siderTitle={false} />
                             </div>
                             <div className="prfl__nav__section" vop="#matter">
-                                <NavigationMyProgress slider={false} />
+                                {/* <NavigationMyProgress slider={false} /> */}
                             </div>
                         </div>
                     )

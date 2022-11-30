@@ -89,7 +89,8 @@ function HeaderButtons ({
         <div className="hdr__optns">
             <ul className="hdr__bttns">
                 {
-                    !!userStorage && userStorage.occupation === "student"
+                    // !!userStorage && userStorage.occupation === "student"
+                    userStorage
                     ?
                     <>
                         {

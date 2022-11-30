@@ -115,7 +115,8 @@ function Registration () {
                 bitrh: birthdayDate,
                 bio: bio,
                 avatar: avatar,
-                color: color.hex
+                color: color.hex,
+                level: 0
             } ));
 
             navigate( "/home" );

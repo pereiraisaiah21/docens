@@ -61,7 +61,7 @@ function StudentInfo () {
                                 <div className="stdnt__inf__emblm__edt">
                                     <FaPencilAlt /> Editar
                                 </div>
-                                <StudentEmblems emblemId={userStorage.level} />
+                                <StudentEmblems emblemId={userStorage.level} userInfo={userStorage} />
                             </div>
                         </>
                         :
