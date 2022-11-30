@@ -34,7 +34,7 @@ function StudentInfo () {
                         ?
                         <>
                             <div className="stdnt__inf__img">
-                                <img src="https://static.vecteezy.com/ti/vetor-gratis/p3/2275847-avatar-masculino-perfil-icone-de-homem-caucasiano-sorridente-vetor.jpg" alt="Ícone do usuário" className="" />
+                                <img src={`/avatar/${userStorage.avatar}.png`} alt="Ícone do usuário" className="" />
                                 {/* {
                                     userInfo.imageAvatar !== null && (
                                         <img src={userInfo.imageAvatar} alt="Ícone do usuário" className="" />

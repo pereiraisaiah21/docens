@@ -69,7 +69,11 @@
         &__label {
             display: block;
             width: 100%;
-            height: 100%
+            height: 100%;
+            &--avatar {
+                display: flex;
+                justify-content: flex-end
+            }
         }
         &--optns {
             @include flexunscen;
@@ -98,20 +102,15 @@
             flex-wrap: wrap;
             &__item {
                 width: 20%;
+                position: relative;
             }
             &__input {
-                width: 0;
-                height: 0;
-                visibility: hidden;
+                position: absolute;
+                left: 0;
             }
             &__image {
                 height: 50px;
                 cursor: pointer;
-
-                &:hover, &:active, &:focus, &:target {
-                    height: 60px;
-                    border-radius: 5px;
-                }
             }
         }
     }

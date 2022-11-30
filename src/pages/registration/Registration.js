@@ -7,7 +7,7 @@ import reactCSS from 'reactcss';
 import Emoji from 'a11y-react-emoji';
 import { SketchPicker } from 'react-color';
 
-import { FaUser, FaEnvelope, FaMap, FaCalendarWeek, FaRegNewspaper, FaPaintBrush } from 'react-icons/fa';
+import { FaUser, FaEnvelope, FaUserTag, FaMap, FaCalendarWeek, FaRegNewspaper, FaPaintBrush } from 'react-icons/fa';
 import MainTitle from "../../components/title/MainTitle";
 import Avatar from "./Avatar";
 import Color from "./Color";
@@ -44,6 +44,7 @@ function Registration () {
     const [ blockForwardButton, setBlockForwardButton ] = useState( false );
     const [ showSecondStep, setShowSecondStep ] = useState( false );
     const [ updateOpen, setUpdateOpen ] = useState( false );
+    const avatars = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "28", "29", "30", "31" ];
 
     const styles = reactCSS({
         'default': {
@@ -76,19 +77,11 @@ function Registration () {
         },
     });
 
-    useEffect(() => {
-        if ( !fullname || !email || !city || !birthdayDate || !bio ) {
-            setBlockForwardButton( true );
-        } else {
-            setBlockForwardButton( false );
-        }
-    }, [fullname, email, city, birthdayDate, bio]);
-
     const handleUpdateData = function( event ) {
         event.preventDefault();
         let url = "/creat";
 
-        if ( fullname || username || email || city || birthdayDate || bio ) {
+        if ( fullname || username || email || city || birthdayDate || bio || avatar || color ) {
             api
                 .post( url, {
                     // avatar : avatar === "" ? "" : avatar,
@@ -113,6 +106,19 @@ function Registration () {
                     console.log( err );
                 });
             window.scrollTo(0,0);
+
+            localStorage.setItem("user", JSON.stringify( {
+                name: fullname,
+                username: username,
+                email: email,
+                city: city,
+                bitrh: birthdayDate,
+                bio: bio,
+                avatar: avatar,
+                color: color.hex
+            } ));
+
+            navigate( "/home" );
         }
     };
     const onChange = function( imageList, addUpdateIndex ) {
@@ -142,6 +148,15 @@ function Registration () {
         console.log( " X ", color.hex)
     };
 
+    useEffect(() => {
+
+        if ( !fullname || !email || !city || !birthdayDate || !bio ) {
+            setBlockForwardButton( true );
+        } else {
+            setBlockForwardButton( false );
+        }
+    }, [ fullname, email, city, birthdayDate, bio ]);
+
     return (
 
         <section className="rgsttn">
@@ -168,7 +183,24 @@ function Registration () {
                             showSecondStep 
                             ?
                             <>
-                                <Avatar />
+                                 <fieldset className="rgsttn__flst rgsttn__flst--avatar">
+                                    <legend className="prfl__inf__itm">
+                                        <FaUserTag />
+                                        Avatar
+                                    </legend>
+                                    {
+                                        avatars.map( ( item, key ) => {
+                                            return (
+                                                <div className="rgsttn__flst--avatar__item" key={key}>
+                                                    <label className="rgsttn__flst__label rgsttn__flst__label--avatar" forhtml={item}>
+                                                        <input id={item} className="rgsttn__flst--avatar__input" name="avatar" type="radio" value={item} onClick={( e ) => setAvatar( e.target.value )} />
+                                                        <img alt={`Avatar do tipo ${item}`} className="rgsttn__flst--avatar__image" src={`/avatar/${key + 1}.png`} />
+                                                    </label>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </fieldset>
                                 <fieldset className="rgsttn__flst rgsttn__flst--avatar">
                                     <legend className="prfl__inf__itm">
                                         <FaPaintBrush />
