@@ -1,5 +1,6 @@
 import React from "react";
 
+import Emoji from 'a11y-react-emoji';
 import { FaEye } from 'react-icons/fa';
 
 /**
@@ -22,13 +23,15 @@ function CardSubjectProgress ({
     classStyleSpanHit,
     title, 
     description,
-    progressValue
+    progressValue,
+    emoji
 }) {
 
     return (
 
         <div className={classStyleGrand}>
-            <img alt={altImage} className={classStyleImage} src={srcImage} />
+            <Emoji className={classStyleImage} symbol={emoji} label="love" />
+            {/* <img alt={altImage} className={classStyleImage} src={srcImage} /> */}
             <span className={`${classStyleSpan} title`}>
                 {title}
             </span>

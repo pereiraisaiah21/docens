@@ -99,6 +99,7 @@
             text-align: center;
             color: #716b72;
             margin: 0;
+            display: none;
         }
     }
     &__dtls {
@@ -163,7 +164,7 @@
         text-transform: uppercase;
         max-width: 1000px;
         margin: 0 0 20px;
-        position: absolute;
+        // position: absolute;
         bottom: 16px;
         width: calc($wmax - 32px);
         left: 16px;

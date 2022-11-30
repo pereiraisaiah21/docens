@@ -74,19 +74,19 @@ function Course () {
 
     const dataPlaceholder = [
         {
-            name : "Algebra",
-            description : "Algebra",
+            name : "Introdução a lógica",
+            description : "Neste curso conheceremos um pouco mais sobre a lógica de programaçaõ. Explicamos a evolução dela no decorrer dos anos. Mostramos também exemplos para facilitar a compreensão dos conteúdos.",
             allMatters : [
                 {
-                    name: "Matéria 01",
-                    url: "/materias/materia-01",
+                    name: "Lógica Teoria",
+                    url: "/materias/logica-teoria",
                 },
                 {
-                    name: "Matéria 02",
+                    name: "Expandindo a lógica",
                     url: "/materias/materia-02",
                 },
                 {
-                    name: "Matéria 03",
+                    name: "Prática Lógica",
                     url: "/materias/materia-03",
                 }
             ],

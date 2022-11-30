@@ -99,6 +99,7 @@
         cursor: pointer;
         &__img {
             max-width: 100%;
+            font-size: 70px;
             border-radius: $brdef;
             &--tutorial {
                 max-width: 100%;
@@ -223,7 +224,7 @@
         &__nm {
             width: $wmax;
             font-size: .9em;
-            color: $fc-white;
+            // color: $fc-white;
         }
         &__dscrptn {
             margin: 0;
@@ -386,10 +387,9 @@
             width: 23%;
             &__nm {
                 &--myPrgrss {
-                    position: absolute;
+                    // position: absolute;
                     top: 30px;
                     left: 0;
-                    color: #FFF;
                 }
             }
             &--fd {}
@@ -398,7 +398,7 @@
             }
 
             &:last-child {
-                margin: 0;
+                margin: 3px;
             }
         }
         &__tpcs {
@@ -427,6 +427,11 @@
 
 // DarkMode
 body.dark-mode {
+    .Home {
+        &__arrowDown {
+            color: #3c3232;
+        }
+    }
     .actns {
         &__dscrptn {
             &__ttl, p {
@@ -436,6 +441,15 @@ body.dark-mode {
         &__itm {
             box-shadow: 0 0 0 1px $gray;
             &__nm, &__inf, &__dscrptn {
+                color: $white;
+            }
+        }
+        &__tchrs {
+            &__itm {
+                box-shadow: 0 0 0 1px #cccccc;
+                background-color: unset;
+            }
+            &__nm {
                 color: $white;
             }
         }

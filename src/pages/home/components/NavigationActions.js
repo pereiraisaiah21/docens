@@ -77,7 +77,7 @@ function NavigationActions () {
             </div>
             <div className="actns__crds actns__crds--list">
                 {
-                    !!userStorage && userStorage.occupation === "student"
+                    userStorage.email !== "adm@docens.com"
                     ?
                       cardsContentDefault.map( ( item, key ) => {
                           return (

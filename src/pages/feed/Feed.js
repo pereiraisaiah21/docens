@@ -16,54 +16,63 @@ function Feed () {
             {
                 imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
                 imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                subject     : "Direitos humanos",
-                title       : "Fundamentos de Realidade aumentada",
-                summary     : "Texto com breve descrição da matéria, Texto com breve descrição da matéria, Texto com breve descrição da matéria, Texto com breve descrição da matéria, Texto com breve descrição da matéria, Texto com breve descrição da matéria, Texto com breve descrição da matéria.",
+                subject     : "Lógica",
+                title       : "Fundamentos da lógica",
+                summary     : "Lógica é a técnica utilizada para desenvolver instruções em uma sequência para atingir determinado objetivo.",
+                link        : "/materias/logica/fundamentos-da-logica",
+                views       : 200
+            },
+            {
+                imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                subject     : "Lógica",
+                title       : "Quais os fundamentos da computação?",
+                summary     : "Esses fundamentos da ciência da computação incluem algoritmos, metodologia e linguagens de programação, computação e análise de dados e símbolos e elementos e hardware do computador.",
                 link        : "/hfs",
                 views       : 200
             },
             {
                 imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
                 imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                subject     : "Direitos humanos",
-                title       : "Fundamentos de Realidade aumentada",
-                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                subject     : "Teoria",
+                title       : "Computação Clássica",
+                summary     : "Computação clássica: princípios básicos. *em 1936, Turing provou que existem problemas que não podem ser resolvidos por uma máquina de Turing, como o problema de HALTING. out A B A B out 00 1 01 1 10 1 11 0.",
                 link        : "/hfs",
                 views       : 200
             },
             {
                 imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
                 imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                subject     : "Direitos humanos",
-                title       : "Fundamentos de Realidade aumentada",
-                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                subject     : "Programação - Prática",
+                title       : "Tipos de dados na linguagem R",
+                summary     : "Na programação R, os tipos de dados mais básicos são os objetos R chamados vectors que contém elementos de diferentes classes.",
                 link        : "/hfs",
                 views       : 200
             },
             {
                 imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
                 imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                subject     : "Direitos humanos",
-                title       : "Fundamentos de Realidade aumentada",
-                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                subject     : "Programação - Prática",
+                title       : "Usos Linguagem R",
+                summary     : "É tanto uma linguagem de programação quanto um ambiente de software para análise estatística, representação gráfica e relatórios.",
                 link        : "/hfs",
                 views       : 200
             },
             {
                 imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
                 imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                subject     : "Direitos humanos",
-                title       : "Fundamentos de Realidade aumentada",
-                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                subject     : "Programação - Prática",
+                title       : "Linguagem R vs Python",
+                summary     : "As linguagens Python e R estão sendo bastante cobradas ultimamente. Principalmente por conta de um assunto que está muito evidente ultimamente: Análise de Dados.",
                 link        : "/hfs",
                 views       : 200
             },
             {
                 imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
                 imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                subject     : "Direitos humanos",
-                title       : "Fundamentos de Realidade aumentada",
-                summary     : "Turismo. No setor de turismo, por exemplo, o Timetraveller é um bom exemplo do uso da realidade aumentada. Se você visitar um lugar histórico, como o Muro de Berlim, e acionar o aplicativo, ele irá contar histórias com vídeos do local para entender o seu passado.",
+                subject     : "Programação - Prática",
+                title       : "Introdução Linguagem de progração R",
+                summary     : "A linguagem R é mais usada para manipulação de conjuntos de dados de tamanho médio, análises estatísticas e produção de documentos e apresentações centradas em dados.",
                 link        : "/hfs",
                 views       : 200
             }

@@ -17,11 +17,11 @@ function NavigationTeachers () {
     const [teachers, setTeachers] = useState({
         data  : [
             {
-                name            : "",
+                name            : "Adminstrador",
                 subject         : "",
-                description     : "",
+                description     : "Adm@docens.com",
                 imageSrc        : ""
-            }
+            },
         ],
         error : ""
     });

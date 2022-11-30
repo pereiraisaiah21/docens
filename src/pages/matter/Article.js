@@ -83,20 +83,20 @@ function Article () {
         //     });
     }, []);
 
-    const dataPlaceholder = [
+    let dataPlaceholder = [
     {
-        name : "Lógica",
-        subTitle: "Você sabe oque é lógica? Leia o artigo a seguir e confira mais sobre, e confira também exemplos a seguir",
+        name : "Lógica matemática",
+        subTitle: "Você sabe oque é lógica matemática? Leia o artigo a seguir e confira mais sobre, e confira também exemplos a seguir",
         quickDescription: "Lorem Ipsum",
         matter: "Lógica",
-        scope : "<p><b>A palavra lógica é originária do grego logos, que significa linguagem racional. É por meio do raciocínio lógico que o homem constrói algoritmos que podem ser transformados em programas capazes de solucionar problemas cada vez mais complexos.</b></p><p>A lógica de programação é necessária para pessoas que desejam trabalhar com desenvolvimento de sistemas e programas, pois ela permite definir a sequência lógica para o desenvolvimento. </p><p>A sequência lógica são passos executados até atingir um objetivo ou solução de um problema.Um algoritmo é formalmente uma sequência finita de passos que levam a execução de uma tarefa. Podemos pensar em algoritmo como uma receita, uma sequência de instruções que dão cabo de uma meta específica. Estas tarefas não podem ser redundantes nem subjetivas na sua definição, devem ser claras e precisas.</p><p>Como exemplos de algoritmos podemos citar os algoritmos das operações básicas (adição, multiplicação, divisão e subtração) de números reais decimais.</p><p>Outros exemplos seriam os manuais de aparelhos eletrônicos, como um videocassete, que explicam passo-a-passo como, por exemplo, gravar um evento.</p><p>Até mesmo as coisas mais simples, podem ser descritas por sequências lógicas. <p>Por exemplo:</p> <p>• Chupar uma bala </p><p>• Pegar a bala </p><p>• Retirar o papel </p><p>• Chupar a bala </p><p>• Jogar o papel no lixo</p>",
+        scope : "<p><b>A lógica matemática analisa determinada proposição buscando identificar se representa uma afirmação verdadeira ou falsa.</b></p><p>A princípio, a lógica era ligada à filosofia, tendo sido iniciada por Aristóteles (384-322 a.C.) que se baseava na teoria do silogismo, ou seja, em argumentações válidas.</p><p>A sequência lógica são passos executados até atingir um objetivo ou solução de um problema.Um algoritmo é formalmente uma sequência finita de passos que levam a execução de uma tarefa. Podemos pensar em algoritmo como uma receita, uma sequência de instruções que dão cabo de uma meta específica. Estas tarefas não podem ser redundantes nem subjetivas na sua definição, devem ser claras e precisas.</p><p>Como exemplos de algoritmos podemos citar os algoritmos das operações básicas (adição, multiplicação, divisão e subtração) de números reais decimais.</p><p>Até mesmo as coisas mais simples, podem ser descritas por sequências lógicas. <p>A lógica só passou a ser uma área da Matemática a partir dos trabalhos de George Boole (1815-1864) e Augustus de Morgan (1806-1871), quando eles apresentaram os fundamentos da lógica algébrica. Essa mudança de paradigma tornou a lógica matemática uma importante ferramenta para a programação de computadores.</p>",
         image: "/",
         altImage: "",
         info: 
         {
             date: "23/11/2022",
             author: "Docens Educacional",
-            last: "2 dias"
+            last: "13 dias"
         },
         support: [
             {
@@ -121,6 +121,49 @@ function Article () {
         }
     }
     ];
+
+    console.log( contentid, " COntent")
+    if ( contentid !== "introducao" ) {
+
+        dataPlaceholder = [
+            {
+                name : "Fundamentos da lógica",
+                subTitle: "Você sabe oque é lógica? Leia o artigo a seguir e confira mais sobre, e confira também exemplos a seguir",
+                quickDescription: "Lorem Ipsum",
+                matter: "Lógica",
+                scope : "<p><b>A lógica é uma área da filosofia que visa estudar a estrutura formal dos enunciados (proposições) e suas regras.</b></p><p>A lógica é uma área da filosofia que visa estudar a estrutura formal dos enunciados (proposições) e suas regras.</p><p>A sequência lógica são passos executados até atingir um objetivo ou solução de um problema.Um algoritmo é formalmente uma sequência finita de passos que levam a execução de uma tarefa. Podemos pensar em algoritmo como uma receita, uma sequência de instruções que dão cabo de uma meta específica. Estas tarefas não podem ser redundantes nem subjetivas na sua definição, devem ser claras e precisas.</p><p>Esse sentido fundamenta-se na estrutura lógica, quando algo \"tem lógica\" quer dizer que faz sentido, é uma argumentação racional.</p><p>Até mesmo as coisas mais simples, podem ser descritas por sequências lógicas. <p>A lógica só passou a ser uma área da Matemática a partir dos trabalhos de George Boole (1815-1864) e Augustus de Morgan (1806-1871), quando eles apresentaram os fundamentos da lógica algébrica. Essa mudança de paradigma tornou a lógica matemática uma importante ferramenta para a programação de computadores.</p>",
+                image: "/",
+                altImage: "",
+                info: 
+                {
+                    date: "23/11/2022",
+                    author: "Docens Educacional",
+                    last: "2 dias"
+                },
+                support: [
+                    {
+                        name: "Livro lógica",
+                        author: "Lawrence Goldstein"
+                    },
+                    {
+                        name: "https://www.todamateria.com.br/o-que-e-logica/",
+                        author: "Toda matéria"
+                    },
+                ],
+                observer: ["Aqui está relacionado ao rei William, que é a melhor rota entre Dallas no Texas"],
+                tags: [
+                    "Tag 01", "Tag 02", "Tag 03", "Tag 04"
+                ],
+                nextMatter:
+                {
+                    name : "Materia 03",
+                    url : "",
+                    image: "/",
+                    imageAlt: ""
+                }
+            }
+        ];
+    }
 
     return (
 
@@ -147,11 +190,11 @@ function Article () {
                                     <React.Fragment key={key}>
                                         <div className="mttr__prmryWrp">
                                             <div className="mttr__hightlight">
-                                                <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://council.science/wp-content/uploads/2017/04/IUPAC-feature-image-1400x600.jpg" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/" />
+                                                <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://www.eratuku.com/wp-content/uploads/2019/12/minda-otak.jpg" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/" />
                                                 <h4 className="mttr__prmryTtl">
                                                     <div className="emoji--title">
                                                         <Emoji className="emoji--navigation" symbol={icon[Math.floor(Math.random() * icon.length)]} label="love" />
-                                                        <MainTitle description={item.name}descriptionUnder="" isCarousel={false} />
+                                                        <MainTitle description={item.name} descriptionUnder="" isCarousel={false} />
                                                     </div>
                                                 </h4>
                                             </div>
@@ -188,7 +231,7 @@ function Article () {
                                         }
                                         <div className="mttr__prmryWrp txt-cntr">
                                             <p className="mttr__spprt">
-                                                Precisa de ajuda? <br /><br /> Confira a seguir alguns conteúdos de recomendação para te ajudar.
+                                                Referências recomendadas <br /><br />
                                             </p>
                                             <ol className="mttr__spprt__lst">
                                                 {

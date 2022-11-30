@@ -73,19 +73,19 @@ function AllCourses () {
 
     const dataPlaceholder = [
         {
-            name: "Curso 01",
-            url: "/cursos/curso-01"
+            name: "Introdução a Lógica",
+            url: "/cursos/introducao-a-logica"
         },
         {
-            name: "Curso 02",
+            name: "Introdução a Lógica II",
             url: "/cursos/curso-02"
         },
         {
-            name: "Curso 03",
+            name: "WEB - Primeiros passos",
             url: "/cursos/curso-03"
         },
         {
-            name: "Curso 04",
+            name: "Linguagens",
             url: "/cursos/curso-04"
         },
     ];

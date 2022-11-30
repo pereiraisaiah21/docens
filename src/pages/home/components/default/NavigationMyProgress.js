@@ -26,13 +26,41 @@ function NavigationMyProgress ({
     const [cardsContent, setCardsContent] = useState({
         data  : [
             {
-                name : "",
+                name : "Introdução a Lógica ",
+                description : "Introdução",
+                link : "",
+                imageSrc :"",
+                imageAlt : "",
+                progressValue : "",
+                emoji : "📑"
+            },
+            {
+                name : "Introdução a Lógica II",
                 description : "",
                 link : "",
                 imageSrc : "",
                 imageAlt : "",
-                progressValue : ""
-            }
+                progressValue : "",
+                emoji : "📑"
+            },
+            {
+                name : "Tipos de dados",
+                description : "",
+                link : "",
+                imageSrc : "",
+                imageAlt : "",
+                progressValue : "",
+                emoji : "📑"
+            },
+            {
+                name : "Estruturas",
+                description : "",
+                link : "",
+                imageSrc : "",
+                imageAlt : "",
+                progressValue : "",
+                emoji : "📑"
+            },
         ],
         error : ""
     });
@@ -91,6 +119,7 @@ function NavigationMyProgress ({
                                                 srcImage={"https://t5z6q4c2.rocketcdn.me/wp-content/uploads/2020/04/o-que-e-quimica-historia-definicao-utilidades-e-suas-areas.jpg"}
                                                 title={item.name}
                                                 progressValue={item.id}
+                                                emoji={item.emoji}
                                             />
                                         </SwiperSlide>
                                     )

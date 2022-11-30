@@ -73,8 +73,8 @@ function Matter () {
 
     const dataPlaceholder = [
     {
-        name : "Lógica de programação",
-        description : "Álgebra é o ramo da Matemática que generaliza a aritmética. Isso significa que os conceitos e operações provenientes da aritmética (adição, subtração, multiplicação, divisão etc.) serão testados e sua eficácia será comprovada para todos os números pertencentes a determinados conjuntos numéricos.",
+        name : "Lógica Teoria",
+        description : "Esta matéria possui artigos sobre oquue é a lógica, e como que ela vem evoluindo ao decorrer dos tempos. Por definição formal, temos que lógica é \"A lógica é uma área da filosofia que visa estudar a estrutura formal dos enunciados (proposições) e suas regras.\". Veja mais a seguir, nos artigos listados.",
         articles : [
             {
                 name : "Introdução",
@@ -92,17 +92,17 @@ function Matter () {
                 title: "Ir para artigo Introducão"
             },
             {
+                name : "Evolução da lógica",
+                url : "/materias/logica/introducao",
+                title: "Ir para artigo Introducão"
+            },
+            {
                 name : "Lógica na programação",
                 url : "/materias/logica/introducao",
                 title: "Ir para artigo Introducão"
             },
             {
                 name : "Lógica matemática",
-                url : "/materias/logica/introducao",
-                title: "Ir para artigo Introducão"
-            },
-            {
-                name : "Lógica avançada",
                 url : "/materias/logica/introducao",
                 title: "Ir para artigo Introducão"
             }
