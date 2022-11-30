@@ -75,7 +75,7 @@
             @include flexunscen;
             flex-wrap: wrap;
         }
-        &--avatar {
+        &--color {
             display: flex;
             flex-wrap: wrap;
             height: 250px;
@@ -91,6 +91,27 @@
             &__image {
                 height: 50px;
                 cursor: pointer;
+            }
+        }
+        &--avatar {
+            display: flex;
+            flex-wrap: wrap;
+            &__item {
+                width: 20%;
+            }
+            &__input {
+                width: 0;
+                height: 0;
+                visibility: hidden;
+            }
+            &__image {
+                height: 50px;
+                cursor: pointer;
+
+                &:hover, &:active, &:focus, &:target {
+                    height: 60px;
+                    border-radius: 5px;
+                }
             }
         }
     }

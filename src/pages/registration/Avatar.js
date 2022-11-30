@@ -22,7 +22,7 @@ function Avatar () {
                 avatars.map( ( item, key ) => {
                     return (
                         <div className="rgsttn__flst--avatar__item" key={key}>
-                            <label className="rgsttn__flst__label" forHtml={item}>
+                            <label className="rgsttn__flst__label" forhtml={item}>
                                 <input id={item} className="rgsttn__flst--avatar__input" name="avatar" type="radio" />
                                 <img alt={`Avatar do tipo ${item}`} className="rgsttn__flst--avatar__image" src={`/avatar/${key + 1}.png`} />
                             </label>

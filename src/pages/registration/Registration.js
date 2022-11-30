@@ -3,11 +3,14 @@ import api from "../../services/api";
 import DatePicker from "react-datepicker";
 import { useNavigate } from "react-router-dom";
 import "react-datepicker/dist/react-datepicker.css";
+import reactCSS from 'reactcss';
+import Emoji from 'a11y-react-emoji';
+import { SketchPicker } from 'react-color';
 
-import { FaUser, FaEnvelope, FaMap, FaCalendarWeek, FaRegNewspaper } from 'react-icons/fa';
+import { FaUser, FaEnvelope, FaMap, FaCalendarWeek, FaRegNewspaper, FaPaintBrush } from 'react-icons/fa';
 import MainTitle from "../../components/title/MainTitle";
 import Avatar from "./Avatar";
-import Emoji from 'a11y-react-emoji';
+import Color from "./Color";
 
 /**
  * 
@@ -18,19 +21,60 @@ function Registration () {
 
     let navigate = useNavigate();
 
-    const [images, setImages] = useState([]);
     const maxNumber = 1;
-    const [avatar, setAvatar] = useState( "" );
-    const [bio, setBio] = useState( "" );
-    const [fullname, setFullname] = useState( "" );
-    const [email, setEmail] = useState( "" );
-    const [city, setCity] = useState( "" );
+    const [ images, setImages ] = useState( [] );
+    const [ avatar, setAvatar ] = useState( "" );
+    const [ bio, setBio ] = useState( "" );
+    const [ fullname, setFullname ] = useState( "" );
+    const [ email, setEmail ] = useState( "" );
+    const [ city, setCity ] = useState( "" );
+    const [ username, setUsername ] = useState( "" );
+    const [ password, setPassword ] = useState( "" );
+    const [ birthdayDate, setBirthdayDate ] = useState( new Date() );
+    const [ color, setColor ] = useState({
+        displayColorPicker: false,
+        color: {
+            r: '241',
+            g: '112',
+            b: '19',
+            a: '1',
+        }
+    });
+
     const [ blockForwardButton, setBlockForwardButton ] = useState( false );
     const [ showSecondStep, setShowSecondStep ] = useState( false );
     const [ updateOpen, setUpdateOpen ] = useState( false );
-    const [password, setPassword] = useState( "" );
-    const [username, setUsername] = useState( "" );
-    const [birthdayDate, setBirthdayDate] = useState( new Date() );
+
+    const styles = reactCSS({
+        'default': {
+          color: {
+            width: '36px',
+            height: '14px',
+            borderRadius: '2px',
+            background: `rgba(${ color.color.r }, ${ color.color.g }, ${ color.color.b }, ${ color.color.a })`,
+          },
+          swatch: {
+            padding: '5px',
+            margin: '5px',
+            background: '#fff',
+            borderRadius: '1px',
+            boxShadow: '0 0 0 1px rgba(0,0,0,.1)',
+            display: 'inline-block',
+            cursor: 'pointer',
+          },
+          popover: {
+            position: 'absolute',
+            zIndex: '2',
+          },
+          cover: {
+            position: 'fixed',
+            top: '0px',
+            right: '0px',
+            bottom: '0px',
+            left: '0px',
+          },
+        },
+    });
 
     useEffect(() => {
         if ( !fullname || !email || !city || !birthdayDate || !bio ) {
@@ -87,6 +131,16 @@ function Registration () {
         event.preventDefault();
         return navigate("/entrar");
     };
+    const colorHandleClick = function () {
+        setColor({ ...color, displayColorPicker: !color.displayColorPicker });
+    };
+    const colorHandleClose = function () {
+        setColor({ ...color, displayColorPicker: false });
+    };
+    const colorHandleChange = function ( color ) {
+        setColor({...color, color: color.rgb });
+        console.log( " X ", color.hex)
+    };
 
     return (
 
@@ -115,6 +169,27 @@ function Registration () {
                             ?
                             <>
                                 <Avatar />
+                                <fieldset className="rgsttn__flst rgsttn__flst--avatar">
+                                    <legend className="prfl__inf__itm">
+                                        <FaPaintBrush />
+                                        Cor de destaque
+                                    </legend>
+                                    <div>
+                                        <div style={ styles.swatch } onClick={ colorHandleClick }>
+                                            <div style={ styles.color } />
+                                        </div>
+                                        {
+                                            color.displayColorPicker
+                                            ?
+                                            <div style={ styles.popover }>
+                                                <div style={ styles.cover } onClick={ colorHandleClose }/>
+                                                <SketchPicker color={ color.color } onChange={ colorHandleChange } />
+                                            </div>
+                                            :
+                                            null
+                                        }
+                                    </div>
+                                </fieldset>
                                 <fieldset className="rgsttn__flst">
                                     <legend className="prfl__inf__itm">
                                         <FaUser />
