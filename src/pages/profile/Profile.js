@@ -45,7 +45,7 @@ function Profile () {
         <section className="prfl">
             <div className="prfl__wrpp">
                 <div className="prfl__bg">
-                    <div className="prfl__strp" />
+                    <div className="prfl__strp" style={{background: userStorage.color}} />
                     {
                         updateUserData
                         ?
@@ -61,8 +61,7 @@ function Profile () {
                     }
                 </div>
                 {
-                    // typeUser === "default" && (
-                        userStorage.occupation === "student" && (
+                    true && (
                         <div className="prfl__updts">
                             <nav className="prfl__nav">
                                 <ul className="prfl__nav__list">
