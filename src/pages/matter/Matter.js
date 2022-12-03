@@ -81,31 +81,31 @@ function Matter () {
                 url : "/materias/logica/introducao",
                 title: "Ir para artigo Introducão"
             },
-            {
-                name : "Fundamentos da lógica",
-                url : "/materias/logica/introducao",
-                title: "Ir para artigo Introducão"
-            },
-            {
-                name : "Lógica no cotidiano",
-                url : "/materias/logica/introducao",
-                title: "Ir para artigo Introducão"
-            },
-            {
-                name : "Evolução da lógica",
-                url : "/materias/logica/introducao",
-                title: "Ir para artigo Introducão"
-            },
-            {
-                name : "Lógica na programação",
-                url : "/materias/logica/introducao",
-                title: "Ir para artigo Introducão"
-            },
-            {
-                name : "Lógica matemática",
-                url : "/materias/logica/introducao",
-                title: "Ir para artigo Introducão"
-            }
+            // {
+            //     name : "Fundamentos da lógica",
+            //     url : "/materias/logica/introducao",
+            //     title: "Ir para artigo Introducão"
+            // },
+            // {
+            //     name : "Lógica no cotidiano",
+            //     url : "/materias/logica/introducao",
+            //     title: "Ir para artigo Introducão"
+            // },
+            // {
+            //     name : "Evolução da lógica",
+            //     url : "/materias/logica/introducao",
+            //     title: "Ir para artigo Introducão"
+            // },
+            // {
+            //     name : "Lógica na programação",
+            //     url : "/materias/logica/introducao",
+            //     title: "Ir para artigo Introducão"
+            // },
+            // {
+            //     name : "Lógica matemática",
+            //     url : "/materias/logica/introducao",
+            //     title: "Ir para artigo Introducão"
+            // }
         ]
     }
     ];

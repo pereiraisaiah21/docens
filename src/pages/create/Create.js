@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Emoji from 'a11y-react-emoji';
 import MainTitle from "../../components/title/MainTitle";
@@ -6,6 +6,7 @@ import CreateUpdateArticle from '../content/components/CreateUpdateArticle';
 import CreateUpdateCourse from '../content/components/CreateUpdateCourse';
 import CreateUpdateMatter from '../content/components/CreateUpdateMatter';
 import CreateUpdateQuestion from '../quiz/components/CreateUpdateQuestion';
+import SuccessForm from "../../components/alert/SuccessForm";
 
 /**
  * 
@@ -13,6 +14,8 @@ import CreateUpdateQuestion from '../quiz/components/CreateUpdateQuestion';
  */
 
 function Create () {
+
+    const [ showSuccess, setShowSuccess ] = useState( false );
 
     const navTabsHandler = function( event ) {
         event.preventDefault();
@@ -30,12 +33,25 @@ function Create () {
         sectionActive.classList.add( "create__nav__section--active" );
     };
 
+    useEffect( () => {
+        setTimeout( () => {
+            setShowSuccess( false );
+        }, 3000);
+    }, [ showSuccess ] );
+
     return (
 
         <section className="create">
-               <div className="emoji--title">
+            {
+                showSuccess
+                ?
+                <SuccessForm />
+                :
+                null
+            }
+            <div className="emoji--title">
                 <Emoji className="emoji--navigation" symbol={"📃"} label="love" />
-                <MainTitle description="meu feed" descriptionUnder="Pubicações recentes" isCarousel={false} />
+                <MainTitle description="Criar" descriptionUnder="" isCarousel={false} />
             </div>
             <div className="create__wrppr">
                 <p className="create__info">
@@ -66,16 +82,16 @@ function Create () {
                     </ul>
                 </nav>
                 <div className="create__nav__section create__nav__section--active" vop="#course">
-                    <CreateUpdateCourse />
+                    <CreateUpdateCourse setState={setShowSuccess} />
                 </div>
                 <div className="create__nav__section" vop="#matter">
-                    <CreateUpdateMatter />
+                    <CreateUpdateMatter setState={setShowSuccess} />
                 </div>
                 <div className="create__nav__section" vop="#article">
-                    <CreateUpdateArticle />
+                    <CreateUpdateArticle setState={setShowSuccess} />
                 </div>
                 <div className="create__nav__section" vop="#quiz">
-                    <CreateUpdateQuestion />
+                    <CreateUpdateQuestion setState={setShowSuccess} />
                 </div>
             </div>
         </section>

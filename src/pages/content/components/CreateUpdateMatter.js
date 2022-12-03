@@ -11,11 +11,16 @@ import { FaPencilAlt, FaInfoCircle } from 'react-icons/fa';
  * @returns
  */
 
-function CreateUpdateMatter () {
+function CreateUpdateMatter ({
+    setState
+}) {
 
     const {id} = useParams();
 
     let navigate = useNavigate();
+
+    // Presentation
+    let courseStorage = JSON.parse( localStorage.getItem( "course" ) );
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
@@ -28,12 +33,21 @@ function CreateUpdateMatter () {
     const [ description, setDescription ] = useState( "" );
     const [subject, setSubject] = useState( null );
     const [ formSendSuccess, setFormSendSuccess ] = useState( "" );
-    const subjectOptions = [
+    let subjectOptions =  [{ value: courseStorage.name, label: courseStorage.name}] || [
         { value: "materia", label: "Materias" },
         { value: "pergunta", label: "Quiz" },
         { value: "feedback", label: "Feedback" },
         { value: "outro", label: "Outro" }
     ];
+
+    setInterval( () => {
+        subjectOptions =  [{ value: courseStorage.name, label: courseStorage.name}] || [
+            { value: "materia", label: "Materias" },
+            { value: "pergunta", label: "Quiz" },
+            { value: "feedback", label: "Feedback" },
+            { value: "outro", label: "Outro" }
+        ];
+    }, 2000);
 
     const handleSubmit = function( event ) {
         event.preventDefault();
@@ -52,7 +66,18 @@ function CreateUpdateMatter () {
                     setFormSendSuccess( true );
                 })
                 .catch( err =>  {
+
                     setFormSendSuccess( false );
+                    
+                    // Presentation
+                    localStorage.setItem("matter", JSON.stringify({
+                        subject : subject,
+                        name : name, 
+                        url : url,
+                        description : description
+                    }));
+                    setFormSendSuccess( true );
+                    setState( true );
                 });
         };
     };

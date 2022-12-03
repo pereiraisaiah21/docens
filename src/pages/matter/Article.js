@@ -12,7 +12,6 @@ import ConnectionTimeoutWarn from "../../components/alert/ConnectionTimeoutWarn"
 import Emoji from 'a11y-react-emoji';
 import MainTitle from "../../components/title/MainTitle";
 
-
 /**
  *
  * @returns
@@ -94,7 +93,7 @@ function Article () {
         altImage: "",
         info: 
         {
-            date: "23/11/2022",
+            date: "03/12/2022",
             author: "Docens Educacional",
             last: "13 dias"
         },
@@ -121,24 +120,31 @@ function Article () {
         }
     }
     ];
+/*
+INTRO TITULO
+Aqui vai o subtitulo
+    A lógica é uma área da filosofia que visa estudar a estrutura formal dos enunciados (proposições) e suas regras.
 
-    console.log( contentid, " COntent")
-    if ( contentid !== "introducao" ) {
+A lógica é uma área da filosofia que visa estudar a estrutura formal dos enunciados (proposições) e suas regras.
+
+A sequência lógica são passos executados até atingir um objetivo ou solução de um problema.Um algoritmo é formalmente uma sequência finita de passos que levam a execução de uma tarefa. Podemos pensar em algoritmo como uma receita, uma sequência de instruções que dão cabo de uma meta específica. Estas tarefas não podem ser redundantes nem subjetivas na sua definição, devem ser claras e precisas.
+*/
+    if ( contentid === "introducao" ) {
 
         dataPlaceholder = [
             {
-                name : "Fundamentos da lógica",
-                subTitle: "Você sabe oque é lógica? Leia o artigo a seguir e confira mais sobre, e confira também exemplos a seguir",
-                quickDescription: "Lorem Ipsum",
+                name : "Intro titulo",
+                subTitle: "Aqui vai o subtitulo",
+                quickDescription: "",
                 matter: "Lógica",
-                scope : "<p><b>A lógica é uma área da filosofia que visa estudar a estrutura formal dos enunciados (proposições) e suas regras.</b></p><p>A lógica é uma área da filosofia que visa estudar a estrutura formal dos enunciados (proposições) e suas regras.</p><p>A sequência lógica são passos executados até atingir um objetivo ou solução de um problema.Um algoritmo é formalmente uma sequência finita de passos que levam a execução de uma tarefa. Podemos pensar em algoritmo como uma receita, uma sequência de instruções que dão cabo de uma meta específica. Estas tarefas não podem ser redundantes nem subjetivas na sua definição, devem ser claras e precisas.</p><p>Esse sentido fundamenta-se na estrutura lógica, quando algo \"tem lógica\" quer dizer que faz sentido, é uma argumentação racional.</p><p>Até mesmo as coisas mais simples, podem ser descritas por sequências lógicas. <p>A lógica só passou a ser uma área da Matemática a partir dos trabalhos de George Boole (1815-1864) e Augustus de Morgan (1806-1871), quando eles apresentaram os fundamentos da lógica algébrica. Essa mudança de paradigma tornou a lógica matemática uma importante ferramenta para a programação de computadores.</p>",
+                scope : "<p><b>A lógica é uma área da filosofia que visa estudar a estrutura formal dos enunciados (proposições) e suas regras.</b></p><p>A lógica é uma área da filosofia que visa estudar a estrutura formal dos enunciados (proposições) e suas regras.</p><p>A sequência lógica são passos executados até atingir um objetivo ou solução de um problema.Um algoritmo é formalmente uma sequência finita de passos que levam a execução de uma tarefa. Podemos pensar em algoritmo como uma receita, uma sequência de instruções que dão cabo de uma meta específica. Estas tarefas não podem ser redundantes nem subjetivas na sua definição, devem ser claras e precisas.</p>",
                 image: "/",
                 altImage: "",
                 info: 
                 {
-                    date: "23/11/2022",
+                    date: "03/12/2022",
                     author: "Docens Educacional",
-                    last: "2 dias"
+                    last: "0 dias"
                 },
                 support: [
                     {
@@ -190,7 +196,7 @@ function Article () {
                                     <React.Fragment key={key}>
                                         <div className="mttr__prmryWrp">
                                             <div className="mttr__hightlight">
-                                                <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://www.eratuku.com/wp-content/uploads/2019/12/minda-otak.jpg" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/" />
+                                                {/* <ImageWithCredits classStyleImg="mttr__img" classStyleCredit="mttr__img__crdts" imageSrc="https://www.eratuku.com/wp-content/uploads/2019/12/minda-otak.jpg" iamgeAlt="Descriptions" imageCredits="https://br.freepik.com/vetores-premium/" /> */}
                                                 <h4 className="mttr__prmryTtl">
                                                     <div className="emoji--title">
                                                         <Emoji className="emoji--navigation" symbol={icon[Math.floor(Math.random() * icon.length)]} label="love" />
@@ -205,7 +211,7 @@ function Article () {
                                                 {item.subTitle}
                                             </p>
                                             <div className="mttr__dtls">
-                                                <p className="mttr__dtls__wrtr">Por {item.info.author} {item.info.date} - Atualizado a {item.info.last} dias</p>
+                                                <p className="mttr__dtls__wrtr">Por {item.info.author} {item.info.date} - Atualizado a 0 dias</p>
                                                 {/* <p className="mttr__dtls__dt">19/07/2022 <span className="mttr__dtls__lstpdt">- Atualizado a 2 dias</span></p> */}
                                             </div>
                                         </div>
@@ -229,7 +235,7 @@ function Article () {
                                             :
                                             null
                                         }
-                                        <div className="mttr__prmryWrp txt-cntr">
+                                        {/* <div className="mttr__prmryWrp txt-cntr">
                                             <p className="mttr__spprt">
                                                 Referências recomendadas <br /><br />
                                             </p>
@@ -252,7 +258,7 @@ function Article () {
                                                     })
                                                 }
                                             </ol>
-                                        </div>
+                                        </div> */}
                                     </React.Fragment>
                                 )
                             })
@@ -260,7 +266,7 @@ function Article () {
                             null
                         }
                         </div>
-                        <RelatedMatters relatedMatter={dataPlaceholder[0].nextMatter}/>
+                        {/* <RelatedMatters relatedMatter={dataPlaceholder[0].nextMatter}/> */}
                         <MatterTags tagMatter={dataPlaceholder[0].tags} />
                         <ButtonWorkout classStyle={"mttr__workout"} url={"/quiz/posts/1"} />
                     </div>

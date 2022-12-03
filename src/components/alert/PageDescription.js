@@ -16,6 +16,6 @@ function PageDescription ({
            {text}
         </span>
     );
-}
+};
 
 export default PageDescription;

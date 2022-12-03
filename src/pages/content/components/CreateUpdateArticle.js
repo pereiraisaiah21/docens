@@ -5,9 +5,8 @@ import UserData from "../../../UserData";
 import Select from 'react-select'
 import ImageUploading from 'react-images-uploading';
 
-import MainTitle from "../../../components/title/MainTitle";
 import MatterEditor from "../../matter/components/MatterEditor";
-import { FaOptinMonster, FaInfoCircle, FaFileImport, FaPencilAlt } from 'react-icons/fa';
+import { FaInfoCircle, FaFileImport, FaPencilAlt } from 'react-icons/fa';
 import { articleSave } from "../../../emulation";
 
 /**
@@ -21,6 +20,9 @@ function CreateUpdateArticle () {
     const {contentid} = useParams();
 
     let navigate = useNavigate();
+
+    // Presentation
+    let matterStorage = JSON.parse( localStorage.getItem( "matter" ) );
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
@@ -39,7 +41,7 @@ function CreateUpdateArticle () {
     const [hightlighImage, setHightlighImage] = useState( "" );
     const [images, setImages] = useState([]);
     const [formSendSuccess, setFormSendSuccess] = useState( "" );
-    const categoryOptions = [
+    const categoryOptions = [{value: matterStorage.name, label: matterStorage.name}] || [
         { value: "tecnologia", label: "Tecnologia" },
         { value: "matematica", label: "Matemática" },
         { value: "fisica", label: "Física" },
@@ -48,12 +50,13 @@ function CreateUpdateArticle () {
         { value: "sociologia", label: "Sociologia" },
     ];
     const subjectOptions = [
-        { value: "tecnologia", label: "Tecnologia" },
-        { value: "matematica", label: "Matemática" },
-        { value: "fisica", label: "Física" },
-        { value: "quimica", label: "Química" },
-        { value: "filosofia", label: "Filosofia" },
-        { value: "sociologia", label: "Sociologia" },
+        { value: "curiosidade", label: "Curiosidade" },
+        { value: "hadware", label: "Hardware" },
+        { value: "software", label: "Software" },
+        { value: "teoria", label: "Teória" },
+        { value: "pratica", label: "Prática" },
+        { value: "programacao", label: "Programação" },
+        { value: "redes", label: "Redes" },
     ];
 
     const onChange = function( imageList, addUpdateIndex ) {
@@ -69,12 +72,7 @@ function CreateUpdateArticle () {
     const handleSubmit = function( event ) {
         event.preventDefault();
 
-        // Video
-        articleSave([
-            category, name, subName, url, content, tags, hightlighImage 
-        ]);
-
-        if ( category !== null && name !== null && subName !== null && url !== null && content !== null && tags !== null && hightlighImage !== null ) {
+        if ( category !== null && name !== null && subName !== null && url !== null && content !== null && tags !== null ) {
             console.log("send");
 
             api
@@ -93,6 +91,17 @@ function CreateUpdateArticle () {
                 })
                 .catch( err =>  {
                     setFormSendSuccess( false );
+
+                    // Presentation
+                    localStorage.setItem("article", JSON.stringify({
+                        category : category,
+                        name : name,
+                        subName: subName,
+                        content : content,
+                        tags : tags,
+                        url : url
+                    }));
+                    setFormSendSuccess( true );
                 });
         };
     };
@@ -245,7 +254,7 @@ function CreateUpdateArticle () {
                         <input className="content__sbmt" value="Salvar curso" type="submit" onClick={handleSubmit} />
                     </fieldset>
                 </form>
-                <span className="content__rtrn">
+                {/* <span className="content__rtrn">
                     <FaInfoCircle />
                     {
                         formSendSuccess !== null && formSendSuccess
@@ -258,7 +267,7 @@ function CreateUpdateArticle () {
                         :
                         "")
                     }
-                </span>
+                </span> */}
             </div>
         </section>
     );

@@ -14,110 +14,110 @@ function Course () {
     const icon = ["🛄", "🛄", "🗿", "⚱", "🪣", "🧹", "🧷", "🧴", "🪑", "🛋", "🪟", - "🩺", "🩹", "🔬", "🧬", "🧰", "🪜", "⛓", "📉", "⚙", "📦", "🖊", "🪙"];
     const [posts, setPosts] = useState({
         data : [
-            {
-                imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                subject     : "Direitos humanos",
-                title       : "Fundamentos de Realidade aumentada",
-                summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
-                link        : "/hfs",
-                views       : 200
-            },
-            {
-                imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                subject     : "Direitos humanos",
-                title       : "Fundamentos de Realidade aumentada",
-                summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
-                link        : "/hfs",
-                views       : 200
-            },
-            {
-                imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                subject     : "Direitos humanos",
-                title       : "Fundamentos de Realidade aumentada",
-                summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
-                link        : "/hfs",
-                views       : 200
-            },
-            {
-                imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                subject     : "Direitos humanos",
-                title       : "Fundamentos de Realidade aumentada",
-                summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
-                link        : "/hfs",
-                views       : 200
-            },
-            {
-                imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                subject     : "Direitos humanos",
-                title       : "Fundamentos de Realidade aumentada",
-                summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
-                link        : "/hfs",
-                views       : 200
-            },
-            {
-                imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                subject     : "Direitos humanos",
-                title       : "Fundamentos de Realidade aumentada",
-                summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
-                link        : "/hfs",
-                views       : 200
-            }
+            // {
+            //     imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+            //     imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+            //     subject     : "Direitos humanos",
+            //     title       : "Fundamentos de Realidade aumentada",
+            //     summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
+            //     link        : "/hfs",
+            //     views       : 200
+            // },
+            // {
+            //     imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+            //     imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+            //     subject     : "Direitos humanos",
+            //     title       : "Fundamentos de Realidade aumentada",
+            //     summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
+            //     link        : "/hfs",
+            //     views       : 200
+            // },
+            // {
+            //     imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+            //     imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+            //     subject     : "Direitos humanos",
+            //     title       : "Fundamentos de Realidade aumentada",
+            //     summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
+            //     link        : "/hfs",
+            //     views       : 200
+            // },
+            // {
+            //     imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+            //     imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+            //     subject     : "Direitos humanos",
+            //     title       : "Fundamentos de Realidade aumentada",
+            //     summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
+            //     link        : "/hfs",
+            //     views       : 200
+            // },
+            // {
+            //     imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+            //     imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+            //     subject     : "Direitos humanos",
+            //     title       : "Fundamentos de Realidade aumentada",
+            //     summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
+            //     link        : "/hfs",
+            //     views       : 200
+            // },
+            // {
+            //     imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+            //     imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+            //     subject     : "Direitos humanos",
+            //     title       : "Fundamentos de Realidade aumentada",
+            //     summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
+            //     link        : "/hfs",
+            //     views       : 200
+            // }
         ],
         error: ""
     });
 
     const dataPlaceholder = [
         {
-            name : "Introdução a lógica",
-            description : "Neste curso conheceremos um pouco mais sobre a lógica de programaçaõ. Explicamos a evolução dela no decorrer dos anos. Mostramos também exemplos para facilitar a compreensão dos conteúdos.",
+            name : "Introdução a Lógica",
+            description : "Descrição curso.",
             allMatters : [
                 {
                     name: "Lógica Teoria",
                     url: "/materias/logica-teoria",
                 },
-                {
-                    name: "Expandindo a lógica",
-                    url: "/materias/materia-02",
-                },
-                {
-                    name: "Prática Lógica",
-                    url: "/materias/materia-03",
-                }
+                // {
+                //     name: "Expandindo a lógica",
+                //     url: "/materias/materia-02",
+                // },
+                // {
+                //     name: "Prática Lógica",
+                //     url: "/materias/materia-03",
+                // }
             ],
             lastArticles : [
-                {
-                    imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                    imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                    subject     : "Direitos humanos",
-                    title       : "Fundamentos de Realidade aumentada",
-                    summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
-                    link        : "/hfs",
-                    views       : 200
-                },
-                {
-                    imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                    imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                    subject     : "Direitos humanos",
-                    title       : "Fundamentos de Realidade aumentada",
-                    summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
-                    link        : "/hfs",
-                    views       : 200
-                },
-                {
-                    imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                    imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
-                    subject     : "Direitos humanos",
-                    title       : "Fundamentos de Realidade aumentada",
-                    summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
-                    link        : "/hfs",
-                    views       : 200
-                }
+                // {
+                //     imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                //     imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                //     subject     : "Direitos humanos",
+                //     title       : "Fundamentos de Realidade aumentada",
+                //     summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
+                //     link        : "/hfs",
+                //     views       : 200
+                // },
+                // {
+                //     imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                //     imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                //     subject     : "Direitos humanos",
+                //     title       : "Fundamentos de Realidade aumentada",
+                //     summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
+                //     link        : "/hfs",
+                //     views       : 200
+                // },
+                // {
+                //     imageSrc    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                //     imageAlt    : "https://etus.com.br/img/impulsionamento-post-etus2.webp",
+                //     subject     : "Direitos humanos",
+                //     title       : "Fundamentos de Realidade aumentada",
+                //     summary     : "Texto de descrição do post, Texto de descrição do post, Texto de descrição do post, Texto de descrição do post.",
+                //     link        : "/hfs",
+                //     views       : 200
+                // }
             ]
         }
     ];

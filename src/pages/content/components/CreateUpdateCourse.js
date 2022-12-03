@@ -11,7 +11,9 @@ import { FaInfoCircle, FaPencilAlt } from 'react-icons/fa';
  * @returns
  */
 
-function CreateUpdateCourse () {
+function CreateUpdateCourse ({
+    setState
+}) {
 
     const {id} = useParams();
     const {contentid} = useParams();
@@ -41,11 +43,23 @@ function CreateUpdateCourse () {
                 description : description
             })
             .then( response => {
-
-                setFormSendSuccess( true );
+                console.log( "Abuela" );
             })
             .catch( err =>  {
                 setFormSendSuccess( false );
+                
+                // Presentation
+                localStorage.setItem("course", JSON.stringify({
+                    name : name, 
+                    url : url,
+                    description : description
+                }));
+                setFormSendSuccess( true );
+                setState( true );
+
+                setName( "" );
+                setUrl( "" );
+                setDescription( "" );
             });
         };
     };
@@ -110,9 +124,9 @@ function CreateUpdateCourse () {
                     </fieldset>
                 </form>
                 <span className="content__rtrn">
-                    <FaInfoCircle />
+                    {/* <FaInfoCircle />
                     {
-                        formSendSuccess !== null && formSendSuccess
+                        !formSendSuccess !== null && formSendSuccess
                         ?
                         "Artigo cadastrado com sucesso."
                         :
@@ -121,7 +135,7 @@ function CreateUpdateCourse () {
                         "Estamos com problemas para salvar seu artigo. Tente novamente mais tarde."
                         :
                         "")
-                    }
+                    } */}
                 </span>
             </div>
         </section>

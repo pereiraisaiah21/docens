@@ -4,7 +4,6 @@ import api from "../../../services/api";
 import Select from 'react-select'
 import UserData from "../../../UserData";
 
-import MainTitle from "../../../components/title/MainTitle";
 import AddAlternatives from "./AddAlternatives";
 import { FaInfoCircle, FaPencilAlt } from 'react-icons/fa';
 
@@ -13,12 +12,17 @@ import { FaInfoCircle, FaPencilAlt } from 'react-icons/fa';
  * @returns
  */
 
-function CreateUpdateQuestion () {
+function CreateUpdateQuestion ({
+    setState
+}) {
 
     const {id} = useParams();
     const {contentid} = useParams();
 
     let navigate = useNavigate();
+
+    // Presentation
+    let matterStorage = JSON.parse( localStorage.getItem( "matter" ) );
 
     const { userDataValues } = useContext( UserData );
     const [ typeUser, setTypeUser ] = useState( null );
@@ -32,7 +36,7 @@ function CreateUpdateQuestion () {
     const [ alternatives, setAlternatives ] = useState( "" );
     const [ correctAlternative, setCorrectAlternative ] = useState( null );
     const [ formSendSuccess, setFormSendSuccess ] = useState( "" );
-    const categoryOptions = [
+    const categoryOptions = [{ value: matterStorage.name, label: matterStorage.name}] || [
         { value: "tecnologia", label: "Tecnologia" },
         { value: "matematica", label: "Matemática" },
         { value: "fisica", label: "Física" },
@@ -70,7 +74,19 @@ function CreateUpdateQuestion () {
                     */
                 })
                 .then( () => setFormSendSuccess( true ))
-                .catch( () => setFormSendSuccess( false ));
+                .catch( () => {
+                    setFormSendSuccess( false );
+
+                    // Presentation
+                    localStorage.setItem("quiz", JSON.stringify({
+                        category : category,
+                        name : name,
+                        description : description,
+                        alternatives : alternatives
+                    }));
+                    setFormSendSuccess( true );
+                    setState( true );
+                });
         };
     };
 

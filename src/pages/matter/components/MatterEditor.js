@@ -16,7 +16,6 @@ import { Select } from "antd";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 // import "antd/dist/antd.min.css";
 
-
 import "react-color-picker/index.css";
 const { Option } = Select;
 
@@ -24,7 +23,7 @@ class EditorConvertToHTML extends Component {
   constructor(props) {
     super(props);
 
-    const html = '<p id="para">asdfsd</p>';
+    const html = '<p id="para"></p>';
     const contentBlock = htmlToDraft(html);
 
     if (contentBlock) {
@@ -129,14 +128,16 @@ class EditorConvertToHTML extends Component {
     ];
 
     const { editorState } = this.state;
-    console.log(this.state.editorState)
+
     return (
+
       <div className="Edtr__wrpp">
-        <p>
+        <p style={{display: "none"}}>
           {
             draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()))
           }
           {
+            // Presentation
             saveArticleOnStorage( convertToRaw(this.state.editorState.getCurrentContent()) )
           }
         </p>

@@ -76,18 +76,18 @@ function AllCourses () {
             name: "Introdução a Lógica",
             url: "/cursos/introducao-a-logica"
         },
-        {
-            name: "Introdução a Lógica II",
-            url: "/cursos/curso-02"
-        },
-        {
-            name: "WEB - Primeiros passos",
-            url: "/cursos/curso-03"
-        },
-        {
-            name: "Linguagens",
-            url: "/cursos/curso-04"
-        },
+        // {
+        //     name: "Introdução a Lógica II",
+        //     url: "/cursos/curso-02"
+        // },
+        // {
+        //     name: "WEB - Primeiros passos",
+        //     url: "/cursos/curso-03"
+        // },
+        // {
+        //     name: "Linguagens",
+        //     url: "/cursos/curso-04"
+        // },
     ];
 
     return (
