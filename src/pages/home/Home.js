@@ -33,7 +33,7 @@ function Home () {
 
         <>
         {
-            !isADM 
+            isADM 
             ?
             <>
                 <StudentInfo />
@@ -50,7 +50,7 @@ function Home () {
             <>
                 <NavigationActions />
                 <ModerateActions />
-                <CreateActions />
+                <cre />
             </>
         }
         </>

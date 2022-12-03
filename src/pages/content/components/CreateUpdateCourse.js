@@ -96,7 +96,7 @@ function CreateUpdateCourse () {
 
         <section className="content">
             <div className="content__wrp">
-                <MainTitle description="curso" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
+                {/* <MainTitle description="curso" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} /> */}
                 <form className="content__frm" onSubmit={(e) => e.preventDefault()}>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Nome do curso *</legend>

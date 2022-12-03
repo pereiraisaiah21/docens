@@ -1,0 +1,43 @@
+.create {
+    padding: 40px 10px;
+    &__wrppr {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        padding: 10px 10px 50px;
+        border-radius: $brdef;
+        flex-wrap: wrap;
+        padding-bottom: 10px;
+    }
+    &__nav {
+        width: 100%;
+        padding-bottom: 20px;
+        &__list {
+            display: flex;
+        }
+        &__item {
+
+        }
+        &__button {
+            border: none;
+            font-size: 1.1em;
+            padding: 10px;
+            color: #716b72;
+            background-color: $bgunset;
+            cursor: pointer;
+            &--active {
+                border-bottom: 3px solid #716b72;
+            }
+        }
+        &__section {
+            display: none;
+            &--active {
+                display: block;
+                width: 100%;
+            }
+            .actns {
+                padding: 0;
+            }
+        }
+    }
+}

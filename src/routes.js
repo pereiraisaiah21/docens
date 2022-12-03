@@ -39,6 +39,7 @@ import Registration from "./pages/registration/Registration";
 import ArticlesList from "./pages/moderation/ArticlesList";
 import ArticleModerate from "./pages/moderation/ArticleModerate";
 import DarkModeToggle from "./components/button/DarkModeToggle";
+import Create from "./pages/create/Create";
 
 /**
  * 
@@ -92,6 +93,9 @@ function SiteRoutes () {
 
                 <Route path="/moderar" element={<ArticlesList />} />
                 <Route path="/moderar/:id" element={<ArticleModerate />} />
+
+                // Working here
+                <Route path="/criar" element={<Create />} />
 
                 <Route path="*" element={<Error />} />
             </Routes>

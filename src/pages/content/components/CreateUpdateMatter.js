@@ -4,8 +4,8 @@ import api from "../../../services/api";
 import UserData from "../../../UserData";
 
 import MainTitle from "../../../components/title/MainTitle";
-
 import { FaOptinMonster, FaInfoCircle } from 'react-icons/fa';
+import Emoji from 'a11y-react-emoji';
 
 /**
  *
@@ -92,7 +92,10 @@ function CreateUpdateMatter () {
 
         <section className="content">
             <div className="content__wrp">
-                <MainTitle description="Matéria" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
+                <div className="emoji--title">
+                    <Emoji className="emoji--navigation" symbol={"📃"} label="love" />
+                    <MainTitle description="matéria" descriptionUnder="preencha o formulário abaixo" isCarousel={false} />
+                </div>
                 <form className="content__frm" onSubmit={(e) => e.preventDefault()}>
                     <fieldset className="content__fldst content__fldst--hlf">
                         <legend className="content__lgnd">Nome da matéria *</legend>

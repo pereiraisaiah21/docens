@@ -62,7 +62,7 @@ function ModerateActions () {
             </div>
             <div className="actns__crds actns__crds--list">
                 {
-                    isADM
+                    !isADM
                     ?
                       cardsContentDefault.map( ( item, key ) => {
                           return (
