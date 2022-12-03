@@ -2,13 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import api from "../../../services/api"
-import Select from 'react-select'
 
 import UserData from "../../../UserData";
-
-import MainTitle from "../../../components/title/MainTitle";
-
-import { FaOptinMonster, FaInfoCircle } from 'react-icons/fa';
+import { FaInfoCircle, FaPencilAlt } from 'react-icons/fa';
 
 /**
  *
@@ -96,19 +92,18 @@ function CreateUpdateCourse () {
 
         <section className="content">
             <div className="content__wrp">
-                {/* <MainTitle description="curso" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} /> */}
                 <form className="content__frm" onSubmit={(e) => e.preventDefault()}>
                     <fieldset className="content__fldst content__fldst--hlf">
-                        <legend className="content__lgnd">Nome do curso *</legend>
+                        <legend className="content__lgnd"><FaPencilAlt />Nome do curso *</legend>
                         <input className="content__inpt" type="text" onChange={(e) => setName(e.target.value)} placeholder={name || "Digite o nome do curso"} value={name || ""} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
-                        <legend className="content__lgnd">Url do curso *</legend>
+                        <legend className="content__lgnd"><FaPencilAlt />Url do curso *</legend>
                         <input className="content__inpt" type="text" onChange={(e) => setUrl(e.target.value)} placeholder={url || "Digite a URL do curso"} value={url || ""} />
                     </fieldset>
-                    <fieldset className="content__fldst content__fldst--hlf">
-                        <legend className="content__lgnd">Descrição</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setDescription(e.target.value)} placeholder={description || "Digite a descrição do curso"} value={description || ""} />
+                    <fieldset className="content__fldst">
+                        <legend className="content__lgnd"><FaPencilAlt />Descrição</legend>
+                        <textarea className="content__inpt content__inpt--textarea" type="text" onChange={(e) => setDescription(e.target.value)} placeholder={description || "Digite a descrição do curso"} value={description || ""} rows="4" cols="50"></textarea>
                     </fieldset>
                     <fieldset className="content__fldst">
                         <input className="content__sbmt" value="Salvar curso" type="submit" onClick={handleSubmit} />
@@ -131,6 +126,6 @@ function CreateUpdateCourse () {
             </div>
         </section>
     );
-}
+};
 
 export default CreateUpdateCourse;

@@ -75,16 +75,24 @@ $wmax : 100%;
 }
 @mixin input {
     padding: 10px;
-    border-radius: 5px;
     border: none;
     width: 100%;
-    font-size: .97em;
+    font-size: .90em;
     position: relative;
     background-color: unset;
     text-align: left;
     color: #716b72;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    border-bottom: 1px solid #ccc;
+    outline: 0;
+    font-family: inherit;
+    
+    &:active, &:hover, &:focus {
+        border-color: $orange;
+    }
+    &::placeholder {
+        font-size: .9rem;
+        color: #716b72;
+    }
 }
 @mixin input-font {
     position: relative;
@@ -96,14 +104,12 @@ $wmax : 100%;
     font-weight: 500;
     font-family: inherit;
     font-size: .97em;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    border-bottom: 1px solid #ccc;
 }
 @mixin select {
     border: none;
-    border-radius: 5px;
+    cursor: pointer;
     font-size: 1em;
-    background-color: unset;
     font-size: .97em;
 }
 @mixin warn {
@@ -122,4 +128,9 @@ $wmax : 100%;
 .demo-editor {
     background-color: #FFF;
     padding: 10px;
+    border-bottom: 1px solid $gray;
+    
+    &:hover, &:active, &:focus {
+        border-color: $orange;
+    }
 }

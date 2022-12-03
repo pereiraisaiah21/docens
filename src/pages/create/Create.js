@@ -1,3 +1,4 @@
+import React from "react";
 
 import Emoji from 'a11y-react-emoji';
 import MainTitle from "../../components/title/MainTitle";
@@ -35,6 +36,9 @@ function Create () {
                 <MainTitle description="meu feed" descriptionUnder="Pubicações recentes" isCarousel={false} />
             </div>
             <div className="create__wrppr">
+                <p>
+                    Selecione alguma das opções abaixo, para preencher o cadastro de algum item.
+                </p>
                 <nav className="create__nav">
                     <ul className="create__nav__list">
                         <li className="create__nav__item">
@@ -73,7 +77,7 @@ function Create () {
                 </div>
             </div>
         </section>
-    )
+    );
 };
 
 export default Create;

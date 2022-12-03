@@ -15,9 +15,7 @@
         &__list {
             display: flex;
         }
-        &__item {
-
-        }
+        &__item {}
         &__button {
             border: none;
             font-size: 1.1em;
@@ -26,7 +24,7 @@
             background-color: $bgunset;
             cursor: pointer;
             &--active {
-                border-bottom: 3px solid #716b72;
+                border-bottom: 3px solid $orange;
             }
         }
         &__section {

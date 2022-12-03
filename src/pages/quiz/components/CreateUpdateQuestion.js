@@ -1,14 +1,12 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../../../services/api";
-
+import Select from 'react-select'
 import UserData from "../../../UserData";
 
 import MainTitle from "../../../components/title/MainTitle";
 import AddAlternatives from "./AddAlternatives";
-import Select from 'react-select'
-
-import { FaOptinMonster, FaInfoCircle } from 'react-icons/fa';
+import { FaInfoCircle, FaPencilAlt } from 'react-icons/fa';
 
 /**
  *
@@ -119,10 +117,9 @@ function CreateUpdateQuestion () {
 
         <section className="content">
             <div className="content__wrp">
-                <MainTitle description="pergunta" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
                 <form className="content__frm" onSubmit={(e) => e.preventDefault()}>
                     <fieldset className="content__fldst">
-                        <legend className="content__lgnd">Matéria *</legend>
+                        <legend className="content__lgnd"><FaPencilAlt />Matéria *</legend>
                         <Select
                             name="filters"
                             className="content__slct"
@@ -133,12 +130,12 @@ function CreateUpdateQuestion () {
                         />
                     </fieldset>
                     <fieldset className="content__fldst">
-                        <legend className="content__lgnd">Titulo da pergunta *</legend>
-                        <input className="content__inpt" type="text" onChange={(e) => setName(e.target.value)} placeholder={name} value={name || ""} />
+                        <legend className="content__lgnd"><FaPencilAlt />Titulo da pergunta *</legend>
+                        <input className="content__inpt" type="text" onChange={(e) => setName(e.target.value)} placeholder={name || "Digite o título da pergunta"} value={name || ""} />
                     </fieldset>
                     <fieldset className="content__fldst">
-                        <legend className="content__lgnd">Descrição da pergunta ( conteúdo ) *</legend>
-                        <textarea className="content__inpt" type="text" onChange={(e) => setDescription(e.target.value)} placeholder={description} value={description || ""} />
+                        <legend className="content__lgnd"><FaPencilAlt />Descrição da pergunta ( conteúdo ) *</legend>
+                        <textarea className="content__inpt" type="text" onChange={(e) => setDescription(e.target.value)} placeholder={description || "Digite a pergunta"} value={description || ""} />
                     </fieldset>
                     <AddAlternatives setAlternatives={setAlternatives} setCorrectAlternative={setCorrectAlternative} />
                     <fieldset className="content__fldst">

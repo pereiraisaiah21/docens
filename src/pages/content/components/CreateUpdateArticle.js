@@ -7,8 +7,7 @@ import ImageUploading from 'react-images-uploading';
 
 import MainTitle from "../../../components/title/MainTitle";
 import MatterEditor from "../../matter/components/MatterEditor";
-import { FaOptinMonster, FaInfoCircle, FaFileImport } from 'react-icons/fa';
-
+import { FaOptinMonster, FaInfoCircle, FaFileImport, FaPencilAlt } from 'react-icons/fa';
 import { articleSave } from "../../../emulation";
 
 /**
@@ -144,10 +143,9 @@ function CreateUpdateArticle () {
 
         <section className="content">
             <div className="content__wrp">
-                <MainTitle description="conteúdo" descriptionUnder="Preencha o formulário abaixo" icon={<FaOptinMonster />} />
                 <form className="content__frm" onSubmit={(e) => e.preventDefault()}>
                     <fieldset className="content__fldst">
-                        <legend className="content__lgnd">Matéria *</legend>
+                        <legend className="content__lgnd"><FaPencilAlt />Matéria *</legend>
                         <Select
                             name="filters"
                             className="content__slct"
@@ -158,7 +156,7 @@ function CreateUpdateArticle () {
                         />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
-                        <legend className="content__lgnd">Título do artigo *</legend>
+                        <legend className="content__lgnd"><FaPencilAlt />Título do artigo *</legend>
                         <input className="content__inpt" type="text" onChange={(e) => setName(e.target.value)} placeholder={name || "Digite o nome da matéria"} value={name || ""} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
@@ -166,7 +164,7 @@ function CreateUpdateArticle () {
                         <input className="content__inpt" type="text" onChange={(e) => setSubName(e.target.value)} placeholder={subName || "Digite o nome da matéria"} value={subName || ""} />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">
-                        <legend className="content__lgnd">Url da matéria *</legend>
+                        <legend className="content__lgnd"><FaPencilAlt />Url da matéria *</legend>
                         <input className="content__inpt" type="text" onChange={(e) => setUrl(e.target.value)} placeholder={url || "Digite a URL da matéria"} value={url || ""} />
                     </fieldset>
                     {/* <fieldset className="content__fldst content__fldst--hlf">
@@ -174,15 +172,15 @@ function CreateUpdateArticle () {
                         <input className="content__inpt" type="text" onChange={(e) => setQuizUrl(e.target.value)} placeholder={quizUrl || "Digite a URL do questionário da matéria" } value={quizUrl || ""} />
                     </fieldset> */}
                     <fieldset className="content__fldst content__fldst--hlf">
-                        <legend className="content__lgnd">Url do próximo conteúdo ( Opcional )</legend>
+                        <legend className="content__lgnd"><FaPencilAlt />Url do próximo conteúdo ( Opcional )</legend>
                         <input className="content__inpt" type="text" onChange={(e) => setNextContentUrl(e.target.value)} placeholder={nextContentUrl || "Digite a URL da próxima matéria"} value={nextContentUrl || ""} />
                     </fieldset>
                     <fieldset className="content__fldst">
-                        <legend className="content__lgnd">Escopo do artigo *</legend>
+                        <legend className="content__lgnd"><FaPencilAlt />Escopo do artigo *</legend>
                         <MatterEditor />
                     </fieldset>
                     <fieldset className="content__fldst">
-                        <legend className="content__lgnd">Tags ( Opcional )</legend>
+                        <legend className="content__lgnd"><FaPencilAlt />Tags ( Opcional )</legend>
                         <Select
                             name="filters"
                             className="content__slct"
@@ -195,7 +193,7 @@ function CreateUpdateArticle () {
                         />
                     </fieldset>
                     <fieldset className="content__fldst">
-                        <legend className="content__lgnd">Imagem de destaque *</legend>
+                        <legend className="content__lgnd"><FaPencilAlt />Imagem de destaque *</legend>
                         <ImageUploading
                             multiple
                             value={images}
@@ -264,6 +262,6 @@ function CreateUpdateArticle () {
             </div>
         </section>
     );
-}
+};
 
 export default CreateUpdateArticle;
