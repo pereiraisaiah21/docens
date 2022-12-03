@@ -30,6 +30,13 @@
     &--navigation {
         font-size: 3rem;
     }
+    &--create {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 50px;
+        font-size: 50px;
+    }
     &--header {
         font-size: 1.3rem;
     }

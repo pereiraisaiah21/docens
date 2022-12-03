@@ -50,7 +50,7 @@ function Home () {
             <>
                 <NavigationActions />
                 <ModerateActions />
-                <cre />
+                <CreateActions />
             </>
         }
         </>

@@ -1,5 +1,4 @@
-import React, { useContext, useEffect } from "react";
-import UserData from "../../../UserData";
+import React from "react";
 
 import Card from "../../../components/card/Card";
 import { FaOptinMonster } from 'react-icons/fa';
@@ -15,7 +14,6 @@ function ModerateActions () {
 
     let userStorage = JSON.parse(localStorage.getItem("user"));
     let isADM = JSON.parse(localStorage.getItem("adm"));
-
 
     const cardsContentDefault = [
         {

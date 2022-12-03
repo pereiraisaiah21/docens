@@ -269,6 +269,12 @@
             padding: 0 20px;
         }
     }
+    &--create {
+        position: relative;
+        background-color: #ece6ff;
+        border: 1px solid #ece6ff;
+        margin: 0 auto 32px;
+    }
     &--bg-01 {
         border-top: 2px solid $orange;
         border-radius: 0 !important;
@@ -400,7 +406,6 @@
             width: 23%;
             &__nm {
                 &--myPrgrss {
-                    // position: absolute;
                     top: 30px;
                     left: 0;
                 }
@@ -465,6 +470,9 @@ body.dark-mode {
             &__nm {
                 color: $white;
             }
+        }
+        &--create {
+            background-color: unset;
         }
         &--bg-01 {
             background-color: unset;

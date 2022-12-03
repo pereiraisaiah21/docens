@@ -9,18 +9,26 @@
         flex-wrap: wrap;
         padding-bottom: 10px;
     }
+    &__info {
+        padding: 0 10px;
+        margin: 30px 0;
+    }
     &__nav {
-        width: 100%;
+        width: $wmax;
         padding-bottom: 20px;
         &__list {
             display: flex;
+            justify-content: space-between;
         }
-        &__item {}
+        &__item {
+            width: 25%;
+        }
         &__button {
             border: none;
             font-size: 1.1em;
             padding: 10px;
             color: #716b72;
+            width: $wmax;
             background-color: $bgunset;
             cursor: pointer;
             &--active {
@@ -35,6 +43,17 @@
             }
             .actns {
                 padding: 0;
+            }
+        }
+    }
+}
+
+// DarkMode
+body.dark-mode {
+    .create {
+        &__nav {
+            &__button {
+                color: $white;
             }
         }
     }

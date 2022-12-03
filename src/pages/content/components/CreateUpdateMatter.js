@@ -100,12 +100,12 @@ function CreateUpdateMatter () {
             <div className="content__wrp">
                 <form className="content__frm" onSubmit={(e) => e.preventDefault()}>
                     <fieldset className="content__fldst">
-                        <legend className="content__lgnd"><FaPencilAlt />Selecione o curso *</legend>
+                        <legend className="content__lgnd"><FaPencilAlt />Curso *</legend>
                         <Select
                             className="cntct__slct"
                             options={subjectOptions}
                             onChange={(e) => setSubject(e.value)}
-                            placeholder="Selecione um assunto"
+                            placeholder="Selecione um curso"
                         />
                     </fieldset>
                     <fieldset className="content__fldst content__fldst--hlf">

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { FaPlus, FaTimes } from 'react-icons/fa';
 
 /**
@@ -94,10 +95,10 @@ function AddAlternatives ({
                                                 <span style={{color: 'white'}}>
                                                     {item.value && (item.value)}
                                                 </span>
+                                                <button keyevent={key} onClick={(e) => removeAlternative(e, key)}>
+                                                    <FaTimes />
+                                                </button>
                                             </label>
-                                            <button keyevent={key} onClick={(e) => removeAlternative(e, key)}>
-                                                <FaTimes />
-                                            </button>
                                         </li>
                                      )
                                  }
@@ -109,6 +110,6 @@ function AddAlternatives ({
             </ul>
         </>
     );
-}
+};
 
 export default AddAlternatives;
